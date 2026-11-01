@@ -186,7 +186,7 @@ export default function HomePage() {
             : "Usa el mismo apodo de siempre para recuperar tu lugar si se corta la conexión."}
         </p>
       </div>
-      {errorCode === "ROOM_NOT_FOUND" ? <RoomNotFoundModal code={code} onClose={() => { setError(null); setErrorCode(null); }} onHome={() => router.push("/")} /> : null}
+      {errorCode === "ROOM_NOT_FOUND" ? <RoomNotFoundModal code={code} onHome={() => router.push("/")} /> : null}
     </main>
   );
 }

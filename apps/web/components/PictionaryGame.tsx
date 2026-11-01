@@ -33,7 +33,7 @@ export function PictionaryGame({ room, me, priv, champions, isHost, resetting, o
   const [draft, setDraft] = useState<Point[]>([]);
   const [drawing, setDrawing] = useState(false);
   const [color, setColor] = useState("#14284b");
-  const [width, setWidth] = useState(1.2);
+  const [width, setWidth] = useState(0.006);
   if (!game) return null;
 
   const drawer = room.players.find((player) => player.playerId === game.drawerId);
@@ -58,7 +58,7 @@ export function PictionaryGame({ room, me, priv, champions, isHost, resetting, o
         {strokes.map((stroke, index) => <polyline key={index} points={pointsAttribute(stroke)} className="pictionary-line" style={{ stroke: stroke[0]?.color ?? "#14284b", strokeWidth: stroke[0]?.width ?? 1.2 }} />)}
         {draft.length > 1 ? <polyline points={pointsAttribute(draft)} className="pictionary-line draft" style={{ stroke: color, strokeWidth: width }} /> : null}
       </svg>
-      {isDrawer ? <div className="pictionary-tools"><div className="pictionary-colors">{["#14284b", "#c0392b", "#2d8a56", "#7b4bb7", "#e09b2d", "#111111"].map((swatch) => <button key={swatch} type="button" className={`pictionary-swatch${color === swatch ? " selected" : ""}`} style={{ background: swatch }} aria-label={`Color ${swatch}`} onClick={() => setColor(swatch)} />)}</div><label className="pictionary-width">Grosor <select value={width} onChange={(event) => setWidth(Number(event.target.value))}><option value={0.8}>Fino</option><option value={1.2}>Medio</option><option value={2}>Grueso</option></select></label><button type="button" className="secondary pictionary-clear" onClick={onClear}>Borrar</button></div> : null}
+      {isDrawer ? <div className="pictionary-tools"><div className="pictionary-colors">{["#14284b", "#c0392b", "#2d8a56", "#7b4bb7", "#e09b2d", "#111111"].map((swatch) => <button key={swatch} type="button" className={`pictionary-swatch${color === swatch ? " selected" : ""}`} style={{ background: swatch }} aria-label={`Color ${swatch}`} onClick={() => setColor(swatch)} />)}</div><div className="pictionary-width"><span>Grosor</span><div className="pictionary-sizes">{[["Fino", 0.003], ["Medio", 0.006], ["Grueso", 0.012]].map(([label, value]) => <button key={label as string} type="button" className={`pictionary-size${width === value ? " selected" : ""}`} onClick={() => setWidth(value as number)}>{label as string}</button>)}</div></div><button type="button" className="secondary pictionary-clear" onClick={onClear}>Borrar</button></div> : null}
       {isDrawer ? <div className="pictionary-hint">Tu objetivo está oculto para los demás. Dibuja con el mouse o el dedo.</div> : <div className="pictionary-hint">Adivina el campeón sin pedir pistas.</div>}
     </section>
 

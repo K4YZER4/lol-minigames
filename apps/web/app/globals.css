@@ -1042,7 +1042,7 @@ input:disabled {
 
 .pictionary-board.can-draw { cursor: crosshair; }
 .pictionary-paper { fill: rgba(240, 236, 221, 0.94); }
-.pictionary-line { fill: none; stroke: #14284b; stroke-width: 0.012; stroke-linecap: round; stroke-linejoin: round; }
+.pictionary-line { fill: none; stroke: #14284b; stroke-width: 0.006; stroke-linecap: round; stroke-linejoin: round; }
 .pictionary-line.draft { stroke: #365c93; }
 .pictionary-hint { padding: 9px 4px 0; color: var(--muted); font-size: 11px; text-align: center; }
 
@@ -1060,8 +1060,10 @@ input:disabled {
 .pictionary-colors { display: flex; gap: 7px; }
 .pictionary-swatch { width: 25px; height: 25px; padding: 0; border: 2px solid transparent; border-radius: 50%; }
 .pictionary-swatch.selected { border-color: var(--text); box-shadow: 0 0 0 2px var(--accent); }
-.pictionary-width { display: inline-flex; align-items: center; gap: 6px; margin: 0; font-size: 11px; }
-.pictionary-width select { padding: 5px 7px; border: 1px solid var(--edge); border-radius: 8px; background: var(--glass); color: var(--text); }
+.pictionary-width { display: inline-flex; align-items: center; gap: 7px; margin: 0; font-size: 11px; }
+.pictionary-sizes { display: inline-flex; gap: 3px; padding: 3px; border: 1px solid var(--edge); border-radius: 9px; background: var(--glass); }
+.pictionary-size { padding: 5px 8px; border: 0; border-radius: 6px; background: transparent; color: var(--muted); font-size: 11px; }
+.pictionary-size.selected { background: var(--accent); color: var(--ink); font-weight: 700; }
 .pictionary-clear { margin-left: auto; padding: 8px 12px; font-size: 12px; }
 
 .clue h2 {

@@ -217,7 +217,7 @@ export function RoomClient({ code }: { code: string }) {
     if (joinErrorCode === "ROOM_NOT_FOUND") {
       return (
         <main className="container">
-          <RoomNotFoundModal code={code} onClose={() => { setJoinError(null); setJoinErrorCode(null); }} onHome={() => router.push("/")} />
+          <RoomNotFoundModal code={code} onHome={() => router.push("/")} />
         </main>
       );
     }

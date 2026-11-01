@@ -149,7 +149,7 @@ export const VotePayloadSchema = z.object({
 
 export const PictionaryStrokePayloadSchema = z.object({
   requestId: RequestIdSchema,
-  points: z.array(z.object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1), color: z.string().regex(/^#[0-9a-f]{6}$/i).optional(), width: z.number().min(1).max(20).optional() })).min(2).max(40),
+  points: z.array(z.object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1), color: z.string().regex(/^#[0-9a-f]{6}$/i).optional(), width: z.number().min(0.001).max(0.03).optional() })).min(2).max(40),
 });
 
 export const PictionaryGuessPayloadSchema = z.object({
