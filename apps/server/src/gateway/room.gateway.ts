@@ -22,6 +22,7 @@ import {
   DescripcionCluePayloadSchema,
   DescripcionGuessPayloadSchema,
   DuoSubmitPayloadSchema,
+  PartyGuessPayloadSchema,
   QuienSoyQuestionPayloadSchema,
   QuienSoyAnswerPayloadSchema,
   QuienSoyGuessPayloadSchema,
@@ -156,7 +157,7 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
   async onReset(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
     const playerId = this.playerOf(client);
     if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
-     const parsed = z.object({ mode: z.enum(["bomba", "impostor", "pictionary", "unica", "quien-soy"]).optional() }).safeParse(body ?? {});
+      const parsed = z.object({ mode: z.enum(["bomba", "impostor", "pictionary", "unica", "quien-soy", "carrera", "descripcion", "duo", "party"]).optional() }).safeParse(body ?? {});
     if (!parsed.success) return reject("INVALID", issue(parsed.error));
     return this.rooms.resetSession(playerId, parsed.data.mode);
   }
@@ -275,6 +276,15 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
     const parsed = DuoSubmitPayloadSchema.safeParse(body);
     if (!parsed.success) return reject("INVALID", issue(parsed.error));
     return this.rooms.action(playerId, { kind: "duo:submit", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.PARTY_GUESS)
+  async onPartyGuess(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = PartyGuessPayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "party:guess", ...parsed.data });
   }
 
   @SubscribeMessage(ClientEvents.QUIEN_SOY_QUESTION)

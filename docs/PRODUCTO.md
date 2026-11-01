@@ -257,6 +257,7 @@ revelación y la vuelta al lobby.
 - Estado en memoria: reiniciar el servidor cierra las salas.
 - Sin persistencia de partidas ni historial.
 - Las pistas son solo íconos de habilidad; el modo audio quedó diferido.
+- Party ya funciona en salas multiplayer con estado autoritativo y categoría de roles. La categoría audio se anuncia en el contrato para una futura integración, pero el servidor rechaza iniciar partidas audio mientras no exista un proveedor de clips/licencias; no se simula reproducción.
 - El e2e usa los datos locales de contenido para conocer la respuesta correcta.
 - Riot prohíbe el uso de su propiedad intelectual en juegos publicados
   ("Legal Jibber Jabber"). Este proyecto es de uso local entre amigos.

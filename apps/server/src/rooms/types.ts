@@ -1,4 +1,4 @@
-import type { BombaSettings, CarreraSettings, DescripcionSettings, DuoSettings, ImpostorSettings, ModeId, PictionarySettings, QuienSoySettings, UnicaSettings } from "@lolgames/protocol";
+import type { BombaSettings, CarreraSettings, DescripcionSettings, DuoSettings, ImpostorSettings, ModeId, PictionarySettings, QuienSoySettings, UnicaSettings, PartySettings } from "@lolgames/protocol";
 import type { BombaState } from "@lolgames/engine";
 import type { ImpostorState } from "@lolgames/engine";
 import type { PictionaryState } from "@lolgames/engine";
@@ -7,6 +7,7 @@ import type { QuienSoyState } from "@lolgames/engine";
 import type { CarreraState } from "@lolgames/engine";
 import type { DescripcionState } from "@lolgames/engine";
 import type { DuoState } from "@lolgames/engine";
+import type { PartyState } from "@lolgames/engine";
 
 export type Player = {
   id: string;
@@ -23,7 +24,7 @@ export type Player = {
   recentRequests: string[];
 };
 
-export type GameState = BombaState | ImpostorState | PictionaryState | UnicaState | QuienSoyState | CarreraState | DescripcionState | DuoState;
+export type GameState = BombaState | ImpostorState | PictionaryState | UnicaState | QuienSoyState | CarreraState | DescripcionState | DuoState | PartyState;
 
 export type Room = {
   id: string;
@@ -45,6 +46,7 @@ export type Room = {
     carrera: CarreraSettings;
     descripcion: DescripcionSettings;
     duo: DuoSettings;
+    party: PartySettings;
   };
   scores: Record<string, number>;
   /** Desplazamiento del primer hablante de Impostor en la siguiente ronda. */
@@ -65,4 +67,5 @@ export type IncomingAction =
   | { kind: "carrera:answer"; requestId: string; championId: string }
   | { kind: "descripcion:clue"; requestId: string; text: string }
   | { kind: "descripcion:guess"; requestId: string; text: string }
-  | { kind: "duo:submit"; requestId: string; championId: string };
+  | { kind: "duo:submit"; requestId: string; championId: string }
+  | { kind: "party:guess"; requestId: string; championId: string };

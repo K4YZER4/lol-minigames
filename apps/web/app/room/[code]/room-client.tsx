@@ -27,6 +27,7 @@ import { QuienSoyGame } from "@/components/QuienSoyGame";
 import { CarreraGame } from "@/components/CarreraGame";
 import { DescripcionGame } from "@/components/DescripcionGame";
 import { DuoGame } from "@/components/DuoGame";
+import { PartyGame } from "@/components/PartyGame";
 
 const newRequestId = () =>
   typeof crypto !== "undefined" && "randomUUID" in crypto
@@ -345,6 +346,8 @@ export function RoomClient({ code }: { code: string }) {
           onReset={(mode) => void resetToLobby(mode)} />
       ) : room.game?.mode === "duo" ? (
         <DuoGame room={room} me={me} priv={duoPriv} champions={champions} isHost={room.hostId === me} resetting={resetting} onSubmit={(championId) => void act("duo:submit", { requestId: newRequestId(), championId })} onReset={(mode) => void resetToLobby(mode)} />
+      ) : room.game?.mode === "party" ? (
+        <PartyGame room={room} me={me} priv={priv?.mode === "party" ? priv : null} champions={champions} onGuess={(championId) => void act("party:guess", { requestId: newRequestId(), championId })} />
       ) : (
         <section className="panel center">
           <p className="hint">Esperando el estado de la partida…</p>
