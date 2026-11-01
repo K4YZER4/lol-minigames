@@ -14,6 +14,7 @@ export type PictionaryState = {
   strokes: Point[][];
   guesses: string[];
   phaseEndsAt: number;
+  backgroundColor: string;
 };
 
 export type PictionaryContext = { now: number; rng: Rng; champions: Record<string, PictionaryChampion> };
@@ -39,6 +40,7 @@ function nextRound(state: PictionaryState, ctx: PictionaryContext): PictionarySt
     strokes: [],
     guesses: [],
     phaseEndsAt: ctx.now + state.settings.drawingSeconds * 1000,
+    backgroundColor: "#f0ecdd",
   };
 }
 
@@ -54,6 +56,7 @@ export function createPictionary(init: PictionaryInit): PictionaryState {
     strokes: [],
     guesses: [],
     phaseEndsAt: init.now + init.settings.drawingSeconds * 1000,
+    backgroundColor: "#f0ecdd",
   };
 }
 
@@ -76,6 +79,21 @@ export function pictionaryClear(state: PictionaryState, playerId: string): Resul
   if (state.phase !== "DRAWING") return { state, effects: [], reject: fail("WRONG_PHASE", "El dibujo ya terminó") };
   if (drawer !== playerId) return { state, effects: [], reject: fail("NOT_YOUR_TURN", "Solo quien dibuja puede borrar") };
   return { state: { ...state, strokes: [] }, effects: [] };
+}
+
+export function pictionaryUndo(state: PictionaryState, playerId: string): Result<PictionaryState> {
+  const drawer = state.order[state.roundIndex % state.order.length];
+  if (state.phase !== "DRAWING") return { state, effects: [], reject: fail("WRONG_PHASE", "El dibujo ya terminó") };
+  if (drawer !== playerId) return { state, effects: [], reject: fail("NOT_YOUR_TURN", "Solo quien dibuja puede deshacer") };
+  return { state: { ...state, strokes: state.strokes.slice(0, -1) }, effects: [] };
+}
+
+export function pictionaryFill(state: PictionaryState, playerId: string, color: string): Result<PictionaryState> {
+  const drawer = state.order[state.roundIndex % state.order.length];
+  if (state.phase !== "DRAWING") return { state, effects: [], reject: fail("WRONG_PHASE", "El dibujo ya terminó") };
+  if (drawer !== playerId) return { state, effects: [], reject: fail("NOT_YOUR_TURN", "Solo quien dibuja puede rellenar") };
+  if (!/^#[0-9a-f]{6}$/i.test(color)) return { state, effects: [], reject: fail("INVALID_STROKE", "Color inválido") };
+  return { state: { ...state, backgroundColor: color }, effects: [] };
 }
 
 export function pictionaryGuess(
@@ -126,6 +144,7 @@ export function pictionaryPublicView(state: PictionaryState, now: number) {
     strokes: state.strokes,
     guesses: state.guesses,
     target,
+    backgroundColor: state.backgroundColor,
     serverTime: now,
   };
 }

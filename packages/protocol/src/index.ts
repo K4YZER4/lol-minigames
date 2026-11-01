@@ -151,6 +151,7 @@ export const PictionaryStrokePayloadSchema = z.object({
   requestId: RequestIdSchema,
   points: z.array(z.object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1), color: z.string().regex(/^#[0-9a-f]{6}$/i).optional(), width: z.number().min(0.001).max(0.03).optional() })).min(2).max(40),
 });
+export const PictionaryFillPayloadSchema = z.object({ requestId: RequestIdSchema, color: z.string().regex(/^#[0-9a-f]{6}$/i) });
 
 export const PictionaryGuessPayloadSchema = z.object({
   requestId: RequestIdSchema,
@@ -189,6 +190,8 @@ export const ClientEvents = {
   PICTIONARY_STROKE: "pictionary:stroke",
   PICTIONARY_GUESS: "pictionary:guess",
   PICTIONARY_CLEAR: "pictionary:clear",
+  PICTIONARY_UNDO: "pictionary:undo",
+  PICTIONARY_FILL: "pictionary:fill",
   UNICA_SUBMIT: "unica:submit",
   CARRERA_ANSWER: "carrera:answer",
   DESCRIPCION_CLUE: "descripcion:clue",
@@ -317,6 +320,7 @@ export type PictionaryGameView = {
   strokes: PictionaryPoint[][];
   guesses: string[];
   target: PublicChampion | null;
+  backgroundColor: string;
 };
 
 export type UnicaAnswer = { playerId: string; champion: PublicChampion | null; duplicate: boolean };

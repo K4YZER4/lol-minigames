@@ -1058,6 +1058,7 @@ input:disabled {
 }
 
 .pictionary-colors { display: flex; gap: 7px; }
+.pictionary-tool-modes { display: inline-flex; gap: 3px; padding: 3px; border: 1px solid var(--edge); border-radius: 9px; background: var(--glass); }
 .pictionary-swatch { width: 25px; height: 25px; padding: 0; border: 2px solid transparent; border-radius: 50%; }
 .pictionary-swatch.selected { border-color: var(--text); box-shadow: 0 0 0 2px var(--accent); }
 .pictionary-width { display: inline-flex; align-items: center; gap: 7px; margin: 0; font-size: 11px; }

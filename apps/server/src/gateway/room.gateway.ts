@@ -17,6 +17,7 @@ import {
   CluePayloadSchema,
   PictionaryGuessPayloadSchema,
   PictionaryStrokePayloadSchema,
+  PictionaryFillPayloadSchema,
   UnicaSubmitPayloadSchema,
   CarreraAnswerPayloadSchema,
   DescripcionCluePayloadSchema,
@@ -240,6 +241,24 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
     const parsed = z.object({ requestId: RequestIdSchema }).safeParse(body);
     if (!parsed.success) return reject("INVALID", issue(parsed.error));
     return this.rooms.action(playerId, { kind: "pictionary:clear", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.PICTIONARY_UNDO)
+  async onPictionaryUndo(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = z.object({ requestId: RequestIdSchema }).safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "pictionary:undo", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.PICTIONARY_FILL)
+  async onPictionaryFill(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = PictionaryFillPayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "pictionary:fill", ...parsed.data });
   }
 
   @SubscribeMessage(ClientEvents.UNICA_SUBMIT)

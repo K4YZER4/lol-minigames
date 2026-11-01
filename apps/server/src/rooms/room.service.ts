@@ -60,6 +60,8 @@ import {
   createPictionary,
   pictionaryGuess,
   pictionaryClear,
+  pictionaryUndo,
+  pictionaryFill,
   pictionaryPrivateView,
   pictionaryPublicView,
   pictionaryResults,
@@ -811,6 +813,10 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
           return pictionaryGuess(room.game as PictionaryState, playerId, action.championId, ctx);
         case "pictionary:clear":
           return pictionaryClear(room.game as PictionaryState, playerId);
+        case "pictionary:undo":
+          return pictionaryUndo(room.game as PictionaryState, playerId);
+        case "pictionary:fill":
+          return pictionaryFill(room.game as PictionaryState, playerId, action.color);
         default:
           return null;
       }

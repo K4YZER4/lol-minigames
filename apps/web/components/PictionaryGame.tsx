@@ -16,7 +16,8 @@ type Props = {
   isHost: boolean;
   resetting: boolean;
   onStroke: (points: Point[]) => void;
-  onClear: () => void;
+  onUndo: () => void;
+  onFill: (color: string) => void;
   onGuess: (championId: string) => void;
   onReset: (mode?: "bomba" | "impostor" | "pictionary") => void;
 };
@@ -28,12 +29,13 @@ function pointsAttribute(points: Point[]) {
     .join(" ");
 }
 
-export function PictionaryGame({ room, me, priv, champions, isHost, resetting, onStroke, onClear, onGuess, onReset }: Props) {
+export function PictionaryGame({ room, me, priv, champions, isHost, resetting, onStroke, onUndo, onFill, onGuess, onReset }: Props) {
   const game = room.game?.mode === "pictionary" ? room.game : null;
   const [draft, setDraft] = useState<Point[]>([]);
   const [drawing, setDrawing] = useState(false);
   const [color, setColor] = useState("#14284b");
   const [width, setWidth] = useState(0.006);
+  const [tool, setTool] = useState<"brush" | "eraser" | "fill">("brush");
   if (!game) return null;
 
   const drawer = room.players.find((player) => player.playerId === game.drawerId);
@@ -45,7 +47,7 @@ export function PictionaryGame({ room, me, priv, champions, isHost, resetting, o
     point.x = event.clientX;
     point.y = event.clientY;
     const local = point.matrixTransform(matrix.inverse());
-    return { x: Math.max(0, Math.min(1, local.x)), y: Math.max(0, Math.min(1, local.y)), color, width };
+    return { x: Math.max(0, Math.min(1, local.x)), y: Math.max(0, Math.min(1, local.y)), color: tool === "eraser" ? (game.backgroundColor ?? "#f0ecdd") : color, width };
   };
   const strokes = Array.isArray(game.strokes) ? game.strokes : [];
 
@@ -53,12 +55,12 @@ export function PictionaryGame({ room, me, priv, champions, isHost, resetting, o
     <div className="center pictionary-heading"><div className="eyebrow">Pictionary · ronda {game.roundIndex + 1}/{game.totalRounds}</div><h1>{game.phase === "DRAWING" ? (isDrawer ? "Dibuja sin decirlo." : `${drawer?.name ?? "Alguien"} está dibujando.`) : "¡Se reveló el campeón!"}</h1><div className="timerbox"><Timer endsAt={game.phaseEndsAt} serverTime={room.serverTime} totalMs={room.settings.pictionary.drawingSeconds * 1000} label={isDrawer && priv?.target ? `Dibuja: ${priv.target.name}` : "Tiempo de la ronda"} /></div></div>
 
     <section className="glass pictionary-board-wrap">
-      <svg className={`pictionary-board${isDrawer ? " can-draw" : ""}`} viewBox="0 0 1 1" role="img" aria-label="Lienzo de Pictionary" onPointerDown={(event) => { if (!isDrawer) return; const canvas = event.currentTarget; try { canvas.setPointerCapture(event.pointerId); } catch { /* el puntero pudo salir del lienzo */ } setDrawing(true); setDraft([pointFromEvent(event, canvas)]); }} onPointerMove={(event) => { if (!drawing || !isDrawer) return; const canvas = event.currentTarget; setDraft((points) => points.length >= 1000 ? points : [...points, pointFromEvent(event, canvas)]); }} onPointerUp={(event) => { if (!drawing) return; setDrawing(false); const canvas = event.currentTarget; try { canvas.releasePointerCapture(event.pointerId); } catch { /* ya fue liberado */ } const completed = [...draft, pointFromEvent(event, canvas)].slice(0, 1000); for (let index = 0; index < completed.length - 1; index += 39) onStroke(completed.slice(index, index + 40)); setDraft([]); }} onPointerCancel={() => { setDrawing(false); setDraft([]); }}>
-        <rect x="0" y="0" width="1" height="1" className="pictionary-paper" />
+      <svg className={`pictionary-board${isDrawer ? " can-draw" : ""}`} viewBox="0 0 1 1" role="img" aria-label="Lienzo de Pictionary" onPointerDown={(event) => { if (!isDrawer) return; const canvas = event.currentTarget; if (tool === "fill") { onFill(color); return; } try { canvas.setPointerCapture(event.pointerId); } catch { /* el puntero pudo salir del lienzo */ } setDrawing(true); setDraft([pointFromEvent(event, canvas)]); }} onPointerMove={(event) => { if (!drawing || !isDrawer) return; const canvas = event.currentTarget; setDraft((points) => points.length >= 1000 ? points : [...points, pointFromEvent(event, canvas)]); }} onPointerUp={(event) => { if (!drawing) return; setDrawing(false); const canvas = event.currentTarget; try { canvas.releasePointerCapture(event.pointerId); } catch { /* ya fue liberado */ } const completed = [...draft, pointFromEvent(event, canvas)].slice(0, 1000); for (let index = 0; index < completed.length - 1; index += 39) onStroke(completed.slice(index, index + 40)); setDraft([]); }} onPointerCancel={() => { setDrawing(false); setDraft([]); }}>
+        <rect x="0" y="0" width="1" height="1" className="pictionary-paper" style={{ fill: game.backgroundColor ?? "#f0ecdd" }} />
         {strokes.map((stroke, index) => <polyline key={index} points={pointsAttribute(stroke)} className="pictionary-line" style={{ stroke: stroke[0]?.color ?? "#14284b", strokeWidth: stroke[0]?.width ?? 1.2 }} />)}
         {draft.length > 1 ? <polyline points={pointsAttribute(draft)} className="pictionary-line draft" style={{ stroke: color, strokeWidth: width }} /> : null}
       </svg>
-      {isDrawer ? <div className="pictionary-tools"><div className="pictionary-colors">{["#14284b", "#c0392b", "#2d8a56", "#7b4bb7", "#e09b2d", "#111111"].map((swatch) => <button key={swatch} type="button" className={`pictionary-swatch${color === swatch ? " selected" : ""}`} style={{ background: swatch }} aria-label={`Color ${swatch}`} onClick={() => setColor(swatch)} />)}</div><div className="pictionary-width"><span>Grosor</span><div className="pictionary-sizes">{[["Fino", 0.003], ["Medio", 0.006], ["Grueso", 0.012]].map(([label, value]) => <button key={label as string} type="button" className={`pictionary-size${width === value ? " selected" : ""}`} onClick={() => setWidth(value as number)}>{label as string}</button>)}</div></div><button type="button" className="secondary pictionary-clear" onClick={onClear}>Borrar</button></div> : null}
+      {isDrawer ? <div className="pictionary-tools"><div className="pictionary-tool-modes"><button type="button" className={`pictionary-size${tool === "brush" ? " selected" : ""}`} onClick={() => setTool("brush")}>Pincel</button><button type="button" className={`pictionary-size${tool === "eraser" ? " selected" : ""}`} onClick={() => setTool("eraser")}>Borrador</button><button type="button" className={`pictionary-size${tool === "fill" ? " selected" : ""}`} onClick={() => setTool("fill")}>Cubeta</button></div><div className="pictionary-colors">{["#14284b", "#c0392b", "#2d8a56", "#7b4bb7", "#e09b2d", "#111111"].map((swatch) => <button key={swatch} type="button" className={`pictionary-swatch${color === swatch ? " selected" : ""}`} style={{ background: swatch }} aria-label={`Color ${swatch}`} onClick={() => setColor(swatch)} />)}</div><div className="pictionary-width"><span>Grosor</span><div className="pictionary-sizes">{[["Fino", 0.003], ["Medio", 0.006], ["Grueso", 0.012]].map(([label, value]) => <button key={label as string} type="button" className={`pictionary-size${width === value ? " selected" : ""}`} onClick={() => setWidth(value as number)}>{label as string}</button>)}</div></div><button type="button" className="secondary pictionary-clear" onClick={onUndo}>Deshacer</button></div> : null}
       {isDrawer ? <div className="pictionary-hint">Tu objetivo está oculto para los demás. Dibuja con el mouse o el dedo.</div> : <div className="pictionary-hint">Adivina el campeón sin pedir pistas.</div>}
     </section>
 

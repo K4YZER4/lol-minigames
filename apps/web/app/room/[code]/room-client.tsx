@@ -325,7 +325,8 @@ export function RoomClient({ code }: { code: string }) {
           isHost={room.hostId === me}
           resetting={resetting}
           onStroke={(points) => void act("pictionary:stroke", { requestId: newRequestId(), points })}
-          onClear={() => void act("pictionary:clear", { requestId: newRequestId() })}
+          onUndo={() => void act("pictionary:undo", { requestId: newRequestId() })}
+          onFill={(color) => void act("pictionary:fill", { requestId: newRequestId(), color })}
           onGuess={(championId) => void act("pictionary:guess", { requestId: newRequestId(), championId })}
           onReset={(mode) => void resetToLobby(mode)}
         />
