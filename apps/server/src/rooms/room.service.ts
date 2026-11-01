@@ -816,7 +816,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
         case "pictionary:undo":
           return pictionaryUndo(room.game as PictionaryState, playerId);
         case "pictionary:fill":
-          return pictionaryFill(room.game as PictionaryState, playerId, action.color);
+          return pictionaryFill(room.game as PictionaryState, playerId, action.x, action.y, action.color);
         default:
           return null;
       }

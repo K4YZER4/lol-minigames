@@ -62,7 +62,7 @@ export type IncomingAction =
   | { kind: "pictionary:guess"; requestId: string; championId: string }
   | { kind: "pictionary:clear"; requestId: string }
   | { kind: "pictionary:undo"; requestId: string }
-  | { kind: "pictionary:fill"; requestId: string; color: string }
+  | { kind: "pictionary:fill"; requestId: string; x: number; y: number; color: string }
   | { kind: "unica:submit"; requestId: string; championId: string }
   | { kind: "quien-soy:question"; requestId: string; text: string }
   | { kind: "quien-soy:answer"; requestId: string; answer: boolean }

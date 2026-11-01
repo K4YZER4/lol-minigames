@@ -151,7 +151,7 @@ export const PictionaryStrokePayloadSchema = z.object({
   requestId: RequestIdSchema,
   points: z.array(z.object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1), color: z.string().regex(/^#[0-9a-f]{6}$/i).optional(), width: z.number().min(0.001).max(0.03).optional() })).min(2).max(40),
 });
-export const PictionaryFillPayloadSchema = z.object({ requestId: RequestIdSchema, color: z.string().regex(/^#[0-9a-f]{6}$/i) });
+export const PictionaryFillPayloadSchema = z.object({ requestId: RequestIdSchema, x: z.number().min(0).max(1), y: z.number().min(0).max(1), color: z.string().regex(/^#[0-9a-f]{6}$/i) });
 
 export const PictionaryGuessPayloadSchema = z.object({
   requestId: RequestIdSchema,
@@ -310,6 +310,7 @@ export type ImpostorGameView = {
 };
 
 export type PictionaryPoint = { x: number; y: number; color?: string; width?: number };
+export type PictionaryFill = { x: number; y: number; color: string };
 export type PictionaryGameView = {
   mode: "pictionary";
   phase: "DRAWING" | "REVEAL";
@@ -321,6 +322,7 @@ export type PictionaryGameView = {
   guesses: string[];
   target: PublicChampion | null;
   backgroundColor: string;
+  fills: PictionaryFill[];
 };
 
 export type UnicaAnswer = { playerId: string; champion: PublicChampion | null; duplicate: boolean };
