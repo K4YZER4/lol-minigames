@@ -7,3 +7,4 @@ export * from "./unica/engine";
 export * from "./quien-soy/engine";
 export * from "./carrera/engine";
 export * from "./descripcion/engine";
+export * from "./duo/engine";

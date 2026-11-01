@@ -20,7 +20,8 @@ export type CarreraContext = { now: number; rng: Rng; clues: CarreraClue[] };
 const fail = (code: string, message: string) => ({ code, message });
 
 function choose(init: CarreraInit, now: number, round: number): CarreraState {
-  const targetId = init.rng.pick(Object.keys(init.champions));
+  const available = [...new Set(init.clues.map((clue) => clue.championId))].filter((id) => init.champions[id]);
+  const targetId = init.rng.pick(available.length ? available : Object.keys(init.champions));
   const clues = init.clues.filter((clue) => clue.championId === targetId).slice(0, 4);
   return { phase: "CLUES", settings: init.settings, players: [...init.playerIds], round, targetId, champions: init.champions, clues, clueIndex: 0, answers: {}, winnerId: null, phaseEndsAt: now + init.settings.clueSeconds * 1000 };
 }

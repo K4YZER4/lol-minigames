@@ -21,6 +21,7 @@ import {
   CarreraAnswerPayloadSchema,
   DescripcionCluePayloadSchema,
   DescripcionGuessPayloadSchema,
+  DuoSubmitPayloadSchema,
   QuienSoyQuestionPayloadSchema,
   QuienSoyAnswerPayloadSchema,
   QuienSoyGuessPayloadSchema,
@@ -265,6 +266,15 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
     const parsed = DescripcionGuessPayloadSchema.safeParse(body);
     if (!parsed.success) return reject("INVALID", issue(parsed.error));
     return this.rooms.action(playerId, { kind: "descripcion:guess", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.DUO_SUBMIT)
+  async onDuoSubmit(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = DuoSubmitPayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "duo:submit", ...parsed.data });
   }
 
   @SubscribeMessage(ClientEvents.QUIEN_SOY_QUESTION)

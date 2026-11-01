@@ -11,6 +11,7 @@ import { RoomNotFoundModal } from "@/components/RoomNotFoundModal";
 import type {
   BombaPrivateView,
   DescripcionPrivateView,
+  DuoPrivateView,
   ImpostorPrivateView,
   JoinAck,
   PrivateView,
@@ -25,6 +26,7 @@ import { UnicaGame } from "@/components/UnicaGame";
 import { QuienSoyGame } from "@/components/QuienSoyGame";
 import { CarreraGame } from "@/components/CarreraGame";
 import { DescripcionGame } from "@/components/DescripcionGame";
+import { DuoGame } from "@/components/DuoGame";
 
 const newRequestId = () =>
   typeof crypto !== "undefined" && "randomUUID" in crypto
@@ -190,7 +192,7 @@ export function RoomClient({ code }: { code: string }) {
     }
   }, [code]);
 
-  const resetToLobby = useCallback(async (mode?: "bomba" | "impostor" | "pictionary" | "unica" | "quien-soy" | "carrera" | "descripcion") => {
+  const resetToLobby = useCallback(async (mode?: "bomba" | "impostor" | "pictionary" | "unica" | "quien-soy" | "carrera" | "descripcion" | "duo") => {
     setResetting(true);
     const ack = await act("session:reset", mode ? { mode } : {});
     setResetting(false);
@@ -200,6 +202,7 @@ export function RoomClient({ code }: { code: string }) {
   const bombaPriv = priv?.mode === "bomba" ? (priv as BombaPrivateView) : null;
   const impostorPriv = priv?.mode === "impostor" ? (priv as ImpostorPrivateView) : null;
   const descripcionPriv = priv?.mode === "descripcion" ? (priv as DescripcionPrivateView) : null;
+  const duoPriv = priv?.mode === "duo" ? (priv as DuoPrivateView) : null;
 
   if (needsJoin) {
     if (joinErrorCode === "ROOM_NOT_FOUND") {
@@ -340,6 +343,8 @@ export function RoomClient({ code }: { code: string }) {
           onClue={(text) => void act("descripcion:clue", { requestId: newRequestId(), text })}
           onGuess={(text) => void act("descripcion:guess", { requestId: newRequestId(), text })}
           onReset={(mode) => void resetToLobby(mode)} />
+      ) : room.game?.mode === "duo" ? (
+        <DuoGame room={room} me={me} priv={duoPriv} champions={champions} isHost={room.hostId === me} resetting={resetting} onSubmit={(championId) => void act("duo:submit", { requestId: newRequestId(), championId })} onReset={(mode) => void resetToLobby(mode)} />
       ) : (
         <section className="panel center">
           <p className="hint">Esperando el estado de la partida…</p>
