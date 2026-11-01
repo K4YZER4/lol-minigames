@@ -149,7 +149,7 @@ export const VotePayloadSchema = z.object({
 
 export const PictionaryStrokePayloadSchema = z.object({
   requestId: RequestIdSchema,
-  points: z.array(z.object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1) })).min(2).max(40),
+  points: z.array(z.object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1), color: z.string().regex(/^#[0-9a-f]{6}$/i).optional(), width: z.number().min(1).max(20).optional() })).min(2).max(40),
 });
 
 export const PictionaryGuessPayloadSchema = z.object({
@@ -188,6 +188,7 @@ export const ClientEvents = {
   IMPOSTOR_VOTE: "impostor:vote",
   PICTIONARY_STROKE: "pictionary:stroke",
   PICTIONARY_GUESS: "pictionary:guess",
+  PICTIONARY_CLEAR: "pictionary:clear",
   UNICA_SUBMIT: "unica:submit",
   CARRERA_ANSWER: "carrera:answer",
   DESCRIPCION_CLUE: "descripcion:clue",
@@ -305,7 +306,7 @@ export type ImpostorGameView = {
   reveal: ImpostorReveal | null;
 };
 
-export type PictionaryPoint = { x: number; y: number };
+export type PictionaryPoint = { x: number; y: number; color?: string; width?: number };
 export type PictionaryGameView = {
   mode: "pictionary";
   phase: "DRAWING" | "REVEAL";

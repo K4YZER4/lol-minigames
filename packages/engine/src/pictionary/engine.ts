@@ -2,7 +2,7 @@ import type { Result, Rng } from "../core/rng";
 
 export type PictionaryChampion = { id: string; name: string; imageUrl: string };
 export type PictionarySettings = { drawingSeconds: number };
-export type Point = { x: number; y: number };
+export type Point = { x: number; y: number; color?: string; width?: number };
 
 export type PictionaryState = {
   phase: "DRAWING" | "REVEAL";
@@ -69,6 +69,13 @@ export function pictionaryStroke(
     return { state, effects: [], reject: fail("INVALID_STROKE", "Trazo inválido") };
   }
   return { state: { ...state, strokes: [...state.strokes, points] }, effects: [] };
+}
+
+export function pictionaryClear(state: PictionaryState, playerId: string): Result<PictionaryState> {
+  const drawer = state.order[state.roundIndex % state.order.length];
+  if (state.phase !== "DRAWING") return { state, effects: [], reject: fail("WRONG_PHASE", "El dibujo ya terminó") };
+  if (drawer !== playerId) return { state, effects: [], reject: fail("NOT_YOUR_TURN", "Solo quien dibuja puede borrar") };
+  return { state: { ...state, strokes: [] }, effects: [] };
 }
 
 export function pictionaryGuess(

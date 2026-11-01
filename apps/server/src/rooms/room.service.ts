@@ -59,6 +59,7 @@ import {
   impostorVote,
   createPictionary,
   pictionaryGuess,
+  pictionaryClear,
   pictionaryPrivateView,
   pictionaryPublicView,
   pictionaryResults,
@@ -808,6 +809,8 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
           return pictionaryStroke(room.game as PictionaryState, playerId, action.points);
         case "pictionary:guess":
           return pictionaryGuess(room.game as PictionaryState, playerId, action.championId, ctx);
+        case "pictionary:clear":
+          return pictionaryClear(room.game as PictionaryState, playerId);
         default:
           return null;
       }

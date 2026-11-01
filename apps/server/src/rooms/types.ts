@@ -58,8 +58,9 @@ export type IncomingAction =
   | { kind: "impostor:ack"; requestId: string }
   | { kind: "impostor:clue"; requestId: string; text: string }
   | { kind: "impostor:vote"; requestId: string; targetId: string | null }
-  | { kind: "pictionary:stroke"; requestId: string; points: { x: number; y: number }[] }
+  | { kind: "pictionary:stroke"; requestId: string; points: { x: number; y: number; color?: string; width?: number }[] }
   | { kind: "pictionary:guess"; requestId: string; championId: string }
+  | { kind: "pictionary:clear"; requestId: string }
   | { kind: "unica:submit"; requestId: string; championId: string }
   | { kind: "quien-soy:question"; requestId: string; text: string }
   | { kind: "quien-soy:answer"; requestId: string; answer: boolean }

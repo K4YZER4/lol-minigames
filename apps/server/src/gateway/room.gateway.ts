@@ -233,6 +233,15 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
     return this.rooms.action(playerId, { kind: "pictionary:guess", ...parsed.data });
   }
 
+  @SubscribeMessage(ClientEvents.PICTIONARY_CLEAR)
+  async onPictionaryClear(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = z.object({ requestId: RequestIdSchema }).safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "pictionary:clear", ...parsed.data });
+  }
+
   @SubscribeMessage(ClientEvents.UNICA_SUBMIT)
   async onUnicaSubmit(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
     const playerId = this.playerOf(client);
