@@ -18,6 +18,7 @@ import {
   PictionaryGuessPayloadSchema,
   PictionaryStrokePayloadSchema,
   UnicaSubmitPayloadSchema,
+  CarreraAnswerPayloadSchema,
   QuienSoyQuestionPayloadSchema,
   QuienSoyAnswerPayloadSchema,
   QuienSoyGuessPayloadSchema,
@@ -235,6 +236,15 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
     const parsed = UnicaSubmitPayloadSchema.safeParse(body);
     if (!parsed.success) return reject("INVALID", issue(parsed.error));
     return this.rooms.action(playerId, { kind: "unica:submit", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.CARRERA_ANSWER)
+  async onCarreraAnswer(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = CarreraAnswerPayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "carrera:answer", ...parsed.data });
   }
 
   @SubscribeMessage(ClientEvents.QUIEN_SOY_QUESTION)

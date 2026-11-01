@@ -22,6 +22,7 @@ import { ImpostorGame } from "@/components/ImpostorGame";
 import { PictionaryGame } from "@/components/PictionaryGame";
 import { UnicaGame } from "@/components/UnicaGame";
 import { QuienSoyGame } from "@/components/QuienSoyGame";
+import { CarreraGame } from "@/components/CarreraGame";
 
 const newRequestId = () =>
   typeof crypto !== "undefined" && "randomUUID" in crypto
@@ -328,7 +329,9 @@ export function RoomClient({ code }: { code: string }) {
           onQuestion={(text) => void act("quien-soy:question", { requestId: newRequestId(), text })}
           onAnswer={(answer) => void act("quien-soy:answer", { requestId: newRequestId(), answer })}
           onGuess={(championId) => void act("quien-soy:guess", { requestId: newRequestId(), championId })}
-          onReset={(mode) => void resetToLobby(mode)} />
+           onReset={(mode) => void resetToLobby(mode)} />
+      ) : room.game?.mode === "carrera" ? (
+        <CarreraGame room={room} priv={priv?.mode === "carrera" ? priv : null} champions={champions} onAnswer={(championId) => void act("carrera:answer", { requestId: newRequestId(), championId })} />
       ) : (
         <section className="panel center">
           <p className="hint">Esperando el estado de la partida…</p>

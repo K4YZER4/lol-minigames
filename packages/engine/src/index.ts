@@ -5,3 +5,4 @@ export * from "./impostor/engine";
 export * from "./pictionary/engine";
 export * from "./unica/engine";
 export * from "./quien-soy/engine";
+export * from "./carrera/engine";

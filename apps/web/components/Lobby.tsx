@@ -22,6 +22,7 @@ const MODES: { id: ModeId; name: string; icon: string; blurb: string }[] = [
   { id: "pictionary", name: "Pictionary", icon: "〰", blurb: "Dibuja un campeón y deja que tu equipo lo adivine." },
   { id: "unica", name: "Respuesta única", icon: "✧", blurb: "Elige un campeón válido y no repitas la respuesta de nadie." },
   { id: "quien-soy", name: "¿Quién soy?", icon: "?", blurb: "Haz preguntas, descubre tu identidad y adivina en tu turno." },
+  { id: "carrera", name: "Carrera de pistas", icon: "➜", blurb: "Adivina antes que los demás con pistas progresivas." },
 ];
 
 export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
@@ -81,6 +82,8 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
             <><div className="divider" /><p className="hint">Por turnos, una persona dibuja durante {room.settings.pictionary.drawingSeconds} s. El resto intenta adivinar el campeón.</p></>
           ) : room.mode === "quien-soy" ? (
             <><div className="divider" /><p className="hint">Cada jugador verá tu campeón, pero nunca el suyo. Haz preguntas de sí/no y adivina en tu turno.</p></>
+          ) : room.mode === "carrera" ? (
+            <><div className="divider" /><p className="hint">Se revelan pistas progresivamente. El primero en identificar el campeón gana la ronda.</p></>
           ) : (
             <><div className="divider" /><p className="hint">Todos responden en secreto con un campeón de la categoría. Las respuestas repetidas no puntúan.</p></>
           )}
