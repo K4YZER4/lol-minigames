@@ -1,0 +1,3765 @@
+[
+  {
+    "id": "Aatrox",
+    "name": "Aatrox",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Aatrox.png",
+    "tags": [
+      "Fighter"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 4,
+      "magic": 3,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 650,
+      "armor": 38,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Ahri",
+    "name": "Ahri",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Ahri.png",
+    "tags": [
+      "Mage",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 3,
+      "defense": 4,
+      "magic": 8,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 590,
+      "armor": 21,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Akali",
+    "name": "Akali",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Akali.png",
+    "tags": [
+      "Assassin"
+    ],
+    "info": {
+      "attack": 5,
+      "defense": 3,
+      "magic": 8,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 600,
+      "armor": 23,
+      "spellblock": 37,
+      "attackrange": 125,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Akshan",
+    "name": "Akshan",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Akshan.png",
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 0,
+      "defense": 0,
+      "magic": 0,
+      "difficulty": 0
+    },
+    "stats": {
+      "hp": 610,
+      "armor": 26,
+      "spellblock": 33,
+      "attackrange": 500,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Alistar",
+    "name": "Alistar",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Alistar.png",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "info": {
+      "attack": 6,
+      "defense": 9,
+      "magic": 5,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 685,
+      "armor": 40,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Ambessa",
+    "name": "Ambessa",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Ambessa.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 2,
+      "magic": 0,
+      "difficulty": 10
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 35,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Amumu",
+    "name": "Amumu",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Amumu.png",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 6,
+      "magic": 8,
+      "difficulty": 3
+    },
+    "stats": {
+      "hp": 685,
+      "armor": 33,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Anivia",
+    "name": "Anivia",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Anivia.png",
+    "tags": [
+      "Mage"
+    ],
+    "info": {
+      "attack": 1,
+      "defense": 4,
+      "magic": 10,
+      "difficulty": 10
+    },
+    "stats": {
+      "hp": 550,
+      "armor": 19,
+      "spellblock": 30,
+      "attackrange": 600,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "Annie",
+    "name": "Annie",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Annie.png",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 3,
+      "magic": 10,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 560,
+      "armor": 23,
+      "spellblock": 30,
+      "attackrange": 625,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Aphelios",
+    "name": "Aphelios",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Aphelios.png",
+    "tags": [
+      "Marksman"
+    ],
+    "info": {
+      "attack": 6,
+      "defense": 2,
+      "magic": 1,
+      "difficulty": 10
+    },
+    "stats": {
+      "hp": 600,
+      "armor": 26,
+      "spellblock": 33,
+      "attackrange": 550,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "Ashe",
+    "name": "Ashe",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Ashe.png",
+    "tags": [
+      "Marksman",
+      "Support"
+    ],
+    "info": {
+      "attack": 7,
+      "defense": 3,
+      "magic": 2,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 610,
+      "armor": 26,
+      "spellblock": 33,
+      "attackrange": 600,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "AurelionSol",
+    "name": "Aurelion Sol",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/AurelionSol.png",
+    "tags": [
+      "Mage"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 3,
+      "magic": 8,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 600,
+      "armor": 22,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Aurora",
+    "name": "Aurora",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Aurora.png",
+    "tags": [
+      "Mage",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 3,
+      "defense": 4,
+      "magic": 8,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 607,
+      "armor": 23,
+      "spellblock": 32,
+      "attackrange": 550,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Azir",
+    "name": "Azir",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Azir.png",
+    "tags": [
+      "Mage",
+      "Marksman"
+    ],
+    "info": {
+      "attack": 6,
+      "defense": 3,
+      "magic": 8,
+      "difficulty": 9
+    },
+    "stats": {
+      "hp": 575,
+      "armor": 25,
+      "spellblock": 30,
+      "attackrange": 525,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Bard",
+    "name": "Bardo",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Bard.png",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 4,
+      "magic": 5,
+      "difficulty": 9
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 32,
+      "spellblock": 30,
+      "attackrange": 500,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Belveth",
+    "name": "Bel'Veth",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Belveth.png",
+    "tags": [
+      "Fighter"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 2,
+      "magic": 7,
+      "difficulty": 10
+    },
+    "stats": {
+      "hp": 580,
+      "armor": 28,
+      "spellblock": 32,
+      "attackrange": 150,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Blitzcrank",
+    "name": "Blitzcrank",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Blitzcrank.png",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 8,
+      "magic": 5,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 600,
+      "armor": 37,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "Brand",
+    "name": "Brand",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Brand.png",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 2,
+      "magic": 9,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 570,
+      "armor": 24,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Braum",
+    "name": "Braum",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Braum.png",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "info": {
+      "attack": 3,
+      "defense": 9,
+      "magic": 4,
+      "difficulty": 3
+    },
+    "stats": {
+      "hp": 610,
+      "armor": 35,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Briar",
+    "name": "Briar",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Briar.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 3
+    },
+    "stats": {
+      "hp": 625,
+      "armor": 30,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Caitlyn",
+    "name": "Caitlyn",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Caitlyn.png",
+    "tags": [
+      "Marksman"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 2,
+      "magic": 2,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 580,
+      "armor": 27,
+      "spellblock": 33,
+      "attackrange": 650,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "Camille",
+    "name": "Camille",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Camille.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 6,
+      "magic": 3,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 650,
+      "armor": 35,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Cassiopeia",
+    "name": "Cassiopeia",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Cassiopeia.png",
+    "tags": [
+      "Mage"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 3,
+      "magic": 9,
+      "difficulty": 10
+    },
+    "stats": {
+      "hp": 610,
+      "armor": 18,
+      "spellblock": 32,
+      "attackrange": 550,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Chogath",
+    "name": "Cho'Gath",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Chogath.png",
+    "tags": [
+      "Tank",
+      "Mage"
+    ],
+    "info": {
+      "attack": 3,
+      "defense": 7,
+      "magic": 7,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 644,
+      "armor": 38,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Corki",
+    "name": "Corki",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Corki.png",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 3,
+      "magic": 6,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 610,
+      "armor": 27,
+      "spellblock": 33,
+      "attackrange": 550,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "Darius",
+    "name": "Darius",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Darius.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 5,
+      "magic": 1,
+      "difficulty": 2
+    },
+    "stats": {
+      "hp": 652,
+      "armor": 37,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Diana",
+    "name": "Diana",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Diana.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 7,
+      "defense": 6,
+      "magic": 8,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 640,
+      "armor": 31,
+      "spellblock": 32,
+      "attackrange": 150,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Draven",
+    "name": "Draven",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Draven.png",
+    "tags": [
+      "Marksman"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 3,
+      "magic": 1,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 675,
+      "armor": 29,
+      "spellblock": 33,
+      "attackrange": 550,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "DrMundo",
+    "name": "Dr. Mundo",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/DrMundo.png",
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "info": {
+      "attack": 5,
+      "defense": 7,
+      "magic": 6,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 640,
+      "armor": 32,
+      "spellblock": 29,
+      "attackrange": 125,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Ekko",
+    "name": "Ekko",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Ekko.png",
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "info": {
+      "attack": 5,
+      "defense": 3,
+      "magic": 7,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 655,
+      "armor": 32,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Elise",
+    "name": "Elise",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Elise.png",
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "info": {
+      "attack": 6,
+      "defense": 5,
+      "magic": 7,
+      "difficulty": 9
+    },
+    "stats": {
+      "hp": 620,
+      "armor": 30,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Evelynn",
+    "name": "Evelynn",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Evelynn.png",
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 2,
+      "magic": 7,
+      "difficulty": 10
+    },
+    "stats": {
+      "hp": 642,
+      "armor": 37,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Ezreal",
+    "name": "Ezreal",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Ezreal.png",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "info": {
+      "attack": 7,
+      "defense": 2,
+      "magic": 6,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 600,
+      "armor": 24,
+      "spellblock": 33,
+      "attackrange": 550,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "Fiddlesticks",
+    "name": "Fiddlesticks",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Fiddlesticks.png",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 3,
+      "magic": 9,
+      "difficulty": 9
+    },
+    "stats": {
+      "hp": 650,
+      "armor": 34,
+      "spellblock": 30,
+      "attackrange": 480,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Fiora",
+    "name": "Fiora",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Fiora.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 10,
+      "defense": 4,
+      "magic": 2,
+      "difficulty": 3
+    },
+    "stats": {
+      "hp": 620,
+      "armor": 33,
+      "spellblock": 32,
+      "attackrange": 150,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Fizz",
+    "name": "Fizz",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Fizz.png",
+    "tags": [
+      "Assassin",
+      "Fighter"
+    ],
+    "info": {
+      "attack": 6,
+      "defense": 4,
+      "magic": 7,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 640,
+      "armor": 26,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Galio",
+    "name": "Galio",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Galio.png",
+    "tags": [
+      "Tank",
+      "Mage"
+    ],
+    "info": {
+      "attack": 1,
+      "defense": 10,
+      "magic": 6,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 600,
+      "armor": 24,
+      "spellblock": 32,
+      "attackrange": 150,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Gangplank",
+    "name": "Gangplank",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Gangplank.png",
+    "tags": [
+      "Fighter"
+    ],
+    "info": {
+      "attack": 7,
+      "defense": 6,
+      "magic": 4,
+      "difficulty": 9
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 31,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Garen",
+    "name": "Garen",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Garen.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 7,
+      "defense": 7,
+      "magic": 1,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 690,
+      "armor": 38,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Gnar",
+    "name": "Gnar",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Gnar.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 6,
+      "defense": 5,
+      "magic": 5,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 540,
+      "armor": 32,
+      "spellblock": 30,
+      "attackrange": 175,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Gragas",
+    "name": "Gragas",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Gragas.png",
+    "tags": [
+      "Fighter",
+      "Mage"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 7,
+      "magic": 6,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 640,
+      "armor": 38,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Graves",
+    "name": "Graves",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Graves.png",
+    "tags": [
+      "Marksman"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 3
+    },
+    "stats": {
+      "hp": 625,
+      "armor": 33,
+      "spellblock": 33,
+      "attackrange": 425,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Gwen",
+    "name": "Gwen",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Gwen.png",
+    "tags": [
+      "Fighter"
+    ],
+    "info": {
+      "attack": 7,
+      "defense": 4,
+      "magic": 5,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 620,
+      "armor": 39,
+      "spellblock": 32,
+      "attackrange": 150,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Hecarim",
+    "name": "Hecarim",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Hecarim.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 6,
+      "magic": 4,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 625,
+      "armor": 32,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Heimerdinger",
+    "name": "Heimerdinger",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Heimerdinger.png",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 6,
+      "magic": 8,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 558,
+      "armor": 19,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Hwei",
+    "name": "Hwei",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Hwei.png",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "info": {
+      "attack": 7,
+      "defense": 1,
+      "magic": 8,
+      "difficulty": 9
+    },
+    "stats": {
+      "hp": 580,
+      "armor": 21,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Illaoi",
+    "name": "Illaoi",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Illaoi.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 6,
+      "magic": 3,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 656,
+      "armor": 35,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 350
+    }
+  },
+  {
+    "id": "Irelia",
+    "name": "Irelia",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Irelia.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 7,
+      "defense": 4,
+      "magic": 5,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 36,
+      "spellblock": 30,
+      "attackrange": 200,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Ivern",
+    "name": "Ivern",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Ivern.png",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "info": {
+      "attack": 3,
+      "defense": 5,
+      "magic": 7,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 27,
+      "spellblock": 30,
+      "attackrange": 475,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Janna",
+    "name": "Janna",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Janna.png",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "info": {
+      "attack": 3,
+      "defense": 5,
+      "magic": 7,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 570,
+      "armor": 28,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "JarvanIV",
+    "name": "Jarvan IV",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/JarvanIV.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 6,
+      "defense": 8,
+      "magic": 3,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 640,
+      "armor": 36,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Jax",
+    "name": "Jax",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Jax.png",
+    "tags": [
+      "Fighter"
+    ],
+    "info": {
+      "attack": 7,
+      "defense": 5,
+      "magic": 7,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 650,
+      "armor": 36,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 350
+    }
+  },
+  {
+    "id": "Jayce",
+    "name": "Jayce",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Jayce.png",
+    "tags": [
+      "Fighter",
+      "Marksman"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 4,
+      "magic": 3,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 590,
+      "armor": 22,
+      "spellblock": 30,
+      "attackrange": 125,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Jhin",
+    "name": "Jhin",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Jhin.png",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "info": {
+      "attack": 10,
+      "defense": 2,
+      "magic": 6,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 655,
+      "armor": 24,
+      "spellblock": 33,
+      "attackrange": 550,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Jinx",
+    "name": "Jinx",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Jinx.png",
+    "tags": [
+      "Marksman"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 2,
+      "magic": 4,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 610,
+      "armor": 26,
+      "spellblock": 33,
+      "attackrange": 525,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "Kaisa",
+    "name": "Kai'Sa",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Kaisa.png",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 640,
+      "armor": 25,
+      "spellblock": 33,
+      "attackrange": 525,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Kalista",
+    "name": "Kalista",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Kalista.png",
+    "tags": [
+      "Marksman"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 2,
+      "magic": 4,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 560,
+      "armor": 24,
+      "spellblock": 33,
+      "attackrange": 525,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Karma",
+    "name": "Karma",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Karma.png",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "info": {
+      "attack": 1,
+      "defense": 7,
+      "magic": 8,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 28,
+      "spellblock": 30,
+      "attackrange": 525,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Karthus",
+    "name": "Karthus",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Karthus.png",
+    "tags": [
+      "Mage"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 2,
+      "magic": 10,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 620,
+      "armor": 21,
+      "spellblock": 30,
+      "attackrange": 450,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Kassadin",
+    "name": "Kassadin",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Kassadin.png",
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "info": {
+      "attack": 3,
+      "defense": 5,
+      "magic": 8,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 646,
+      "armor": 21,
+      "spellblock": 30,
+      "attackrange": 150,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Katarina",
+    "name": "Katarina",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Katarina.png",
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 3,
+      "magic": 9,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 672,
+      "armor": 32,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Kayle",
+    "name": "Kayle",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Kayle.png",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "info": {
+      "attack": 6,
+      "defense": 6,
+      "magic": 7,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 670,
+      "armor": 26,
+      "spellblock": 22,
+      "attackrange": 175,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Kayn",
+    "name": "Kayn",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Kayn.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 10,
+      "defense": 6,
+      "magic": 1,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 655,
+      "armor": 38,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Kennen",
+    "name": "Kennen",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Kennen.png",
+    "tags": [
+      "Mage"
+    ],
+    "info": {
+      "attack": 6,
+      "defense": 4,
+      "magic": 7,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 580,
+      "armor": 29,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Khazix",
+    "name": "Kha'Zix",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Khazix.png",
+    "tags": [
+      "Assassin"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 4,
+      "magic": 3,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 643,
+      "armor": 32,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Kindred",
+    "name": "Kindred",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Kindred.png",
+    "tags": [
+      "Marksman"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 2,
+      "magic": 2,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 595,
+      "armor": 29,
+      "spellblock": 33,
+      "attackrange": 500,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "Kled",
+    "name": "Kled",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Kled.png",
+    "tags": [
+      "Fighter"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 2,
+      "magic": 2,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 410,
+      "armor": 35,
+      "spellblock": 28,
+      "attackrange": 125,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "KogMaw",
+    "name": "Kog'Maw",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/KogMaw.png",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 2,
+      "magic": 5,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 635,
+      "armor": 24,
+      "spellblock": 33,
+      "attackrange": 500,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "KSante",
+    "name": "K'Sante",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/KSante.png",
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 8,
+      "magic": 7,
+      "difficulty": 9
+    },
+    "stats": {
+      "hp": 625,
+      "armor": 36,
+      "spellblock": 30,
+      "attackrange": 150,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Leblanc",
+    "name": "LeBlanc",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Leblanc.png",
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "info": {
+      "attack": 1,
+      "defense": 4,
+      "magic": 10,
+      "difficulty": 9
+    },
+    "stats": {
+      "hp": 598,
+      "armor": 22,
+      "spellblock": 30,
+      "attackrange": 525,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "LeeSin",
+    "name": "Lee Sin",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/LeeSin.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 645,
+      "armor": 36,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Leona",
+    "name": "Leona",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Leona.png",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 8,
+      "magic": 3,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 646,
+      "armor": 43,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Lillia",
+    "name": "Lillia",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Lillia.png",
+    "tags": [
+      "Fighter",
+      "Mage"
+    ],
+    "info": {
+      "attack": 0,
+      "defense": 2,
+      "magic": 10,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 605,
+      "armor": 24,
+      "spellblock": 32,
+      "attackrange": 325,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Lissandra",
+    "name": "Lissandra",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Lissandra.png",
+    "tags": [
+      "Mage"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 5,
+      "magic": 8,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 620,
+      "armor": 22,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "Locke",
+    "name": "Locke",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Locke.png",
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "info": {
+      "attack": 6,
+      "defense": 4,
+      "magic": 2,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 620,
+      "armor": 32,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Lucian",
+    "name": "Lucian",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Lucian.png",
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 641,
+      "armor": 28,
+      "spellblock": 33,
+      "attackrange": 500,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Lulu",
+    "name": "Lulu",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Lulu.png",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 5,
+      "magic": 7,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 565,
+      "armor": 26,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Lux",
+    "name": "Lux",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Lux.png",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 4,
+      "magic": 9,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 580,
+      "armor": 21,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Malphite",
+    "name": "Malphite",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Malphite.png",
+    "tags": [
+      "Tank",
+      "Mage"
+    ],
+    "info": {
+      "attack": 5,
+      "defense": 9,
+      "magic": 7,
+      "difficulty": 2
+    },
+    "stats": {
+      "hp": 665,
+      "armor": 40,
+      "spellblock": 28,
+      "attackrange": 125,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Malzahar",
+    "name": "Malzahar",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Malzahar.png",
+    "tags": [
+      "Mage"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 2,
+      "magic": 9,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 580,
+      "armor": 18,
+      "spellblock": 30,
+      "attackrange": 500,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Maokai",
+    "name": "Maokai",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Maokai.png",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "info": {
+      "attack": 3,
+      "defense": 8,
+      "magic": 6,
+      "difficulty": 3
+    },
+    "stats": {
+      "hp": 665,
+      "armor": 35,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "MasterYi",
+    "name": "Maestro Yi",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/MasterYi.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 10,
+      "defense": 4,
+      "magic": 2,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 640,
+      "armor": 33,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 355
+    }
+  },
+  {
+    "id": "Mel",
+    "name": "Mel",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Mel.png",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 4,
+      "magic": 9,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 21,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Milio",
+    "name": "Milio",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Milio.png",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 4,
+      "magic": 8,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 560,
+      "armor": 26,
+      "spellblock": 30,
+      "attackrange": 525,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "MissFortune",
+    "name": "Miss Fortune",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/MissFortune.png",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 2,
+      "magic": 5,
+      "difficulty": 1
+    },
+    "stats": {
+      "hp": 625,
+      "armor": 25,
+      "spellblock": 33,
+      "attackrange": 550,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "MonkeyKing",
+    "name": "Wukong",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/MonkeyKing.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 2,
+      "difficulty": 3
+    },
+    "stats": {
+      "hp": 610,
+      "armor": 31,
+      "spellblock": 28,
+      "attackrange": 175,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Mordekaiser",
+    "name": "Mordekaiser",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Mordekaiser.png",
+    "tags": [
+      "Fighter",
+      "Mage"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 6,
+      "magic": 7,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 645,
+      "armor": 37,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Morgana",
+    "name": "Morgana",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Morgana.png",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "info": {
+      "attack": 1,
+      "defense": 6,
+      "magic": 8,
+      "difficulty": 1
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 25,
+      "spellblock": 30,
+      "attackrange": 450,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Naafiri",
+    "name": "Naafiri",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Naafiri.png",
+    "tags": [
+      "Assassin",
+      "Fighter"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 5,
+      "magic": 0,
+      "difficulty": 2
+    },
+    "stats": {
+      "hp": 610,
+      "armor": 28,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Nami",
+    "name": "Nami",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Nami.png",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 3,
+      "magic": 7,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 560,
+      "armor": 29,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Nasus",
+    "name": "Nasus",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Nasus.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 7,
+      "defense": 5,
+      "magic": 6,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 650,
+      "armor": 34,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 350
+    }
+  },
+  {
+    "id": "Nautilus",
+    "name": "Nautilus",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Nautilus.png",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 6,
+      "magic": 6,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 646,
+      "armor": 39,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "Neeko",
+    "name": "Neeko",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Neeko.png",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "info": {
+      "attack": 1,
+      "defense": 1,
+      "magic": 9,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 610,
+      "armor": 21,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Nidalee",
+    "name": "Nidalee",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Nidalee.png",
+    "tags": [
+      "Assassin",
+      "Mage"
+    ],
+    "info": {
+      "attack": 5,
+      "defense": 4,
+      "magic": 7,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 610,
+      "armor": 32,
+      "spellblock": 30,
+      "attackrange": 525,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Nilah",
+    "name": "Nilah",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Nilah.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 4,
+      "magic": 4,
+      "difficulty": 10
+    },
+    "stats": {
+      "hp": 570,
+      "armor": 27,
+      "spellblock": 32,
+      "attackrange": 225,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Nocturne",
+    "name": "Nocturne",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Nocturne.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 5,
+      "magic": 2,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 640,
+      "armor": 36,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Nunu",
+    "name": "Nunu y Willump",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Nunu.png",
+    "tags": [
+      "Tank",
+      "Mage"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 6,
+      "magic": 7,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 610,
+      "armor": 29,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Olaf",
+    "name": "Olaf",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Olaf.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 3
+    },
+    "stats": {
+      "hp": 645,
+      "armor": 35,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 350
+    }
+  },
+  {
+    "id": "Orianna",
+    "name": "Orianna",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Orianna.png",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 3,
+      "magic": 9,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 565,
+      "armor": 20,
+      "spellblock": 26,
+      "attackrange": 525,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "Ornn",
+    "name": "Ornn",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Ornn.png",
+    "tags": [
+      "Tank"
+    ],
+    "info": {
+      "attack": 5,
+      "defense": 9,
+      "magic": 3,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 660,
+      "armor": 33,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Pantheon",
+    "name": "Pantheon",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Pantheon.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 4,
+      "magic": 3,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 650,
+      "armor": 40,
+      "spellblock": 28,
+      "attackrange": 175,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Poppy",
+    "name": "Poppy",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Poppy.png",
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "info": {
+      "attack": 6,
+      "defense": 7,
+      "magic": 2,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 610,
+      "armor": 35,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Pyke",
+    "name": "Pyke",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Pyke.png",
+    "tags": [
+      "Support",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 3,
+      "magic": 1,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 670,
+      "armor": 37,
+      "spellblock": 32,
+      "attackrange": 150,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Qiyana",
+    "name": "Qiyana",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Qiyana.png",
+    "tags": [
+      "Assassin"
+    ],
+    "info": {
+      "attack": 0,
+      "defense": 2,
+      "magic": 4,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 590,
+      "armor": 31,
+      "spellblock": 32,
+      "attackrange": 150,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Quinn",
+    "name": "Quinn",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Quinn.png",
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 4,
+      "magic": 2,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 565,
+      "armor": 28,
+      "spellblock": 33,
+      "attackrange": 525,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Rakan",
+    "name": "Rakan",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Rakan.png",
+    "tags": [
+      "Support"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 4,
+      "magic": 8,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 610,
+      "armor": 30,
+      "spellblock": 32,
+      "attackrange": 300,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Rammus",
+    "name": "Rammus",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Rammus.png",
+    "tags": [
+      "Tank"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 10,
+      "magic": 5,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 645,
+      "armor": 35,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "RekSai",
+    "name": "Rek'Sai",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/RekSai.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 2,
+      "difficulty": 3
+    },
+    "stats": {
+      "hp": 600,
+      "armor": 35,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Rell",
+    "name": "Rell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Rell.png",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "info": {
+      "attack": 0,
+      "defense": 0,
+      "magic": 0,
+      "difficulty": 0
+    },
+    "stats": {
+      "hp": 620,
+      "armor": 30,
+      "spellblock": 28,
+      "attackrange": 175,
+      "movespeed": 315
+    }
+  },
+  {
+    "id": "Renata",
+    "name": "Renata Glasc",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Renata.png",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 6,
+      "magic": 9,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 545,
+      "armor": 27,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Renekton",
+    "name": "Renekton",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Renekton.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 2,
+      "difficulty": 3
+    },
+    "stats": {
+      "hp": 660,
+      "armor": 35,
+      "spellblock": 28,
+      "attackrange": 125,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Rengar",
+    "name": "Rengar",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Rengar.png",
+    "tags": [
+      "Assassin",
+      "Fighter"
+    ],
+    "info": {
+      "attack": 7,
+      "defense": 4,
+      "magic": 2,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 590,
+      "armor": 34,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Riven",
+    "name": "Riven",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Riven.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 1,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 33,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Rumble",
+    "name": "Rumble",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Rumble.png",
+    "tags": [
+      "Fighter",
+      "Mage"
+    ],
+    "info": {
+      "attack": 3,
+      "defense": 6,
+      "magic": 8,
+      "difficulty": 10
+    },
+    "stats": {
+      "hp": 640,
+      "armor": 36,
+      "spellblock": 28,
+      "attackrange": 125,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Ryze",
+    "name": "Ryze",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Ryze.png",
+    "tags": [
+      "Mage"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 2,
+      "magic": 10,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 620,
+      "armor": 22,
+      "spellblock": 32,
+      "attackrange": 550,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Samira",
+    "name": "Samira",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Samira.png",
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 26,
+      "spellblock": 33,
+      "attackrange": 500,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Sejuani",
+    "name": "Sejuani",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Sejuani.png",
+    "tags": [
+      "Tank"
+    ],
+    "info": {
+      "attack": 5,
+      "defense": 7,
+      "magic": 6,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 34,
+      "spellblock": 32,
+      "attackrange": 150,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Senna",
+    "name": "Senna",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Senna.png",
+    "tags": [
+      "Support",
+      "Marksman"
+    ],
+    "info": {
+      "attack": 7,
+      "defense": 2,
+      "magic": 6,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 530,
+      "armor": 25,
+      "spellblock": 33,
+      "attackrange": 600,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Seraphine",
+    "name": "Seraphine",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Seraphine.png",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "info": {
+      "attack": 0,
+      "defense": 0,
+      "magic": 0,
+      "difficulty": 0
+    },
+    "stats": {
+      "hp": 570,
+      "armor": 26,
+      "spellblock": 30,
+      "attackrange": 525,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Sett",
+    "name": "Sett",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Sett.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 1,
+      "difficulty": 2
+    },
+    "stats": {
+      "hp": 670,
+      "armor": 33,
+      "spellblock": 28,
+      "attackrange": 125,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Shaco",
+    "name": "Shaco",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Shaco.png",
+    "tags": [
+      "Assassin"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 4,
+      "magic": 6,
+      "difficulty": 9
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 30,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Shen",
+    "name": "Shen",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Shen.png",
+    "tags": [
+      "Tank"
+    ],
+    "info": {
+      "attack": 3,
+      "defense": 9,
+      "magic": 3,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 610,
+      "armor": 34,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Shyvana",
+    "name": "Shyvana",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Shyvana.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 6,
+      "magic": 3,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 625,
+      "armor": 35,
+      "spellblock": 32,
+      "attackrange": 150,
+      "movespeed": 350
+    }
+  },
+  {
+    "id": "Singed",
+    "name": "Singed",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Singed.png",
+    "tags": [
+      "Tank",
+      "Mage"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 8,
+      "magic": 7,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 650,
+      "armor": 34,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Sion",
+    "name": "Sion",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Sion.png",
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "info": {
+      "attack": 5,
+      "defense": 9,
+      "magic": 3,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 655,
+      "armor": 36,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Sivir",
+    "name": "Sivir",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Sivir.png",
+    "tags": [
+      "Marksman"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 3,
+      "magic": 1,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 600,
+      "armor": 30,
+      "spellblock": 33,
+      "attackrange": 500,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Skarner",
+    "name": "Skarner",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Skarner.png",
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "info": {
+      "attack": 7,
+      "defense": 8,
+      "magic": 5,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 33,
+      "spellblock": 32,
+      "attackrange": 150,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Smolder",
+    "name": "Smolder",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Smolder.png",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 2,
+      "magic": 5,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 575,
+      "armor": 24,
+      "spellblock": 33,
+      "attackrange": 550,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Sona",
+    "name": "Sona",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Sona.png",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "info": {
+      "attack": 5,
+      "defense": 2,
+      "magic": 8,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 550,
+      "armor": 26,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "Soraka",
+    "name": "Soraka",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Soraka.png",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 5,
+      "magic": 7,
+      "difficulty": 3
+    },
+    "stats": {
+      "hp": 605,
+      "armor": 32,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "Swain",
+    "name": "Swain",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Swain.png",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 6,
+      "magic": 9,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 595,
+      "armor": 23,
+      "spellblock": 34,
+      "attackrange": 525,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Sylas",
+    "name": "Sylas",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Sylas.png",
+    "tags": [
+      "Mage",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 3,
+      "defense": 4,
+      "magic": 8,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 600,
+      "armor": 29,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Syndra",
+    "name": "Syndra",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Syndra.png",
+    "tags": [
+      "Mage"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 3,
+      "magic": 9,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 583,
+      "armor": 25,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "TahmKench",
+    "name": "Tahm Kench",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/TahmKench.png",
+    "tags": [
+      "Tank",
+      "Support"
+    ],
+    "info": {
+      "attack": 3,
+      "defense": 9,
+      "magic": 6,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 640,
+      "armor": 39,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Taliyah",
+    "name": "Taliyah",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Taliyah.png",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "info": {
+      "attack": 1,
+      "defense": 7,
+      "magic": 8,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 550,
+      "armor": 18,
+      "spellblock": 28,
+      "attackrange": 525,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Talon",
+    "name": "Talon",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Talon.png",
+    "tags": [
+      "Assassin"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 3,
+      "magic": 1,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 658,
+      "armor": 30,
+      "spellblock": 36,
+      "attackrange": 125,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Taric",
+    "name": "Taric",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Taric.png",
+    "tags": [
+      "Support",
+      "Tank"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 8,
+      "magic": 5,
+      "difficulty": 3
+    },
+    "stats": {
+      "hp": 645,
+      "armor": 40,
+      "spellblock": 28,
+      "attackrange": 150,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Teemo",
+    "name": "Teemo",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Teemo.png",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "info": {
+      "attack": 5,
+      "defense": 3,
+      "magic": 7,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 615,
+      "armor": 24,
+      "spellblock": 30,
+      "attackrange": 500,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Thresh",
+    "name": "Thresh",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Thresh.png",
+    "tags": [
+      "Support",
+      "Tank"
+    ],
+    "info": {
+      "attack": 5,
+      "defense": 6,
+      "magic": 6,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 620,
+      "armor": 33,
+      "spellblock": 30,
+      "attackrange": 450,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Tristana",
+    "name": "Tristana",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Tristana.png",
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 3,
+      "magic": 5,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 640,
+      "armor": 30,
+      "spellblock": 33,
+      "attackrange": 550,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "Trundle",
+    "name": "Trundle",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Trundle.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 7,
+      "defense": 6,
+      "magic": 2,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 650,
+      "armor": 37,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 350
+    }
+  },
+  {
+    "id": "Tryndamere",
+    "name": "Tryndamere",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Tryndamere.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 10,
+      "defense": 5,
+      "magic": 2,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 696,
+      "armor": 33,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "TwistedFate",
+    "name": "Twisted Fate",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/TwistedFate.png",
+    "tags": [
+      "Mage",
+      "Marksman"
+    ],
+    "info": {
+      "attack": 6,
+      "defense": 2,
+      "magic": 6,
+      "difficulty": 9
+    },
+    "stats": {
+      "hp": 604,
+      "armor": 24,
+      "spellblock": 30,
+      "attackrange": 525,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Twitch",
+    "name": "Twitch",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Twitch.png",
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 2,
+      "magic": 3,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 27,
+      "spellblock": 33,
+      "attackrange": 550,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Udyr",
+    "name": "Udyr",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Udyr.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 7,
+      "magic": 4,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 664,
+      "armor": 31,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 350
+    }
+  },
+  {
+    "id": "Urgot",
+    "name": "Urgot",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Urgot.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 655,
+      "armor": 36,
+      "spellblock": 32,
+      "attackrange": 350,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Varus",
+    "name": "Varus",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Varus.png",
+    "tags": [
+      "Marksman",
+      "Mage"
+    ],
+    "info": {
+      "attack": 7,
+      "defense": 3,
+      "magic": 4,
+      "difficulty": 2
+    },
+    "stats": {
+      "hp": 600,
+      "armor": 24,
+      "spellblock": 33,
+      "attackrange": 575,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Vayne",
+    "name": "Vayne",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Vayne.png",
+    "tags": [
+      "Marksman",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 10,
+      "defense": 1,
+      "magic": 1,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 580,
+      "armor": 23,
+      "spellblock": 33,
+      "attackrange": 550,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Veigar",
+    "name": "Veigar",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Veigar.png",
+    "tags": [
+      "Mage"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 2,
+      "magic": 10,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 580,
+      "armor": 18,
+      "spellblock": 32,
+      "attackrange": 550,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Velkoz",
+    "name": "Vel'Koz",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Velkoz.png",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 2,
+      "magic": 10,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 590,
+      "armor": 22,
+      "spellblock": 30,
+      "attackrange": 525,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Vex",
+    "name": "Vex",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Vex.png",
+    "tags": [
+      "Mage"
+    ],
+    "info": {
+      "attack": 0,
+      "defense": 0,
+      "magic": 0,
+      "difficulty": 0
+    },
+    "stats": {
+      "hp": 590,
+      "armor": 23,
+      "spellblock": 28,
+      "attackrange": 550,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Vi",
+    "name": "Vi",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Vi.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 655,
+      "armor": 30,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Viego",
+    "name": "Viego",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Viego.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 6,
+      "defense": 4,
+      "magic": 2,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 34,
+      "spellblock": 32,
+      "attackrange": 200,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Viktor",
+    "name": "Viktor",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Viktor.png",
+    "tags": [
+      "Mage"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 4,
+      "magic": 10,
+      "difficulty": 9
+    },
+    "stats": {
+      "hp": 600,
+      "armor": 23,
+      "spellblock": 30,
+      "attackrange": 525,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Vladimir",
+    "name": "Vladimir",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Vladimir.png",
+    "tags": [
+      "Mage",
+      "Fighter"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 6,
+      "magic": 8,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 600,
+      "armor": 24,
+      "spellblock": 30,
+      "attackrange": 450,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Volibear",
+    "name": "Volibear",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Volibear.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 7,
+      "defense": 7,
+      "magic": 4,
+      "difficulty": 3
+    },
+    "stats": {
+      "hp": 650,
+      "armor": 35,
+      "spellblock": 32,
+      "attackrange": 150,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Warwick",
+    "name": "Warwick",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Warwick.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 3
+    },
+    "stats": {
+      "hp": 620,
+      "armor": 33,
+      "spellblock": 32,
+      "attackrange": 125,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Xayah",
+    "name": "Xayah",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Xayah.png",
+    "tags": [
+      "Marksman"
+    ],
+    "info": {
+      "attack": 10,
+      "defense": 6,
+      "magic": 1,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 25,
+      "spellblock": 33,
+      "attackrange": 525,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Xerath",
+    "name": "Xerath",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Xerath.png",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "info": {
+      "attack": 1,
+      "defense": 3,
+      "magic": 10,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 575,
+      "armor": 22,
+      "spellblock": 30,
+      "attackrange": 525,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "XinZhao",
+    "name": "Xin Zhao",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/XinZhao.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 6,
+      "magic": 3,
+      "difficulty": 2
+    },
+    "stats": {
+      "hp": 620,
+      "armor": 35,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Yasuo",
+    "name": "Yasuo",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Yasuo.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 4,
+      "magic": 4,
+      "difficulty": 10
+    },
+    "stats": {
+      "hp": 590,
+      "armor": 32,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Yone",
+    "name": "Yone",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Yone.png",
+    "tags": [
+      "Fighter",
+      "Assassin"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 4,
+      "magic": 4,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 620,
+      "armor": 33,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Yorick",
+    "name": "Yorick",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Yorick.png",
+    "tags": [
+      "Fighter",
+      "Tank"
+    ],
+    "info": {
+      "attack": 6,
+      "defense": 6,
+      "magic": 4,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 650,
+      "armor": 36,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Yunara",
+    "name": "Yunara",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Yunara.png",
+    "tags": [
+      "Marksman"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 2,
+      "magic": 0,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 590,
+      "armor": 25,
+      "spellblock": 33,
+      "attackrange": 575,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "Yuumi",
+    "name": "Yuumi",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Yuumi.png",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "info": {
+      "attack": 5,
+      "defense": 1,
+      "magic": 8,
+      "difficulty": 2
+    },
+    "stats": {
+      "hp": 500,
+      "armor": 25,
+      "spellblock": 25,
+      "attackrange": 425,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Zaahen",
+    "name": "Zaahen",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Zaahen.png",
+    "tags": [
+      "Fighter"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 6,
+      "magic": 1,
+      "difficulty": 2
+    },
+    "stats": {
+      "hp": 640,
+      "armor": 36,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Zac",
+    "name": "Zac",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Zac.png",
+    "tags": [
+      "Tank",
+      "Fighter"
+    ],
+    "info": {
+      "attack": 3,
+      "defense": 7,
+      "magic": 7,
+      "difficulty": 8
+    },
+    "stats": {
+      "hp": 685,
+      "armor": 33,
+      "spellblock": 32,
+      "attackrange": 175,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Zed",
+    "name": "Zed",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Zed.png",
+    "tags": [
+      "Assassin"
+    ],
+    "info": {
+      "attack": 9,
+      "defense": 2,
+      "magic": 1,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 654,
+      "armor": 32,
+      "spellblock": 29,
+      "attackrange": 125,
+      "movespeed": 345
+    }
+  },
+  {
+    "id": "Zeri",
+    "name": "Zeri",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Zeri.png",
+    "tags": [
+      "Marksman"
+    ],
+    "info": {
+      "attack": 8,
+      "defense": 5,
+      "magic": 3,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 600,
+      "armor": 24,
+      "spellblock": 33,
+      "attackrange": 550,
+      "movespeed": 330
+    }
+  },
+  {
+    "id": "Ziggs",
+    "name": "Ziggs",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Ziggs.png",
+    "tags": [
+      "Mage"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 4,
+      "magic": 9,
+      "difficulty": 4
+    },
+    "stats": {
+      "hp": 606,
+      "armor": 21,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 325
+    }
+  },
+  {
+    "id": "Zilean",
+    "name": "Zilean",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Zilean.png",
+    "tags": [
+      "Support",
+      "Mage"
+    ],
+    "info": {
+      "attack": 2,
+      "defense": 5,
+      "magic": 8,
+      "difficulty": 6
+    },
+    "stats": {
+      "hp": 574,
+      "armor": 24,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 335
+    }
+  },
+  {
+    "id": "Zoe",
+    "name": "Zoe",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Zoe.png",
+    "tags": [
+      "Mage"
+    ],
+    "info": {
+      "attack": 1,
+      "defense": 7,
+      "magic": 8,
+      "difficulty": 5
+    },
+    "stats": {
+      "hp": 630,
+      "armor": 21,
+      "spellblock": 30,
+      "attackrange": 550,
+      "movespeed": 340
+    }
+  },
+  {
+    "id": "Zyra",
+    "name": "Zyra",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/champion/Zyra.png",
+    "tags": [
+      "Mage",
+      "Support"
+    ],
+    "info": {
+      "attack": 4,
+      "defense": 3,
+      "magic": 8,
+      "difficulty": 7
+    },
+    "stats": {
+      "hp": 574,
+      "armor": 29,
+      "spellblock": 30,
+      "attackrange": 575,
+      "movespeed": 340
+    }
+  }
+]

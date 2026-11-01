@@ -1,0 +1,258 @@
+[
+  {
+    "id": "emote_10168",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/events/mayhem/10168_placeholder_question_mark_do_not_translate_inventory.accessories_16_21.png"
+  },
+  {
+    "id": "emote_1030",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/lux/lux_happy_cheerful_inventory.png"
+  },
+  {
+    "id": "emote_1443",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/events/snowdown/event_snowdown_amumu_sad_inventory.png"
+  },
+  {
+    "id": "emote_1444",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/events/snowdown/event_snowdown_jinglebells_01_inventory.png"
+  },
+  {
+    "id": "emote_1445",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/events/snowdown/event_snowdown_poro_love_inventory.png"
+  },
+  {
+    "id": "emote_1452",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/darius/darius_angry_smile_inventory.png"
+  },
+  {
+    "id": "emote_1457",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/flairs/mcat_sad_tear_inventory.png"
+  },
+  {
+    "id": "emote_1459",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/flairs/thumb_happy_up_inventory.png"
+  },
+  {
+    "id": "emote_1460",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/caitlyn/caitlyn_happy_greetings_inventory.png"
+  },
+  {
+    "id": "emote_1462",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/vayne/vayne_happy_taunt_inventory.png"
+  },
+  {
+    "id": "emote_1464",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/fiora/fiora_happy_cheers_inventory.png"
+  },
+  {
+    "id": "emote_1465",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/events/vs/vs_order_inventory.png"
+  },
+  {
+    "id": "emote_1466",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/events/vs/vs_chaos_inventory.png"
+  },
+  {
+    "id": "emote_1467",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/amumu/amumu_sad_crying_inventory.png"
+  },
+  {
+    "id": "emote_1468",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/blitzcrank/blitzcrank_sad_confused_inventory.png"
+  },
+  {
+    "id": "emote_1469",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/braum/braum_happy_heart_inventory.png"
+  },
+  {
+    "id": "emote_1473",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/jinx/jinx_meme_taunt_inventory.png"
+  },
+  {
+    "id": "emote_1474",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/leesin/leesin_happy_cheers_inventory.png"
+  },
+  {
+    "id": "emote_1476",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/taric/taric_love_glamorus_inventory.png"
+  },
+  {
+    "id": "emote_1478",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/velkoz/velkoz_happy_greetings_inventory.png"
+  },
+  {
+    "id": "emote_1480",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/yasuo/yasuo_meme_taunt_inventory.png"
+  },
+  {
+    "id": "emote_1481",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/ziggs/ziggs_happy_cheers_inventory.png"
+  },
+  {
+    "id": "emote_1487",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/gnar/gnar_sad_pout_inventory.png"
+  },
+  {
+    "id": "emote_1488",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/lulu/lulu_happy_cheerful_inventory.png"
+  },
+  {
+    "id": "emote_1489",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/poppy/poppy_meme_taunt_inventory.png"
+  },
+  {
+    "id": "emote_1490",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/riven/riven_angry_battle_bunny_mad_inventory.png"
+  },
+  {
+    "id": "emote_1492",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/teemo/teemo_happy_cheers_inventory.png"
+  },
+  {
+    "id": "emote_1495",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/flairs/flag_sad_white_inventory.png"
+  },
+  {
+    "id": "emote_1498",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/flairs/poro_happy_cheers_inventory.png"
+  },
+  {
+    "id": "emote_1499",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/flairs/poro_happy_taunt_inventory.png"
+  },
+  {
+    "id": "emote_1501",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/flairs/mcat_angry_mad_inventory.png"
+  },
+  {
+    "id": "emote_1502",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/flairs/mcat_happy_cute_inventory.png"
+  },
+  {
+    "id": "emote_1505",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/flairs/penguin_happy_greetings_inventory.png"
+  },
+  {
+    "id": "emote_1506",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/flairs/penguin_meme_dab_inventory.png"
+  },
+  {
+    "id": "emote_1509",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/events/arcade/arcade_pixel_baron_inventory.png"
+  },
+  {
+    "id": "emote_1512",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/ahri/ahri_love_wink_02_inventory.png"
+  },
+  {
+    "id": "emote_1513",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/garen/garen_happy_proud_inventory.png"
+  },
+  {
+    "id": "emote_1514",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/alistar/angry_alistar_inventory.png"
+  },
+  {
+    "id": "emote_1516",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/champions/tahmkench/tahmkench_grin_inventory.png"
+  },
+  {
+    "id": "emote_1600",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/events/chinamasters/events_china_masters_01_inventory.png"
+  },
+  {
+    "id": "emote_1999",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/events/em_evnt_worlds2017_01_inventory.png"
+  },
+  {
+    "id": "emote_2000",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_afs_inventory.png"
+  },
+  {
+    "id": "emote_2001",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_ahq_inventory.png"
+  },
+  {
+    "id": "emote_2002",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_av_inventory.png"
+  },
+  {
+    "id": "emote_2003",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_c9_inventory.png"
+  },
+  {
+    "id": "emote_2004",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_chf_inventory.png"
+  },
+  {
+    "id": "emote_2005",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_clg_inventory.png"
+  },
+  {
+    "id": "emote_2006",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_dig_inventory.png"
+  },
+  {
+    "id": "emote_2007",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_dw_inventory.png"
+  },
+  {
+    "id": "emote_2008",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_edg_inventory.png"
+  },
+  {
+    "id": "emote_2009",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_fb_inventory.png"
+  },
+  {
+    "id": "emote_2010",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_fly_inventory.png"
+  },
+  {
+    "id": "emote_2011",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_fnc_inventory.png"
+  },
+  {
+    "id": "emote_2012",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_fw_inventory.png"
+  },
+  {
+    "id": "emote_2013",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_g2_inventory.png"
+  },
+  {
+    "id": "emote_2014",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_gam_inventory.png"
+  },
+  {
+    "id": "emote_2015",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_gmb_inventory.png"
+  },
+  {
+    "id": "emote_2016",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_h2k_inventory.png"
+  },
+  {
+    "id": "emote_2017",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_hka_inventory.png"
+  },
+  {
+    "id": "emote_2018",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_ig_inventory.png"
+  },
+  {
+    "id": "emote_2019",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_imt_inventory.png"
+  },
+  {
+    "id": "emote_2020",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_inf_inventory.png"
+  },
+  {
+    "id": "emote_2021",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_klg_inventory.png"
+  },
+  {
+    "id": "emote_2022",
+    "imageUrl": "https://raw.communitydragon.org/16.21/plugins/rcp-be-lol-game-data/global/default/assets/loadouts/summoneremotes/esports/worlds2017/em_worlds2017_klh_inventory.png"
+  }
+]

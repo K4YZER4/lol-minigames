@@ -1,0 +1,25 @@
+{
+  "name": "lol-party",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:server": "npm run dev -w @lolgames/server",
+    "dev:web": "npm run dev -w @lolgames/web",
+    "content": "npm run build:data -w @lolgames/content",
+    "test": "npm run test -w @lolgames/engine",
+    "e2e": "node scripts/e2e.mjs",
+    "typecheck": "npm run typecheck -w @lolgames/protocol && npm run typecheck -w @lolgames/engine && npm run typecheck -w @lolgames/server && npm run typecheck -w @lolgames/web",
+    "build": "npm run build -w @lolgames/server && npm run build -w @lolgames/web"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "5.9.3",
+    "vitest": "^5.0.5"
+  }
+}

@@ -1,0 +1,5192 @@
+[
+  {
+    "clueId": "c_0001",
+    "championId": "Aatrox",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AatroxQ.png"
+  },
+  {
+    "clueId": "c_0002",
+    "championId": "Aatrox",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AatroxW.png"
+  },
+  {
+    "clueId": "c_0003",
+    "championId": "Aatrox",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AatroxE.png"
+  },
+  {
+    "clueId": "c_0004",
+    "championId": "Aatrox",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AatroxR.png"
+  },
+  {
+    "clueId": "c_0005",
+    "championId": "Aatrox",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Aatrox_Passive.png"
+  },
+  {
+    "clueId": "c_0006",
+    "championId": "Ahri",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AhriQ.png"
+  },
+  {
+    "clueId": "c_0007",
+    "championId": "Ahri",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AhriW.png"
+  },
+  {
+    "clueId": "c_0008",
+    "championId": "Ahri",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AhriE.png"
+  },
+  {
+    "clueId": "c_0009",
+    "championId": "Ahri",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AhriR.png"
+  },
+  {
+    "clueId": "c_0010",
+    "championId": "Ahri",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Ahri_SoulEater2.png"
+  },
+  {
+    "clueId": "c_0011",
+    "championId": "Akali",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AkaliQ.png"
+  },
+  {
+    "clueId": "c_0012",
+    "championId": "Akali",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AkaliW.png"
+  },
+  {
+    "clueId": "c_0013",
+    "championId": "Akali",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AkaliE.png"
+  },
+  {
+    "clueId": "c_0014",
+    "championId": "Akali",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AkaliR.png"
+  },
+  {
+    "clueId": "c_0015",
+    "championId": "Akali",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Akali_P.png"
+  },
+  {
+    "clueId": "c_0016",
+    "championId": "Akshan",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AkshanQ.png"
+  },
+  {
+    "clueId": "c_0017",
+    "championId": "Akshan",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AkshanW.png"
+  },
+  {
+    "clueId": "c_0018",
+    "championId": "Akshan",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AkshanE.png"
+  },
+  {
+    "clueId": "c_0019",
+    "championId": "Akshan",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AkshanR.png"
+  },
+  {
+    "clueId": "c_0020",
+    "championId": "Akshan",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/akshan_p.png"
+  },
+  {
+    "clueId": "c_0021",
+    "championId": "Alistar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Pulverize.png"
+  },
+  {
+    "clueId": "c_0022",
+    "championId": "Alistar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Headbutt.png"
+  },
+  {
+    "clueId": "c_0023",
+    "championId": "Alistar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AlistarE.png"
+  },
+  {
+    "clueId": "c_0024",
+    "championId": "Alistar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/FerociousHowl.png"
+  },
+  {
+    "clueId": "c_0025",
+    "championId": "Alistar",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Alistar_E.png"
+  },
+  {
+    "clueId": "c_0026",
+    "championId": "Ambessa",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AmbessaQ.png"
+  },
+  {
+    "clueId": "c_0027",
+    "championId": "Ambessa",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AmbessaW.png"
+  },
+  {
+    "clueId": "c_0028",
+    "championId": "Ambessa",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AmbessaE.png"
+  },
+  {
+    "clueId": "c_0029",
+    "championId": "Ambessa",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AmbessaR.png"
+  },
+  {
+    "clueId": "c_0030",
+    "championId": "Ambessa",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Icon_Ambessa_Passive.png"
+  },
+  {
+    "clueId": "c_0031",
+    "championId": "Amumu",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BandageToss.png"
+  },
+  {
+    "clueId": "c_0032",
+    "championId": "Amumu",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AuraofDespair.png"
+  },
+  {
+    "clueId": "c_0033",
+    "championId": "Amumu",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Tantrum.png"
+  },
+  {
+    "clueId": "c_0034",
+    "championId": "Amumu",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/CurseoftheSadMummy.png"
+  },
+  {
+    "clueId": "c_0035",
+    "championId": "Amumu",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Amumu_Passive.png"
+  },
+  {
+    "clueId": "c_0036",
+    "championId": "Anivia",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/FlashFrost.png"
+  },
+  {
+    "clueId": "c_0037",
+    "championId": "Anivia",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Crystallize.png"
+  },
+  {
+    "clueId": "c_0038",
+    "championId": "Anivia",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Frostbite.png"
+  },
+  {
+    "clueId": "c_0039",
+    "championId": "Anivia",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GlacialStorm.png"
+  },
+  {
+    "clueId": "c_0040",
+    "championId": "Anivia",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Anivia_P.png"
+  },
+  {
+    "clueId": "c_0041",
+    "championId": "Annie",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AnnieQ.png"
+  },
+  {
+    "clueId": "c_0042",
+    "championId": "Annie",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AnnieW.png"
+  },
+  {
+    "clueId": "c_0043",
+    "championId": "Annie",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AnnieE.png"
+  },
+  {
+    "clueId": "c_0044",
+    "championId": "Annie",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AnnieR.png"
+  },
+  {
+    "clueId": "c_0045",
+    "championId": "Annie",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Annie_Passive.png"
+  },
+  {
+    "clueId": "c_0046",
+    "championId": "Aphelios",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ApheliosQ_ClientTooltipWrapper.png"
+  },
+  {
+    "clueId": "c_0047",
+    "championId": "Aphelios",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ApheliosW.png"
+  },
+  {
+    "clueId": "c_0048",
+    "championId": "Aphelios",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ApheliosE_ClientTooltipWrapper.png"
+  },
+  {
+    "clueId": "c_0049",
+    "championId": "Aphelios",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ApheliosR.png"
+  },
+  {
+    "clueId": "c_0050",
+    "championId": "Aphelios",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/ApheliosP.png"
+  },
+  {
+    "clueId": "c_0051",
+    "championId": "Ashe",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AsheQ.png"
+  },
+  {
+    "clueId": "c_0052",
+    "championId": "Ashe",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Volley.png"
+  },
+  {
+    "clueId": "c_0053",
+    "championId": "Ashe",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AsheSpiritOfTheHawk.png"
+  },
+  {
+    "clueId": "c_0054",
+    "championId": "Ashe",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EnchantedCrystalArrow.png"
+  },
+  {
+    "clueId": "c_0055",
+    "championId": "Ashe",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Ashe_P.png"
+  },
+  {
+    "clueId": "c_0056",
+    "championId": "AurelionSol",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AurelionSolQ.png"
+  },
+  {
+    "clueId": "c_0057",
+    "championId": "AurelionSol",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AurelionSolW.png"
+  },
+  {
+    "clueId": "c_0058",
+    "championId": "AurelionSol",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AurelionSolE.png"
+  },
+  {
+    "clueId": "c_0059",
+    "championId": "AurelionSol",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AurelionSolR.png"
+  },
+  {
+    "clueId": "c_0060",
+    "championId": "AurelionSol",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/AurelionSolP.png"
+  },
+  {
+    "clueId": "c_0061",
+    "championId": "Aurora",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AuroraQ.png"
+  },
+  {
+    "clueId": "c_0062",
+    "championId": "Aurora",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AuroraW.png"
+  },
+  {
+    "clueId": "c_0063",
+    "championId": "Aurora",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AuroraE.png"
+  },
+  {
+    "clueId": "c_0064",
+    "championId": "Aurora",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AuroraR.png"
+  },
+  {
+    "clueId": "c_0065",
+    "championId": "Aurora",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/AuroraPassive.png"
+  },
+  {
+    "clueId": "c_0066",
+    "championId": "Azir",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AzirQWrapper.png"
+  },
+  {
+    "clueId": "c_0067",
+    "championId": "Azir",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AzirW.png"
+  },
+  {
+    "clueId": "c_0068",
+    "championId": "Azir",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AzirEWrapper.png"
+  },
+  {
+    "clueId": "c_0069",
+    "championId": "Azir",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AzirR.png"
+  },
+  {
+    "clueId": "c_0070",
+    "championId": "Azir",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Azir_Passive.png"
+  },
+  {
+    "clueId": "c_0071",
+    "championId": "Bard",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BardQ.png"
+  },
+  {
+    "clueId": "c_0072",
+    "championId": "Bard",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BardW.png"
+  },
+  {
+    "clueId": "c_0073",
+    "championId": "Bard",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BardE.png"
+  },
+  {
+    "clueId": "c_0074",
+    "championId": "Bard",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BardR.png"
+  },
+  {
+    "clueId": "c_0075",
+    "championId": "Bard",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Bard_Passive.png"
+  },
+  {
+    "clueId": "c_0076",
+    "championId": "Belveth",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BelvethQ.png"
+  },
+  {
+    "clueId": "c_0077",
+    "championId": "Belveth",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BelvethW.png"
+  },
+  {
+    "clueId": "c_0078",
+    "championId": "Belveth",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BelvethE.png"
+  },
+  {
+    "clueId": "c_0079",
+    "championId": "Belveth",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BelvethR.png"
+  },
+  {
+    "clueId": "c_0080",
+    "championId": "Belveth",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Belveth_Passive.png"
+  },
+  {
+    "clueId": "c_0081",
+    "championId": "Blitzcrank",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RocketGrab.png"
+  },
+  {
+    "clueId": "c_0082",
+    "championId": "Blitzcrank",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Overdrive.png"
+  },
+  {
+    "clueId": "c_0083",
+    "championId": "Blitzcrank",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PowerFist.png"
+  },
+  {
+    "clueId": "c_0084",
+    "championId": "Blitzcrank",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/StaticField.png"
+  },
+  {
+    "clueId": "c_0085",
+    "championId": "Blitzcrank",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Blitzcrank_ManaBarrier.png"
+  },
+  {
+    "clueId": "c_0086",
+    "championId": "Brand",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BrandQ.png"
+  },
+  {
+    "clueId": "c_0087",
+    "championId": "Brand",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BrandW.png"
+  },
+  {
+    "clueId": "c_0088",
+    "championId": "Brand",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BrandE.png"
+  },
+  {
+    "clueId": "c_0089",
+    "championId": "Brand",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BrandR.png"
+  },
+  {
+    "clueId": "c_0090",
+    "championId": "Brand",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/BrandP.png"
+  },
+  {
+    "clueId": "c_0091",
+    "championId": "Braum",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BraumQ.png"
+  },
+  {
+    "clueId": "c_0092",
+    "championId": "Braum",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BraumW.png"
+  },
+  {
+    "clueId": "c_0093",
+    "championId": "Braum",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BraumE.png"
+  },
+  {
+    "clueId": "c_0094",
+    "championId": "Braum",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BraumRWrapper.png"
+  },
+  {
+    "clueId": "c_0095",
+    "championId": "Braum",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Braum_Passive.png"
+  },
+  {
+    "clueId": "c_0096",
+    "championId": "Briar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BriarQ.png"
+  },
+  {
+    "clueId": "c_0097",
+    "championId": "Briar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BriarW.png"
+  },
+  {
+    "clueId": "c_0098",
+    "championId": "Briar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BriarE.png"
+  },
+  {
+    "clueId": "c_0099",
+    "championId": "Briar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/BriarR.png"
+  },
+  {
+    "clueId": "c_0100",
+    "championId": "Briar",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/BriarP.png"
+  },
+  {
+    "clueId": "c_0101",
+    "championId": "Caitlyn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/CaitlynQ.png"
+  },
+  {
+    "clueId": "c_0102",
+    "championId": "Caitlyn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/CaitlynW.png"
+  },
+  {
+    "clueId": "c_0103",
+    "championId": "Caitlyn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/CaitlynE.png"
+  },
+  {
+    "clueId": "c_0104",
+    "championId": "Caitlyn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/CaitlynR.png"
+  },
+  {
+    "clueId": "c_0105",
+    "championId": "Caitlyn",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Caitlyn_Headshot.png"
+  },
+  {
+    "clueId": "c_0106",
+    "championId": "Camille",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/CamilleQ.png"
+  },
+  {
+    "clueId": "c_0107",
+    "championId": "Camille",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/CamilleW.png"
+  },
+  {
+    "clueId": "c_0108",
+    "championId": "Camille",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/CamilleE.png"
+  },
+  {
+    "clueId": "c_0109",
+    "championId": "Camille",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/CamilleR.png"
+  },
+  {
+    "clueId": "c_0110",
+    "championId": "Camille",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Camille_Passive.png"
+  },
+  {
+    "clueId": "c_0111",
+    "championId": "Cassiopeia",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/CassiopeiaQ.png"
+  },
+  {
+    "clueId": "c_0112",
+    "championId": "Cassiopeia",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/CassiopeiaW.png"
+  },
+  {
+    "clueId": "c_0113",
+    "championId": "Cassiopeia",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/CassiopeiaE.png"
+  },
+  {
+    "clueId": "c_0114",
+    "championId": "Cassiopeia",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/CassiopeiaR.png"
+  },
+  {
+    "clueId": "c_0115",
+    "championId": "Cassiopeia",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Cassiopeia_Passive.png"
+  },
+  {
+    "clueId": "c_0116",
+    "championId": "Chogath",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Rupture.png"
+  },
+  {
+    "clueId": "c_0117",
+    "championId": "Chogath",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/FeralScream.png"
+  },
+  {
+    "clueId": "c_0118",
+    "championId": "Chogath",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VorpalSpikes.png"
+  },
+  {
+    "clueId": "c_0119",
+    "championId": "Chogath",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Feast.png"
+  },
+  {
+    "clueId": "c_0120",
+    "championId": "Chogath",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/GreenTerror_TailSpike.png"
+  },
+  {
+    "clueId": "c_0121",
+    "championId": "Corki",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PhosphorusBomb.png"
+  },
+  {
+    "clueId": "c_0122",
+    "championId": "Corki",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/CarpetBomb.png"
+  },
+  {
+    "clueId": "c_0123",
+    "championId": "Corki",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GGun.png"
+  },
+  {
+    "clueId": "c_0124",
+    "championId": "Corki",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MissileBarrage.png"
+  },
+  {
+    "clueId": "c_0125",
+    "championId": "Corki",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Corki_RapidReload.png"
+  },
+  {
+    "clueId": "c_0126",
+    "championId": "Darius",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DariusCleave.png"
+  },
+  {
+    "clueId": "c_0127",
+    "championId": "Darius",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DariusNoxianTacticsONH.png"
+  },
+  {
+    "clueId": "c_0128",
+    "championId": "Darius",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DariusAxeGrabCone.png"
+  },
+  {
+    "clueId": "c_0129",
+    "championId": "Darius",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DariusExecute.png"
+  },
+  {
+    "clueId": "c_0130",
+    "championId": "Darius",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Darius_Icon_Hemorrhage.png"
+  },
+  {
+    "clueId": "c_0131",
+    "championId": "Diana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DianaQ.png"
+  },
+  {
+    "clueId": "c_0132",
+    "championId": "Diana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DianaOrbs.png"
+  },
+  {
+    "clueId": "c_0133",
+    "championId": "Diana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DianaTeleport.png"
+  },
+  {
+    "clueId": "c_0134",
+    "championId": "Diana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DianaR.png"
+  },
+  {
+    "clueId": "c_0135",
+    "championId": "Diana",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Diana_Passive_LunarBlade.png"
+  },
+  {
+    "clueId": "c_0136",
+    "championId": "DrMundo",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DrMundoQ.png"
+  },
+  {
+    "clueId": "c_0137",
+    "championId": "DrMundo",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DrMundoW.png"
+  },
+  {
+    "clueId": "c_0138",
+    "championId": "DrMundo",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DrMundoE.png"
+  },
+  {
+    "clueId": "c_0139",
+    "championId": "DrMundo",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DrMundoR.png"
+  },
+  {
+    "clueId": "c_0140",
+    "championId": "DrMundo",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/DrMundo_P.png"
+  },
+  {
+    "clueId": "c_0141",
+    "championId": "Draven",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DravenSpinning.png"
+  },
+  {
+    "clueId": "c_0142",
+    "championId": "Draven",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DravenFury.png"
+  },
+  {
+    "clueId": "c_0143",
+    "championId": "Draven",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DravenDoubleShot.png"
+  },
+  {
+    "clueId": "c_0144",
+    "championId": "Draven",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DravenRCast.png"
+  },
+  {
+    "clueId": "c_0145",
+    "championId": "Draven",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Draven_passive.png"
+  },
+  {
+    "clueId": "c_0146",
+    "championId": "Ekko",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EkkoQ.png"
+  },
+  {
+    "clueId": "c_0147",
+    "championId": "Ekko",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EkkoW.png"
+  },
+  {
+    "clueId": "c_0148",
+    "championId": "Ekko",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EkkoE.png"
+  },
+  {
+    "clueId": "c_0149",
+    "championId": "Ekko",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EkkoR.png"
+  },
+  {
+    "clueId": "c_0150",
+    "championId": "Ekko",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Ekko_P.png"
+  },
+  {
+    "clueId": "c_0151",
+    "championId": "Elise",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EliseHumanQ.png"
+  },
+  {
+    "clueId": "c_0152",
+    "championId": "Elise",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EliseHumanW.png"
+  },
+  {
+    "clueId": "c_0153",
+    "championId": "Elise",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EliseHumanE.png"
+  },
+  {
+    "clueId": "c_0154",
+    "championId": "Elise",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EliseR.png"
+  },
+  {
+    "clueId": "c_0155",
+    "championId": "Elise",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/ElisePassive.png"
+  },
+  {
+    "clueId": "c_0156",
+    "championId": "Evelynn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EvelynnQ.png"
+  },
+  {
+    "clueId": "c_0157",
+    "championId": "Evelynn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EvelynnW.png"
+  },
+  {
+    "clueId": "c_0158",
+    "championId": "Evelynn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EvelynnE.png"
+  },
+  {
+    "clueId": "c_0159",
+    "championId": "Evelynn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EvelynnR.png"
+  },
+  {
+    "clueId": "c_0160",
+    "championId": "Evelynn",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Evelynn_Passive.png"
+  },
+  {
+    "clueId": "c_0161",
+    "championId": "Ezreal",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EzrealQ.png"
+  },
+  {
+    "clueId": "c_0162",
+    "championId": "Ezreal",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EzrealW.png"
+  },
+  {
+    "clueId": "c_0163",
+    "championId": "Ezreal",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EzrealE.png"
+  },
+  {
+    "clueId": "c_0164",
+    "championId": "Ezreal",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EzrealR.png"
+  },
+  {
+    "clueId": "c_0165",
+    "championId": "Ezreal",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Ezreal_RisingSpellForce.png"
+  },
+  {
+    "clueId": "c_0166",
+    "championId": "Fiddlesticks",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/FiddleSticksQ.png"
+  },
+  {
+    "clueId": "c_0167",
+    "championId": "Fiddlesticks",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/FiddleSticksW.png"
+  },
+  {
+    "clueId": "c_0168",
+    "championId": "Fiddlesticks",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/FiddleSticksE.png"
+  },
+  {
+    "clueId": "c_0169",
+    "championId": "Fiddlesticks",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/FiddleSticksR.png"
+  },
+  {
+    "clueId": "c_0170",
+    "championId": "Fiddlesticks",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/FiddlesticksP.png"
+  },
+  {
+    "clueId": "c_0171",
+    "championId": "Fiora",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/FioraQ.png"
+  },
+  {
+    "clueId": "c_0172",
+    "championId": "Fiora",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/FioraW.png"
+  },
+  {
+    "clueId": "c_0173",
+    "championId": "Fiora",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/FioraE.png"
+  },
+  {
+    "clueId": "c_0174",
+    "championId": "Fiora",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/FioraR.png"
+  },
+  {
+    "clueId": "c_0175",
+    "championId": "Fiora",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Fiora_P.png"
+  },
+  {
+    "clueId": "c_0176",
+    "championId": "Fizz",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/FizzQ.png"
+  },
+  {
+    "clueId": "c_0177",
+    "championId": "Fizz",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/FizzW.png"
+  },
+  {
+    "clueId": "c_0178",
+    "championId": "Fizz",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/FizzE.png"
+  },
+  {
+    "clueId": "c_0179",
+    "championId": "Fizz",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/FizzR.png"
+  },
+  {
+    "clueId": "c_0180",
+    "championId": "Fizz",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Fizz_P.png"
+  },
+  {
+    "clueId": "c_0181",
+    "championId": "Galio",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GalioQ.png"
+  },
+  {
+    "clueId": "c_0182",
+    "championId": "Galio",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GalioW.png"
+  },
+  {
+    "clueId": "c_0183",
+    "championId": "Galio",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GalioE.png"
+  },
+  {
+    "clueId": "c_0184",
+    "championId": "Galio",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GalioR.png"
+  },
+  {
+    "clueId": "c_0185",
+    "championId": "Galio",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Galio_Passive.png"
+  },
+  {
+    "clueId": "c_0186",
+    "championId": "Gangplank",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GangplankQWrapper.png"
+  },
+  {
+    "clueId": "c_0187",
+    "championId": "Gangplank",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GangplankW.png"
+  },
+  {
+    "clueId": "c_0188",
+    "championId": "Gangplank",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GangplankE.png"
+  },
+  {
+    "clueId": "c_0189",
+    "championId": "Gangplank",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GangplankR.png"
+  },
+  {
+    "clueId": "c_0190",
+    "championId": "Gangplank",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Gangplank_Passive.png"
+  },
+  {
+    "clueId": "c_0191",
+    "championId": "Garen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GarenQ.png"
+  },
+  {
+    "clueId": "c_0192",
+    "championId": "Garen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GarenW.png"
+  },
+  {
+    "clueId": "c_0193",
+    "championId": "Garen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GarenE.png"
+  },
+  {
+    "clueId": "c_0194",
+    "championId": "Garen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GarenR.png"
+  },
+  {
+    "clueId": "c_0195",
+    "championId": "Garen",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Garen_Passive.png"
+  },
+  {
+    "clueId": "c_0196",
+    "championId": "Gnar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GnarQ.png"
+  },
+  {
+    "clueId": "c_0197",
+    "championId": "Gnar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GnarW.png"
+  },
+  {
+    "clueId": "c_0198",
+    "championId": "Gnar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GnarE.png"
+  },
+  {
+    "clueId": "c_0199",
+    "championId": "Gnar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GnarR.png"
+  },
+  {
+    "clueId": "c_0200",
+    "championId": "Gnar",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Gnar_Passive.png"
+  },
+  {
+    "clueId": "c_0201",
+    "championId": "Gragas",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GragasQ.png"
+  },
+  {
+    "clueId": "c_0202",
+    "championId": "Gragas",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GragasW.png"
+  },
+  {
+    "clueId": "c_0203",
+    "championId": "Gragas",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GragasE.png"
+  },
+  {
+    "clueId": "c_0204",
+    "championId": "Gragas",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GragasR.png"
+  },
+  {
+    "clueId": "c_0205",
+    "championId": "Gragas",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/GragasPassiveHeal.png"
+  },
+  {
+    "clueId": "c_0206",
+    "championId": "Graves",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GravesQLineSpell.png"
+  },
+  {
+    "clueId": "c_0207",
+    "championId": "Graves",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GravesSmokeGrenade.png"
+  },
+  {
+    "clueId": "c_0208",
+    "championId": "Graves",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GravesMove.png"
+  },
+  {
+    "clueId": "c_0209",
+    "championId": "Graves",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GravesChargeShot.png"
+  },
+  {
+    "clueId": "c_0210",
+    "championId": "Graves",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/GravesTrueGrit.png"
+  },
+  {
+    "clueId": "c_0211",
+    "championId": "Gwen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GwenQ.png"
+  },
+  {
+    "clueId": "c_0212",
+    "championId": "Gwen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GwenW.png"
+  },
+  {
+    "clueId": "c_0213",
+    "championId": "Gwen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GwenE.png"
+  },
+  {
+    "clueId": "c_0214",
+    "championId": "Gwen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/GwenR.png"
+  },
+  {
+    "clueId": "c_0215",
+    "championId": "Gwen",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Gwen_Passive.png"
+  },
+  {
+    "clueId": "c_0216",
+    "championId": "Hecarim",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/HecarimRapidSlash.png"
+  },
+  {
+    "clueId": "c_0217",
+    "championId": "Hecarim",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/HecarimW.png"
+  },
+  {
+    "clueId": "c_0218",
+    "championId": "Hecarim",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/HecarimRamp.png"
+  },
+  {
+    "clueId": "c_0219",
+    "championId": "Hecarim",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/HecarimUlt.png"
+  },
+  {
+    "clueId": "c_0220",
+    "championId": "Hecarim",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Hecarim_Passive.png"
+  },
+  {
+    "clueId": "c_0221",
+    "championId": "Heimerdinger",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/HeimerdingerQ.png"
+  },
+  {
+    "clueId": "c_0222",
+    "championId": "Heimerdinger",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/HeimerdingerW.png"
+  },
+  {
+    "clueId": "c_0223",
+    "championId": "Heimerdinger",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/HeimerdingerE.png"
+  },
+  {
+    "clueId": "c_0224",
+    "championId": "Heimerdinger",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/HeimerdingerR.png"
+  },
+  {
+    "clueId": "c_0225",
+    "championId": "Heimerdinger",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Heimerdinger_Passive.png"
+  },
+  {
+    "clueId": "c_0226",
+    "championId": "Hwei",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/HweiQ.png"
+  },
+  {
+    "clueId": "c_0227",
+    "championId": "Hwei",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/HweiW.png"
+  },
+  {
+    "clueId": "c_0228",
+    "championId": "Hwei",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/HweiE.png"
+  },
+  {
+    "clueId": "c_0229",
+    "championId": "Hwei",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/HweiR.png"
+  },
+  {
+    "clueId": "c_0230",
+    "championId": "Hwei",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/HweiPassive.png"
+  },
+  {
+    "clueId": "c_0231",
+    "championId": "Illaoi",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/IllaoiQ.png"
+  },
+  {
+    "clueId": "c_0232",
+    "championId": "Illaoi",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/IllaoiW.png"
+  },
+  {
+    "clueId": "c_0233",
+    "championId": "Illaoi",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/IllaoiE.png"
+  },
+  {
+    "clueId": "c_0234",
+    "championId": "Illaoi",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/IllaoiR.png"
+  },
+  {
+    "clueId": "c_0235",
+    "championId": "Illaoi",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Illaoi_P.png"
+  },
+  {
+    "clueId": "c_0236",
+    "championId": "Irelia",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/IreliaQ.png"
+  },
+  {
+    "clueId": "c_0237",
+    "championId": "Irelia",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/IreliaW.png"
+  },
+  {
+    "clueId": "c_0238",
+    "championId": "Irelia",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/IreliaE.png"
+  },
+  {
+    "clueId": "c_0239",
+    "championId": "Irelia",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/IreliaR.png"
+  },
+  {
+    "clueId": "c_0240",
+    "championId": "Irelia",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Irelia_Passive.png"
+  },
+  {
+    "clueId": "c_0241",
+    "championId": "Ivern",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/IvernQ.png"
+  },
+  {
+    "clueId": "c_0242",
+    "championId": "Ivern",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/IvernW.png"
+  },
+  {
+    "clueId": "c_0243",
+    "championId": "Ivern",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/IvernE.png"
+  },
+  {
+    "clueId": "c_0244",
+    "championId": "Ivern",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/IvernR.png"
+  },
+  {
+    "clueId": "c_0245",
+    "championId": "Ivern",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/IvernP.png"
+  },
+  {
+    "clueId": "c_0246",
+    "championId": "Janna",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/HowlingGale.png"
+  },
+  {
+    "clueId": "c_0247",
+    "championId": "Janna",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SowTheWind.png"
+  },
+  {
+    "clueId": "c_0248",
+    "championId": "Janna",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/EyeOfTheStorm.png"
+  },
+  {
+    "clueId": "c_0249",
+    "championId": "Janna",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ReapTheWhirlwind.png"
+  },
+  {
+    "clueId": "c_0250",
+    "championId": "Janna",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/JannaP.png"
+  },
+  {
+    "clueId": "c_0251",
+    "championId": "JarvanIV",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JarvanIVDragonStrike.png"
+  },
+  {
+    "clueId": "c_0252",
+    "championId": "JarvanIV",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JarvanIVGoldenAegis.png"
+  },
+  {
+    "clueId": "c_0253",
+    "championId": "JarvanIV",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JarvanIVDemacianStandard.png"
+  },
+  {
+    "clueId": "c_0254",
+    "championId": "JarvanIV",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JarvanIVCataclysm.png"
+  },
+  {
+    "clueId": "c_0255",
+    "championId": "JarvanIV",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/JarvanIVP.png"
+  },
+  {
+    "clueId": "c_0256",
+    "championId": "Jax",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JaxQ.png"
+  },
+  {
+    "clueId": "c_0257",
+    "championId": "Jax",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JaxW.png"
+  },
+  {
+    "clueId": "c_0258",
+    "championId": "Jax",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JaxE.png"
+  },
+  {
+    "clueId": "c_0259",
+    "championId": "Jax",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JaxR.png"
+  },
+  {
+    "clueId": "c_0260",
+    "championId": "Jax",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Armsmaster_MasterOfArms.png"
+  },
+  {
+    "clueId": "c_0261",
+    "championId": "Jayce",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JayceToTheSkies.png"
+  },
+  {
+    "clueId": "c_0262",
+    "championId": "Jayce",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JayceStaticField.png"
+  },
+  {
+    "clueId": "c_0263",
+    "championId": "Jayce",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JayceThunderingBlow.png"
+  },
+  {
+    "clueId": "c_0264",
+    "championId": "Jayce",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JayceStanceHtG.png"
+  },
+  {
+    "clueId": "c_0265",
+    "championId": "Jayce",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Jayce_Passive.png"
+  },
+  {
+    "clueId": "c_0266",
+    "championId": "Jhin",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JhinQ.png"
+  },
+  {
+    "clueId": "c_0267",
+    "championId": "Jhin",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JhinW.png"
+  },
+  {
+    "clueId": "c_0268",
+    "championId": "Jhin",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JhinE.png"
+  },
+  {
+    "clueId": "c_0269",
+    "championId": "Jhin",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JhinR.png"
+  },
+  {
+    "clueId": "c_0270",
+    "championId": "Jhin",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Jhin_P.png"
+  },
+  {
+    "clueId": "c_0271",
+    "championId": "Jinx",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JinxQ.png"
+  },
+  {
+    "clueId": "c_0272",
+    "championId": "Jinx",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JinxW.png"
+  },
+  {
+    "clueId": "c_0273",
+    "championId": "Jinx",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JinxE.png"
+  },
+  {
+    "clueId": "c_0274",
+    "championId": "Jinx",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JinxR.png"
+  },
+  {
+    "clueId": "c_0275",
+    "championId": "Jinx",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Jinx_Passive.png"
+  },
+  {
+    "clueId": "c_0276",
+    "championId": "KSante",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KSanteQ.png"
+  },
+  {
+    "clueId": "c_0277",
+    "championId": "KSante",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KSanteW.png"
+  },
+  {
+    "clueId": "c_0278",
+    "championId": "KSante",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KSanteE.png"
+  },
+  {
+    "clueId": "c_0279",
+    "championId": "KSante",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KSanteR.png"
+  },
+  {
+    "clueId": "c_0280",
+    "championId": "KSante",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Icons_KSante_P.png"
+  },
+  {
+    "clueId": "c_0281",
+    "championId": "Kaisa",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KaisaQ.png"
+  },
+  {
+    "clueId": "c_0282",
+    "championId": "Kaisa",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KaisaW.png"
+  },
+  {
+    "clueId": "c_0283",
+    "championId": "Kaisa",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KaisaE.png"
+  },
+  {
+    "clueId": "c_0284",
+    "championId": "Kaisa",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KaisaR.png"
+  },
+  {
+    "clueId": "c_0285",
+    "championId": "Kaisa",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Kaisa_Passive.png"
+  },
+  {
+    "clueId": "c_0286",
+    "championId": "Kalista",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KalistaMysticShot.png"
+  },
+  {
+    "clueId": "c_0287",
+    "championId": "Kalista",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KalistaW.png"
+  },
+  {
+    "clueId": "c_0288",
+    "championId": "Kalista",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KalistaExpungeWrapper.png"
+  },
+  {
+    "clueId": "c_0289",
+    "championId": "Kalista",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KalistaRx.png"
+  },
+  {
+    "clueId": "c_0290",
+    "championId": "Kalista",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Kalista_Passive.png"
+  },
+  {
+    "clueId": "c_0291",
+    "championId": "Karma",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KarmaQ.png"
+  },
+  {
+    "clueId": "c_0292",
+    "championId": "Karma",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KarmaSpiritBind.png"
+  },
+  {
+    "clueId": "c_0293",
+    "championId": "Karma",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KarmaSolKimShield.png"
+  },
+  {
+    "clueId": "c_0294",
+    "championId": "Karma",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KarmaMantra.png"
+  },
+  {
+    "clueId": "c_0295",
+    "championId": "Karma",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Karma_Passive.png"
+  },
+  {
+    "clueId": "c_0296",
+    "championId": "Karthus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KarthusLayWasteA1.png"
+  },
+  {
+    "clueId": "c_0297",
+    "championId": "Karthus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KarthusWallOfPain.png"
+  },
+  {
+    "clueId": "c_0298",
+    "championId": "Karthus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KarthusDefile.png"
+  },
+  {
+    "clueId": "c_0299",
+    "championId": "Karthus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KarthusFallenOne.png"
+  },
+  {
+    "clueId": "c_0300",
+    "championId": "Karthus",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Karthus_Passive.png"
+  },
+  {
+    "clueId": "c_0301",
+    "championId": "Kassadin",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NullLance.png"
+  },
+  {
+    "clueId": "c_0302",
+    "championId": "Kassadin",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NetherBlade.png"
+  },
+  {
+    "clueId": "c_0303",
+    "championId": "Kassadin",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ForcePulse.png"
+  },
+  {
+    "clueId": "c_0304",
+    "championId": "Kassadin",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RiftWalk.png"
+  },
+  {
+    "clueId": "c_0305",
+    "championId": "Kassadin",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Kassadin_Passive.png"
+  },
+  {
+    "clueId": "c_0306",
+    "championId": "Katarina",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KatarinaQ.png"
+  },
+  {
+    "clueId": "c_0307",
+    "championId": "Katarina",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KatarinaW.png"
+  },
+  {
+    "clueId": "c_0308",
+    "championId": "Katarina",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KatarinaEWrapper.png"
+  },
+  {
+    "clueId": "c_0309",
+    "championId": "Katarina",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KatarinaR.png"
+  },
+  {
+    "clueId": "c_0310",
+    "championId": "Katarina",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Katarina_Passive.png"
+  },
+  {
+    "clueId": "c_0311",
+    "championId": "Kayle",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KayleQ.png"
+  },
+  {
+    "clueId": "c_0312",
+    "championId": "Kayle",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KayleW.png"
+  },
+  {
+    "clueId": "c_0313",
+    "championId": "Kayle",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KayleE.png"
+  },
+  {
+    "clueId": "c_0314",
+    "championId": "Kayle",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KayleR.png"
+  },
+  {
+    "clueId": "c_0315",
+    "championId": "Kayle",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Kayle_P.png"
+  },
+  {
+    "clueId": "c_0316",
+    "championId": "Kayn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KaynQ.png"
+  },
+  {
+    "clueId": "c_0317",
+    "championId": "Kayn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KaynW.png"
+  },
+  {
+    "clueId": "c_0318",
+    "championId": "Kayn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KaynE.png"
+  },
+  {
+    "clueId": "c_0319",
+    "championId": "Kayn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KaynR.png"
+  },
+  {
+    "clueId": "c_0320",
+    "championId": "Kayn",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Kayn_Passive_Primary.png"
+  },
+  {
+    "clueId": "c_0321",
+    "championId": "Kennen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KennenShurikenHurlMissile1.png"
+  },
+  {
+    "clueId": "c_0322",
+    "championId": "Kennen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KennenBringTheLight.png"
+  },
+  {
+    "clueId": "c_0323",
+    "championId": "Kennen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KennenLightningRush.png"
+  },
+  {
+    "clueId": "c_0324",
+    "championId": "Kennen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KennenShurikenStorm.png"
+  },
+  {
+    "clueId": "c_0325",
+    "championId": "Kennen",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Kennen_Passive.png"
+  },
+  {
+    "clueId": "c_0326",
+    "championId": "Khazix",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KhazixQ.png"
+  },
+  {
+    "clueId": "c_0327",
+    "championId": "Khazix",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KhazixW.png"
+  },
+  {
+    "clueId": "c_0328",
+    "championId": "Khazix",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KhazixE.png"
+  },
+  {
+    "clueId": "c_0329",
+    "championId": "Khazix",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KhazixR.png"
+  },
+  {
+    "clueId": "c_0330",
+    "championId": "Khazix",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Khazix_P.png"
+  },
+  {
+    "clueId": "c_0331",
+    "championId": "Kindred",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KindredQ.png"
+  },
+  {
+    "clueId": "c_0332",
+    "championId": "Kindred",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KindredW.png"
+  },
+  {
+    "clueId": "c_0333",
+    "championId": "Kindred",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KindredEWrapper.png"
+  },
+  {
+    "clueId": "c_0334",
+    "championId": "Kindred",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KindredR.png"
+  },
+  {
+    "clueId": "c_0335",
+    "championId": "Kindred",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Kindred_Passive.png"
+  },
+  {
+    "clueId": "c_0336",
+    "championId": "Kled",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KledQ.png"
+  },
+  {
+    "clueId": "c_0337",
+    "championId": "Kled",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KledW.png"
+  },
+  {
+    "clueId": "c_0338",
+    "championId": "Kled",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KledE.png"
+  },
+  {
+    "clueId": "c_0339",
+    "championId": "Kled",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KledR.png"
+  },
+  {
+    "clueId": "c_0340",
+    "championId": "Kled",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Kled_P.png"
+  },
+  {
+    "clueId": "c_0341",
+    "championId": "KogMaw",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KogMawQ.png"
+  },
+  {
+    "clueId": "c_0342",
+    "championId": "KogMaw",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KogMawBioArcaneBarrage.png"
+  },
+  {
+    "clueId": "c_0343",
+    "championId": "KogMaw",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KogMawVoidOoze.png"
+  },
+  {
+    "clueId": "c_0344",
+    "championId": "KogMaw",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/KogMawLivingArtillery.png"
+  },
+  {
+    "clueId": "c_0345",
+    "championId": "KogMaw",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/KogMaw_IcathianSurprise.png"
+  },
+  {
+    "clueId": "c_0346",
+    "championId": "Leblanc",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LeblancQ.png"
+  },
+  {
+    "clueId": "c_0347",
+    "championId": "Leblanc",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LeblancW.png"
+  },
+  {
+    "clueId": "c_0348",
+    "championId": "Leblanc",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LeblancE.png"
+  },
+  {
+    "clueId": "c_0349",
+    "championId": "Leblanc",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LeblancR.png"
+  },
+  {
+    "clueId": "c_0350",
+    "championId": "Leblanc",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/LeblancP.png"
+  },
+  {
+    "clueId": "c_0351",
+    "championId": "LeeSin",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LeeSinQOne.png"
+  },
+  {
+    "clueId": "c_0352",
+    "championId": "LeeSin",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LeeSinWOne.png"
+  },
+  {
+    "clueId": "c_0353",
+    "championId": "LeeSin",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LeeSinEOne.png"
+  },
+  {
+    "clueId": "c_0354",
+    "championId": "LeeSin",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LeeSinR.png"
+  },
+  {
+    "clueId": "c_0355",
+    "championId": "LeeSin",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/LeeSinPassive.png"
+  },
+  {
+    "clueId": "c_0356",
+    "championId": "Leona",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LeonaShieldOfDaybreak.png"
+  },
+  {
+    "clueId": "c_0357",
+    "championId": "Leona",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LeonaSolarBarrier.png"
+  },
+  {
+    "clueId": "c_0358",
+    "championId": "Leona",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LeonaZenithBlade.png"
+  },
+  {
+    "clueId": "c_0359",
+    "championId": "Leona",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LeonaSolarFlare.png"
+  },
+  {
+    "clueId": "c_0360",
+    "championId": "Leona",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/LeonaSunlight.png"
+  },
+  {
+    "clueId": "c_0361",
+    "championId": "Lillia",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LilliaQ.png"
+  },
+  {
+    "clueId": "c_0362",
+    "championId": "Lillia",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LilliaW.png"
+  },
+  {
+    "clueId": "c_0363",
+    "championId": "Lillia",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LilliaE.png"
+  },
+  {
+    "clueId": "c_0364",
+    "championId": "Lillia",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LilliaR.png"
+  },
+  {
+    "clueId": "c_0365",
+    "championId": "Lillia",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Lillia_Icon_Passive.png"
+  },
+  {
+    "clueId": "c_0366",
+    "championId": "Lissandra",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LissandraQ.png"
+  },
+  {
+    "clueId": "c_0367",
+    "championId": "Lissandra",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LissandraW.png"
+  },
+  {
+    "clueId": "c_0368",
+    "championId": "Lissandra",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LissandraE.png"
+  },
+  {
+    "clueId": "c_0369",
+    "championId": "Lissandra",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LissandraR.png"
+  },
+  {
+    "clueId": "c_0370",
+    "championId": "Lissandra",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Lissandra_Passive.png"
+  },
+  {
+    "clueId": "c_0371",
+    "championId": "Locke",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LockeQ.png"
+  },
+  {
+    "clueId": "c_0372",
+    "championId": "Locke",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LockeW.png"
+  },
+  {
+    "clueId": "c_0373",
+    "championId": "Locke",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LockeE.png"
+  },
+  {
+    "clueId": "c_0374",
+    "championId": "Locke",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LockeR.png"
+  },
+  {
+    "clueId": "c_0375",
+    "championId": "Locke",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Locke_Passive.png"
+  },
+  {
+    "clueId": "c_0376",
+    "championId": "Lucian",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LucianQ.png"
+  },
+  {
+    "clueId": "c_0377",
+    "championId": "Lucian",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LucianW.png"
+  },
+  {
+    "clueId": "c_0378",
+    "championId": "Lucian",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LucianE.png"
+  },
+  {
+    "clueId": "c_0379",
+    "championId": "Lucian",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LucianR.png"
+  },
+  {
+    "clueId": "c_0380",
+    "championId": "Lucian",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Lucian_Passive.png"
+  },
+  {
+    "clueId": "c_0381",
+    "championId": "Lulu",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LuluQ.png"
+  },
+  {
+    "clueId": "c_0382",
+    "championId": "Lulu",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LuluW.png"
+  },
+  {
+    "clueId": "c_0383",
+    "championId": "Lulu",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LuluE.png"
+  },
+  {
+    "clueId": "c_0384",
+    "championId": "Lulu",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LuluR.png"
+  },
+  {
+    "clueId": "c_0385",
+    "championId": "Lulu",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Lulu_PixFaerieCompanion.png"
+  },
+  {
+    "clueId": "c_0386",
+    "championId": "Lux",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LuxLightBinding.png"
+  },
+  {
+    "clueId": "c_0387",
+    "championId": "Lux",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LuxPrismaticWave.png"
+  },
+  {
+    "clueId": "c_0388",
+    "championId": "Lux",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LuxLightStrikeKugel.png"
+  },
+  {
+    "clueId": "c_0389",
+    "championId": "Lux",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/LuxR.png"
+  },
+  {
+    "clueId": "c_0390",
+    "championId": "Lux",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/LuxIlluminatingFraulein.png"
+  },
+  {
+    "clueId": "c_0391",
+    "championId": "Malphite",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SeismicShard.png"
+  },
+  {
+    "clueId": "c_0392",
+    "championId": "Malphite",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Obduracy.png"
+  },
+  {
+    "clueId": "c_0393",
+    "championId": "Malphite",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Landslide.png"
+  },
+  {
+    "clueId": "c_0394",
+    "championId": "Malphite",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/UFSlash.png"
+  },
+  {
+    "clueId": "c_0395",
+    "championId": "Malphite",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Malphite_GraniteShield.png"
+  },
+  {
+    "clueId": "c_0396",
+    "championId": "Malzahar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MalzaharQ.png"
+  },
+  {
+    "clueId": "c_0397",
+    "championId": "Malzahar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MalzaharW.png"
+  },
+  {
+    "clueId": "c_0398",
+    "championId": "Malzahar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MalzaharE.png"
+  },
+  {
+    "clueId": "c_0399",
+    "championId": "Malzahar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MalzaharR.png"
+  },
+  {
+    "clueId": "c_0400",
+    "championId": "Malzahar",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Malzahar_Passive.png"
+  },
+  {
+    "clueId": "c_0401",
+    "championId": "Maokai",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MaokaiQ.png"
+  },
+  {
+    "clueId": "c_0402",
+    "championId": "Maokai",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MaokaiW.png"
+  },
+  {
+    "clueId": "c_0403",
+    "championId": "Maokai",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MaokaiE.png"
+  },
+  {
+    "clueId": "c_0404",
+    "championId": "Maokai",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MaokaiR.png"
+  },
+  {
+    "clueId": "c_0405",
+    "championId": "Maokai",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Maokai_Passive.png"
+  },
+  {
+    "clueId": "c_0406",
+    "championId": "MasterYi",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AlphaStrike.png"
+  },
+  {
+    "clueId": "c_0407",
+    "championId": "MasterYi",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Meditate.png"
+  },
+  {
+    "clueId": "c_0408",
+    "championId": "MasterYi",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/WujuStyle.png"
+  },
+  {
+    "clueId": "c_0409",
+    "championId": "MasterYi",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Highlander.png"
+  },
+  {
+    "clueId": "c_0410",
+    "championId": "MasterYi",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/MasterYi_Passive1.png"
+  },
+  {
+    "clueId": "c_0411",
+    "championId": "Mel",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MelQ.png"
+  },
+  {
+    "clueId": "c_0412",
+    "championId": "Mel",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MelW.png"
+  },
+  {
+    "clueId": "c_0413",
+    "championId": "Mel",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MelE.png"
+  },
+  {
+    "clueId": "c_0414",
+    "championId": "Mel",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MelR.png"
+  },
+  {
+    "clueId": "c_0415",
+    "championId": "Mel",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Mel_Passive.png"
+  },
+  {
+    "clueId": "c_0416",
+    "championId": "Milio",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MilioQ.png"
+  },
+  {
+    "clueId": "c_0417",
+    "championId": "Milio",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MilioW.png"
+  },
+  {
+    "clueId": "c_0418",
+    "championId": "Milio",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MilioE.png"
+  },
+  {
+    "clueId": "c_0419",
+    "championId": "Milio",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MilioR.png"
+  },
+  {
+    "clueId": "c_0420",
+    "championId": "Milio",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Milio_P.png"
+  },
+  {
+    "clueId": "c_0421",
+    "championId": "MissFortune",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MissFortuneRicochetShot.png"
+  },
+  {
+    "clueId": "c_0422",
+    "championId": "MissFortune",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MissFortuneViciousStrikes.png"
+  },
+  {
+    "clueId": "c_0423",
+    "championId": "MissFortune",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MissFortuneScattershot.png"
+  },
+  {
+    "clueId": "c_0424",
+    "championId": "MissFortune",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MissFortuneBulletTime.png"
+  },
+  {
+    "clueId": "c_0425",
+    "championId": "MissFortune",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/MissFortune_W.png"
+  },
+  {
+    "clueId": "c_0426",
+    "championId": "MonkeyKing",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MonkeyKingDoubleAttack.png"
+  },
+  {
+    "clueId": "c_0427",
+    "championId": "MonkeyKing",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MonkeyKingDecoy.png"
+  },
+  {
+    "clueId": "c_0428",
+    "championId": "MonkeyKing",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MonkeyKingNimbus.png"
+  },
+  {
+    "clueId": "c_0429",
+    "championId": "MonkeyKing",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MonkeyKingSpinToWin.png"
+  },
+  {
+    "clueId": "c_0430",
+    "championId": "MonkeyKing",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/MonkeyKingStoneSkin.png"
+  },
+  {
+    "clueId": "c_0431",
+    "championId": "Mordekaiser",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MordekaiserQ.png"
+  },
+  {
+    "clueId": "c_0432",
+    "championId": "Mordekaiser",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MordekaiserW.png"
+  },
+  {
+    "clueId": "c_0433",
+    "championId": "Mordekaiser",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MordekaiserE.png"
+  },
+  {
+    "clueId": "c_0434",
+    "championId": "Mordekaiser",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MordekaiserR.png"
+  },
+  {
+    "clueId": "c_0435",
+    "championId": "Mordekaiser",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/MordekaiserPassive.png"
+  },
+  {
+    "clueId": "c_0436",
+    "championId": "Morgana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MorganaQ.png"
+  },
+  {
+    "clueId": "c_0437",
+    "championId": "Morgana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MorganaW.png"
+  },
+  {
+    "clueId": "c_0438",
+    "championId": "Morgana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MorganaE.png"
+  },
+  {
+    "clueId": "c_0439",
+    "championId": "Morgana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MorganaR.png"
+  },
+  {
+    "clueId": "c_0440",
+    "championId": "Morgana",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/FallenAngel_Empathize.png"
+  },
+  {
+    "clueId": "c_0441",
+    "championId": "Naafiri",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NaafiriQ.png"
+  },
+  {
+    "clueId": "c_0442",
+    "championId": "Naafiri",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NaafiriR.png"
+  },
+  {
+    "clueId": "c_0443",
+    "championId": "Naafiri",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NaafiriE.png"
+  },
+  {
+    "clueId": "c_0444",
+    "championId": "Naafiri",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NaafiriW.png"
+  },
+  {
+    "clueId": "c_0445",
+    "championId": "Naafiri",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Icons_Naafiri_P.png"
+  },
+  {
+    "clueId": "c_0446",
+    "championId": "Nami",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NamiQ.png"
+  },
+  {
+    "clueId": "c_0447",
+    "championId": "Nami",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NamiW.png"
+  },
+  {
+    "clueId": "c_0448",
+    "championId": "Nami",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NamiE.png"
+  },
+  {
+    "clueId": "c_0449",
+    "championId": "Nami",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NamiR.png"
+  },
+  {
+    "clueId": "c_0450",
+    "championId": "Nami",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/NamiPassive.png"
+  },
+  {
+    "clueId": "c_0451",
+    "championId": "Nasus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NasusQ.png"
+  },
+  {
+    "clueId": "c_0452",
+    "championId": "Nasus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NasusW.png"
+  },
+  {
+    "clueId": "c_0453",
+    "championId": "Nasus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NasusE.png"
+  },
+  {
+    "clueId": "c_0454",
+    "championId": "Nasus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NasusR.png"
+  },
+  {
+    "clueId": "c_0455",
+    "championId": "Nasus",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Nasus_Passive.png"
+  },
+  {
+    "clueId": "c_0456",
+    "championId": "Nautilus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NautilusAnchorDrag.png"
+  },
+  {
+    "clueId": "c_0457",
+    "championId": "Nautilus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NautilusPiercingGaze.png"
+  },
+  {
+    "clueId": "c_0458",
+    "championId": "Nautilus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NautilusSplashZone.png"
+  },
+  {
+    "clueId": "c_0459",
+    "championId": "Nautilus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NautilusGrandLine.png"
+  },
+  {
+    "clueId": "c_0460",
+    "championId": "Nautilus",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Nautilus_StaggeringBlow.png"
+  },
+  {
+    "clueId": "c_0461",
+    "championId": "Neeko",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NeekoQ.png"
+  },
+  {
+    "clueId": "c_0462",
+    "championId": "Neeko",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NeekoW.png"
+  },
+  {
+    "clueId": "c_0463",
+    "championId": "Neeko",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NeekoE.png"
+  },
+  {
+    "clueId": "c_0464",
+    "championId": "Neeko",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NeekoR.png"
+  },
+  {
+    "clueId": "c_0465",
+    "championId": "Neeko",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Neeko_P.png"
+  },
+  {
+    "clueId": "c_0466",
+    "championId": "Nidalee",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JavelinToss.png"
+  },
+  {
+    "clueId": "c_0467",
+    "championId": "Nidalee",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Bushwhack.png"
+  },
+  {
+    "clueId": "c_0468",
+    "championId": "Nidalee",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PrimalSurge.png"
+  },
+  {
+    "clueId": "c_0469",
+    "championId": "Nidalee",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/AspectOfTheCougar.png"
+  },
+  {
+    "clueId": "c_0470",
+    "championId": "Nidalee",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Nidalee_Passive.png"
+  },
+  {
+    "clueId": "c_0471",
+    "championId": "Nilah",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NilahQ.png"
+  },
+  {
+    "clueId": "c_0472",
+    "championId": "Nilah",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NilahW.png"
+  },
+  {
+    "clueId": "c_0473",
+    "championId": "Nilah",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NilahE.png"
+  },
+  {
+    "clueId": "c_0474",
+    "championId": "Nilah",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NilahR.png"
+  },
+  {
+    "clueId": "c_0475",
+    "championId": "Nilah",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/NIlahP.png"
+  },
+  {
+    "clueId": "c_0476",
+    "championId": "Nocturne",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NocturneDuskbringer.png"
+  },
+  {
+    "clueId": "c_0477",
+    "championId": "Nocturne",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NocturneShroudofDarkness.png"
+  },
+  {
+    "clueId": "c_0478",
+    "championId": "Nocturne",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NocturneUnspeakableHorror.png"
+  },
+  {
+    "clueId": "c_0479",
+    "championId": "Nocturne",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NocturneParanoia.png"
+  },
+  {
+    "clueId": "c_0480",
+    "championId": "Nocturne",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Nocturne_UmbraBlades.png"
+  },
+  {
+    "clueId": "c_0481",
+    "championId": "Nunu",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NunuQ.png"
+  },
+  {
+    "clueId": "c_0482",
+    "championId": "Nunu",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NunuW.png"
+  },
+  {
+    "clueId": "c_0483",
+    "championId": "Nunu",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NunuE.png"
+  },
+  {
+    "clueId": "c_0484",
+    "championId": "Nunu",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/NunuR.png"
+  },
+  {
+    "clueId": "c_0485",
+    "championId": "Nunu",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/NunuPassive.png"
+  },
+  {
+    "clueId": "c_0486",
+    "championId": "Olaf",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/OlafAxeThrowCast.png"
+  },
+  {
+    "clueId": "c_0487",
+    "championId": "Olaf",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/OlafFrenziedStrikes.png"
+  },
+  {
+    "clueId": "c_0488",
+    "championId": "Olaf",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/OlafRecklessStrike.png"
+  },
+  {
+    "clueId": "c_0489",
+    "championId": "Olaf",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/OlafRagnarok.png"
+  },
+  {
+    "clueId": "c_0490",
+    "championId": "Olaf",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Olaf_Passive.png"
+  },
+  {
+    "clueId": "c_0491",
+    "championId": "Orianna",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/OrianaIzunaCommand.png"
+  },
+  {
+    "clueId": "c_0492",
+    "championId": "Orianna",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/OrianaDissonanceCommand.png"
+  },
+  {
+    "clueId": "c_0493",
+    "championId": "Orianna",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/OrianaRedactCommand.png"
+  },
+  {
+    "clueId": "c_0494",
+    "championId": "Orianna",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/OrianaDetonateCommand.png"
+  },
+  {
+    "clueId": "c_0495",
+    "championId": "Orianna",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/OriannaPassive.png"
+  },
+  {
+    "clueId": "c_0496",
+    "championId": "Ornn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/OrnnQ.png"
+  },
+  {
+    "clueId": "c_0497",
+    "championId": "Ornn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/OrnnW.png"
+  },
+  {
+    "clueId": "c_0498",
+    "championId": "Ornn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/OrnnE.png"
+  },
+  {
+    "clueId": "c_0499",
+    "championId": "Ornn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/OrnnR.png"
+  },
+  {
+    "clueId": "c_0500",
+    "championId": "Ornn",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/OrnnP.png"
+  },
+  {
+    "clueId": "c_0501",
+    "championId": "Pantheon",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PantheonQ.png"
+  },
+  {
+    "clueId": "c_0502",
+    "championId": "Pantheon",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PantheonW.png"
+  },
+  {
+    "clueId": "c_0503",
+    "championId": "Pantheon",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PantheonE.png"
+  },
+  {
+    "clueId": "c_0504",
+    "championId": "Pantheon",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PantheonR.png"
+  },
+  {
+    "clueId": "c_0505",
+    "championId": "Pantheon",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Pantheon_Passive.png"
+  },
+  {
+    "clueId": "c_0506",
+    "championId": "Poppy",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PoppyQ.png"
+  },
+  {
+    "clueId": "c_0507",
+    "championId": "Poppy",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PoppyW.png"
+  },
+  {
+    "clueId": "c_0508",
+    "championId": "Poppy",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PoppyE.png"
+  },
+  {
+    "clueId": "c_0509",
+    "championId": "Poppy",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PoppyR.png"
+  },
+  {
+    "clueId": "c_0510",
+    "championId": "Poppy",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Poppy_Passive.png"
+  },
+  {
+    "clueId": "c_0511",
+    "championId": "Pyke",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PykeQ.png"
+  },
+  {
+    "clueId": "c_0512",
+    "championId": "Pyke",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PykeW.png"
+  },
+  {
+    "clueId": "c_0513",
+    "championId": "Pyke",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PykeE.png"
+  },
+  {
+    "clueId": "c_0514",
+    "championId": "Pyke",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PykeR.png"
+  },
+  {
+    "clueId": "c_0515",
+    "championId": "Pyke",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/PykePassive.png"
+  },
+  {
+    "clueId": "c_0516",
+    "championId": "Qiyana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/QiyanaQ.png"
+  },
+  {
+    "clueId": "c_0517",
+    "championId": "Qiyana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/QiyanaW.png"
+  },
+  {
+    "clueId": "c_0518",
+    "championId": "Qiyana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/QiyanaE.png"
+  },
+  {
+    "clueId": "c_0519",
+    "championId": "Qiyana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/QiyanaR.png"
+  },
+  {
+    "clueId": "c_0520",
+    "championId": "Qiyana",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Qiyana_Passive.png"
+  },
+  {
+    "clueId": "c_0521",
+    "championId": "Quinn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/QuinnQ.png"
+  },
+  {
+    "clueId": "c_0522",
+    "championId": "Quinn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/QuinnW.png"
+  },
+  {
+    "clueId": "c_0523",
+    "championId": "Quinn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/QuinnE.png"
+  },
+  {
+    "clueId": "c_0524",
+    "championId": "Quinn",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/QuinnR.png"
+  },
+  {
+    "clueId": "c_0525",
+    "championId": "Quinn",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Quinn_Passive.png"
+  },
+  {
+    "clueId": "c_0526",
+    "championId": "Rakan",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RakanQ.png"
+  },
+  {
+    "clueId": "c_0527",
+    "championId": "Rakan",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RakanW.png"
+  },
+  {
+    "clueId": "c_0528",
+    "championId": "Rakan",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RakanE.png"
+  },
+  {
+    "clueId": "c_0529",
+    "championId": "Rakan",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RakanR.png"
+  },
+  {
+    "clueId": "c_0530",
+    "championId": "Rakan",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Rakan_P.png"
+  },
+  {
+    "clueId": "c_0531",
+    "championId": "Rammus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PowerBall.png"
+  },
+  {
+    "clueId": "c_0532",
+    "championId": "Rammus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/DefensiveBallCurl.png"
+  },
+  {
+    "clueId": "c_0533",
+    "championId": "Rammus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PuncturingTaunt.png"
+  },
+  {
+    "clueId": "c_0534",
+    "championId": "Rammus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Tremors2.png"
+  },
+  {
+    "clueId": "c_0535",
+    "championId": "Rammus",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Armordillo_ScavengeArmor.png"
+  },
+  {
+    "clueId": "c_0536",
+    "championId": "RekSai",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RekSaiQ.png"
+  },
+  {
+    "clueId": "c_0537",
+    "championId": "RekSai",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RekSaiW.png"
+  },
+  {
+    "clueId": "c_0538",
+    "championId": "RekSai",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RekSaiE.png"
+  },
+  {
+    "clueId": "c_0539",
+    "championId": "RekSai",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RekSaiR.png"
+  },
+  {
+    "clueId": "c_0540",
+    "championId": "RekSai",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/RekSai_Passive.png"
+  },
+  {
+    "clueId": "c_0541",
+    "championId": "Rell",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RellQ.png"
+  },
+  {
+    "clueId": "c_0542",
+    "championId": "Rell",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RellW_Dismount.png"
+  },
+  {
+    "clueId": "c_0543",
+    "championId": "Rell",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RellE.png"
+  },
+  {
+    "clueId": "c_0544",
+    "championId": "Rell",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RellR.png"
+  },
+  {
+    "clueId": "c_0545",
+    "championId": "Rell",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/RellP.png"
+  },
+  {
+    "clueId": "c_0546",
+    "championId": "Renata",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RenataQ.png"
+  },
+  {
+    "clueId": "c_0547",
+    "championId": "Renata",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RenataW.png"
+  },
+  {
+    "clueId": "c_0548",
+    "championId": "Renata",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RenataE.png"
+  },
+  {
+    "clueId": "c_0549",
+    "championId": "Renata",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RenataR.png"
+  },
+  {
+    "clueId": "c_0550",
+    "championId": "Renata",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Renata_P.png"
+  },
+  {
+    "clueId": "c_0551",
+    "championId": "Renekton",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RenektonCleave.png"
+  },
+  {
+    "clueId": "c_0552",
+    "championId": "Renekton",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RenektonPreExecute.png"
+  },
+  {
+    "clueId": "c_0553",
+    "championId": "Renekton",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RenektonSliceAndDice.png"
+  },
+  {
+    "clueId": "c_0554",
+    "championId": "Renekton",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RenektonReignOfTheTyrant.png"
+  },
+  {
+    "clueId": "c_0555",
+    "championId": "Renekton",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Renekton_Passive.png"
+  },
+  {
+    "clueId": "c_0556",
+    "championId": "Rengar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RengarQ.png"
+  },
+  {
+    "clueId": "c_0557",
+    "championId": "Rengar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RengarW.png"
+  },
+  {
+    "clueId": "c_0558",
+    "championId": "Rengar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RengarE.png"
+  },
+  {
+    "clueId": "c_0559",
+    "championId": "Rengar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RengarR.png"
+  },
+  {
+    "clueId": "c_0560",
+    "championId": "Rengar",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Rengar_P.png"
+  },
+  {
+    "clueId": "c_0561",
+    "championId": "Riven",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RivenTriCleave.png"
+  },
+  {
+    "clueId": "c_0562",
+    "championId": "Riven",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RivenMartyr.png"
+  },
+  {
+    "clueId": "c_0563",
+    "championId": "Riven",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RivenFeint.png"
+  },
+  {
+    "clueId": "c_0564",
+    "championId": "Riven",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RivenFengShuiEngine.png"
+  },
+  {
+    "clueId": "c_0565",
+    "championId": "Riven",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/RivenRunicBlades.png"
+  },
+  {
+    "clueId": "c_0566",
+    "championId": "Rumble",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RumbleFlameThrower.png"
+  },
+  {
+    "clueId": "c_0567",
+    "championId": "Rumble",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RumbleShield.png"
+  },
+  {
+    "clueId": "c_0568",
+    "championId": "Rumble",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RumbleGrenade.png"
+  },
+  {
+    "clueId": "c_0569",
+    "championId": "Rumble",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RumbleCarpetBomb.png"
+  },
+  {
+    "clueId": "c_0570",
+    "championId": "Rumble",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Rumble_JunkyardTitan1.png"
+  },
+  {
+    "clueId": "c_0571",
+    "championId": "Ryze",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RyzeQWrapper.png"
+  },
+  {
+    "clueId": "c_0572",
+    "championId": "Ryze",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RyzeW.png"
+  },
+  {
+    "clueId": "c_0573",
+    "championId": "Ryze",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RyzeE.png"
+  },
+  {
+    "clueId": "c_0574",
+    "championId": "Ryze",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/RyzeR.png"
+  },
+  {
+    "clueId": "c_0575",
+    "championId": "Ryze",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Ryze_P.png"
+  },
+  {
+    "clueId": "c_0576",
+    "championId": "Samira",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SamiraQ.png"
+  },
+  {
+    "clueId": "c_0577",
+    "championId": "Samira",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SamiraW.png"
+  },
+  {
+    "clueId": "c_0578",
+    "championId": "Samira",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SamiraE.png"
+  },
+  {
+    "clueId": "c_0579",
+    "championId": "Samira",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SamiraR.png"
+  },
+  {
+    "clueId": "c_0580",
+    "championId": "Samira",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/SamiraP.png"
+  },
+  {
+    "clueId": "c_0581",
+    "championId": "Sejuani",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SejuaniQ.png"
+  },
+  {
+    "clueId": "c_0582",
+    "championId": "Sejuani",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SejuaniW.png"
+  },
+  {
+    "clueId": "c_0583",
+    "championId": "Sejuani",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SejuaniE.png"
+  },
+  {
+    "clueId": "c_0584",
+    "championId": "Sejuani",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SejuaniR.png"
+  },
+  {
+    "clueId": "c_0585",
+    "championId": "Sejuani",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Sejuani_passive.png"
+  },
+  {
+    "clueId": "c_0586",
+    "championId": "Senna",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SennaQ.png"
+  },
+  {
+    "clueId": "c_0587",
+    "championId": "Senna",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SennaW.png"
+  },
+  {
+    "clueId": "c_0588",
+    "championId": "Senna",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SennaE.png"
+  },
+  {
+    "clueId": "c_0589",
+    "championId": "Senna",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SennaR.png"
+  },
+  {
+    "clueId": "c_0590",
+    "championId": "Senna",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Senna_Passive.png"
+  },
+  {
+    "clueId": "c_0591",
+    "championId": "Seraphine",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SeraphineQ.png"
+  },
+  {
+    "clueId": "c_0592",
+    "championId": "Seraphine",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SeraphineW.png"
+  },
+  {
+    "clueId": "c_0593",
+    "championId": "Seraphine",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SeraphineE.png"
+  },
+  {
+    "clueId": "c_0594",
+    "championId": "Seraphine",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SeraphineR.png"
+  },
+  {
+    "clueId": "c_0595",
+    "championId": "Seraphine",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Seraphine_Passive.png"
+  },
+  {
+    "clueId": "c_0596",
+    "championId": "Sett",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SettQ.png"
+  },
+  {
+    "clueId": "c_0597",
+    "championId": "Sett",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SettW.png"
+  },
+  {
+    "clueId": "c_0598",
+    "championId": "Sett",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SettE.png"
+  },
+  {
+    "clueId": "c_0599",
+    "championId": "Sett",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SettR.png"
+  },
+  {
+    "clueId": "c_0600",
+    "championId": "Sett",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Sett_P.png"
+  },
+  {
+    "clueId": "c_0601",
+    "championId": "Shaco",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Deceive.png"
+  },
+  {
+    "clueId": "c_0602",
+    "championId": "Shaco",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/JackInTheBox.png"
+  },
+  {
+    "clueId": "c_0603",
+    "championId": "Shaco",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TwoShivPoison.png"
+  },
+  {
+    "clueId": "c_0604",
+    "championId": "Shaco",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/HallucinateFull.png"
+  },
+  {
+    "clueId": "c_0605",
+    "championId": "Shaco",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Jester_CarefulStrikes.png"
+  },
+  {
+    "clueId": "c_0606",
+    "championId": "Shen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ShenQ.png"
+  },
+  {
+    "clueId": "c_0607",
+    "championId": "Shen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ShenW.png"
+  },
+  {
+    "clueId": "c_0608",
+    "championId": "Shen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ShenE.png"
+  },
+  {
+    "clueId": "c_0609",
+    "championId": "Shen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ShenR.png"
+  },
+  {
+    "clueId": "c_0610",
+    "championId": "Shen",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Shen_Passive.png"
+  },
+  {
+    "clueId": "c_0611",
+    "championId": "Shyvana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ShyvanaQ.png"
+  },
+  {
+    "clueId": "c_0612",
+    "championId": "Shyvana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ShyvanaW.png"
+  },
+  {
+    "clueId": "c_0613",
+    "championId": "Shyvana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ShyvanaE.png"
+  },
+  {
+    "clueId": "c_0614",
+    "championId": "Shyvana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ShyvanaR.png"
+  },
+  {
+    "clueId": "c_0615",
+    "championId": "Shyvana",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Shyvana_Passive.png"
+  },
+  {
+    "clueId": "c_0616",
+    "championId": "Singed",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PoisonTrail.png"
+  },
+  {
+    "clueId": "c_0617",
+    "championId": "Singed",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/MegaAdhesive.png"
+  },
+  {
+    "clueId": "c_0618",
+    "championId": "Singed",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Fling.png"
+  },
+  {
+    "clueId": "c_0619",
+    "championId": "Singed",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/InsanityPotion.png"
+  },
+  {
+    "clueId": "c_0620",
+    "championId": "Singed",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Singed_Passive.png"
+  },
+  {
+    "clueId": "c_0621",
+    "championId": "Sion",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SionQ.png"
+  },
+  {
+    "clueId": "c_0622",
+    "championId": "Sion",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SionW.png"
+  },
+  {
+    "clueId": "c_0623",
+    "championId": "Sion",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SionE.png"
+  },
+  {
+    "clueId": "c_0624",
+    "championId": "Sion",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SionR.png"
+  },
+  {
+    "clueId": "c_0625",
+    "championId": "Sion",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Sion_Passive1.png"
+  },
+  {
+    "clueId": "c_0626",
+    "championId": "Sivir",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SivirQ.png"
+  },
+  {
+    "clueId": "c_0627",
+    "championId": "Sivir",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SivirW.png"
+  },
+  {
+    "clueId": "c_0628",
+    "championId": "Sivir",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SivirE.png"
+  },
+  {
+    "clueId": "c_0629",
+    "championId": "Sivir",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SivirR.png"
+  },
+  {
+    "clueId": "c_0630",
+    "championId": "Sivir",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Sivir_Passive.png"
+  },
+  {
+    "clueId": "c_0631",
+    "championId": "Skarner",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SkarnerQ.png"
+  },
+  {
+    "clueId": "c_0632",
+    "championId": "Skarner",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SkarnerW.png"
+  },
+  {
+    "clueId": "c_0633",
+    "championId": "Skarner",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SkarnerE.png"
+  },
+  {
+    "clueId": "c_0634",
+    "championId": "Skarner",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SkarnerR.png"
+  },
+  {
+    "clueId": "c_0635",
+    "championId": "Skarner",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Skarner_Passive.png"
+  },
+  {
+    "clueId": "c_0636",
+    "championId": "Smolder",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SmolderQ.png"
+  },
+  {
+    "clueId": "c_0637",
+    "championId": "Smolder",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SmolderW.png"
+  },
+  {
+    "clueId": "c_0638",
+    "championId": "Smolder",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SmolderE.png"
+  },
+  {
+    "clueId": "c_0639",
+    "championId": "Smolder",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SmolderR.png"
+  },
+  {
+    "clueId": "c_0640",
+    "championId": "Smolder",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Icons_Smolder_Passive.png"
+  },
+  {
+    "clueId": "c_0641",
+    "championId": "Sona",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SonaQ.png"
+  },
+  {
+    "clueId": "c_0642",
+    "championId": "Sona",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SonaW.png"
+  },
+  {
+    "clueId": "c_0643",
+    "championId": "Sona",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SonaE.png"
+  },
+  {
+    "clueId": "c_0644",
+    "championId": "Sona",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SonaR.png"
+  },
+  {
+    "clueId": "c_0645",
+    "championId": "Sona",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Sona_Passive_Charged.png"
+  },
+  {
+    "clueId": "c_0646",
+    "championId": "Soraka",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SorakaQ.png"
+  },
+  {
+    "clueId": "c_0647",
+    "championId": "Soraka",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SorakaW.png"
+  },
+  {
+    "clueId": "c_0648",
+    "championId": "Soraka",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SorakaE.png"
+  },
+  {
+    "clueId": "c_0649",
+    "championId": "Soraka",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SorakaR.png"
+  },
+  {
+    "clueId": "c_0650",
+    "championId": "Soraka",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Soraka_Passive.png"
+  },
+  {
+    "clueId": "c_0651",
+    "championId": "Swain",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SwainQ.png"
+  },
+  {
+    "clueId": "c_0652",
+    "championId": "Swain",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SwainW.png"
+  },
+  {
+    "clueId": "c_0653",
+    "championId": "Swain",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SwainE.png"
+  },
+  {
+    "clueId": "c_0654",
+    "championId": "Swain",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SwainR.png"
+  },
+  {
+    "clueId": "c_0655",
+    "championId": "Swain",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Swain_P.png"
+  },
+  {
+    "clueId": "c_0656",
+    "championId": "Sylas",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SylasQ.png"
+  },
+  {
+    "clueId": "c_0657",
+    "championId": "Sylas",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SylasW.png"
+  },
+  {
+    "clueId": "c_0658",
+    "championId": "Sylas",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SylasE.png"
+  },
+  {
+    "clueId": "c_0659",
+    "championId": "Sylas",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SylasR.png"
+  },
+  {
+    "clueId": "c_0660",
+    "championId": "Sylas",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/SylasP.png"
+  },
+  {
+    "clueId": "c_0661",
+    "championId": "Syndra",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SyndraQ.png"
+  },
+  {
+    "clueId": "c_0662",
+    "championId": "Syndra",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SyndraW.png"
+  },
+  {
+    "clueId": "c_0663",
+    "championId": "Syndra",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SyndraE.png"
+  },
+  {
+    "clueId": "c_0664",
+    "championId": "Syndra",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/SyndraR.png"
+  },
+  {
+    "clueId": "c_0665",
+    "championId": "Syndra",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/SyndraPassive.png"
+  },
+  {
+    "clueId": "c_0666",
+    "championId": "TahmKench",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TahmKenchQ.png"
+  },
+  {
+    "clueId": "c_0667",
+    "championId": "TahmKench",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TahmKenchW.png"
+  },
+  {
+    "clueId": "c_0668",
+    "championId": "TahmKench",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TahmKenchE.png"
+  },
+  {
+    "clueId": "c_0669",
+    "championId": "TahmKench",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TahmKenchRWrapper.png"
+  },
+  {
+    "clueId": "c_0670",
+    "championId": "TahmKench",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/TahmKenchP.png"
+  },
+  {
+    "clueId": "c_0671",
+    "championId": "Taliyah",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TaliyahQ.png"
+  },
+  {
+    "clueId": "c_0672",
+    "championId": "Taliyah",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TaliyahWVC.png"
+  },
+  {
+    "clueId": "c_0673",
+    "championId": "Taliyah",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TaliyahE.png"
+  },
+  {
+    "clueId": "c_0674",
+    "championId": "Taliyah",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TaliyahR.png"
+  },
+  {
+    "clueId": "c_0675",
+    "championId": "Taliyah",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Taliyah_Passive.png"
+  },
+  {
+    "clueId": "c_0676",
+    "championId": "Talon",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TalonQ.png"
+  },
+  {
+    "clueId": "c_0677",
+    "championId": "Talon",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TalonW.png"
+  },
+  {
+    "clueId": "c_0678",
+    "championId": "Talon",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TalonE.png"
+  },
+  {
+    "clueId": "c_0679",
+    "championId": "Talon",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TalonR.png"
+  },
+  {
+    "clueId": "c_0680",
+    "championId": "Talon",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/TalonP.png"
+  },
+  {
+    "clueId": "c_0681",
+    "championId": "Taric",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TaricQ.png"
+  },
+  {
+    "clueId": "c_0682",
+    "championId": "Taric",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TaricW.png"
+  },
+  {
+    "clueId": "c_0683",
+    "championId": "Taric",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TaricE.png"
+  },
+  {
+    "clueId": "c_0684",
+    "championId": "Taric",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TaricR.png"
+  },
+  {
+    "clueId": "c_0685",
+    "championId": "Taric",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Taric_Passive.png"
+  },
+  {
+    "clueId": "c_0686",
+    "championId": "Teemo",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TeemoQ.png"
+  },
+  {
+    "clueId": "c_0687",
+    "championId": "Teemo",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TeemoW.png"
+  },
+  {
+    "clueId": "c_0688",
+    "championId": "Teemo",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TeemoE.png"
+  },
+  {
+    "clueId": "c_0689",
+    "championId": "Teemo",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TeemoR.png"
+  },
+  {
+    "clueId": "c_0690",
+    "championId": "Teemo",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/TeemoPassive.png"
+  },
+  {
+    "clueId": "c_0691",
+    "championId": "Thresh",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ThreshQ.png"
+  },
+  {
+    "clueId": "c_0692",
+    "championId": "Thresh",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ThreshW.png"
+  },
+  {
+    "clueId": "c_0693",
+    "championId": "Thresh",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ThreshE.png"
+  },
+  {
+    "clueId": "c_0694",
+    "championId": "Thresh",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ThreshRPenta.png"
+  },
+  {
+    "clueId": "c_0695",
+    "championId": "Thresh",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Thresh_Passive.png"
+  },
+  {
+    "clueId": "c_0696",
+    "championId": "Tristana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TristanaQ.png"
+  },
+  {
+    "clueId": "c_0697",
+    "championId": "Tristana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TristanaW.png"
+  },
+  {
+    "clueId": "c_0698",
+    "championId": "Tristana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TristanaE.png"
+  },
+  {
+    "clueId": "c_0699",
+    "championId": "Tristana",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TristanaR.png"
+  },
+  {
+    "clueId": "c_0700",
+    "championId": "Tristana",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Tristana_Passive.png"
+  },
+  {
+    "clueId": "c_0701",
+    "championId": "Trundle",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TrundleTrollSmash.png"
+  },
+  {
+    "clueId": "c_0702",
+    "championId": "Trundle",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/trundledesecrate.png"
+  },
+  {
+    "clueId": "c_0703",
+    "championId": "Trundle",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TrundleCircle.png"
+  },
+  {
+    "clueId": "c_0704",
+    "championId": "Trundle",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TrundlePain.png"
+  },
+  {
+    "clueId": "c_0705",
+    "championId": "Trundle",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Trundle_Passive.png"
+  },
+  {
+    "clueId": "c_0706",
+    "championId": "Tryndamere",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TryndamereQ.png"
+  },
+  {
+    "clueId": "c_0707",
+    "championId": "Tryndamere",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TryndamereW.png"
+  },
+  {
+    "clueId": "c_0708",
+    "championId": "Tryndamere",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TryndamereE.png"
+  },
+  {
+    "clueId": "c_0709",
+    "championId": "Tryndamere",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/UndyingRage.png"
+  },
+  {
+    "clueId": "c_0710",
+    "championId": "Tryndamere",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Tryndamere_Passive.png"
+  },
+  {
+    "clueId": "c_0711",
+    "championId": "TwistedFate",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/WildCards.png"
+  },
+  {
+    "clueId": "c_0712",
+    "championId": "TwistedFate",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/PickACard.png"
+  },
+  {
+    "clueId": "c_0713",
+    "championId": "TwistedFate",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/CardmasterStack.png"
+  },
+  {
+    "clueId": "c_0714",
+    "championId": "TwistedFate",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/Destiny.png"
+  },
+  {
+    "clueId": "c_0715",
+    "championId": "TwistedFate",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Cardmaster_SealFate.png"
+  },
+  {
+    "clueId": "c_0716",
+    "championId": "Twitch",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TwitchHideInShadows.png"
+  },
+  {
+    "clueId": "c_0717",
+    "championId": "Twitch",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TwitchVenomCask.png"
+  },
+  {
+    "clueId": "c_0718",
+    "championId": "Twitch",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TwitchExpunge.png"
+  },
+  {
+    "clueId": "c_0719",
+    "championId": "Twitch",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TwitchFullAutomatic.png"
+  },
+  {
+    "clueId": "c_0720",
+    "championId": "Twitch",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Twitch_Passive.png"
+  },
+  {
+    "clueId": "c_0721",
+    "championId": "Udyr",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/UdyrQ.png"
+  },
+  {
+    "clueId": "c_0722",
+    "championId": "Udyr",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/UdyrW.png"
+  },
+  {
+    "clueId": "c_0723",
+    "championId": "Udyr",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/UdyrE.png"
+  },
+  {
+    "clueId": "c_0724",
+    "championId": "Udyr",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/UdyrR.png"
+  },
+  {
+    "clueId": "c_0725",
+    "championId": "Udyr",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Udyr_P.png"
+  },
+  {
+    "clueId": "c_0726",
+    "championId": "Urgot",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/UrgotQ.png"
+  },
+  {
+    "clueId": "c_0727",
+    "championId": "Urgot",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/UrgotW.png"
+  },
+  {
+    "clueId": "c_0728",
+    "championId": "Urgot",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/UrgotE.png"
+  },
+  {
+    "clueId": "c_0729",
+    "championId": "Urgot",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/UrgotR.png"
+  },
+  {
+    "clueId": "c_0730",
+    "championId": "Urgot",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Urgot_Passive.png"
+  },
+  {
+    "clueId": "c_0731",
+    "championId": "Varus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VarusQ.png"
+  },
+  {
+    "clueId": "c_0732",
+    "championId": "Varus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VarusW.png"
+  },
+  {
+    "clueId": "c_0733",
+    "championId": "Varus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VarusE.png"
+  },
+  {
+    "clueId": "c_0734",
+    "championId": "Varus",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VarusR.png"
+  },
+  {
+    "clueId": "c_0735",
+    "championId": "Varus",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/VarusPassive.png"
+  },
+  {
+    "clueId": "c_0736",
+    "championId": "Vayne",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VayneTumble.png"
+  },
+  {
+    "clueId": "c_0737",
+    "championId": "Vayne",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VayneSilveredBolts.png"
+  },
+  {
+    "clueId": "c_0738",
+    "championId": "Vayne",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VayneCondemn.png"
+  },
+  {
+    "clueId": "c_0739",
+    "championId": "Vayne",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VayneInquisition.png"
+  },
+  {
+    "clueId": "c_0740",
+    "championId": "Vayne",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Vayne_NightHunter.png"
+  },
+  {
+    "clueId": "c_0741",
+    "championId": "Veigar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VeigarBalefulStrike.png"
+  },
+  {
+    "clueId": "c_0742",
+    "championId": "Veigar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VeigarDarkMatter.png"
+  },
+  {
+    "clueId": "c_0743",
+    "championId": "Veigar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VeigarEventHorizon.png"
+  },
+  {
+    "clueId": "c_0744",
+    "championId": "Veigar",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VeigarR.png"
+  },
+  {
+    "clueId": "c_0745",
+    "championId": "Veigar",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/VeigarEntropy.png"
+  },
+  {
+    "clueId": "c_0746",
+    "championId": "Velkoz",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VelkozQ.png"
+  },
+  {
+    "clueId": "c_0747",
+    "championId": "Velkoz",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VelkozW.png"
+  },
+  {
+    "clueId": "c_0748",
+    "championId": "Velkoz",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VelkozE.png"
+  },
+  {
+    "clueId": "c_0749",
+    "championId": "Velkoz",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VelkozR.png"
+  },
+  {
+    "clueId": "c_0750",
+    "championId": "Velkoz",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/VelKoz_Passive.png"
+  },
+  {
+    "clueId": "c_0751",
+    "championId": "Vex",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VexQ.png"
+  },
+  {
+    "clueId": "c_0752",
+    "championId": "Vex",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VexW.png"
+  },
+  {
+    "clueId": "c_0753",
+    "championId": "Vex",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VexE.png"
+  },
+  {
+    "clueId": "c_0754",
+    "championId": "Vex",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VexR.png"
+  },
+  {
+    "clueId": "c_0755",
+    "championId": "Vex",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Icons_Vex_Passive.png"
+  },
+  {
+    "clueId": "c_0756",
+    "championId": "Vi",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ViQ.png"
+  },
+  {
+    "clueId": "c_0757",
+    "championId": "Vi",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ViW.png"
+  },
+  {
+    "clueId": "c_0758",
+    "championId": "Vi",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ViE.png"
+  },
+  {
+    "clueId": "c_0759",
+    "championId": "Vi",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ViR.png"
+  },
+  {
+    "clueId": "c_0760",
+    "championId": "Vi",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/ViPassive.png"
+  },
+  {
+    "clueId": "c_0761",
+    "championId": "Viego",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ViegoQ.png"
+  },
+  {
+    "clueId": "c_0762",
+    "championId": "Viego",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ViegoW.png"
+  },
+  {
+    "clueId": "c_0763",
+    "championId": "Viego",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ViegoE.png"
+  },
+  {
+    "clueId": "c_0764",
+    "championId": "Viego",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ViegoR.png"
+  },
+  {
+    "clueId": "c_0765",
+    "championId": "Viego",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Viego_Passive.png"
+  },
+  {
+    "clueId": "c_0766",
+    "championId": "Viktor",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ViktorQ.png"
+  },
+  {
+    "clueId": "c_0767",
+    "championId": "Viktor",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ViktorW.png"
+  },
+  {
+    "clueId": "c_0768",
+    "championId": "Viktor",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ViktorE.png"
+  },
+  {
+    "clueId": "c_0769",
+    "championId": "Viktor",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ViktorR.png"
+  },
+  {
+    "clueId": "c_0770",
+    "championId": "Viktor",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Viktor_Passive.png"
+  },
+  {
+    "clueId": "c_0771",
+    "championId": "Vladimir",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VladimirQ.png"
+  },
+  {
+    "clueId": "c_0772",
+    "championId": "Vladimir",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VladimirSanguinePool.png"
+  },
+  {
+    "clueId": "c_0773",
+    "championId": "Vladimir",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VladimirE.png"
+  },
+  {
+    "clueId": "c_0774",
+    "championId": "Vladimir",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VladimirHemoplague.png"
+  },
+  {
+    "clueId": "c_0775",
+    "championId": "Vladimir",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/VladimirP.png"
+  },
+  {
+    "clueId": "c_0776",
+    "championId": "Volibear",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VolibearQ.png"
+  },
+  {
+    "clueId": "c_0777",
+    "championId": "Volibear",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VolibearW.png"
+  },
+  {
+    "clueId": "c_0778",
+    "championId": "Volibear",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VolibearE.png"
+  },
+  {
+    "clueId": "c_0779",
+    "championId": "Volibear",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/VolibearR.png"
+  },
+  {
+    "clueId": "c_0780",
+    "championId": "Volibear",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Volibear_Icon_P.png"
+  },
+  {
+    "clueId": "c_0781",
+    "championId": "Warwick",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/WarwickQ.png"
+  },
+  {
+    "clueId": "c_0782",
+    "championId": "Warwick",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/WarwickW.png"
+  },
+  {
+    "clueId": "c_0783",
+    "championId": "Warwick",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/WarwickE.png"
+  },
+  {
+    "clueId": "c_0784",
+    "championId": "Warwick",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/WarwickR.png"
+  },
+  {
+    "clueId": "c_0785",
+    "championId": "Warwick",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/WarwickP.png"
+  },
+  {
+    "clueId": "c_0786",
+    "championId": "Xayah",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/XayahQ.png"
+  },
+  {
+    "clueId": "c_0787",
+    "championId": "Xayah",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/XayahW.png"
+  },
+  {
+    "clueId": "c_0788",
+    "championId": "Xayah",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/XayahE.png"
+  },
+  {
+    "clueId": "c_0789",
+    "championId": "Xayah",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/XayahR.png"
+  },
+  {
+    "clueId": "c_0790",
+    "championId": "Xayah",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/XayahPassive.png"
+  },
+  {
+    "clueId": "c_0791",
+    "championId": "Xerath",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/XerathArcanopulseChargeUp.png"
+  },
+  {
+    "clueId": "c_0792",
+    "championId": "Xerath",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/XerathArcaneBarrage2.png"
+  },
+  {
+    "clueId": "c_0793",
+    "championId": "Xerath",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/XerathMageSpear.png"
+  },
+  {
+    "clueId": "c_0794",
+    "championId": "Xerath",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/XerathLocusOfPower2.png"
+  },
+  {
+    "clueId": "c_0795",
+    "championId": "Xerath",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Xerath_Passive1.png"
+  },
+  {
+    "clueId": "c_0796",
+    "championId": "XinZhao",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/XinZhaoQ.png"
+  },
+  {
+    "clueId": "c_0797",
+    "championId": "XinZhao",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/XinZhaoW.png"
+  },
+  {
+    "clueId": "c_0798",
+    "championId": "XinZhao",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/XinZhaoE.png"
+  },
+  {
+    "clueId": "c_0799",
+    "championId": "XinZhao",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/XinZhaoR.png"
+  },
+  {
+    "clueId": "c_0800",
+    "championId": "XinZhao",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/XinZhaoReworkP.png"
+  },
+  {
+    "clueId": "c_0801",
+    "championId": "Yasuo",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YasuoQ1Wrapper.png"
+  },
+  {
+    "clueId": "c_0802",
+    "championId": "Yasuo",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YasuoW.png"
+  },
+  {
+    "clueId": "c_0803",
+    "championId": "Yasuo",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YasuoE.png"
+  },
+  {
+    "clueId": "c_0804",
+    "championId": "Yasuo",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YasuoR.png"
+  },
+  {
+    "clueId": "c_0805",
+    "championId": "Yasuo",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Yasuo_Passive.png"
+  },
+  {
+    "clueId": "c_0806",
+    "championId": "Yone",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YoneQ.png"
+  },
+  {
+    "clueId": "c_0807",
+    "championId": "Yone",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YoneW.png"
+  },
+  {
+    "clueId": "c_0808",
+    "championId": "Yone",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YoneE.png"
+  },
+  {
+    "clueId": "c_0809",
+    "championId": "Yone",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YoneR.png"
+  },
+  {
+    "clueId": "c_0810",
+    "championId": "Yone",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/YonePassive.png"
+  },
+  {
+    "clueId": "c_0811",
+    "championId": "Yorick",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YorickQ.png"
+  },
+  {
+    "clueId": "c_0812",
+    "championId": "Yorick",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YorickW.png"
+  },
+  {
+    "clueId": "c_0813",
+    "championId": "Yorick",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YorickE.png"
+  },
+  {
+    "clueId": "c_0814",
+    "championId": "Yorick",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YorickR.png"
+  },
+  {
+    "clueId": "c_0815",
+    "championId": "Yorick",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Yorick_P.png"
+  },
+  {
+    "clueId": "c_0816",
+    "championId": "Yunara",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YunaraQ.png"
+  },
+  {
+    "clueId": "c_0817",
+    "championId": "Yunara",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YunaraW.png"
+  },
+  {
+    "clueId": "c_0818",
+    "championId": "Yunara",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YunaraE.png"
+  },
+  {
+    "clueId": "c_0819",
+    "championId": "Yunara",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YunaraR.png"
+  },
+  {
+    "clueId": "c_0820",
+    "championId": "Yunara",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Yunara_Passive.png"
+  },
+  {
+    "clueId": "c_0821",
+    "championId": "Yuumi",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YuumiQ.png"
+  },
+  {
+    "clueId": "c_0822",
+    "championId": "Yuumi",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YuumiW.png"
+  },
+  {
+    "clueId": "c_0823",
+    "championId": "Yuumi",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YuumiE.png"
+  },
+  {
+    "clueId": "c_0824",
+    "championId": "Yuumi",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/YuumiR.png"
+  },
+  {
+    "clueId": "c_0825",
+    "championId": "Yuumi",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/YuumiP2.png"
+  },
+  {
+    "clueId": "c_0826",
+    "championId": "Zaahen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZaahenQ.png"
+  },
+  {
+    "clueId": "c_0827",
+    "championId": "Zaahen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZaahenW.png"
+  },
+  {
+    "clueId": "c_0828",
+    "championId": "Zaahen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZaahenE.png"
+  },
+  {
+    "clueId": "c_0829",
+    "championId": "Zaahen",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZaahenR.png"
+  },
+  {
+    "clueId": "c_0830",
+    "championId": "Zaahen",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/ZaahenP.png"
+  },
+  {
+    "clueId": "c_0831",
+    "championId": "Zac",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZacQ.png"
+  },
+  {
+    "clueId": "c_0832",
+    "championId": "Zac",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZacW.png"
+  },
+  {
+    "clueId": "c_0833",
+    "championId": "Zac",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZacE.png"
+  },
+  {
+    "clueId": "c_0834",
+    "championId": "Zac",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZacR.png"
+  },
+  {
+    "clueId": "c_0835",
+    "championId": "Zac",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/ZacPassive.png"
+  },
+  {
+    "clueId": "c_0836",
+    "championId": "Zed",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZedQ.png"
+  },
+  {
+    "clueId": "c_0837",
+    "championId": "Zed",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZedW.png"
+  },
+  {
+    "clueId": "c_0838",
+    "championId": "Zed",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZedE.png"
+  },
+  {
+    "clueId": "c_0839",
+    "championId": "Zed",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZedR.png"
+  },
+  {
+    "clueId": "c_0840",
+    "championId": "Zed",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/ZedP.png"
+  },
+  {
+    "clueId": "c_0841",
+    "championId": "Zeri",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZeriQ.png"
+  },
+  {
+    "clueId": "c_0842",
+    "championId": "Zeri",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZeriW.png"
+  },
+  {
+    "clueId": "c_0843",
+    "championId": "Zeri",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZeriE.png"
+  },
+  {
+    "clueId": "c_0844",
+    "championId": "Zeri",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZeriR.png"
+  },
+  {
+    "clueId": "c_0845",
+    "championId": "Zeri",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/ZeriP.png"
+  },
+  {
+    "clueId": "c_0846",
+    "championId": "Ziggs",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZiggsQ.png"
+  },
+  {
+    "clueId": "c_0847",
+    "championId": "Ziggs",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZiggsW.png"
+  },
+  {
+    "clueId": "c_0848",
+    "championId": "Ziggs",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZiggsE.png"
+  },
+  {
+    "clueId": "c_0849",
+    "championId": "Ziggs",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZiggsR.png"
+  },
+  {
+    "clueId": "c_0850",
+    "championId": "Ziggs",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/ZiggsPassiveReady.png"
+  },
+  {
+    "clueId": "c_0851",
+    "championId": "Zilean",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZileanQ.png"
+  },
+  {
+    "clueId": "c_0852",
+    "championId": "Zilean",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZileanW.png"
+  },
+  {
+    "clueId": "c_0853",
+    "championId": "Zilean",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/TimeWarp.png"
+  },
+  {
+    "clueId": "c_0854",
+    "championId": "Zilean",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ChronoShift.png"
+  },
+  {
+    "clueId": "c_0855",
+    "championId": "Zilean",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Zilean_Passive.png"
+  },
+  {
+    "clueId": "c_0856",
+    "championId": "Zoe",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZoeQ.png"
+  },
+  {
+    "clueId": "c_0857",
+    "championId": "Zoe",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZoeW.png"
+  },
+  {
+    "clueId": "c_0858",
+    "championId": "Zoe",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZoeE.png"
+  },
+  {
+    "clueId": "c_0859",
+    "championId": "Zoe",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZoeR.png"
+  },
+  {
+    "clueId": "c_0860",
+    "championId": "Zoe",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/Zoe_P.png"
+  },
+  {
+    "clueId": "c_0861",
+    "championId": "Zyra",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZyraQ.png"
+  },
+  {
+    "clueId": "c_0862",
+    "championId": "Zyra",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZyraW.png"
+  },
+  {
+    "clueId": "c_0863",
+    "championId": "Zyra",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZyraE.png"
+  },
+  {
+    "clueId": "c_0864",
+    "championId": "Zyra",
+    "kind": "spell",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/spell/ZyraR.png"
+  },
+  {
+    "clueId": "c_0865",
+    "championId": "Zyra",
+    "kind": "passive",
+    "imageUrl": "https://ddragon.leagueoflegends.com/cdn/16.21.1/img/passive/ZyraP.png"
+  }
+]

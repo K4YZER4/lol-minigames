@@ -1,0 +1,289 @@
+import { z } from "zod";
+
+/* ------------------------------------------------------------------ */
+/* Constantes del dominio                                              */
+/* ------------------------------------------------------------------ */
+
+export const ROOM_CODE_ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+export const ROOM_CODE_LENGTH = 6;
+export const MAX_PLAYERS = 12;
+export const MIN_PLAYERS = 3;
+export const NICKNAME_MAX = 16;
+export const RECONNECT_GRACE_MS = 30_000;
+
+export const MODE_IDS = ["bomba", "impostor"] as const;
+export type ModeId = (typeof MODE_IDS)[number];
+
+/* ------------------------------------------------------------------ */
+/* Esquemas de entrada (todo lo que llega del cliente se valida)        */
+/* ------------------------------------------------------------------ */
+
+export const NicknameSchema = z
+  .string()
+  .transform((v) => v.trim().replace(/\s+/g, " "))
+  .refine((v) => v.length >= 2 && v.length <= NICKNAME_MAX, {
+    message: `El apodo debe tener entre 2 y ${NICKNAME_MAX} caracteres`,
+  })
+  .refine((v) => /^[\p{L}\p{N} _.'-]+$/u.test(v), {
+    message: "El apodo tiene caracteres no permitidos",
+  });
+
+export const RoomCodeSchema = z
+  .string()
+  .transform((v) => v.trim().toUpperCase())
+  .refine(
+    (v) =>
+      v.length === ROOM_CODE_LENGTH &&
+      [...v].every((c) => ROOM_CODE_ALPHABET.includes(c)),
+    { message: "Código de sala inválido" },
+  );
+
+export const TokenSchema = z.string().length(64).regex(/^[a-f0-9]+$/);
+
+export const AvatarIdSchema = z.string().min(1).max(80).regex(/^[A-Za-z0-9_-]+$/);
+
+export const ChampionIdSchema = z
+  .string()
+  .min(1)
+  .max(32)
+  .regex(/^[A-Za-z0-9']+$/, "Identificador de campeón inválido");
+
+export const RequestIdSchema = z.string().min(1).max(64);
+
+const BombaSettingsBase = z.object({
+  lives: z.number().int().min(1).max(9),
+  minFuseMs: z.number().int().min(5_000).max(60_000),
+  maxFuseMs: z.number().int().min(5_000).max(120_000),
+  penaltyMs: z.number().int().min(0).max(10_000),
+  minMarginMs: z.number().int().min(0).max(15_000),
+});
+
+export const BombaSettingsSchema = BombaSettingsBase.refine(
+  (s) => s.minFuseMs <= s.maxFuseMs,
+  { message: "La mecha mínima no puede superar a la máxima" },
+);
+
+/** Parche parcial: se valida completo recién cuando se fusiona en la sala. */
+export const BombaSettingsPatchSchema = BombaSettingsBase.partial();
+
+export const ImpostorSettingsSchema = z.object({
+  assignmentSeconds: z.number().int().min(5).max(120),
+  clueSeconds: z.number().int().min(10).max(180),
+  discussionSeconds: z.number().int().min(10).max(600),
+  voteSeconds: z.number().int().min(10).max(180),
+});
+
+export type BombaSettings = z.infer<typeof BombaSettingsSchema>;
+export type ImpostorSettings = z.infer<typeof ImpostorSettingsSchema>;
+
+export const DEFAULT_BOMBA_SETTINGS: BombaSettings = {
+  lives: 3,
+  minFuseMs: 10_000,
+  maxFuseMs: 30_000,
+  penaltyMs: 1_000,
+  minMarginMs: 3_000,
+};
+
+export const DEFAULT_IMPOSTOR_SETTINGS: ImpostorSettings = {
+  assignmentSeconds: 15,
+  clueSeconds: 20,
+  discussionSeconds: 60,
+  voteSeconds: 30,
+};
+
+export const SettingsSchema = z.object({
+  mode: z.enum(MODE_IDS).optional(),
+  bomba: BombaSettingsPatchSchema.optional(),
+  impostor: ImpostorSettingsSchema.partial().optional(),
+});
+
+export type SettingsPatch = z.infer<typeof SettingsSchema>;
+
+export const AnswerPayloadSchema = z.object({
+  requestId: RequestIdSchema,
+  championId: ChampionIdSchema,
+});
+
+export const CluePayloadSchema = z.object({
+  requestId: RequestIdSchema,
+  text: z.string().trim().min(1).max(80),
+});
+
+export const VotePayloadSchema = z.object({
+  requestId: RequestIdSchema,
+  targetId: z.string().min(1).max(64).nullable(),
+});
+
+/* ------------------------------------------------------------------ */
+/* Nombres de eventos                                                  */
+/* ------------------------------------------------------------------ */
+
+export const ClientEvents = {
+  CREATE_ROOM: "room:create",
+  JOIN_ROOM: "room:join",
+  LEAVE_ROOM: "room:leave",
+  SET_READY: "room:ready",
+  CONFIGURE: "session:configure",
+  START: "session:start",
+  RESET: "session:reset",
+  BOMBA_ANSWER: "bomba:answer",
+  IMPOSTOR_ACK: "impostor:ack",
+  IMPOSTOR_CLUE: "impostor:clue",
+  IMPOSTOR_VOTE: "impostor:vote",
+} as const;
+
+export const ServerEvents = {
+  STATE: "room:state",
+  PRIVATE: "private:state",
+  EFFECT: "game:effect",
+  REJECTED: "action:rejected",
+} as const;
+
+/* ------------------------------------------------------------------ */
+/* Códigos de rechazo                                                  */
+/* ------------------------------------------------------------------ */
+
+export const REJECT_CODES = [
+  "INVALID",
+  "RATE_LIMITED",
+  "ROOM_NOT_FOUND",
+  "ROOM_FULL",
+  "ROOM_STARTED",
+  "NAME_TAKEN",
+  "NOT_IN_ROOM",
+  "NOT_HOST",
+  "NOT_ENOUGH_PLAYERS",
+  "WRONG_PHASE",
+  "NOT_YOUR_TURN",
+  "LATE",
+  "UNKNOWN_CHAMPION",
+  "WRONG_ANSWER",
+  "NAME_IN_CLUE",
+  "INVALID_TARGET",
+  "ALREADY_VOTED",
+  "SESSION_REPLACED",
+] as const;
+
+export type RejectCode = (typeof REJECT_CODES)[number];
+
+export type Reject = { ok: false; code: RejectCode; message: string };
+export type Ok<T> = { ok: true } & T;
+
+/* ------------------------------------------------------------------ */
+/* Vistas públicas                                                     */
+/* ------------------------------------------------------------------ */
+
+export type PublicChampion = {
+  id: string;
+  name: string;
+  imageUrl: string;
+};
+
+export type PlayerView = {
+  playerId: string;
+  name: string;
+  avatar: { id: string; imageUrl: string };
+  connected: boolean;
+  ready: boolean;
+  isHost: boolean;
+  lives: number | null;
+  eliminated: boolean;
+  score: number;
+};
+
+export type BombaPublicClue = {
+  clueId: string;
+  kind: "spell" | "passive";
+  imageUrl: string;
+};
+
+export type BombaGameView = {
+  mode: "bomba";
+  activePlayerId: string | null;
+  clue: BombaPublicClue | null;
+  /** Solo una señal aproximada: el vencimiento exacto nunca sale del servidor. */
+  heat: "cold" | "warm" | "hot";
+  explosions: number;
+  finished: boolean;
+};
+
+export type ImpostorPhase =
+  | "ASSIGNMENT"
+  | "CLUES"
+  | "DISCUSSION"
+  | "VOTING"
+  | "REVEAL";
+
+export type ImpostorReveal = {
+  assignment: Record<string, PublicChampion>;
+  impostorIds: string[];
+  caught: boolean;
+  winners: string[];
+  scores: Record<string, number>;
+};
+
+export type ImpostorGameView = {
+  mode: "impostor";
+  phase: ImpostorPhase;
+  phaseEndsAt: number;
+  clueOrder: string[];
+  clueIndex: number;
+  clues: { playerId: string; text: string }[];
+  votesSubmitted: string[];
+  reveal: ImpostorReveal | null;
+};
+
+export type GameView = BombaGameView | ImpostorGameView;
+
+export type RoomView = {
+  code: string;
+  roomId: string;
+  stateVersion: number;
+  phase: "LOBBY" | "PLAYING" | "FINISHED";
+  hostId: string | null;
+  mode: ModeId;
+  players: PlayerView[];
+  settings: {
+    bomba: BombaSettings;
+    impostor: ImpostorSettings;
+  };
+  game: GameView | null;
+  serverTime: number;
+};
+
+/* ------------------------------------------------------------------ */
+/* Vistas privadas (nunca se difunden a la sala)                       */
+/* ------------------------------------------------------------------ */
+
+export type BombaPrivateView = {
+  mode: "bomba";
+  youAreActive: boolean;
+  clue: BombaPublicClue | null;
+};
+
+export type ImpostorPrivateView = {
+  mode: "impostor";
+  /** Solo el campeón propio. Nunca una etiqueta de "eres el impostor". */
+  champion: PublicChampion | null;
+  yourVote: string | null;
+  hasVoted: boolean;
+  mustSubmitClue: boolean;
+};
+
+export type PrivateView = BombaPrivateView | ImpostorPrivateView | null;
+
+/* ------------------------------------------------------------------ */
+/* Efectos transitorios (animaciones, no estado)                       */
+/* ------------------------------------------------------------------ */
+
+export type GameEffect =
+  | { type: "bomba:correct"; playerId: string }
+  | { type: "bomba:wrong"; playerId: string }
+  | { type: "bomba:explosion"; playerId: string; eliminated: boolean }
+  | { type: "impostor:reveal"; caught: boolean };
+
+export type JoinAck =
+  | { ok: true; playerId: string; token: string; roomCode: string; roomId: string }
+  | Reject;
+
+export type SimpleAck = { ok: true } | Reject;

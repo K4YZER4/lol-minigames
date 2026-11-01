@@ -1,0 +1,1213 @@
+[
+  {
+    "championId": "Aatrox",
+    "partnerId": "Renekton",
+    "distance": 1.612,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Ahri",
+    "partnerId": "Leblanc",
+    "distance": 0.4921,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Akali",
+    "partnerId": "Katarina",
+    "distance": 1.6129,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Akshan",
+    "partnerId": "Quinn",
+    "distance": 1.1234,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Alistar",
+    "partnerId": "Braum",
+    "distance": 0.5126,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Ambessa",
+    "partnerId": "Riven",
+    "distance": 0.388,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Amumu",
+    "partnerId": "Rammus",
+    "distance": 1.7001,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Anivia",
+    "partnerId": "Lissandra",
+    "distance": 0.4765,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Annie",
+    "partnerId": "Veigar",
+    "distance": 1.6113,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Aphelios",
+    "partnerId": "Draven",
+    "distance": 0.3759,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Ashe",
+    "partnerId": "Varus",
+    "distance": 2.2808,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "AurelionSol",
+    "partnerId": "Syndra",
+    "distance": 0.1468,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Aurora",
+    "partnerId": "Ahri",
+    "distance": 0.0311,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Azir",
+    "partnerId": "TwistedFate",
+    "distance": 0.2239,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Bard",
+    "partnerId": "Ivern",
+    "distance": 0.3227,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Belveth",
+    "partnerId": "Gangplank",
+    "distance": 0.5938,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Blitzcrank",
+    "partnerId": "Thresh",
+    "distance": 0.6342,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Brand",
+    "partnerId": "Neeko",
+    "distance": 0.176,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Braum",
+    "partnerId": "Alistar",
+    "distance": 0.5126,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Briar",
+    "partnerId": "Vi",
+    "distance": 0.1415,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Caitlyn",
+    "partnerId": "Jinx",
+    "distance": 0.2952,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Camille",
+    "partnerId": "Gwen",
+    "distance": 1.6319,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Cassiopeia",
+    "partnerId": "Viktor",
+    "distance": 0.1858,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Chogath",
+    "partnerId": "Singed",
+    "distance": 0.147,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Corki",
+    "partnerId": "Tristana",
+    "distance": 2.2762,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Darius",
+    "partnerId": "Garen",
+    "distance": 0.4125,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Diana",
+    "partnerId": "Fizz",
+    "distance": 0.3234,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Draven",
+    "partnerId": "Twitch",
+    "distance": 1.628,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "DrMundo",
+    "partnerId": "Skarner",
+    "distance": 0.2512,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Ekko",
+    "partnerId": "Fizz",
+    "distance": 2.2781,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Elise",
+    "partnerId": "Nidalee",
+    "distance": 0.179,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Evelynn",
+    "partnerId": "Ekko",
+    "distance": 0.2503,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Ezreal",
+    "partnerId": "Jhin",
+    "distance": 0.3167,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Fiddlesticks",
+    "partnerId": "Velkoz",
+    "distance": 0.2225,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Fiora",
+    "partnerId": "Riven",
+    "distance": 0.5582,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Fizz",
+    "partnerId": "Ekko",
+    "distance": 2.2781,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Galio",
+    "partnerId": "Singed",
+    "distance": 0.3895,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Gangplank",
+    "partnerId": "Gwen",
+    "distance": 0.4669,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Garen",
+    "partnerId": "Darius",
+    "distance": 0.4125,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Gnar",
+    "partnerId": "Yorick",
+    "distance": 0.2504,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Gragas",
+    "partnerId": "Mordekaiser",
+    "distance": 0.1902,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Graves",
+    "partnerId": "Lucian",
+    "distance": 1.6328,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Gwen",
+    "partnerId": "Camille",
+    "distance": 1.6319,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Hecarim",
+    "partnerId": "Udyr",
+    "distance": 0.162,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Heimerdinger",
+    "partnerId": "Teemo",
+    "distance": 2.315,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Hwei",
+    "partnerId": "Zyra",
+    "distance": 0.4225,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Illaoi",
+    "partnerId": "Shyvana",
+    "distance": 0.0389,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Irelia",
+    "partnerId": "Jax",
+    "distance": 1.6202,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Ivern",
+    "partnerId": "Maokai",
+    "distance": 2.3826,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Janna",
+    "partnerId": "Soraka",
+    "distance": 0.4143,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "JarvanIV",
+    "partnerId": "Sion",
+    "distance": 0.142,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Jax",
+    "partnerId": "Irelia",
+    "distance": 1.6202,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Jayce",
+    "partnerId": "Kled",
+    "distance": 1.6217,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Jhin",
+    "partnerId": "Ezreal",
+    "distance": 0.3167,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Jinx",
+    "partnerId": "Caitlyn",
+    "distance": 0.2952,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Kaisa",
+    "partnerId": "Vayne",
+    "distance": 2.3243,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Kalista",
+    "partnerId": "Jinx",
+    "distance": 0.1438,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Karma",
+    "partnerId": "Lulu",
+    "distance": 0.3771,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Karthus",
+    "partnerId": "Ryze",
+    "distance": 0.156,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Kassadin",
+    "partnerId": "Katarina",
+    "distance": 0.272,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Katarina",
+    "partnerId": "Akali",
+    "distance": 1.6129,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Kayle",
+    "partnerId": "Teemo",
+    "distance": 0.6059,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Kayn",
+    "partnerId": "RekSai",
+    "distance": 2.3305,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Kennen",
+    "partnerId": "Vladimir",
+    "distance": 1.6989,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Khazix",
+    "partnerId": "Talon",
+    "distance": 0.2503,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Kindred",
+    "partnerId": "Sivir",
+    "distance": 0.1753,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Kled",
+    "partnerId": "Aatrox",
+    "distance": 0.3895,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "KogMaw",
+    "partnerId": "Smolder",
+    "distance": 0.0779,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "KSante",
+    "partnerId": "Udyr",
+    "distance": 0.3833,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Leblanc",
+    "partnerId": "Ahri",
+    "distance": 0.4921,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "LeeSin",
+    "partnerId": "XinZhao",
+    "distance": 2.3013,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Leona",
+    "partnerId": "Nautilus",
+    "distance": 0.4221,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Lillia",
+    "partnerId": "Vladimir",
+    "distance": 0.5361,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Lissandra",
+    "partnerId": "Anivia",
+    "distance": 0.4765,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Locke",
+    "partnerId": "Ekko",
+    "distance": 0.6,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Lucian",
+    "partnerId": "Graves",
+    "distance": 1.6328,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Lulu",
+    "partnerId": "Karma",
+    "distance": 0.3771,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Lux",
+    "partnerId": "Morgana",
+    "distance": 0.4955,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Malphite",
+    "partnerId": "Singed",
+    "distance": 0.3403,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Malzahar",
+    "partnerId": "Swain",
+    "distance": 1.6631,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Maokai",
+    "partnerId": "Ivern",
+    "distance": 2.3826,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "MasterYi",
+    "partnerId": "Fiora",
+    "distance": 0.1101,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Mel",
+    "partnerId": "Lux",
+    "distance": 0.0103,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Milio",
+    "partnerId": "Lux",
+    "distance": 0.1183,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "MissFortune",
+    "partnerId": "Sivir",
+    "distance": 1.685,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "MonkeyKing",
+    "partnerId": "RekSai",
+    "distance": 0.0566,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Mordekaiser",
+    "partnerId": "Gragas",
+    "distance": 0.1902,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Morgana",
+    "partnerId": "Lux",
+    "distance": 0.4955,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Naafiri",
+    "partnerId": "Fiora",
+    "distance": 0.2723,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Nami",
+    "partnerId": "Sona",
+    "distance": 0.2038,
+    "difficulty": "normal",
+    "curated": true
+  },
+  {
+    "championId": "Nasus",
+    "partnerId": "Sion",
+    "distance": 0.5536,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Nautilus",
+    "partnerId": "Leona",
+    "distance": 0.4221,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Neeko",
+    "partnerId": "Brand",
+    "distance": 0.176,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Nidalee",
+    "partnerId": "Elise",
+    "distance": 0.179,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Nilah",
+    "partnerId": "Yasuo",
+    "distance": 0.0927,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Nocturne",
+    "partnerId": "Vi",
+    "distance": 0.1542,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Nunu",
+    "partnerId": "Sejuani",
+    "distance": 1.6106,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Olaf",
+    "partnerId": "Tryndamere",
+    "distance": 2.2774,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Orianna",
+    "partnerId": "Syndra",
+    "distance": 1.6173,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Ornn",
+    "partnerId": "Shen",
+    "distance": 0.2372,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Pantheon",
+    "partnerId": "MasterYi",
+    "distance": 0.1647,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Poppy",
+    "partnerId": "Shen",
+    "distance": 1.6554,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Pyke",
+    "partnerId": "Talon",
+    "distance": 1.6025,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Qiyana",
+    "partnerId": "Akali",
+    "distance": 0.6641,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Quinn",
+    "partnerId": "Lucian",
+    "distance": 0.2047,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Rakan",
+    "partnerId": "Milio",
+    "distance": 1.6377,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Rammus",
+    "partnerId": "Amumu",
+    "distance": 1.7001,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "RekSai",
+    "partnerId": "Kayn",
+    "distance": 2.3305,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Rell",
+    "partnerId": "Leona",
+    "distance": 1.0378,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Renata",
+    "partnerId": "Swain",
+    "distance": 0.0693,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Renekton",
+    "partnerId": "Aatrox",
+    "distance": 1.612,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Rengar",
+    "partnerId": "Riven",
+    "distance": 0.1741,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Riven",
+    "partnerId": "Fiora",
+    "distance": 0.5582,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Rumble",
+    "partnerId": "Gragas",
+    "distance": 0.5598,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Ryze",
+    "partnerId": "Viktor",
+    "distance": 0.2874,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Samira",
+    "partnerId": "Lucian",
+    "distance": 0.0201,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Sejuani",
+    "partnerId": "Nunu",
+    "distance": 1.6106,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Senna",
+    "partnerId": "Ashe",
+    "distance": 0.5105,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Seraphine",
+    "partnerId": "Soraka",
+    "distance": 0.9356,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Sett",
+    "partnerId": "Darius",
+    "distance": 0.1383,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Shaco",
+    "partnerId": "Akali",
+    "distance": 0.4329,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Shen",
+    "partnerId": "Poppy",
+    "distance": 1.6554,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Shyvana",
+    "partnerId": "Illaoi",
+    "distance": 0.0389,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Singed",
+    "partnerId": "Chogath",
+    "distance": 0.147,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Sion",
+    "partnerId": "Nasus",
+    "distance": 0.5536,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Sivir",
+    "partnerId": "MissFortune",
+    "distance": 1.685,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Skarner",
+    "partnerId": "JarvanIV",
+    "distance": 0.2292,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Smolder",
+    "partnerId": "KogMaw",
+    "distance": 0.0779,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Sona",
+    "partnerId": "Nami",
+    "distance": 0.2038,
+    "difficulty": "normal",
+    "curated": true
+  },
+  {
+    "championId": "Soraka",
+    "partnerId": "Janna",
+    "distance": 0.4143,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Swain",
+    "partnerId": "Malzahar",
+    "distance": 1.6631,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Sylas",
+    "partnerId": "Viego",
+    "distance": 2.361,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Syndra",
+    "partnerId": "Orianna",
+    "distance": 1.6173,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "TahmKench",
+    "partnerId": "Blitzcrank",
+    "distance": 0.2168,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Taliyah",
+    "partnerId": "Karma",
+    "distance": 0.1041,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Talon",
+    "partnerId": "Zed",
+    "distance": 0.1262,
+    "difficulty": "hard",
+    "curated": true
+  },
+  {
+    "championId": "Taric",
+    "partnerId": "Blitzcrank",
+    "distance": 0.1244,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Teemo",
+    "partnerId": "Heimerdinger",
+    "distance": 2.315,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Thresh",
+    "partnerId": "Blitzcrank",
+    "distance": 0.6342,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Tristana",
+    "partnerId": "Corki",
+    "distance": 2.2762,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Trundle",
+    "partnerId": "Garen",
+    "distance": 0.1442,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Tryndamere",
+    "partnerId": "Olaf",
+    "distance": 2.2774,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "TwistedFate",
+    "partnerId": "Azir",
+    "distance": 0.2239,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Twitch",
+    "partnerId": "Draven",
+    "distance": 1.628,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Udyr",
+    "partnerId": "Volibear",
+    "distance": 0.4168,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Urgot",
+    "partnerId": "Hecarim",
+    "distance": 0.3681,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Varus",
+    "partnerId": "Ashe",
+    "distance": 2.2808,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Vayne",
+    "partnerId": "Kaisa",
+    "distance": 2.3243,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Veigar",
+    "partnerId": "Annie",
+    "distance": 1.6113,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Velkoz",
+    "partnerId": "Xerath",
+    "distance": 0.1415,
+    "difficulty": "hard",
+    "curated": true
+  },
+  {
+    "championId": "Vex",
+    "partnerId": "Ziggs",
+    "distance": 1.0823,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Vi",
+    "partnerId": "Camille",
+    "distance": 0.1118,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Viego",
+    "partnerId": "Sylas",
+    "distance": 2.361,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Viktor",
+    "partnerId": "Ryze",
+    "distance": 0.2874,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Vladimir",
+    "partnerId": "Kennen",
+    "distance": 1.6989,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Volibear",
+    "partnerId": "Udyr",
+    "distance": 0.4168,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Warwick",
+    "partnerId": "Olaf",
+    "distance": 0.0428,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Xayah",
+    "partnerId": "Zeri",
+    "distance": 0.3188,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Xerath",
+    "partnerId": "Velkoz",
+    "distance": 0.1415,
+    "difficulty": "hard",
+    "curated": true
+  },
+  {
+    "championId": "XinZhao",
+    "partnerId": "LeeSin",
+    "distance": 2.3013,
+    "difficulty": "easy",
+    "curated": true
+  },
+  {
+    "championId": "Yasuo",
+    "partnerId": "Yone",
+    "distance": 0.2003,
+    "difficulty": "normal",
+    "curated": true
+  },
+  {
+    "championId": "Yone",
+    "partnerId": "Yasuo",
+    "distance": 0.2003,
+    "difficulty": "normal",
+    "curated": true
+  },
+  {
+    "championId": "Yorick",
+    "partnerId": "Hecarim",
+    "distance": 0.2044,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Yunara",
+    "partnerId": "Sivir",
+    "distance": 0.1909,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Yuumi",
+    "partnerId": "Sona",
+    "distance": 0.2998,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Zaahen",
+    "partnerId": "Aatrox",
+    "distance": 0.347,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Zac",
+    "partnerId": "DrMundo",
+    "distance": 0.3836,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Zed",
+    "partnerId": "Talon",
+    "distance": 0.1262,
+    "difficulty": "hard",
+    "curated": true
+  },
+  {
+    "championId": "Zeri",
+    "partnerId": "Xayah",
+    "distance": 0.3188,
+    "difficulty": "easy",
+    "curated": false
+  },
+  {
+    "championId": "Ziggs",
+    "partnerId": "Lissandra",
+    "distance": 0.2452,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Zilean",
+    "partnerId": "Milio",
+    "distance": 0.1485,
+    "difficulty": "hard",
+    "curated": false
+  },
+  {
+    "championId": "Zoe",
+    "partnerId": "Lissandra",
+    "distance": 0.248,
+    "difficulty": "normal",
+    "curated": false
+  },
+  {
+    "championId": "Zyra",
+    "partnerId": "Orianna",
+    "distance": 0.1644,
+    "difficulty": "normal",
+    "curated": false
+  }
+]
