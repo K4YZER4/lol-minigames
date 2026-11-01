@@ -10,6 +10,7 @@ import {
   DEFAULT_IMPOSTOR_SETTINGS,
   DEFAULT_PICTIONARY_SETTINGS,
   DEFAULT_UNICA_SETTINGS,
+  DEFAULT_CARRERA_SETTINGS,
   MAX_PLAYERS,
   MIN_PLAYERS,
   RECONNECT_GRACE_MS,
@@ -20,6 +21,7 @@ import {
   type ImpostorSettings,
   type PictionarySettings,
   type UnicaSettings,
+  type CarreraSettings,
   type JoinAck,
   type ModeId,
   type PlayerView,
@@ -60,12 +62,19 @@ import {
   unicaResults,
   unicaSubmit,
   unicaTick,
+  createCarrera,
+  carreraAnswer,
+  carreraPrivateView,
+  carreraPublicView,
+  carreraResults,
+  carreraTick,
   nameKey,
   type BombaState,
   type Effect,
   type ImpostorState,
   type PictionaryState,
   type UnicaState,
+  type CarreraState,
   type Result,
 } from "@lolgames/engine";
 import { Clock, RateLimiter, RoomRepository, SessionRepository } from "../ports";
@@ -142,7 +151,8 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
         bomba: { ...DEFAULT_BOMBA_SETTINGS },
         impostor: { ...DEFAULT_IMPOSTOR_SETTINGS },
         pictionary: { ...DEFAULT_PICTIONARY_SETTINGS },
-        unica: { ...DEFAULT_UNICA_SETTINGS },
+    unica: { ...DEFAULT_UNICA_SETTINGS },
+    carrera: { ...DEFAULT_CARRERA_SETTINGS },
       },
       scores: { [player.id]: 0 },
       impostorRoundOffset: 0,
@@ -371,6 +381,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       if (patch.unica) {
         room.settings.unica = { ...room.settings.unica, ...patch.unica };
       }
+      if (patch.carrera) room.settings.carrera = { ...room.settings.carrera, ...patch.carrera };
 
       room.lastActivityAt = this.clock.now();
       room.stateVersion++;
@@ -436,13 +447,14 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                 now,
                 rng: this.rng,
               })
-              : createUnica({
+               : createUnica({
                 playerIds: ids,
                 settings: room.settings.unica,
                 champions: this.content.unicaChampionInfo,
                 now,
                 rng: this.rng,
-              });
+               });
+      if (room.mode === "carrera") room.game = createCarrera({ playerIds: ids, settings: room.settings.carrera, champions: this.content.championInfo, clues: this.content.clues, now, rng: this.rng });
 
       room.phase = "PLAYING";
       room.lastActivityAt = now;
@@ -737,6 +749,10 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       if (action.kind === "unica:submit") return unicaSubmit(room.game as UnicaState, playerId, action.championId);
       return null;
     }
+    if (room.mode === "carrera") {
+      if (action.kind === "carrera:answer") return carreraAnswer(room.game as CarreraState, playerId, action.championId, { now: this.clock.now(), rng: this.rng, clues: this.content.clues });
+      return null;
+    }
     if (room.mode !== "impostor") return null;
     const state = room.game as ImpostorState;
 
@@ -760,7 +776,8 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
     if (room.mode === "bomba") return bombaTick(room.game as BombaState, ctx);
     if (room.mode === "impostor") return impostorTick(room.game as ImpostorState, ctx);
     if (room.mode === "pictionary") return pictionaryTick(room.game as PictionaryState, ctx);
-    return unicaTick(room.game as UnicaState, ctx);
+    if (room.mode === "unica") return unicaTick(room.game as UnicaState, ctx);
+    return carreraTick(room.game as CarreraState, { now, rng: this.rng, clues: this.content.clues });
   }
 
   private skipStalledBomba(
@@ -787,7 +804,9 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
           : room.mode === "pictionary"
             ? (room.game as PictionaryState).phase === "REVEAL" &&
               (room.game as PictionaryState).roundIndex + 1 >= (room.game as PictionaryState).order.length
-            : (room.game as UnicaState).phase === "REVEAL";
+            : room.mode === "unica"
+              ? (room.game as UnicaState).phase === "REVEAL"
+              : (room.game as CarreraState).phase === "FINISHED";
     if (!finished || room.phase === "FINISHED") return false;
 
     room.phase = "FINISHED";
@@ -798,7 +817,9 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
           ? impostorResults(room.game as ImpostorState)
           : room.mode === "pictionary"
             ? pictionaryResults(room.game as PictionaryState)
-            : unicaResults(room.game as UnicaState);
+           : room.mode === "unica"
+             ? unicaResults(room.game as UnicaState)
+             : carreraResults(room.game as CarreraState);
     for (const [id, score] of Object.entries(results.scores)) {
       room.scores[id] = (room.scores[id] ?? 0) + score;
     }
@@ -872,7 +893,9 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
              ? impostorPublicView(room.game as ImpostorState, now)
              : room.mode === "pictionary"
                ? pictionaryPublicView(room.game as PictionaryState, now)
-               : unicaPublicView(room.game as UnicaState);
+                : room.mode === "unica"
+                  ? unicaPublicView(room.game as UnicaState)
+                  : carreraPublicView(room.game as CarreraState, now);
     }
 
     return {
@@ -896,6 +919,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
     }
     if (room.mode === "impostor") return impostorPrivateView(room.game as ImpostorState, playerId);
     if (room.mode === "pictionary") return pictionaryPrivateView(room.game as PictionaryState, playerId);
-    return unicaPrivateView(room.game as UnicaState, playerId);
+    if (room.mode === "unica") return unicaPrivateView(room.game as UnicaState, playerId);
+    return carreraPrivateView(room.game as CarreraState, playerId);
   }
 }

@@ -21,6 +21,7 @@ const MODES: { id: ModeId; name: string; icon: string; blurb: string }[] = [
   { id: "impostor", name: "Impostor", icon: "◈", blurb: "Encuentra al infiltrado antes de que engañe a todos." },
   { id: "pictionary", name: "Pictionary", icon: "〰", blurb: "Dibuja un campeón y deja que tu equipo lo adivine." },
   { id: "unica", name: "Respuesta única", icon: "✧", blurb: "Elige un campeón válido y no repitas la respuesta de nadie." },
+  { id: "carrera", name: "Carrera de pistas", icon: "➜", blurb: "Se revelan pistas: sé el primero en identificar al campeón." },
 ];
 
 export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
@@ -78,6 +79,8 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
             <><div className="divider" /><p className="hint">Un infiltrado con 3 a 6 jugadores, dos desde 7. Pistas de {room.settings.impostor.clueSeconds} s, discusión de {room.settings.impostor.discussionSeconds} s y votación de {room.settings.impostor.voteSeconds} s.</p></>
           ) : room.mode === "pictionary" ? (
             <><div className="divider" /><p className="hint">Por turnos, una persona dibuja durante {room.settings.pictionary.drawingSeconds} s. El resto intenta adivinar el campeón.</p></>
+          ) : room.mode === "carrera" ? (
+            <><div className="divider" /><p className="hint">Se revela una pista cada {room.settings.carrera.clueSeconds} s. El primer acierto gana la ronda; se juegan {room.settings.carrera.rounds} rondas.</p></>
           ) : (
             <><div className="divider" /><p className="hint">Todos responden en secreto con un campeón de la categoría. Las respuestas repetidas no puntúan.</p></>
           )}

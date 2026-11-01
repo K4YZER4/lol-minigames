@@ -21,6 +21,7 @@ import { BombaGame } from "@/components/BombaGame";
 import { ImpostorGame } from "@/components/ImpostorGame";
 import { PictionaryGame } from "@/components/PictionaryGame";
 import { UnicaGame } from "@/components/UnicaGame";
+import { CarreraGame } from "@/components/CarreraGame";
 
 const newRequestId = () =>
   typeof crypto !== "undefined" && "randomUUID" in crypto
@@ -249,7 +250,7 @@ export function RoomClient({ code }: { code: string }) {
       <div className="top">
         <div>
           <div className="eyebrow"><span className={`live-dot${connecting ? "" : " on"}`} /> Sala {code}</div>
-          <h1>{!room || room.phase === "LOBBY" ? "La sala está lista." : room.mode === "bomba" ? "No te la quedes." : room.mode === "impostor" ? "Que no te lean tan fácil." : room.mode === "pictionary" ? "Dibuja. Que no te descubran." : "Elige sin repetir."}</h1>
+          <h1>{!room || room.phase === "LOBBY" ? "La sala está lista." : room.mode === "bomba" ? "No te la quedes." : room.mode === "impostor" ? "Que no te lean tan fácil." : room.mode === "pictionary" ? "Dibuja. Que no te descubran." : room.mode === "carrera" ? "Corre con las pistas." : "Elige sin repetir."}</h1>
         </div>
         <div className="row">
           <button className="secondary" onClick={() => void copyCode()}>Copiar código ↗</button>
@@ -322,6 +323,8 @@ export function RoomClient({ code }: { code: string }) {
           onSubmit={(championId) => void act("unica:submit", { requestId: newRequestId(), championId })}
           onReset={(mode) => void resetToLobby(mode)}
         />
+      ) : room.game?.mode === "carrera" ? (
+        <CarreraGame room={room} priv={priv?.mode === "carrera" ? priv : null} champions={champions} onAnswer={(championId) => void act("carrera:answer", { requestId: newRequestId(), championId })} />
       ) : (
         <section className="panel center">
           <p className="hint">Esperando el estado de la partida…</p>

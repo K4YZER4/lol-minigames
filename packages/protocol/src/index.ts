@@ -11,7 +11,7 @@ export const MIN_PLAYERS = 3;
 export const NICKNAME_MAX = 16;
 export const RECONNECT_GRACE_MS = 30_000;
 
-export const MODE_IDS = ["bomba", "impostor", "pictionary", "unica"] as const;
+export const MODE_IDS = ["bomba", "impostor", "pictionary", "unica", "carrera"] as const;
 export type ModeId = (typeof MODE_IDS)[number];
 
 /* ------------------------------------------------------------------ */
@@ -99,6 +99,9 @@ export const DEFAULT_PICTIONARY_SETTINGS: PictionarySettings = { drawingSeconds:
 export const UnicaSettingsSchema = z.object({ answerSeconds: z.number().int().min(20).max(180) });
 export type UnicaSettings = z.infer<typeof UnicaSettingsSchema>;
 export const DEFAULT_UNICA_SETTINGS: UnicaSettings = { answerSeconds: 45 };
+export const CarreraSettingsSchema = z.object({ clueSeconds: z.number().int().min(3).max(30), rounds: z.number().int().min(1).max(10) });
+export type CarreraSettings = z.infer<typeof CarreraSettingsSchema>;
+export const DEFAULT_CARRERA_SETTINGS: CarreraSettings = { clueSeconds: 8, rounds: 5 };
 
 export const SettingsSchema = z.object({
   mode: z.enum(MODE_IDS).optional(),
@@ -106,6 +109,7 @@ export const SettingsSchema = z.object({
   impostor: ImpostorSettingsSchema.partial().optional(),
   pictionary: PictionarySettingsSchema.partial().optional(),
   unica: UnicaSettingsSchema.partial().optional(),
+  carrera: CarreraSettingsSchema.partial().optional(),
 });
 
 export type SettingsPatch = z.infer<typeof SettingsSchema>;
@@ -139,6 +143,7 @@ export const UnicaSubmitPayloadSchema = z.object({
   requestId: RequestIdSchema,
   championId: ChampionIdSchema,
 });
+export const CarreraAnswerPayloadSchema = z.object({ requestId: RequestIdSchema, championId: ChampionIdSchema });
 
 /* ------------------------------------------------------------------ */
 /* Nombres de eventos                                                  */
@@ -159,6 +164,7 @@ export const ClientEvents = {
   PICTIONARY_STROKE: "pictionary:stroke",
   PICTIONARY_GUESS: "pictionary:guess",
   UNICA_SUBMIT: "unica:submit",
+  CARRERA_ANSWER: "carrera:answer",
 } as const;
 
 export const ServerEvents = {
@@ -191,6 +197,7 @@ export const REJECT_CODES = [
   "INVALID_TARGET",
   "ALREADY_VOTED",
   "ALREADY_GUESSED",
+  "ALREADY_ANSWERED",
   "INVALID_STROKE",
   "INVALID_CATEGORY",
   "SESSION_REPLACED",
@@ -287,8 +294,9 @@ export type UnicaGameView = {
   submitted: string[];
   answers: UnicaAnswer[];
 };
+export type CarreraGameView = { mode: "carrera"; phase: "CLUES" | "REVEAL" | "FINISHED"; phaseEndsAt: number; round: number; totalRounds: number; clueIndex: number; clues: BombaPublicClue[]; winnerId: string | null; target: PublicChampion | null };
 
-export type GameView = BombaGameView | ImpostorGameView | PictionaryGameView | UnicaGameView;
+export type GameView = BombaGameView | ImpostorGameView | PictionaryGameView | UnicaGameView | CarreraGameView;
 
 export type RoomView = {
   code: string;
@@ -303,6 +311,7 @@ export type RoomView = {
     impostor: ImpostorSettings;
     pictionary: PictionarySettings;
     unica: UnicaSettings;
+    carrera: CarreraSettings;
   };
   game: GameView | null;
   serverTime: number;
@@ -338,8 +347,9 @@ export type UnicaPrivateView = {
   yourAnswer: PublicChampion | null;
   hasSubmitted: boolean;
 };
+export type CarreraPrivateView = { mode: "carrera"; hasAnswered: boolean; answer: string | null };
 
-export type PrivateView = BombaPrivateView | ImpostorPrivateView | PictionaryPrivateView | UnicaPrivateView | null;
+export type PrivateView = BombaPrivateView | ImpostorPrivateView | PictionaryPrivateView | UnicaPrivateView | CarreraPrivateView | null;
 
 /* ------------------------------------------------------------------ */
 /* Efectos transitorios (animaciones, no estado)                       */
