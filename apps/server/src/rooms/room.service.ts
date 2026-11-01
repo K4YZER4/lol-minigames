@@ -8,6 +8,7 @@ import { randomBytes, randomUUID } from "node:crypto";
 import {
   DEFAULT_BOMBA_SETTINGS,
   DEFAULT_IMPOSTOR_SETTINGS,
+  DEFAULT_PICTIONARY_SETTINGS,
   MAX_PLAYERS,
   MIN_PLAYERS,
   RECONNECT_GRACE_MS,
@@ -16,6 +17,7 @@ import {
   ServerEvents,
   type BombaSettings,
   type ImpostorSettings,
+  type PictionarySettings,
   type JoinAck,
   type ModeId,
   type PlayerView,
@@ -43,17 +45,25 @@ import {
   impostorResults,
   impostorTick,
   impostorVote,
+  createPictionary,
+  pictionaryGuess,
+  pictionaryPrivateView,
+  pictionaryPublicView,
+  pictionaryResults,
+  pictionaryStroke,
+  pictionaryTick,
   nameKey,
   type BombaState,
   type Effect,
   type ImpostorState,
+  type PictionaryState,
   type Result,
 } from "@lolgames/engine";
 import { Clock, RateLimiter, RoomRepository, SessionRepository } from "../ports";
 import { BroadcastService } from "../gateway/broadcast.service";
 import { ContentService } from "../content/content.service";
 import { withRoomLock } from "./lock";
-import type { IncomingAction, Player, Room } from "./types";
+import type { GameState, IncomingAction, Player, Room } from "./types";
 
 /** Tras este tiempo desconectado, el turno se salta (la mecha sigue). */
 const SKIP_AFTER_MS = 3_000;
@@ -122,6 +132,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       settings: {
         bomba: { ...DEFAULT_BOMBA_SETTINGS },
         impostor: { ...DEFAULT_IMPOSTOR_SETTINGS },
+        pictionary: { ...DEFAULT_PICTIONARY_SETTINGS },
       },
       scores: { [player.id]: 0 },
       impostorRoundOffset: 0,
@@ -344,6 +355,10 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
         room.settings.impostor = merged;
       }
 
+      if (patch.pictionary) {
+        room.settings.pictionary = { ...room.settings.pictionary, ...patch.pictionary };
+      }
+
       room.lastActivityAt = this.clock.now();
       room.stateVersion++;
       await this.repo.save(room);
@@ -391,14 +406,22 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
               now,
               rng: this.rng,
             })
-          : createImpostor({
+          : room.mode === "impostor"
+            ? createImpostor({
               playerIds: ids,
               settings: room.settings.impostor,
               pairs: this.content.pairs,
               champions: this.content.championInfo,
               now,
               rng: this.rng,
-            });
+              })
+            : createPictionary({
+                playerIds: ids,
+                settings: room.settings.pictionary,
+                champions: this.content.championInfo,
+                now,
+                rng: this.rng,
+              });
 
       room.phase = "PLAYING";
       room.lastActivityAt = now;
@@ -664,7 +687,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
     room: Room,
     playerId: string,
     action: IncomingAction,
-  ): Result<BombaState | ImpostorState> | null {
+  ): Result<GameState> | null {
     if (!room.game) return null;
     const ctx = this.engineContext(this.clock.now());
 
@@ -679,6 +702,16 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       return bombaAnswer(room.game as BombaState, playerId, action.championId, ctx);
     }
 
+    if (room.mode === "pictionary") {
+      switch (action.kind) {
+        case "pictionary:stroke":
+          return pictionaryStroke(room.game as PictionaryState, playerId, action.points);
+        case "pictionary:guess":
+          return pictionaryGuess(room.game as PictionaryState, playerId, action.championId, ctx);
+        default:
+          return null;
+      }
+    }
     if (room.mode !== "impostor") return null;
     const state = room.game as ImpostorState;
 
@@ -697,10 +730,11 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
   private tickEngine(
     room: Room,
     now: number,
-  ): Result<BombaState | ImpostorState> {
+  ): Result<GameState> {
     const ctx = this.engineContext(now);
     if (room.mode === "bomba") return bombaTick(room.game as BombaState, ctx);
-    return impostorTick(room.game as ImpostorState, ctx);
+    if (room.mode === "impostor") return impostorTick(room.game as ImpostorState, ctx);
+    return pictionaryTick(room.game as PictionaryState, ctx);
   }
 
   private skipStalledBomba(
@@ -722,14 +756,19 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
     const finished =
       room.mode === "bomba"
         ? (room.game as BombaState).phase === "FINISHED"
-        : (room.game as ImpostorState).phase === "REVEAL";
+        : room.mode === "impostor"
+          ? (room.game as ImpostorState).phase === "REVEAL"
+          : (room.game as PictionaryState).phase === "REVEAL" &&
+            (room.game as PictionaryState).roundIndex + 1 >= (room.game as PictionaryState).order.length;
     if (!finished || room.phase === "FINISHED") return false;
 
     room.phase = "FINISHED";
     const results =
       room.mode === "bomba"
         ? bombaResults(room.game as BombaState)
-        : impostorResults(room.game as ImpostorState);
+        : room.mode === "impostor"
+          ? impostorResults(room.game as ImpostorState)
+          : pictionaryResults(room.game as PictionaryState);
     for (const [id, score] of Object.entries(results.scores)) {
       room.scores[id] = (room.scores[id] ?? 0) + score;
     }
@@ -799,7 +838,9 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       game =
         room.mode === "bomba"
           ? bombaPublicView(room.game as BombaState, now)
-          : impostorPublicView(room.game as ImpostorState, now);
+           : room.mode === "impostor"
+             ? impostorPublicView(room.game as ImpostorState, now)
+             : pictionaryPublicView(room.game as PictionaryState, now);
     }
 
     return {
@@ -821,6 +862,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
     if (room.mode === "bomba") {
       return bombaPrivateView(room.game as BombaState, playerId);
     }
-    return impostorPrivateView(room.game as ImpostorState, playerId);
+    if (room.mode === "impostor") return impostorPrivateView(room.game as ImpostorState, playerId);
+    return pictionaryPrivateView(room.game as PictionaryState, playerId);
   }
 }

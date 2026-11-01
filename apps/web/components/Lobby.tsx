@@ -19,6 +19,7 @@ const FUSE_PRESETS = [
 const MODES: { id: ModeId; name: string; icon: string; blurb: string }[] = [
   { id: "bomba", name: "Bomba", icon: "◕", blurb: "Adivina el campeón y pasa la bomba antes de que explote." },
   { id: "impostor", name: "Impostor", icon: "◈", blurb: "Encuentra al infiltrado antes de que engañe a todos." },
+  { id: "pictionary", name: "Pictionary", icon: "〰", blurb: "Dibuja un campeón y deja que tu equipo lo adivine." },
 ];
 
 export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
@@ -72,8 +73,10 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
               </div>
               <p className="hint" style={{ marginTop: 16 }}>Fallar descuenta {(fuse.penaltyMs / 1000).toFixed(0)} s y siempre tendrás al menos {(fuse.minMarginMs / 1000).toFixed(0)} s para pasarla.</p>
             </>
-          ) : (
+          ) : room.mode === "impostor" ? (
             <><div className="divider" /><p className="hint">Un infiltrado con 3 a 6 jugadores, dos desde 7. Pistas de {room.settings.impostor.clueSeconds} s, discusión de {room.settings.impostor.discussionSeconds} s y votación de {room.settings.impostor.voteSeconds} s.</p></>
+          ) : (
+            <><div className="divider" /><p className="hint">Por turnos, una persona dibuja durante {room.settings.pictionary.drawingSeconds} s. El resto intenta adivinar el campeón.</p></>
           )}
         </section>
 
