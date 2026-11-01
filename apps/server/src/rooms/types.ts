@@ -1,10 +1,11 @@
-import type { BombaSettings, CarreraSettings, ImpostorSettings, ModeId, PictionarySettings, QuienSoySettings, UnicaSettings } from "@lolgames/protocol";
+import type { BombaSettings, CarreraSettings, DescripcionSettings, ImpostorSettings, ModeId, PictionarySettings, QuienSoySettings, UnicaSettings } from "@lolgames/protocol";
 import type { BombaState } from "@lolgames/engine";
 import type { ImpostorState } from "@lolgames/engine";
 import type { PictionaryState } from "@lolgames/engine";
 import type { UnicaState } from "@lolgames/engine";
 import type { QuienSoyState } from "@lolgames/engine";
 import type { CarreraState } from "@lolgames/engine";
+import type { DescripcionState } from "@lolgames/engine";
 
 export type Player = {
   id: string;
@@ -21,7 +22,7 @@ export type Player = {
   recentRequests: string[];
 };
 
-export type GameState = BombaState | ImpostorState | PictionaryState | UnicaState | QuienSoyState | CarreraState;
+export type GameState = BombaState | ImpostorState | PictionaryState | UnicaState | QuienSoyState | CarreraState | DescripcionState;
 
 export type Room = {
   id: string;
@@ -41,6 +42,7 @@ export type Room = {
     unica: UnicaSettings;
     quienSoy: QuienSoySettings;
     carrera: CarreraSettings;
+    descripcion: DescripcionSettings;
   };
   scores: Record<string, number>;
   /** Desplazamiento del primer hablante de Impostor en la siguiente ronda. */
@@ -58,4 +60,6 @@ export type IncomingAction =
   | { kind: "quien-soy:question"; requestId: string; text: string }
   | { kind: "quien-soy:answer"; requestId: string; answer: boolean }
   | { kind: "quien-soy:guess"; requestId: string; championId: string }
-  | { kind: "carrera:answer"; requestId: string; championId: string };
+  | { kind: "carrera:answer"; requestId: string; championId: string }
+  | { kind: "descripcion:clue"; requestId: string; text: string }
+  | { kind: "descripcion:guess"; requestId: string; text: string };

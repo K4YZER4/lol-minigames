@@ -10,6 +10,7 @@ import { AvatarPicker } from "@/components/AvatarPicker";
 import { RoomNotFoundModal } from "@/components/RoomNotFoundModal";
 import type {
   BombaPrivateView,
+  DescripcionPrivateView,
   ImpostorPrivateView,
   JoinAck,
   PrivateView,
@@ -23,6 +24,7 @@ import { PictionaryGame } from "@/components/PictionaryGame";
 import { UnicaGame } from "@/components/UnicaGame";
 import { QuienSoyGame } from "@/components/QuienSoyGame";
 import { CarreraGame } from "@/components/CarreraGame";
+import { DescripcionGame } from "@/components/DescripcionGame";
 
 const newRequestId = () =>
   typeof crypto !== "undefined" && "randomUUID" in crypto
@@ -188,7 +190,7 @@ export function RoomClient({ code }: { code: string }) {
     }
   }, [code]);
 
-  const resetToLobby = useCallback(async (mode?: "bomba" | "impostor" | "pictionary" | "unica" | "quien-soy") => {
+  const resetToLobby = useCallback(async (mode?: "bomba" | "impostor" | "pictionary" | "unica" | "quien-soy" | "carrera" | "descripcion") => {
     setResetting(true);
     const ack = await act("session:reset", mode ? { mode } : {});
     setResetting(false);
@@ -197,6 +199,7 @@ export function RoomClient({ code }: { code: string }) {
 
   const bombaPriv = priv?.mode === "bomba" ? (priv as BombaPrivateView) : null;
   const impostorPriv = priv?.mode === "impostor" ? (priv as ImpostorPrivateView) : null;
+  const descripcionPriv = priv?.mode === "descripcion" ? (priv as DescripcionPrivateView) : null;
 
   if (needsJoin) {
     if (joinErrorCode === "ROOM_NOT_FOUND") {
@@ -332,6 +335,11 @@ export function RoomClient({ code }: { code: string }) {
            onReset={(mode) => void resetToLobby(mode)} />
       ) : room.game?.mode === "carrera" ? (
         <CarreraGame room={room} priv={priv?.mode === "carrera" ? priv : null} champions={champions} onAnswer={(championId) => void act("carrera:answer", { requestId: newRequestId(), championId })} />
+      ) : room.game?.mode === "descripcion" ? (
+        <DescripcionGame room={room} me={me} priv={priv?.mode === "descripcion" ? priv : null} isHost={room.hostId === me} resetting={resetting}
+          onClue={(text) => void act("descripcion:clue", { requestId: newRequestId(), text })}
+          onGuess={(text) => void act("descripcion:guess", { requestId: newRequestId(), text })}
+          onReset={(mode) => void resetToLobby(mode)} />
       ) : (
         <section className="panel center">
           <p className="hint">Esperando el estado de la partida…</p>

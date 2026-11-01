@@ -12,6 +12,7 @@ import {
   DEFAULT_UNICA_SETTINGS,
   DEFAULT_QUIEN_SOY_SETTINGS,
   DEFAULT_CARRERA_SETTINGS,
+  DEFAULT_DESCRIPCION_SETTINGS,
   MAX_PLAYERS,
   MIN_PLAYERS,
   RECONNECT_GRACE_MS,
@@ -24,6 +25,7 @@ import {
   type UnicaSettings,
   type QuienSoySettings,
   type CarreraSettings,
+  type DescripcionSettings,
   type JoinAck,
   type ModeId,
   type PlayerView,
@@ -78,6 +80,13 @@ import {
   carreraPublicView,
   carreraResults,
   carreraTick,
+  createDescripcion,
+  descripcionClue,
+  descripcionGuess,
+  descripcionPrivateView,
+  descripcionPublicView,
+  descripcionResults,
+  descripcionTick,
   nameKey,
   type BombaState,
   type Effect,
@@ -86,6 +95,7 @@ import {
   type UnicaState,
   type QuienSoyState,
   type CarreraState,
+  type DescripcionState,
   type Result,
 } from "@lolgames/engine";
 import { Clock, RateLimiter, RoomRepository, SessionRepository } from "../ports";
@@ -165,6 +175,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
         unica: { ...DEFAULT_UNICA_SETTINGS },
         quienSoy: { ...DEFAULT_QUIEN_SOY_SETTINGS },
         carrera: { ...DEFAULT_CARRERA_SETTINGS },
+        descripcion: { ...DEFAULT_DESCRIPCION_SETTINGS },
       },
       scores: { [player.id]: 0 },
       impostorRoundOffset: 0,
@@ -395,6 +406,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       }
       if (patch.quienSoy) room.settings.quienSoy = { ...room.settings.quienSoy, ...patch.quienSoy };
       if (patch.carrera) room.settings.carrera = { ...room.settings.carrera, ...patch.carrera };
+      if (patch.descripcion) room.settings.descripcion = { ...room.settings.descripcion, ...patch.descripcion };
 
       room.lastActivityAt = this.clock.now();
       room.stateVersion++;
@@ -476,7 +488,9 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                  now,
                  rng: this.rng,
                 })
-                : createCarrera({ playerIds: ids, settings: room.settings.carrera, champions: this.content.championInfo, clues: this.content.clues, now, rng: this.rng });
+                : room.mode === "carrera"
+                ? createCarrera({ playerIds: ids, settings: room.settings.carrera, champions: this.content.championInfo, clues: this.content.clues, now, rng: this.rng })
+                : createDescripcion({ playerIds: ids, settings: room.settings.descripcion, champions: this.content.championInfo, now, rng: this.rng });
 
       room.phase = "PLAYING";
       room.lastActivityAt = now;
@@ -782,6 +796,11 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       if (action.kind === "carrera:answer") return carreraAnswer(room.game as CarreraState, playerId, action.championId, { now: this.clock.now(), rng: this.rng, clues: this.content.clues });
       return null;
     }
+    if (room.mode === "descripcion") {
+      if (action.kind === "descripcion:clue") return descripcionClue(room.game as DescripcionState, playerId, action.text);
+      if (action.kind === "descripcion:guess") return descripcionGuess(room.game as DescripcionState, playerId, action.text, ctx);
+      return null;
+    }
     if (room.mode !== "impostor") return null;
     const state = room.game as ImpostorState;
 
@@ -807,7 +826,8 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
     if (room.mode === "pictionary") return pictionaryTick(room.game as PictionaryState, ctx);
     if (room.mode === "unica") return unicaTick(room.game as UnicaState, ctx);
     if (room.mode === "quien-soy") return quienSoyTick(room.game as QuienSoyState, ctx);
-    return carreraTick(room.game as CarreraState, { now, rng: this.rng, clues: this.content.clues });
+    if (room.mode === "carrera") return carreraTick(room.game as CarreraState, { now, rng: this.rng, clues: this.content.clues });
+    return descripcionTick(room.game as DescripcionState, { now, rng: this.rng, champions: this.content.championInfo });
   }
 
   private skipStalledBomba(
@@ -838,7 +858,10 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                ? (room.game as UnicaState).phase === "REVEAL"
                 : room.mode === "quien-soy"
                   ? (room.game as QuienSoyState).phase === "REVEAL"
-                  : (room.game as CarreraState).phase === "FINISHED";
+                   : room.mode === "carrera"
+                     ? (room.game as CarreraState).phase === "FINISHED"
+                     : (room.game as DescripcionState).phase === "REVEAL" &&
+                       (room.game as DescripcionState).roundIndex + 1 >= (room.game as DescripcionState).order.length;
     if (!finished || room.phase === "FINISHED") return false;
 
     room.phase = "FINISHED";
@@ -853,7 +876,9 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
              ? unicaResults(room.game as UnicaState)
               : room.mode === "quien-soy"
                 ? quienSoyResults(room.game as QuienSoyState)
-                : carreraResults(room.game as CarreraState);
+                 : room.mode === "carrera"
+                   ? carreraResults(room.game as CarreraState)
+                   : descripcionResults(room.game as DescripcionState);
     for (const [id, score] of Object.entries(results.scores)) {
       room.scores[id] = (room.scores[id] ?? 0) + score;
     }
@@ -931,7 +956,9 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                   ? unicaPublicView(room.game as UnicaState)
                    : room.mode === "quien-soy"
                      ? quienSoyPublicView(room.game as QuienSoyState)
-                     : carreraPublicView(room.game as CarreraState, now);
+                      : room.mode === "carrera"
+                        ? carreraPublicView(room.game as CarreraState, now)
+                         : descripcionPublicView(room.game as DescripcionState);
     }
 
     return {
@@ -957,6 +984,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
     if (room.mode === "pictionary") return pictionaryPrivateView(room.game as PictionaryState, playerId);
     if (room.mode === "unica") return unicaPrivateView(room.game as UnicaState, playerId);
     if (room.mode === "quien-soy") return quienSoyPrivateView(room.game as QuienSoyState, playerId);
-    return carreraPrivateView(room.game as CarreraState, playerId);
+     if (room.mode === "carrera") return carreraPrivateView(room.game as CarreraState, playerId);
+     return descripcionPrivateView(room.game as DescripcionState, playerId);
   }
 }
