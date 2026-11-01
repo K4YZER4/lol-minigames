@@ -35,8 +35,8 @@ export function PictionaryGame({ room, me, priv, champions, isHost, resetting, o
 
   const drawer = room.players.find((player) => player.playerId === game.drawerId);
   const isDrawer = Boolean(me) && game.drawerId === me && game.phase === "DRAWING";
-  const pointFromEvent = (event: PointerEvent<SVGSVGElement>): Point => {
-    const rect = event.currentTarget.getBoundingClientRect();
+  const pointFromEvent = (event: PointerEvent<SVGSVGElement>, canvas: SVGSVGElement): Point => {
+    const rect = canvas.getBoundingClientRect();
     if (!rect.width || !rect.height) return { x: 0, y: 0 };
     return { x: Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width)), y: Math.max(0, Math.min(1, (event.clientY - rect.top) / rect.height)) };
   };
@@ -46,7 +46,7 @@ export function PictionaryGame({ room, me, priv, champions, isHost, resetting, o
     <div className="center pictionary-heading"><div className="eyebrow">Pictionary · ronda {game.roundIndex + 1}/{game.totalRounds}</div><h1>{game.phase === "DRAWING" ? (isDrawer ? "Dibuja sin decirlo." : `${drawer?.name ?? "Alguien"} está dibujando.`) : "¡Se reveló el campeón!"}</h1><div className="timerbox"><Timer endsAt={game.phaseEndsAt} serverTime={room.serverTime} totalMs={room.settings.pictionary.drawingSeconds * 1000} label={isDrawer && priv?.target ? `Dibuja: ${priv.target.name}` : "Tiempo de la ronda"} /></div></div>
 
     <section className="glass pictionary-board-wrap">
-      <svg className={`pictionary-board${isDrawer ? " can-draw" : ""}`} viewBox="0 0 1 1" role="img" aria-label="Lienzo de Pictionary" onPointerDown={(event) => { if (!isDrawer) return; try { event.currentTarget.setPointerCapture(event.pointerId); } catch { /* el puntero pudo salir del lienzo */ } setDrawing(true); setDraft([pointFromEvent(event)]); }} onPointerMove={(event) => { if (!drawing || !isDrawer) return; setDraft((points) => points.length >= 40 ? points : [...points, pointFromEvent(event)]); }} onPointerUp={(event) => { if (!drawing) return; setDrawing(false); try { event.currentTarget.releasePointerCapture(event.pointerId); } catch { /* ya fue liberado */ } if (draft.length > 1) onStroke(draft.slice(0, 40)); setDraft([]); }} onPointerCancel={() => { setDrawing(false); setDraft([]); }}>
+      <svg className={`pictionary-board${isDrawer ? " can-draw" : ""}`} viewBox="0 0 1 1" role="img" aria-label="Lienzo de Pictionary" onPointerDown={(event) => { if (!isDrawer) return; const canvas = event.currentTarget; try { canvas.setPointerCapture(event.pointerId); } catch { /* el puntero pudo salir del lienzo */ } setDrawing(true); setDraft([pointFromEvent(event, canvas)]); }} onPointerMove={(event) => { if (!drawing || !isDrawer) return; const canvas = event.currentTarget; setDraft((points) => points.length >= 40 ? points : [...points, pointFromEvent(event, canvas)]); }} onPointerUp={(event) => { if (!drawing) return; setDrawing(false); try { event.currentTarget.releasePointerCapture(event.pointerId); } catch { /* ya fue liberado */ } if (draft.length > 1) onStroke(draft.slice(0, 40)); setDraft([]); }} onPointerCancel={() => { setDrawing(false); setDraft([]); }}>
         <rect x="0" y="0" width="1" height="1" className="pictionary-paper" />
         {strokes.map((stroke, index) => <polyline key={index} points={pointsAttribute(stroke)} className="pictionary-line" />)}
         {draft.length > 1 ? <polyline points={pointsAttribute(draft)} className="pictionary-line draft" /> : null}
