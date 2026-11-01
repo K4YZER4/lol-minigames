@@ -11,7 +11,7 @@ export const MIN_PLAYERS = 3;
 export const NICKNAME_MAX = 16;
 export const RECONNECT_GRACE_MS = 30_000;
 
-export const MODE_IDS = ["bomba", "impostor", "pictionary"] as const;
+export const MODE_IDS = ["bomba", "impostor", "pictionary", "unica"] as const;
 export type ModeId = (typeof MODE_IDS)[number];
 
 /* ------------------------------------------------------------------ */
@@ -96,12 +96,16 @@ export const PictionarySettingsSchema = z.object({
 });
 export type PictionarySettings = z.infer<typeof PictionarySettingsSchema>;
 export const DEFAULT_PICTIONARY_SETTINGS: PictionarySettings = { drawingSeconds: 90 };
+export const UnicaSettingsSchema = z.object({ answerSeconds: z.number().int().min(20).max(180) });
+export type UnicaSettings = z.infer<typeof UnicaSettingsSchema>;
+export const DEFAULT_UNICA_SETTINGS: UnicaSettings = { answerSeconds: 45 };
 
 export const SettingsSchema = z.object({
   mode: z.enum(MODE_IDS).optional(),
   bomba: BombaSettingsPatchSchema.optional(),
   impostor: ImpostorSettingsSchema.partial().optional(),
   pictionary: PictionarySettingsSchema.partial().optional(),
+  unica: UnicaSettingsSchema.partial().optional(),
 });
 
 export type SettingsPatch = z.infer<typeof SettingsSchema>;
@@ -131,6 +135,11 @@ export const PictionaryGuessPayloadSchema = z.object({
   championId: ChampionIdSchema,
 });
 
+export const UnicaSubmitPayloadSchema = z.object({
+  requestId: RequestIdSchema,
+  championId: ChampionIdSchema,
+});
+
 /* ------------------------------------------------------------------ */
 /* Nombres de eventos                                                  */
 /* ------------------------------------------------------------------ */
@@ -149,6 +158,7 @@ export const ClientEvents = {
   IMPOSTOR_VOTE: "impostor:vote",
   PICTIONARY_STROKE: "pictionary:stroke",
   PICTIONARY_GUESS: "pictionary:guess",
+  UNICA_SUBMIT: "unica:submit",
 } as const;
 
 export const ServerEvents = {
@@ -182,6 +192,7 @@ export const REJECT_CODES = [
   "ALREADY_VOTED",
   "ALREADY_GUESSED",
   "INVALID_STROKE",
+  "INVALID_CATEGORY",
   "SESSION_REPLACED",
 ] as const;
 
@@ -267,7 +278,17 @@ export type PictionaryGameView = {
   target: PublicChampion | null;
 };
 
-export type GameView = BombaGameView | ImpostorGameView | PictionaryGameView;
+export type UnicaAnswer = { playerId: string; champion: PublicChampion | null; duplicate: boolean };
+export type UnicaGameView = {
+  mode: "unica";
+  phase: "SUBMISSION" | "REVEAL";
+  phaseEndsAt: number;
+  category: string;
+  submitted: string[];
+  answers: UnicaAnswer[];
+};
+
+export type GameView = BombaGameView | ImpostorGameView | PictionaryGameView | UnicaGameView;
 
 export type RoomView = {
   code: string;
@@ -281,6 +302,7 @@ export type RoomView = {
     bomba: BombaSettings;
     impostor: ImpostorSettings;
     pictionary: PictionarySettings;
+    unica: UnicaSettings;
   };
   game: GameView | null;
   serverTime: number;
@@ -311,7 +333,13 @@ export type PictionaryPrivateView = {
   youAreDrawer: boolean;
 };
 
-export type PrivateView = BombaPrivateView | ImpostorPrivateView | PictionaryPrivateView | null;
+export type UnicaPrivateView = {
+  mode: "unica";
+  yourAnswer: PublicChampion | null;
+  hasSubmitted: boolean;
+};
+
+export type PrivateView = BombaPrivateView | ImpostorPrivateView | PictionaryPrivateView | UnicaPrivateView | null;
 
 /* ------------------------------------------------------------------ */
 /* Efectos transitorios (animaciones, no estado)                       */

@@ -70,6 +70,15 @@ export class ContentService {
     return this.info;
   }
 
+  get unicaChampionInfo(): Record<string, { id: string; name: string; imageUrl: string; tags: string[] }> {
+    return Object.fromEntries(this.bundle.champions.map((champion) => [champion.id, {
+      id: champion.id,
+      name: champion.name,
+      imageUrl: champion.imageUrl,
+      tags: champion.tags,
+    }]));
+  }
+
   exists(championId: string): boolean {
     return Boolean(this.bundle.championById[championId]);
   }

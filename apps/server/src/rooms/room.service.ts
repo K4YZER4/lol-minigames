@@ -9,6 +9,7 @@ import {
   DEFAULT_BOMBA_SETTINGS,
   DEFAULT_IMPOSTOR_SETTINGS,
   DEFAULT_PICTIONARY_SETTINGS,
+  DEFAULT_UNICA_SETTINGS,
   MAX_PLAYERS,
   MIN_PLAYERS,
   RECONNECT_GRACE_MS,
@@ -18,6 +19,7 @@ import {
   type BombaSettings,
   type ImpostorSettings,
   type PictionarySettings,
+  type UnicaSettings,
   type JoinAck,
   type ModeId,
   type PlayerView,
@@ -52,11 +54,18 @@ import {
   pictionaryResults,
   pictionaryStroke,
   pictionaryTick,
+  createUnica,
+  unicaPrivateView,
+  unicaPublicView,
+  unicaResults,
+  unicaSubmit,
+  unicaTick,
   nameKey,
   type BombaState,
   type Effect,
   type ImpostorState,
   type PictionaryState,
+  type UnicaState,
   type Result,
 } from "@lolgames/engine";
 import { Clock, RateLimiter, RoomRepository, SessionRepository } from "../ports";
@@ -133,6 +142,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
         bomba: { ...DEFAULT_BOMBA_SETTINGS },
         impostor: { ...DEFAULT_IMPOSTOR_SETTINGS },
         pictionary: { ...DEFAULT_PICTIONARY_SETTINGS },
+        unica: { ...DEFAULT_UNICA_SETTINGS },
       },
       scores: { [player.id]: 0 },
       impostorRoundOffset: 0,
@@ -358,6 +368,9 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       if (patch.pictionary) {
         room.settings.pictionary = { ...room.settings.pictionary, ...patch.pictionary };
       }
+      if (patch.unica) {
+        room.settings.unica = { ...room.settings.unica, ...patch.unica };
+      }
 
       room.lastActivityAt = this.clock.now();
       room.stateVersion++;
@@ -415,10 +428,18 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
               now,
               rng: this.rng,
               })
-            : createPictionary({
+            : room.mode === "pictionary"
+              ? createPictionary({
                 playerIds: ids,
                 settings: room.settings.pictionary,
                 champions: this.content.championInfo,
+                now,
+                rng: this.rng,
+              })
+              : createUnica({
+                playerIds: ids,
+                settings: room.settings.unica,
+                champions: this.content.unicaChampionInfo,
                 now,
                 rng: this.rng,
               });
@@ -679,7 +700,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       rng: this.rng,
       clues: this.content.clues,
       pairs: this.content.pairs,
-      champions: this.content.championInfo,
+      champions: this.content.unicaChampionInfo,
     };
   }
 
@@ -712,6 +733,10 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
           return null;
       }
     }
+    if (room.mode === "unica") {
+      if (action.kind === "unica:submit") return unicaSubmit(room.game as UnicaState, playerId, action.championId);
+      return null;
+    }
     if (room.mode !== "impostor") return null;
     const state = room.game as ImpostorState;
 
@@ -725,7 +750,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       default:
         return null;
     }
-  }
+    }
 
   private tickEngine(
     room: Room,
@@ -734,7 +759,8 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
     const ctx = this.engineContext(now);
     if (room.mode === "bomba") return bombaTick(room.game as BombaState, ctx);
     if (room.mode === "impostor") return impostorTick(room.game as ImpostorState, ctx);
-    return pictionaryTick(room.game as PictionaryState, ctx);
+    if (room.mode === "pictionary") return pictionaryTick(room.game as PictionaryState, ctx);
+    return unicaTick(room.game as UnicaState, ctx);
   }
 
   private skipStalledBomba(
@@ -758,8 +784,10 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
         ? (room.game as BombaState).phase === "FINISHED"
         : room.mode === "impostor"
           ? (room.game as ImpostorState).phase === "REVEAL"
-          : (room.game as PictionaryState).phase === "REVEAL" &&
-            (room.game as PictionaryState).roundIndex + 1 >= (room.game as PictionaryState).order.length;
+          : room.mode === "pictionary"
+            ? (room.game as PictionaryState).phase === "REVEAL" &&
+              (room.game as PictionaryState).roundIndex + 1 >= (room.game as PictionaryState).order.length
+            : (room.game as UnicaState).phase === "REVEAL";
     if (!finished || room.phase === "FINISHED") return false;
 
     room.phase = "FINISHED";
@@ -768,7 +796,9 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
         ? bombaResults(room.game as BombaState)
         : room.mode === "impostor"
           ? impostorResults(room.game as ImpostorState)
-          : pictionaryResults(room.game as PictionaryState);
+          : room.mode === "pictionary"
+            ? pictionaryResults(room.game as PictionaryState)
+            : unicaResults(room.game as UnicaState);
     for (const [id, score] of Object.entries(results.scores)) {
       room.scores[id] = (room.scores[id] ?? 0) + score;
     }
@@ -840,7 +870,9 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
           ? bombaPublicView(room.game as BombaState, now)
            : room.mode === "impostor"
              ? impostorPublicView(room.game as ImpostorState, now)
-             : pictionaryPublicView(room.game as PictionaryState, now);
+             : room.mode === "pictionary"
+               ? pictionaryPublicView(room.game as PictionaryState, now)
+               : unicaPublicView(room.game as UnicaState);
     }
 
     return {
@@ -863,6 +895,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       return bombaPrivateView(room.game as BombaState, playerId);
     }
     if (room.mode === "impostor") return impostorPrivateView(room.game as ImpostorState, playerId);
-    return pictionaryPrivateView(room.game as PictionaryState, playerId);
+    if (room.mode === "pictionary") return pictionaryPrivateView(room.game as PictionaryState, playerId);
+    return unicaPrivateView(room.game as UnicaState, playerId);
   }
 }
