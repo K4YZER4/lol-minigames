@@ -141,8 +141,12 @@ export function RoomClient({ code }: { code: string }) {
     const onEffect = (effect: { type?: string }) => {
       if (effect?.type) setFlash({ type: effect.type, key: Date.now() });
     };
-    const onRejected = (payload: { message?: string }) => {
-      setToast(payload?.message ?? "El servidor rechazó la acción");
+    const onRejected = (payload: { code?: string; message?: string }) => {
+      setToast(
+        payload?.code === "SESSION_REPLACED"
+          ? "Esta sesión se abrió en otra pestaña. Usa otro jugador para esta pestaña."
+          : (payload?.message ?? "El servidor rechazó la acción"),
+      );
     };
 
     socket.on("connect", onConnect);
