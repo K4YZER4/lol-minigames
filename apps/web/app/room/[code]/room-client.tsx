@@ -132,7 +132,11 @@ export function RoomClient({ code }: { code: string }) {
       else setNeedsJoin(true);
     };
     const onDisconnect = () => setConnecting(true);
-    const onState = (view: RoomView) => setRoom(view);
+    const onState = (view: RoomView) => {
+      setRoom((previous) =>
+        !previous || view.stateVersion >= previous.stateVersion ? view : previous,
+      );
+    };
     const onPrivate = (view: PrivateView) => setPriv(view);
     const onEffect = (effect: { type?: string }) => {
       if (effect?.type) setFlash({ type: effect.type, key: Date.now() });

@@ -269,20 +269,20 @@ async function bombaFlow() {
     "Caro de vuelta",
   );
 
-  // Un refresh rápido no debe quitar el anfitrión: hay una gracia de reconexión.
+  // Si el host pierde su socket, el control se transfiere inmediatamente.
   ana.socket.disconnect();
   await beto.waitFor(
-    (room) => room.players.find((p) => p.playerId === ana.id)?.connected === false,
-    "Ana desconectada",
+    (room) => room.hostId === beto.id,
+    "traspaso de anfitrión en tiempo real",
   );
-  check(true, "el anfitrión se reserva durante la gracia de reconexión");
+  check(true, "el anfitrión pasa al jugador conectado en tiempo real");
 
   ana.socket.connect();
   await ana.open();
   const anaBack = await ana.emit("room:join", { code, token: ana.token });
   check(anaBack.ok === true, "el anfitrión anterior puede volver");
-  await ana.waitFor((room) => room.hostId === ana.id, "host restaurado");
-  check(true, "el anfitrión conserva el control al reconectarse");
+  await ana.waitFor((room) => room.hostId === beto.id, "host estable");
+  check(true, "el anfitrión anterior vuelve sin recuperar el control");
 
   for (const client of all) client.close();
   return code;

@@ -610,7 +610,9 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       player.socketId = null;
       player.ready = false;
       this.broadcast.unbind(player.id);
-      this.electHost(room);
+      // La desconexión del socket transfiere el control inmediatamente. Si el
+      // antiguo host vuelve, se reconecta como jugador y no hace rebotar el rol.
+      this.electHost(room, this.clock.now(), true);
 
       room.stateVersion++;
       await this.repo.save(room);
