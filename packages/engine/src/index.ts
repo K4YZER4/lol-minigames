@@ -4,4 +4,4 @@ export * from "./bomba/engine";
 export * from "./impostor/engine";
 export * from "./pictionary/engine";
 export * from "./unica/engine";
-export * from "./carrera/engine";
+export * from "./quien-soy/engine";

@@ -21,7 +21,7 @@ import { BombaGame } from "@/components/BombaGame";
 import { ImpostorGame } from "@/components/ImpostorGame";
 import { PictionaryGame } from "@/components/PictionaryGame";
 import { UnicaGame } from "@/components/UnicaGame";
-import { CarreraGame } from "@/components/CarreraGame";
+import { QuienSoyGame } from "@/components/QuienSoyGame";
 
 const newRequestId = () =>
   typeof crypto !== "undefined" && "randomUUID" in crypto
@@ -187,7 +187,7 @@ export function RoomClient({ code }: { code: string }) {
     }
   }, [code]);
 
-  const resetToLobby = useCallback(async (mode?: "bomba" | "impostor" | "pictionary" | "unica") => {
+  const resetToLobby = useCallback(async (mode?: "bomba" | "impostor" | "pictionary" | "unica" | "quien-soy") => {
     setResetting(true);
     const ack = await act("session:reset", mode ? { mode } : {});
     setResetting(false);
@@ -250,7 +250,7 @@ export function RoomClient({ code }: { code: string }) {
       <div className="top">
         <div>
           <div className="eyebrow"><span className={`live-dot${connecting ? "" : " on"}`} /> Sala {code}</div>
-          <h1>{!room || room.phase === "LOBBY" ? "La sala está lista." : room.mode === "bomba" ? "No te la quedes." : room.mode === "impostor" ? "Que no te lean tan fácil." : room.mode === "pictionary" ? "Dibuja. Que no te descubran." : room.mode === "carrera" ? "Corre con las pistas." : "Elige sin repetir."}</h1>
+          <h1>{!room || room.phase === "LOBBY" ? "La sala está lista." : room.mode === "bomba" ? "No te la quedes." : room.mode === "impostor" ? "Que no te lean tan fácil." : room.mode === "pictionary" ? "Dibuja. Que no te descubran." : room.mode === "unica" ? "Elige sin repetir." : "Descubre quién eres."}</h1>
         </div>
         <div className="row">
           <button className="secondary" onClick={() => void copyCode()}>Copiar código ↗</button>
@@ -323,8 +323,12 @@ export function RoomClient({ code }: { code: string }) {
           onSubmit={(championId) => void act("unica:submit", { requestId: newRequestId(), championId })}
           onReset={(mode) => void resetToLobby(mode)}
         />
-      ) : room.game?.mode === "carrera" ? (
-        <CarreraGame room={room} priv={priv?.mode === "carrera" ? priv : null} champions={champions} onAnswer={(championId) => void act("carrera:answer", { requestId: newRequestId(), championId })} />
+      ) : room.game?.mode === "quien-soy" ? (
+        <QuienSoyGame room={room} me={me} priv={priv?.mode === "quien-soy" ? priv : null} champions={champions} isHost={room.hostId === me} resetting={resetting}
+          onQuestion={(text) => void act("quien-soy:question", { requestId: newRequestId(), text })}
+          onAnswer={(answer) => void act("quien-soy:answer", { requestId: newRequestId(), answer })}
+          onGuess={(championId) => void act("quien-soy:guess", { requestId: newRequestId(), championId })}
+          onReset={(mode) => void resetToLobby(mode)} />
       ) : (
         <section className="panel center">
           <p className="hint">Esperando el estado de la partida…</p>
