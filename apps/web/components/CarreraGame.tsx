@@ -1,18 +1,21 @@
 "use client";
-import { useState } from "react";
+
 import type { CarreraPrivateView, RoomView } from "@lolgames/protocol";
 import type { Champion } from "@/lib/champions";
-type Props = { room: RoomView; priv: CarreraPrivateView | null; champions: Champion[]; onAnswer: (id: string) => void };
-export function CarreraGame({ room, priv, champions, onAnswer }: Props) {
-  const [choice, setChoice] = useState("");
+import { ChampionPicker } from "./ChampionPicker";
+import { Timer } from "./Timer";
+
+type Props = { room: RoomView; priv: CarreraPrivateView | null; champions: Champion[]; isHost: boolean; resetting: boolean; onAnswer: (id: string) => void; onReset: (mode?: "carrera") => void };
+
+export function CarreraGame({ room, priv, champions, isHost, resetting, onAnswer, onReset }: Props) {
   const game = room.game?.mode === "carrera" ? room.game : null;
   if (!game) return null;
   const answered = priv?.hasAnswered ?? false;
-  return <div className="game-shell"><section className="panel">
-    <div className="eyebrow">Carrera de pistas · ronda {game.round + 1}/{game.totalRounds}</div>
-    <h2>{game.phase === "CLUES" ? `Pista ${game.clueIndex + 1}` : game.phase === "FINISHED" ? "Carrera terminada" : "Respuesta"}</h2>
-    <p className="hint">{game.phase === "CLUES" ? "Elige el campeón correcto antes que los demás." : game.target ? `Era ${game.target.name}.` : "La ronda se revela…"}</p>
-    <div className="clue-grid">{game.clues.map((clue) => <div className="clue-card" key={clue.clueId}><img src={clue.imageUrl} alt="Pista" /><span>{clue.kind === "spell" ? "Habilidad" : "Pasiva"}</span></div>)}</div>
-    {game.phase === "CLUES" && !answered ? <><select className="input" value={choice} onChange={(e) => setChoice(e.target.value)}><option value="">Elige un campeón…</option>{champions.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}</select><button className="primary" disabled={!choice} onClick={() => { onAnswer(choice); setChoice(""); }}>Responder</button></> : <p className="hint">{answered ? "Respuesta registrada. Espera el resultado." : game.winnerId ? `${room.players.find((p) => p.playerId === game.winnerId)?.name ?? "Alguien"} ganó la ronda.` : "Sin ganador en esta ronda."}</p>}
-  </section></div>;
+  const winner = room.players.find((player) => player.playerId === game.winnerId);
+  const blur = Math.max(1, 9 - game.clueIndex * 2);
+  return <div className="game-shell carrera-layout">
+    <div className="center carrera-heading"><div className="eyebrow">Carrera de pistas · ronda {game.round + 1}/{game.totalRounds}</div><h1>{game.phase === "CLUES" ? "Adivina antes que los demás." : game.phase === "FINISHED" ? "Carrera terminada" : "Respuesta revelada"}</h1><div className="timerbox"><Timer endsAt={game.phaseEndsAt} serverTime={room.serverTime} totalMs={room.settings.carrera.clueSeconds * 1000} label={`Pista ${game.clueIndex + 1}`} /></div></div>
+    <section className="glass carrera-clues"><div className="carrera-clue-grid">{game.clues.map((clue) => <div className="carrera-clue-card" key={clue.clueId}><img src={clue.imageUrl} alt="Pista visual" style={{ filter: game.phase === "CLUES" ? `blur(${blur}px)` : "none" }} /><span>{clue.kind === "spell" ? "Habilidad" : "Pasiva"}</span></div>)}</div>{game.phase === "CLUES" && !answered ? <ChampionPicker champions={champions} onPick={onAnswer} placeholder="¿Qué campeón es?" /> : <p className="hint carrera-result">{answered ? "Respuesta registrada. Espera el resultado." : winner ? `${winner.name} ganó la ronda.` : game.target ? `Era ${game.target.name}.` : "Sin ganador en esta ronda."}</p>}</section>
+    <aside className="panel carrera-sidebar"><div className="eyebrow">Puntuación</div>{room.players.slice().sort((a, b) => b.score - a.score).map((player) => <div className="score-row" key={player.playerId}><span>{player.name}</span><strong>{player.score}</strong></div>)}{game.phase === "FINISHED" && isHost ? <div className="result-actions"><button className="primary" disabled={resetting} onClick={() => onReset("carrera")}>Repetir carrera →</button></div> : null}</aside>
+  </div>;
 }

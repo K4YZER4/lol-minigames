@@ -1048,9 +1048,9 @@ input:disabled {
 .pictionary-line.draft { stroke: #365c93; }
 .pictionary-hint { padding: 9px 4px 0; color: var(--muted); font-size: 11px; text-align: center; }
 
-.pictionary-guess { grid-column: 2; grid-row: 3; width: 100%; margin: 0; }
-.pictionary-target { grid-column: 2; grid-row: 3; margin: 0; padding: 18px; }
-.pictionary-scoreboard { grid-column: 2; grid-row: 2; margin: 0; }
+.pictionary-guess { grid-column: 2; grid-row: 2; width: 100%; margin: 0; }
+.pictionary-target { grid-column: 2; grid-row: 2; margin: 0; padding: 18px; }
+.pictionary-scoreboard { grid-column: 2; grid-row: 3; margin: 10px 0 0; max-height: 250px; overflow-y: auto; }
 .score-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--edge); font-size: 12px; }
 .score-row:last-child { border-bottom: 0; }
 .score-row strong { color: var(--accent); }
@@ -1074,7 +1074,18 @@ input:disabled {
 .pictionary-size.selected { background: var(--accent); color: var(--ink); font-weight: 700; }
 .pictionary-icon-tool { width: 34px; height: 30px; padding: 0; font-size: 18px; }
 .pictionary-width-tool { width: 27px; height: 27px; padding: 0; line-height: 1; font-size: 14px; }
-.pictionary-clear { margin-left: auto; padding: 8px 12px; font-size: 12px; }
+.pictionary-clear { margin-left: auto; width: 38px; height: 34px; padding: 0; font-size: 22px; line-height: 1; }
+
+.carrera-layout { max-width: 1120px; grid-template-columns: minmax(0, 1fr) 280px; align-items: start; }
+.carrera-heading { grid-column: 1 / -1; }
+.carrera-clues { grid-column: 1; grid-row: 2; padding: 18px; }
+.carrera-sidebar { grid-column: 2; grid-row: 2; max-height: 520px; overflow-y: auto; }
+.carrera-clue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; }
+.carrera-clue-card { position: relative; overflow: hidden; border: 1px solid var(--edge); border-radius: 15px; background: rgba(0,0,0,.18); }
+.carrera-clue-card img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; transition: filter .3s ease; }
+.carrera-clue-card span { position: absolute; left: 8px; bottom: 8px; padding: 4px 7px; border-radius: 7px; background: rgba(2,18,47,.8); color: var(--text); font-size: 10px; }
+.carrera-clues .picker { margin-top: 16px; }
+.carrera-result { margin-top: 16px; text-align: center; }
 
 .clue h2 {
   font-size: 24px;
@@ -1692,9 +1703,13 @@ input:disabled {
   .pictionary-guess,
   .pictionary-target {
     grid-column: 1;
+    grid-row: auto;
   }
 
-  .pictionary-scoreboard { grid-column: 1; }
+  .pictionary-scoreboard { grid-column: 1; grid-row: auto; }
+
+  .carrera-layout { grid-template-columns: 1fr; }
+  .carrera-heading, .carrera-clues, .carrera-sidebar { grid-column: 1; grid-row: auto; }
 
   .avatar-picker-grid {
     grid-template-columns: repeat(4, 1fr);
