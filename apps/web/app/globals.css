@@ -1027,14 +1027,16 @@ input:disabled {
 }
 
 .pictionary-board-wrap {
+  grid-column: 1;
+  grid-row: 2;
   padding: 14px;
 }
 
 .pictionary-board {
   display: block;
   width: 100%;
-  height: min(68vh, 620px);
-  min-height: 380px;
+  height: min(52vh, 500px);
+  min-height: 300px;
   touch-action: none;
   border-radius: 16px;
   overflow: hidden;
@@ -1046,9 +1048,9 @@ input:disabled {
 .pictionary-line.draft { stroke: #365c93; }
 .pictionary-hint { padding: 9px 4px 0; color: var(--muted); font-size: 11px; text-align: center; }
 
-.pictionary-guess { grid-column: 2; width: 100%; margin: 0; }
-.pictionary-target { grid-column: 2; margin: 0; padding: 18px; }
-.pictionary-scoreboard { grid-column: 2; margin-top: 10px; }
+.pictionary-guess { grid-column: 2; grid-row: 3; width: 100%; margin: 0; }
+.pictionary-target { grid-column: 2; grid-row: 3; margin: 0; padding: 18px; }
+.pictionary-scoreboard { grid-column: 2; grid-row: 2; margin: 0; }
 .score-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--edge); font-size: 12px; }
 .score-row:last-child { border-bottom: 0; }
 .score-row strong { color: var(--accent); }
@@ -1070,6 +1072,8 @@ input:disabled {
 .pictionary-sizes { display: inline-flex; gap: 3px; padding: 3px; border: 1px solid var(--edge); border-radius: 9px; background: var(--glass); }
 .pictionary-size { padding: 5px 8px; border: 0; border-radius: 6px; background: transparent; color: var(--muted); font-size: 11px; }
 .pictionary-size.selected { background: var(--accent); color: var(--ink); font-weight: 700; }
+.pictionary-icon-tool { width: 34px; height: 30px; padding: 0; font-size: 18px; }
+.pictionary-width-tool { width: 27px; height: 27px; padding: 0; line-height: 1; font-size: 14px; }
 .pictionary-clear { margin-left: auto; padding: 8px 12px; font-size: 12px; }
 
 .clue h2 {
