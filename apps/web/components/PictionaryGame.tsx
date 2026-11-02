@@ -59,7 +59,7 @@ function floodFill(ctx: CanvasRenderingContext2D, x: number, y: number, color: s
 export function PictionaryGame({ room, me, priv, champions, isHost, resetting, onStroke, onUndo, onFill, onGuess, onReset }: Props) {
   const game = room.game?.mode === "pictionary" ? room.game : null;
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [draft, setDraft] = useState<Point[]>([]);
+  const draftRef = useRef<Point[]>([]);
   const [drawing, setDrawing] = useState(false);
   const [color, setColor] = useState(COLORS[0]!);
   const [width, setWidth] = useState(0.006);
@@ -82,8 +82,7 @@ export function PictionaryGame({ room, me, priv, champions, isHost, resetting, o
       for (const fill of game.fills ?? []) floodFill(ctx, fill.x, fill.y, fill.color);
       for (const stroke of game.strokes ?? []) drawStroke(ctx, stroke);
     }
-    if (draft.length > 1) drawStroke(ctx, draft);
-  }, [game, background, draft]);
+  }, [game, background]);
 
   if (!game) return null;
   const drawer = room.players.find((player) => player.playerId === game.drawerId);
@@ -97,6 +96,7 @@ export function PictionaryGame({ room, me, priv, champions, isHost, resetting, o
   return <div className="game-shell pictionary-layout">
     <div className="center pictionary-heading"><div className="eyebrow">Pictionary · ronda {game.roundIndex + 1}/{game.totalRounds}</div><h1>{game.phase === "DRAWING" ? (isDrawer ? "Dibuja sin decirlo." : `${drawer?.name ?? "Alguien"} está dibujando.`) : "¡Se reveló el campeón!"}</h1><div className="timerbox"><Timer endsAt={game.phaseEndsAt} serverTime={room.serverTime} totalMs={room.settings.pictionary.drawingSeconds * 1000} label={isDrawer && priv?.target ? `Dibuja: ${priv.target.name}` : "Tiempo de la ronda"} /></div></div>
     <section className="glass pictionary-board-wrap">
+      <canvas ref={canvasRef} className={`pictionary-board${isDrawer ? " can-draw" : ""}`} aria-label="Lienzo de Pictionary" onPointerDown={(event) => { if (!isDrawer) return; const canvas = canvasRef.current; if (!canvas) return; const point = pointFromEvent(event, canvas); if (tool === "fill") { onFill(point.x, point.y, color); return; } try { canvas.setPointerCapture(event.pointerId); } catch {} draftRef.current = [point]; setDrawing(true); }} onPointerMove={(event) => { if (!drawing || !isDrawer) return; const canvas = canvasRef.current; if (!canvas) return; const point = pointFromEvent(event, canvas); const previous = draftRef.current.at(-1); if (!previous || draftRef.current.length >= 1000) return; const ctx = canvas.getContext("2d"); if (ctx) drawStroke(ctx, [previous, point]); draftRef.current.push(point); }} onPointerUp={(event) => { if (!drawing) return; setDrawing(false); const canvas = canvasRef.current; if (!canvas) { draftRef.current = []; return; } const point = pointFromEvent(event, canvas); const previous = draftRef.current.at(-1); if (previous) { const ctx = canvas.getContext("2d"); if (ctx) drawStroke(ctx, [previous, point]); draftRef.current.push(point); } const completed = draftRef.current.slice(0, 1000); for (let index = 0; index < completed.length - 1; index += 39) onStroke(completed.slice(index, index + 40)); draftRef.current = []; }} onPointerCancel={() => { setDrawing(false); draftRef.current = []; }} />
       <div className="pictionary-tools"><div className="pictionary-tool-modes">{([["✎", "brush", "Pincel"], ["⌫", "eraser", "Borrador"], ["▰", "fill", "Cubeta"]] as const).map(([icon, value, label]) => <button key={value} type="button" className={`pictionary-size pictionary-icon-tool${tool === value ? " selected" : ""}`} title={label} aria-label={label} onClick={() => setTool(value)}>{icon}</button>)}</div><input className="pictionary-color-wheel" type="color" value={color} onChange={(event) => setColor(event.target.value)} aria-label="Rueda de colores" /><div className="pictionary-colors">{COLORS.map((swatch) => <button key={swatch} type="button" className={`pictionary-swatch${color === swatch ? " selected" : ""}`} style={{ background: swatch }} onClick={() => setColor(swatch)} aria-label={`Color ${swatch}`} />)}</div><div className="pictionary-width"><span>Grosor</span><div className="pictionary-sizes">{[["•", 0.003, "Fino"], ["●", 0.006, "Medio"], ["●", 0.012, "Grueso"]].map(([icon, value, label]) => <button key={label as string} type="button" className={`pictionary-size pictionary-width-tool${width === value ? " selected" : ""}`} title={label as string} aria-label={label as string} onClick={() => setWidth(value as number)}>{icon}</button>)}</div></div><button type="button" className="secondary pictionary-clear" title="Deshacer" aria-label="Deshacer" onClick={onUndo}>↶</button></div>
       <div className="pictionary-hint">{isDrawer ? "Tu objetivo está oculto para los demás." : "Adivina el campeón sin pedir pistas."}</div>
     </section>
