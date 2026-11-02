@@ -28,6 +28,7 @@ import { CarreraGame } from "@/components/CarreraGame";
 import { DescripcionGame } from "@/components/DescripcionGame";
 import { DuoGame } from "@/components/DuoGame";
 import { PartyGame } from "@/components/PartyGame";
+import { ResultsScreen } from "@/components/ResultsScreen";
 
 const newRequestId = () =>
   typeof crypto !== "undefined" && "randomUUID" in crypto
@@ -206,7 +207,7 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
     }
   }, [code]);
 
-  const resetToLobby = useCallback(async (mode?: "bomba" | "impostor" | "pictionary" | "unica" | "quien-soy" | "carrera" | "descripcion" | "duo") => {
+  const resetToLobby = useCallback(async (mode?: "bomba" | "impostor" | "pictionary" | "unica" | "quien-soy" | "carrera" | "descripcion" | "duo" | "party") => {
     setResetting(true);
     const ack = await act("session:reset", mode ? { mode } : {});
     setResetting(false);
@@ -291,6 +292,8 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
           onConfigure={(patch) => void act("session:configure", patch)}
           onStart={() => void act("session:start", {})}
         />
+      ) : room.phase === "FINISHED" ? (
+        <ResultsScreen room={room} me={me} resetting={resetting} onReset={(mode) => void resetToLobby(mode)} />
       ) : room.game?.mode === "bomba" ? (
         <BombaGame
           room={room}
