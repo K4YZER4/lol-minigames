@@ -34,7 +34,7 @@ const newRequestId = () =>
     ? crypto.randomUUID()
     : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
-export function RoomClient({ code }: { code: string }) {
+export function RoomClient({ code, devSession }: { code: string; devSession?: { token: string; playerId: string; nickname: string } | null }) {
   const router = useRouter();
   const socket = useMemo(() => getSocket(), []);
 
@@ -57,6 +57,11 @@ export function RoomClient({ code }: { code: string }) {
   const session = useRef(loadSession(code));
 
   useEffect(() => {
+    if (devSession) {
+      const stored = { ...devSession };
+      session.current = stored;
+      saveSession(code, stored);
+    }
     setNickname(session.current?.nickname || lastNickname());
     setAvatarId(session.current?.avatarId ?? lastAvatarId());
     void loadChampions()
@@ -68,7 +73,7 @@ export function RoomClient({ code }: { code: string }) {
         setAvatarId((current) => current && items.some((item) => item.id === current) ? current : items[0]?.id ?? null);
       })
       .catch(() => setToast("No se pudo cargar el catálogo de emotes"));
-  }, []);
+  }, [code, devSession]);
 
   useEffect(() => {
     if (!toast) return;

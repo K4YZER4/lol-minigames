@@ -155,6 +155,23 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
     @Inject(BroadcastService) private readonly broadcast: BroadcastService,
   ) {}
 
+  async createDevTestRoom(mode: ModeId, count: number): Promise<{ roomCode: string; playerId: string; token: string; nickname: string }> {
+    const suffix = randomUUID();
+    const hostSocket = `dev-host-${suffix}`;
+    const host = await this.createRoom("Dev Host", undefined, hostSocket, "127.0.0.1");
+    if (!host.ok) throw new Error(host.message);
+    const players = [host];
+    for (let index = 1; index < count; index++) {
+      const joined = await this.joinRoom(host.roomCode, `Dev Player ${index + 1}`, null, undefined, `dev-player-${index}-${suffix}`, "127.0.0.1");
+      if (joined.ok) players.push(joined);
+    }
+    await this.configure(host.playerId, { mode });
+    for (const player of players) await this.setReady(player.playerId, true);
+    const started = await this.startSession(host.playerId);
+    if (!started.ok) throw new Error(started.message);
+    return { roomCode: host.roomCode, playerId: host.playerId, token: host.token, nickname: "Dev Host" };
+  }
+
   onModuleInit() {
     this.timer = setInterval(() => {
       void this.tick().catch((error) => console.error("[tick]", error));

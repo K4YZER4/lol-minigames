@@ -1,5 +1,7 @@
-import { Controller, Get, Inject, Param, Res } from "@nestjs/common";
+import { Controller, Get, Inject, Param, Query, Res } from "@nestjs/common";
+import { MODE_IDS, type ModeId } from "@lolgames/protocol";
 import { ContentService } from "../content/content.service";
+import { RoomService } from "../rooms/room.service";
 
 /**
  * Lo mínimo que usamos de la respuesta HTTP. Evita depender de los tipos de
@@ -13,7 +15,10 @@ type ImageResponse = {
 
 @Controller("api")
 export class CatalogController {
-  constructor(@Inject(ContentService) private readonly content: ContentService) {}
+  constructor(
+    @Inject(ContentService) private readonly content: ContentService,
+    @Inject(RoomService) private readonly rooms: RoomService,
+  ) {}
 
   @Get("health")
   health() {
@@ -36,6 +41,22 @@ export class CatalogController {
   @Get("avatars")
   avatars() {
     return this.content.avatars;
+  }
+
+  @Get("dev/test-room")
+  async devTestRoom(@Query("mode") mode = "pictionary", @Query("players") players = "3") {
+    if (process.env.NODE_ENV === "production") return { ok: false, message: "Ruta disponible solo en desarrollo" };
+    const selected = MODE_IDS.includes(mode as ModeId) ? (mode as ModeId) : "pictionary";
+    const count = Math.max(3, Math.min(12, Number.parseInt(players, 10) || 3));
+    const result = await this.rooms.createDevTestRoom(selected, count);
+    const query = new URLSearchParams({ devToken: result.token, devPlayerId: result.playerId, devNickname: result.nickname }).toString();
+    return {
+      ok: true,
+      mode: selected,
+      roomCode: result.roomCode,
+      hostUrl: `http://localhost:3000/room/${result.roomCode}?${query}`,
+      note: "Abre hostUrl para entrar como anfitrión. Los demás jugadores fake ya están listos.",
+    };
   }
 
   /**
