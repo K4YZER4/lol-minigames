@@ -82,7 +82,7 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
           ) : room.mode === "impostor" ? (
             <><div className="divider" /><p className="hint">Un infiltrado con 3 a 6 jugadores, dos desde 7. Pistas de {room.settings.impostor.clueSeconds} s, discusión de {room.settings.impostor.discussionSeconds} s y votación de {room.settings.impostor.voteSeconds} s.</p></>
           ) : room.mode === "pictionary" ? (
-            <><div className="divider" /><p className="hint">Por turnos, una persona dibuja durante {room.settings.pictionary.drawingSeconds} s. El resto intenta adivinar el campeón.</p></>
+            <><div className="divider" /><p className="hint">Por turnos, una persona dibuja durante {room.settings.pictionary.drawingSeconds} s. El resto intenta adivinar el campeón.</p><div className="stepper" style={{ marginTop: 14 }}><span className="hint">Rondas</span><button className="step" disabled={!isHost || room.settings.pictionary.rounds <= 1} onClick={() => onConfigure({ pictionary: { rounds: room.settings.pictionary.rounds - 1 } })}>−</button><strong>{room.settings.pictionary.rounds}</strong><button className="step" disabled={!isHost || room.settings.pictionary.rounds >= 10} onClick={() => onConfigure({ pictionary: { rounds: room.settings.pictionary.rounds + 1 } })}>+</button></div></>
           ) : room.mode === "quien-soy" ? (
             <><div className="divider" /><p className="hint">Cada jugador verá tu campeón, pero nunca el suyo. Haz preguntas de sí/no y adivina en tu turno.</p></>
           ) : room.mode === "carrera" ? (

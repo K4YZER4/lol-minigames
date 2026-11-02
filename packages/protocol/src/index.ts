@@ -93,9 +93,10 @@ export const DEFAULT_IMPOSTOR_SETTINGS: ImpostorSettings = {
 
 export const PictionarySettingsSchema = z.object({
   drawingSeconds: z.number().int().min(30).max(300),
+  rounds: z.number().int().min(1).max(10),
 });
 export type PictionarySettings = z.infer<typeof PictionarySettingsSchema>;
-export const DEFAULT_PICTIONARY_SETTINGS: PictionarySettings = { drawingSeconds: 90 };
+export const DEFAULT_PICTIONARY_SETTINGS: PictionarySettings = { drawingSeconds: 90, rounds: 3 };
 export const UnicaSettingsSchema = z.object({ answerSeconds: z.number().int().min(20).max(180) });
 export type UnicaSettings = z.infer<typeof UnicaSettingsSchema>;
 export const DEFAULT_UNICA_SETTINGS: UnicaSettings = { answerSeconds: 45 };
@@ -311,6 +312,7 @@ export type ImpostorGameView = {
 
 export type PictionaryPoint = { x: number; y: number; color?: string; width?: number };
 export type PictionaryFill = { x: number; y: number; color: string };
+export type PictionaryOperation = { type: "stroke"; points: PictionaryPoint[] } | { type: "fill"; fill: PictionaryFill };
 export type PictionaryGameView = {
   mode: "pictionary";
   phase: "DRAWING" | "REVEAL";
@@ -323,6 +325,8 @@ export type PictionaryGameView = {
   target: PublicChampion | null;
   backgroundColor: string;
   fills: PictionaryFill[];
+  operations: PictionaryOperation[];
+  scores: Record<string, number>;
 };
 
 export type UnicaAnswer = { playerId: string; champion: PublicChampion | null; duplicate: boolean };

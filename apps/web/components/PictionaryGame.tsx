@@ -73,8 +73,15 @@ export function PictionaryGame({ room, me, priv, champions, isHost, resetting, o
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
     ctx.fillStyle = background; ctx.fillRect(0, 0, W, H);
-    for (const fill of game.fills ?? []) floodFill(ctx, fill.x, fill.y, fill.color);
-    for (const stroke of game.strokes ?? []) drawStroke(ctx, stroke);
+    if (game.operations?.length) {
+      for (const operation of game.operations) {
+        if (operation.type === "fill") floodFill(ctx, operation.fill.x, operation.fill.y, operation.fill.color);
+        else drawStroke(ctx, operation.points);
+      }
+    } else {
+      for (const fill of game.fills ?? []) floodFill(ctx, fill.x, fill.y, fill.color);
+      for (const stroke of game.strokes ?? []) drawStroke(ctx, stroke);
+    }
     if (draft.length > 1) drawStroke(ctx, draft);
   }, [game, background, draft]);
 
@@ -95,6 +102,7 @@ export function PictionaryGame({ room, me, priv, champions, isHost, resetting, o
       <div className="pictionary-hint">{isDrawer ? "Tu objetivo está oculto para los demás." : "Adivina el campeón sin pedir pistas."}</div>
     </section>
     {game.phase === "DRAWING" && !isDrawer ? <section className="panel pictionary-guess"><h2>¿Qué campeón es?</h2><ChampionPicker champions={champions} onPick={onGuess} submitLabel="Enviar intento" /></section> : null}
+    <section className="panel pictionary-scoreboard"><div className="eyebrow">Puntuación</div>{room.players.slice().sort((a, b) => (game.scores[b.playerId] ?? 0) - (game.scores[a.playerId] ?? 0)).map((player) => <div className="score-row" key={player.playerId}><span>{player.name}</span><strong>{game.scores[player.playerId] ?? 0}</strong></div>)}</section>
     {game.phase === "DRAWING" && isDrawer && priv?.target ? <section className="glass private pictionary-target"><div className="eyebrow">Solo para ti</div><div className="champ-img"><img src={priv.target.imageUrl} alt={priv.target.name} /></div><div className="champ">{priv.target.name}</div></section> : null}
     {game.phase === "REVEAL" ? <section className="glass private pictionary-target"><div className="eyebrow">Campeón de la ronda</div>{game.target ? <><div className="champ-img"><img src={game.target.imageUrl} alt={game.target.name} /></div><div className="champ">{game.target.name}</div></> : null}<p className="muted">{game.guesses.length ? `${game.guesses.length} jugador(es) acertaron.` : "Nadie acertó esta vez."}</p>{isHost ? <div className="result-actions"><button className="primary" disabled={resetting} onClick={() => onReset("pictionary")}>Repetir Pictionary →</button><button className="secondary" disabled={resetting} onClick={() => onReset()}>Cambiar modo</button></div> : null}</section> : null}
   </div>;

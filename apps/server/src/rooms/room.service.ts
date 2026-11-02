@@ -903,7 +903,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
           ? (room.game as ImpostorState).phase === "REVEAL"
           : room.mode === "pictionary"
             ? (room.game as PictionaryState).phase === "REVEAL" &&
-              (room.game as PictionaryState).roundIndex + 1 >= (room.game as PictionaryState).order.length
+              (room.game as PictionaryState).roundIndex + 1 >= (room.game as PictionaryState).settings.rounds
              : room.mode === "unica"
                ? (room.game as UnicaState).phase === "REVEAL"
                 : room.mode === "quien-soy"

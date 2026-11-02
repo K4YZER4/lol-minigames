@@ -1048,6 +1048,10 @@ input:disabled {
 
 .pictionary-guess { grid-column: 2; width: 100%; margin: 0; }
 .pictionary-target { grid-column: 2; margin: 0; padding: 18px; }
+.pictionary-scoreboard { grid-column: 2; margin-top: 10px; }
+.score-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--edge); font-size: 12px; }
+.score-row:last-child { border-bottom: 0; }
+.score-row strong { color: var(--accent); }
 
 .pictionary-tools {
   display: flex;
@@ -1685,6 +1689,8 @@ input:disabled {
   .pictionary-target {
     grid-column: 1;
   }
+
+  .pictionary-scoreboard { grid-column: 1; }
 
   .avatar-picker-grid {
     grid-template-columns: repeat(4, 1fr);
