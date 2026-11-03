@@ -26,7 +26,6 @@ export function BombaGame({ room, me, priv, champions, flash, onAnswer, isHost, 
     <div className="center">
       {game.finished ? <div className="eyebrow">Fin de la partida</div> : null}
       <h1>{game.finished ? `Sobrevivió ${survivors.map((p) => p.name).join(", ") || "nadie"}` : (active?.name ?? "—")}</h1>
-      <div className="star bomb-symbol">{flash?.type === "bomba:explosion" ? "✹" : "◕"}</div>
       {game.finished ? <section className="glass clue result-clue"><div className="eyebrow">Fin de la partida</div><div className="result-symbol">✹</div><p className="muted">{game.explosions} {game.explosions === 1 ? "explosión" : "explosiones"} en total.</p>{isHost ? <div className="result-actions"><button className="primary" disabled={resetting} onClick={() => onReset("bomba")}>Repetir Bomba →</button><button className="secondary" disabled={resetting} onClick={() => onReset()}>Cambiar modo</button></div> : <p className="hint" style={{ marginTop: 12 }}>Esperando al anfitrión para otra partida…</p>}</section> : <section className={`glass clue ${flashClass}`}>
         <div className="eyebrow">¿De quién es esta habilidad?</div>
         <div className="clue-frame">{displayedClue ? <img src={displayedClue.imageUrl} alt="Pista visual" /> : <span className="hint">Sin pista</span>}</div>

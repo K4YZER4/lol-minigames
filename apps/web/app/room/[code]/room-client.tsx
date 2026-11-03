@@ -200,11 +200,12 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
   }, [act, code, router]);
 
   const copyCode = useCallback(async () => {
+    const inviteUrl = `${window.location.origin}/room/${code}`;
     try {
-      await navigator.clipboard.writeText(code);
-      setToast("Código copiado");
+      await navigator.clipboard.writeText(inviteUrl);
+      setToast("Enlace de invitación copiado");
     } catch {
-      setToast(`Código: ${code}`);
+      setToast(`Enlace: ${inviteUrl}`);
     }
   }, [code]);
 
@@ -276,7 +277,7 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
           <h1>{!room || room.phase === "LOBBY" ? "La sala está lista." : room.mode === "bomba" ? "No te la quedes." : room.mode === "impostor" ? "Que no te lean tan fácil." : room.mode === "pictionary" ? "Dibuja. Que no te descubran." : room.mode === "quien-soy" ? "Todos ven tu campeón menos tú." : "Descubre quién eres."}</h1>
         </div>
         <div className="row">
-          <button className="secondary" onClick={() => void copyCode()}>Copiar código ↗</button>
+          <button className="secondary" onClick={() => void copyCode()}>Copiar enlace ↗</button>
           <button className="textbutton" onClick={() => void leave()}>Salir</button>
         </div>
       </div>
