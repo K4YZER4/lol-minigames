@@ -157,7 +157,7 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
   async onReset(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
     const playerId = this.playerOf(client);
     if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
-      const parsed = z.object({ mode: z.enum(["bomba", "impostor", "pictionary", "quien-soy", "carrera", "carrera-sonido", "imitacion", "descripcion", "duo", "party"]).optional() }).safeParse(body ?? {});
+      const parsed = z.object({ mode: z.enum(["bomba", "impostor", "pictionary", "quien-soy", "carrera", "carrera-sonido", "carrera-emojis", "imitacion", "descripcion", "duo", "party"]).optional() }).safeParse(body ?? {});
     if (!parsed.success) return reject("INVALID", issue(parsed.error));
     return this.rooms.resetSession(playerId, parsed.data.mode);
   }
@@ -276,6 +276,15 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
     const parsed = CarreraAnswerPayloadSchema.safeParse(body);
     if (!parsed.success) return reject("INVALID", issue(parsed.error));
     return this.rooms.action(playerId, { kind: "carrera-sonido:answer", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.CARRERA_EMOJIS_ANSWER)
+  async onCarreraEmojisAnswer(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = CarreraAnswerPayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "carrera-emojis:answer", ...parsed.data });
   }
 
   @SubscribeMessage(ClientEvents.IMITACION_SUBMIT)

@@ -22,7 +22,8 @@ const fail = (code: string, message: string) => ({ code, message });
 
 function choose(init: CarreraSonidoInit, now: number, round: number): CarreraSonidoState {
   const available = [...new Set(init.clues.map((clue) => clue.championId))].filter((id) => init.champions[id]);
-  const targetId = init.rng.pick(available.length ? available : Object.keys(init.champions));
+  if (available.length === 0) throw new Error("No hay campeones con cinco pistas de audio");
+  const targetId = init.rng.pick(available);
   const clues = init.clues.filter((clue) => clue.championId === targetId).slice(0, 5);
   const scores = { ...(init.scores ?? {}) };
   for (const playerId of init.playerIds) scores[playerId] ??= 0;

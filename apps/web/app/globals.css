@@ -1105,6 +1105,11 @@ input:disabled {
 .carrera-clue-card span { position: absolute; left: 8px; bottom: 8px; padding: 4px 7px; border-radius: 7px; background: rgba(2,18,47,.8); color: var(--text); font-size: 10px; }
 .carrera-clue-card.is-hidden { display: grid; place-items: center; aspect-ratio: 1; border-style: dashed; background: color-mix(in srgb, var(--glass) 70%, transparent); }
 .carrera-clue-card .carrera-clue-locked { position: static; padding: 0; background: transparent; color: var(--muted); font-size: 11px; }
+.emoji-clue-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.emoji-clue-card { display: grid; place-items: center; gap: 6px; aspect-ratio: 1; border: 1px solid var(--edge); border-radius: 15px; background: rgba(0,0,0,.14); }
+.emoji-clue-card.is-hidden { border-style: dashed; opacity: .6; }
+.emoji-clue-number { color: var(--muted); font-size: 11px; }
+.emoji-clue-value { min-height: 52px; font-size: clamp(34px, 5vw, 58px); line-height: 1; }
 .carrera-clues .picker { margin-top: 16px; }
 .carrera-result { margin-top: 16px; text-align: center; }
 

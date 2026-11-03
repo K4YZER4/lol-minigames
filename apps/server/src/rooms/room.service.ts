@@ -12,6 +12,7 @@ import {
   DEFAULT_QUIEN_SOY_SETTINGS,
   DEFAULT_CARRERA_SETTINGS,
   DEFAULT_CARRERA_SONIDO_SETTINGS,
+  DEFAULT_CARRERA_EMOJIS_SETTINGS,
   DEFAULT_IMITACION_SETTINGS,
   DEFAULT_DESCRIPCION_SETTINGS,
   DEFAULT_DUO_SETTINGS,
@@ -28,6 +29,7 @@ import {
   type QuienSoySettings,
   type CarreraSettings,
   type CarreraSonidoSettings,
+  type CarreraEmojisSettings,
   type ImitacionSettings,
   type DescripcionSettings,
   type DuoSettings,
@@ -87,6 +89,12 @@ import {
   carreraSonidoPublicView,
   carreraSonidoResults,
   carreraSonidoTick,
+  createCarreraEmojis,
+  carreraEmojisAnswer,
+  carreraEmojisPrivateView,
+  carreraEmojisPublicView,
+  carreraEmojisResults,
+  carreraEmojisTick,
   createImitacion,
   imitacionSubmit,
   imitacionVote,
@@ -121,6 +129,7 @@ import {
   type QuienSoyState,
   type CarreraState,
   type CarreraSonidoState,
+  type CarreraEmojisState,
   type ImitacionState,
   type DescripcionState,
   type DuoState,
@@ -221,6 +230,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
         quienSoy: { ...DEFAULT_QUIEN_SOY_SETTINGS },
         carrera: { ...DEFAULT_CARRERA_SETTINGS },
         carreraSonido: { ...DEFAULT_CARRERA_SONIDO_SETTINGS },
+        carreraEmojis: { ...DEFAULT_CARRERA_EMOJIS_SETTINGS },
         imitacion: { ...DEFAULT_IMITACION_SETTINGS },
         descripcion: { ...DEFAULT_DESCRIPCION_SETTINGS },
         duo: { ...DEFAULT_DUO_SETTINGS },
@@ -453,6 +463,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       if (patch.quienSoy) room.settings.quienSoy = { ...room.settings.quienSoy, ...patch.quienSoy };
       if (patch.carrera) room.settings.carrera = { ...room.settings.carrera, ...patch.carrera };
       if (patch.carreraSonido) room.settings.carreraSonido = { ...room.settings.carreraSonido, ...patch.carreraSonido };
+      if (patch.carreraEmojis) room.settings.carreraEmojis = { ...room.settings.carreraEmojis, ...patch.carreraEmojis };
       if (patch.imitacion) room.settings.imitacion = { ...room.settings.imitacion, ...patch.imitacion };
       if (patch.descripcion) room.settings.descripcion = { ...room.settings.descripcion, ...patch.descripcion };
       if (patch.duo) room.settings.duo = { ...room.settings.duo, ...patch.duo };
@@ -537,6 +548,8 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                  ? createCarrera({ playerIds: ids, settings: room.settings.carrera, champions: this.content.championInfo, clues: this.content.clues, now, rng: this.rng })
                  : room.mode === "carrera-sonido"
                  ? createCarreraSonido({ playerIds: ids, settings: room.settings.carreraSonido, champions: this.content.championInfo, clues: this.content.audioClips, now, rng: this.rng })
+                 : room.mode === "carrera-emojis"
+                 ? createCarreraEmojis({ playerIds: ids, settings: room.settings.carreraEmojis, champions: this.content.championInfo, clues: this.content.emojiClues, now, rng: this.rng })
                  : room.mode === "imitacion"
                  ? createImitacion({ playerIds: ids, settings: room.settings.imitacion, clips: this.content.audioClips, now, rng: this.rng })
                  : room.mode === "descripcion"
@@ -855,6 +868,10 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       if (action.kind === "carrera-sonido:answer") return carreraSonidoAnswer(room.game as CarreraSonidoState, playerId, action.championId, { now: this.clock.now(), rng: this.rng, clues: this.content.audioClips });
       return null;
     }
+    if (room.mode === "carrera-emojis") {
+      if (action.kind === "carrera-emojis:answer") return carreraEmojisAnswer(room.game as CarreraEmojisState, playerId, action.championId, { now: this.clock.now(), rng: this.rng, clues: this.content.emojiClues });
+      return null;
+    }
     if (room.mode === "imitacion") {
       const state = room.game as ImitacionState;
       if (action.kind === "imitacion:submit") return imitacionSubmit(state, playerId, action.audioData, action.mimeType, { now: this.clock.now(), rng: this.rng });
@@ -900,6 +917,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
     if (room.mode === "quien-soy") return quienSoyTick(room.game as QuienSoyState, ctx);
     if (room.mode === "carrera") return carreraTick(room.game as CarreraState, { now, rng: this.rng, clues: this.content.clues });
     if (room.mode === "carrera-sonido") return carreraSonidoTick(room.game as CarreraSonidoState, { now, rng: this.rng, clues: this.content.audioClips });
+    if (room.mode === "carrera-emojis") return carreraEmojisTick(room.game as CarreraEmojisState, { now, rng: this.rng, clues: this.content.emojiClues });
     if (room.mode === "imitacion") return imitacionTick(room.game as ImitacionState, { now, rng: this.rng });
     if (room.mode === "descripcion") return descripcionTick(room.game as DescripcionState, { now, rng: this.rng, champions: this.content.championInfo });
      if (room.mode === "duo") return duoTick(room.game as DuoState, { now, champions: this.content.unicaChampionInfo });
@@ -936,6 +954,8 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                 ? (room.game as CarreraState).phase === "FINISHED"
                 : room.mode === "carrera-sonido"
                   ? (room.game as CarreraSonidoState).phase === "FINISHED"
+                : room.mode === "carrera-emojis"
+                  ? (room.game as CarreraEmojisState).phase === "FINISHED"
                 : room.mode === "imitacion"
                   ? (room.game as ImitacionState).phase === "FINISHED"
                 : room.mode === "descripcion"
@@ -960,6 +980,8 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                     ? carreraResults(room.game as CarreraState)
                   : room.mode === "carrera-sonido"
                     ? carreraSonidoResults(room.game as CarreraSonidoState)
+                  : room.mode === "carrera-emojis"
+                    ? carreraEmojisResults(room.game as CarreraEmojisState)
                   : room.mode === "imitacion"
                     ? imitacionResults(room.game as ImitacionState)
                  : room.mode === "descripcion"
@@ -1046,6 +1068,8 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                          ? carreraPublicView(room.game as CarreraState, now)
                          : room.mode === "carrera-sonido"
                            ? carreraSonidoPublicView(room.game as CarreraSonidoState)
+                         : room.mode === "carrera-emojis"
+                           ? carreraEmojisPublicView(room.game as CarreraEmojisState)
                          : room.mode === "imitacion"
                            ? imitacionPublicView(room.game as ImitacionState)
                          : room.mode === "descripcion"
@@ -1079,6 +1103,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       if (room.mode === "quien-soy") return quienSoyPrivateView(room.game as QuienSoyState, playerId);
       if (room.mode === "carrera") return carreraPrivateView(room.game as CarreraState, playerId);
       if (room.mode === "carrera-sonido") return carreraSonidoPrivateView(room.game as CarreraSonidoState, playerId);
+      if (room.mode === "carrera-emojis") return carreraEmojisPrivateView(room.game as CarreraEmojisState, playerId);
       if (room.mode === "imitacion") return imitacionPrivateView(room.game as ImitacionState, playerId);
       if (room.mode === "descripcion") return descripcionPrivateView(room.game as DescripcionState, playerId);
       if (room.mode === "duo") return duoPrivateView(room.game as DuoState, playerId);

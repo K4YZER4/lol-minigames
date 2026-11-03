@@ -21,6 +21,17 @@ const AUDIO_ROOT_CANDIDATES = [
 const AUDIO_ROOT = AUDIO_ROOT_CANDIDATES.find((candidate) => existsSync(candidate)) ?? AUDIO_ROOT_CANDIDATES[0]!;
 
 type AudioClip = { clueId: string; championId: string; audioUrl: string; filePath: string };
+type EmojiClue = { clueId: string; championId: string; emojis: string[] };
+
+function emojiSets(tags: string[]): string[][] {
+  const tag = tags.map((value) => value.toLowerCase());
+  if (tag.includes("mage")) return [["✨", "🔮", "🌌", "💥"], ["🪄", "💫", "🌀", "⚡"], ["🌙", "🧿", "✨", "🔥"]];
+  if (tag.includes("assassin")) return [["🗡️", "🌑", "💨", "🎯"], ["🥷", "🩸", "👤", "⚡"], ["🗡️", "💀", "🌫️", "🔥"]];
+  if (tag.includes("marksman")) return [["🏹", "🎯", "💨", "💥"], ["🔫", "👁️", "⚡", "🎯"], ["🏹", "🔥", "🌪️", "💫"]];
+  if (tag.includes("tank")) return [["🛡️", "🪨", "💪", "🏰"], ["🛡️", "⛰️", "💥", "🧱"], ["⚔️", "🛡️", "🔥", "👊"]];
+  if (tag.includes("support")) return [["🛡️", "💚", "✨", "🤝"], ["💫", "🪽", "💖", "🛡️"], ["🌿", "✨", "🔗", "💚"]];
+  return [["⚔️", "💪", "🔥", "🎯"], ["🛡️", "⚡", "💥", "👊"], ["🌑", "⚔️", "✨", "🔥"]];
+}
 
 @Injectable()
 export class ContentService {
@@ -30,6 +41,7 @@ export class ContentService {
   private readonly clueById: Map<string, ContentClue>;
   private readonly imageCache = new Map<string, Buffer>();
   private readonly audioById = new Map<string, AudioClip>();
+  private readonly emojiList: EmojiClue[];
 
   constructor() {
     const info: Record<string, { id: string; name: string; imageUrl: string }> = {};
@@ -41,6 +53,7 @@ export class ContentService {
       };
     }
     this.info = info;
+    this.emojiList = this.bundle.champions.flatMap((champion, championIndex) => emojiSets(champion.tags).map((emojis, setIndex) => ({ clueId: `emoji-${championIndex.toString(36)}-${setIndex}`, championId: champion.id, emojis })));
 
     this.clueById = new Map(this.bundle.clues.map((clue) => [clue.clueId, clue]));
 
@@ -110,6 +123,10 @@ export class ContentService {
 
   get audioClips(): { clueId: string; championId: string; audioUrl: string }[] {
     return [...this.audioById.values()].map(({ clueId, championId, audioUrl }) => ({ clueId, championId, audioUrl }));
+  }
+
+  get emojiClues(): EmojiClue[] {
+    return this.emojiList;
   }
 
   audioClip(clueId: string): { body: Buffer; contentType: string } | null {
