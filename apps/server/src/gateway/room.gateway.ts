@@ -18,14 +18,11 @@ import {
   PictionaryGuessPayloadSchema,
   PictionaryStrokePayloadSchema,
   PictionaryFillPayloadSchema,
-  UnicaSubmitPayloadSchema,
   CarreraAnswerPayloadSchema,
   DescripcionCluePayloadSchema,
   DescripcionGuessPayloadSchema,
   DuoSubmitPayloadSchema,
   PartyGuessPayloadSchema,
-  QuienSoyQuestionPayloadSchema,
-  QuienSoyAnswerPayloadSchema,
   QuienSoyGuessPayloadSchema,
   NicknameSchema,
   RequestIdSchema,
@@ -158,7 +155,7 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
   async onReset(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
     const playerId = this.playerOf(client);
     if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
-      const parsed = z.object({ mode: z.enum(["bomba", "impostor", "pictionary", "unica", "quien-soy", "carrera", "descripcion", "duo", "party"]).optional() }).safeParse(body ?? {});
+      const parsed = z.object({ mode: z.enum(["bomba", "impostor", "pictionary", "quien-soy", "carrera", "descripcion", "duo", "party"]).optional() }).safeParse(body ?? {});
     if (!parsed.success) return reject("INVALID", issue(parsed.error));
     return this.rooms.resetSession(playerId, parsed.data.mode);
   }
@@ -261,15 +258,6 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
     return this.rooms.action(playerId, { kind: "pictionary:fill", ...parsed.data });
   }
 
-  @SubscribeMessage(ClientEvents.UNICA_SUBMIT)
-  async onUnicaSubmit(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
-    const playerId = this.playerOf(client);
-    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
-    const parsed = UnicaSubmitPayloadSchema.safeParse(body);
-    if (!parsed.success) return reject("INVALID", issue(parsed.error));
-    return this.rooms.action(playerId, { kind: "unica:submit", ...parsed.data });
-  }
-
   @SubscribeMessage(ClientEvents.CARRERA_ANSWER)
   async onCarreraAnswer(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
     const playerId = this.playerOf(client);
@@ -315,18 +303,6 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
     return this.rooms.action(playerId, { kind: "party:guess", ...parsed.data });
   }
 
-  @SubscribeMessage(ClientEvents.QUIEN_SOY_QUESTION)
-  async onQuienSoyQuestion(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
-    const playerId = this.playerOf(client); if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
-    const parsed = QuienSoyQuestionPayloadSchema.safeParse(body); if (!parsed.success) return reject("INVALID", issue(parsed.error));
-    return this.rooms.action(playerId, { kind: "quien-soy:question", ...parsed.data });
-  }
-  @SubscribeMessage(ClientEvents.QUIEN_SOY_ANSWER)
-  async onQuienSoyAnswer(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
-    const playerId = this.playerOf(client); if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
-    const parsed = QuienSoyAnswerPayloadSchema.safeParse(body); if (!parsed.success) return reject("INVALID", issue(parsed.error));
-    return this.rooms.action(playerId, { kind: "quien-soy:answer", ...parsed.data });
-  }
   @SubscribeMessage(ClientEvents.QUIEN_SOY_GUESS)
   async onQuienSoyGuess(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
     const playerId = this.playerOf(client); if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");

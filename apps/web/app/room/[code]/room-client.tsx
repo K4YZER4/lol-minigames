@@ -14,6 +14,7 @@ import type {
   DuoPrivateView,
   ImpostorPrivateView,
   JoinAck,
+  ModeId,
   PrivateView,
   RoomView,
   SimpleAck,
@@ -22,7 +23,6 @@ import { Lobby } from "@/components/Lobby";
 import { BombaGame } from "@/components/BombaGame";
 import { ImpostorGame } from "@/components/ImpostorGame";
 import { PictionaryGame } from "@/components/PictionaryGame";
-import { UnicaGame } from "@/components/UnicaGame";
 import { QuienSoyGame } from "@/components/QuienSoyGame";
 import { CarreraGame } from "@/components/CarreraGame";
 import { DescripcionGame } from "@/components/DescripcionGame";
@@ -207,7 +207,7 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
     }
   }, [code]);
 
-  const resetToLobby = useCallback(async (mode?: "bomba" | "impostor" | "pictionary" | "unica" | "quien-soy" | "carrera" | "descripcion" | "duo" | "party") => {
+  const resetToLobby = useCallback(async (mode?: ModeId) => {
     setResetting(true);
     const ack = await act("session:reset", mode ? { mode } : {});
     setResetting(false);
@@ -272,7 +272,7 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
       <div className="top">
         <div>
           <div className="eyebrow"><span className={`live-dot${connecting ? "" : " on"}`} /> Sala {code}</div>
-          <h1>{!room || room.phase === "LOBBY" ? "La sala está lista." : room.mode === "bomba" ? "No te la quedes." : room.mode === "impostor" ? "Que no te lean tan fácil." : room.mode === "pictionary" ? "Dibuja. Que no te descubran." : room.mode === "unica" ? "Elige sin repetir." : "Descubre quién eres."}</h1>
+          <h1>{!room || room.phase === "LOBBY" ? "La sala está lista." : room.mode === "bomba" ? "No te la quedes." : room.mode === "impostor" ? "Que no te lean tan fácil." : room.mode === "pictionary" ? "Dibuja. Que no te descubran." : room.mode === "quien-soy" ? "Todos ven tu campeón menos tú." : "Descubre quién eres."}</h1>
         </div>
         <div className="row">
           <button className="secondary" onClick={() => void copyCode()}>Copiar código ↗</button>
@@ -338,23 +338,9 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
           onGuess={(championId) => void act("pictionary:guess", { requestId: newRequestId(), championId })}
           onReset={(mode) => void resetToLobby(mode)}
         />
-      ) : room.game?.mode === "unica" ? (
-        <UnicaGame
-          room={room}
-          me={me}
-          priv={priv?.mode === "unica" ? priv : null}
-          champions={champions}
-          isHost={room.hostId === me}
-          resetting={resetting}
-          onSubmit={(championId) => void act("unica:submit", { requestId: newRequestId(), championId })}
-          onReset={(mode) => void resetToLobby(mode)}
-        />
       ) : room.game?.mode === "quien-soy" ? (
-        <QuienSoyGame room={room} me={me} priv={priv?.mode === "quien-soy" ? priv : null} champions={champions} isHost={room.hostId === me} resetting={resetting}
-          onQuestion={(text) => void act("quien-soy:question", { requestId: newRequestId(), text })}
-          onAnswer={(answer) => void act("quien-soy:answer", { requestId: newRequestId(), answer })}
-          onGuess={(championId) => void act("quien-soy:guess", { requestId: newRequestId(), championId })}
-           onReset={(mode) => void resetToLobby(mode)} />
+        <QuienSoyGame room={room} me={me} priv={priv?.mode === "quien-soy" ? priv : null} champions={champions}
+          onGuess={(championId) => void act("quien-soy:guess", { requestId: newRequestId(), championId })} />
       ) : room.game?.mode === "carrera" ? (
         <CarreraGame room={room} priv={priv?.mode === "carrera" ? priv : null} champions={champions} isHost={room.hostId === me} resetting={resetting} onAnswer={(championId) => void act("carrera:answer", { requestId: newRequestId(), championId })} onReset={(mode) => void resetToLobby(mode)} />
       ) : room.game?.mode === "descripcion" ? (

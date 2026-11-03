@@ -26,7 +26,6 @@ Abre cualquiera en el navegador:
 | Bomba | `http://localhost:3000/dev/test/bomba` | 4 |
 | Impostor | `http://localhost:3000/dev/test/impostor` | 5 |
 | Pictionary | `http://localhost:3000/dev/test/pictionary` | 4 |
-| Respuesta única | `http://localhost:3000/dev/test/unica` | 4 |
 | ¿Quién soy? | `http://localhost:3000/dev/test/quien-soy` | 4 |
 | Carrera de pistas | `http://localhost:3000/dev/test/carrera` | 4 |
 | Descripción | `http://localhost:3000/dev/test/descripcion` | 4 |

@@ -9,7 +9,6 @@ import {
   DEFAULT_BOMBA_SETTINGS,
   DEFAULT_IMPOSTOR_SETTINGS,
   DEFAULT_PICTIONARY_SETTINGS,
-  DEFAULT_UNICA_SETTINGS,
   DEFAULT_QUIEN_SOY_SETTINGS,
   DEFAULT_CARRERA_SETTINGS,
   DEFAULT_DESCRIPCION_SETTINGS,
@@ -24,7 +23,6 @@ import {
   type BombaSettings,
   type ImpostorSettings,
   type PictionarySettings,
-  type UnicaSettings,
   type QuienSoySettings,
   type CarreraSettings,
   type DescripcionSettings,
@@ -67,16 +65,8 @@ import {
   pictionaryResults,
   pictionaryStroke,
   pictionaryTick,
-  createUnica,
-  unicaPrivateView,
-  unicaPublicView,
-  unicaResults,
-  unicaSubmit,
-  unicaTick,
   createQuienSoy,
-  quienSoyAnswer,
   quienSoyGuess,
-  quienSoyQuestion,
   quienSoyPrivateView,
   quienSoyPublicView,
   quienSoyResults,
@@ -111,7 +101,6 @@ import {
   type Effect,
   type ImpostorState,
   type PictionaryState,
-  type UnicaState,
   type QuienSoyState,
   type CarreraState,
   type DescripcionState,
@@ -210,7 +199,6 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
         bomba: { ...DEFAULT_BOMBA_SETTINGS },
         impostor: { ...DEFAULT_IMPOSTOR_SETTINGS },
         pictionary: { ...DEFAULT_PICTIONARY_SETTINGS },
-        unica: { ...DEFAULT_UNICA_SETTINGS },
         quienSoy: { ...DEFAULT_QUIEN_SOY_SETTINGS },
         carrera: { ...DEFAULT_CARRERA_SETTINGS },
         descripcion: { ...DEFAULT_DESCRIPCION_SETTINGS },
@@ -441,9 +429,6 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       if (patch.pictionary) {
         room.settings.pictionary = { ...room.settings.pictionary, ...patch.pictionary };
       }
-      if (patch.unica) {
-        room.settings.unica = { ...room.settings.unica, ...patch.unica };
-      }
       if (patch.quienSoy) room.settings.quienSoy = { ...room.settings.quienSoy, ...patch.quienSoy };
       if (patch.carrera) room.settings.carrera = { ...room.settings.carrera, ...patch.carrera };
       if (patch.descripcion) room.settings.descripcion = { ...room.settings.descripcion, ...patch.descripcion };
@@ -517,14 +502,6 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                 now,
                 rng: this.rng,
               })
-               : room.mode === "unica"
-               ? createUnica({
-                playerIds: ids,
-                settings: room.settings.unica,
-                champions: this.content.unicaChampionInfo,
-                now,
-                rng: this.rng,
-               })
                 : room.mode === "quien-soy"
                 ? createQuienSoy({
                  playerIds: ids,
@@ -838,14 +815,8 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
           return null;
       }
     }
-    if (room.mode === "unica") {
-      if (action.kind === "unica:submit") return unicaSubmit(room.game as UnicaState, playerId, action.championId);
-      return null;
-    }
     if (room.mode === "quien-soy") {
       const state = room.game as QuienSoyState;
-      if (action.kind === "quien-soy:question") return quienSoyQuestion(state, playerId, action.text);
-      if (action.kind === "quien-soy:answer") return quienSoyAnswer(state, playerId, action.answer);
       if (action.kind === "quien-soy:guess") return quienSoyGuess(state, playerId, action.championId, ctx);
       return null;
     }
@@ -889,7 +860,6 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
     if (room.mode === "bomba") return bombaTick(room.game as BombaState, ctx);
     if (room.mode === "impostor") return impostorTick(room.game as ImpostorState, ctx);
     if (room.mode === "pictionary") return pictionaryTick(room.game as PictionaryState, ctx);
-    if (room.mode === "unica") return unicaTick(room.game as UnicaState, ctx);
     if (room.mode === "quien-soy") return quienSoyTick(room.game as QuienSoyState, ctx);
     if (room.mode === "carrera") return carreraTick(room.game as CarreraState, { now, rng: this.rng, clues: this.content.clues });
     if (room.mode === "descripcion") return descripcionTick(room.game as DescripcionState, { now, rng: this.rng, champions: this.content.championInfo });
@@ -921,10 +891,8 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
           : room.mode === "pictionary"
             ? (room.game as PictionaryState).phase === "REVEAL" &&
               (room.game as PictionaryState).roundIndex + 1 >= (room.game as PictionaryState).settings.rounds
-             : room.mode === "unica"
-               ? (room.game as UnicaState).phase === "REVEAL"
-                : room.mode === "quien-soy"
-                  ? (room.game as QuienSoyState).phase === "REVEAL"
+              : room.mode === "quien-soy"
+                ? (room.game as QuienSoyState).phase === "REVEAL"
                    : room.mode === "carrera"
                      ? (room.game as CarreraState).phase === "FINISHED"
                       : room.mode === "descripcion"
@@ -943,10 +911,8 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
           ? impostorResults(room.game as ImpostorState)
           : room.mode === "pictionary"
             ? pictionaryResults(room.game as PictionaryState)
-           : room.mode === "unica"
-             ? unicaResults(room.game as UnicaState)
-              : room.mode === "quien-soy"
-                ? quienSoyResults(room.game as QuienSoyState)
+            : room.mode === "quien-soy"
+              ? quienSoyResults(room.game as QuienSoyState)
                  : room.mode === "carrera"
                    ? carreraResults(room.game as CarreraState)
                 : room.mode === "descripcion"
@@ -1027,9 +993,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
              ? impostorPublicView(room.game as ImpostorState, now)
              : room.mode === "pictionary"
                ? pictionaryPublicView(room.game as PictionaryState, now)
-                : room.mode === "unica"
-                  ? unicaPublicView(room.game as UnicaState)
-                   : room.mode === "quien-soy"
+                : room.mode === "quien-soy"
                      ? quienSoyPublicView(room.game as QuienSoyState)
                       : room.mode === "carrera"
                         ? carreraPublicView(room.game as CarreraState, now)
@@ -1061,7 +1025,6 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
     }
     if (room.mode === "impostor") return impostorPrivateView(room.game as ImpostorState, playerId);
     if (room.mode === "pictionary") return pictionaryPrivateView(room.game as PictionaryState, playerId);
-    if (room.mode === "unica") return unicaPrivateView(room.game as UnicaState, playerId);
     if (room.mode === "quien-soy") return quienSoyPrivateView(room.game as QuienSoyState, playerId);
      if (room.mode === "carrera") return carreraPrivateView(room.game as CarreraState, playerId);
       if (room.mode === "descripcion") return descripcionPrivateView(room.game as DescripcionState, playerId);

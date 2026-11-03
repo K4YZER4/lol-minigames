@@ -3,7 +3,6 @@ export * from "./core/text";
 export * from "./bomba/engine";
 export * from "./impostor/engine";
 export * from "./pictionary/engine";
-export * from "./unica/engine";
 export * from "./quien-soy/engine";
 export * from "./carrera/engine";
 export * from "./descripcion/engine";

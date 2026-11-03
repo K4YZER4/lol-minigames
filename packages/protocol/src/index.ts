@@ -11,7 +11,7 @@ export const MIN_PLAYERS = 3;
 export const NICKNAME_MAX = 16;
 export const RECONNECT_GRACE_MS = 30_000;
 
-export const MODE_IDS = ["bomba", "impostor", "pictionary", "unica", "quien-soy", "carrera", "descripcion", "duo", "party"] as const;
+export const MODE_IDS = ["bomba", "impostor", "pictionary", "quien-soy", "carrera", "descripcion", "duo", "party"] as const;
 export type ModeId = (typeof MODE_IDS)[number];
 
 /* ------------------------------------------------------------------ */
@@ -97,9 +97,6 @@ export const PictionarySettingsSchema = z.object({
 });
 export type PictionarySettings = z.infer<typeof PictionarySettingsSchema>;
 export const DEFAULT_PICTIONARY_SETTINGS: PictionarySettings = { drawingSeconds: 90, rounds: 3 };
-export const UnicaSettingsSchema = z.object({ answerSeconds: z.number().int().min(20).max(180) });
-export type UnicaSettings = z.infer<typeof UnicaSettingsSchema>;
-export const DEFAULT_UNICA_SETTINGS: UnicaSettings = { answerSeconds: 45 };
 export const CarreraSettingsSchema = z.object({ clueSeconds: z.number().int().min(3).max(30), rounds: z.number().int().min(1).max(10) });
 export type CarreraSettings = z.infer<typeof CarreraSettingsSchema>;
 export const DEFAULT_CARRERA_SETTINGS: CarreraSettings = { clueSeconds: 8, rounds: 5 };
@@ -123,7 +120,6 @@ export const SettingsSchema = z.object({
   bomba: BombaSettingsPatchSchema.optional(),
   impostor: ImpostorSettingsSchema.partial().optional(),
   pictionary: PictionarySettingsSchema.partial().optional(),
-  unica: UnicaSettingsSchema.partial().optional(),
   carrera: CarreraSettingsSchema.partial().optional(),
   descripcion: DescripcionSettingsSchema.partial().optional(),
   duo: DuoSettingsSchema.partial().optional(),
@@ -159,17 +155,11 @@ export const PictionaryGuessPayloadSchema = z.object({
   championId: ChampionIdSchema,
 });
 
-export const UnicaSubmitPayloadSchema = z.object({
-  requestId: RequestIdSchema,
-  championId: ChampionIdSchema,
-});
 export const CarreraAnswerPayloadSchema = z.object({ requestId: RequestIdSchema, championId: ChampionIdSchema });
 export const DescripcionCluePayloadSchema = z.object({ requestId: RequestIdSchema, text: z.string().trim().min(1).max(120) });
 export const DescripcionGuessPayloadSchema = z.object({ requestId: RequestIdSchema, text: z.string().trim().min(1).max(80) });
 export const DuoSubmitPayloadSchema = z.object({ requestId: RequestIdSchema, championId: ChampionIdSchema });
 export const PartyGuessPayloadSchema = z.object({ requestId: RequestIdSchema, championId: ChampionIdSchema });
-export const QuienSoyQuestionPayloadSchema = z.object({ requestId: RequestIdSchema, text: z.string().trim().min(1).max(120) });
-export const QuienSoyAnswerPayloadSchema = z.object({ requestId: RequestIdSchema, answer: z.boolean() });
 export const QuienSoyGuessPayloadSchema = z.object({ requestId: RequestIdSchema, championId: ChampionIdSchema });
 
 /* ------------------------------------------------------------------ */
@@ -193,14 +183,11 @@ export const ClientEvents = {
   PICTIONARY_CLEAR: "pictionary:clear",
   PICTIONARY_UNDO: "pictionary:undo",
   PICTIONARY_FILL: "pictionary:fill",
-  UNICA_SUBMIT: "unica:submit",
   CARRERA_ANSWER: "carrera:answer",
   DESCRIPCION_CLUE: "descripcion:clue",
   DESCRIPCION_GUESS: "descripcion:guess",
   DUO_SUBMIT: "duo:submit",
   PARTY_GUESS: "party:guess",
-  QUIEN_SOY_QUESTION: "quien-soy:question",
-  QUIEN_SOY_ANSWER: "quien-soy:answer",
   QUIEN_SOY_GUESS: "quien-soy:guess",
 } as const;
 
@@ -329,32 +316,32 @@ export type PictionaryGameView = {
   scores: Record<string, number>;
 };
 
-export type UnicaAnswer = { playerId: string; champion: PublicChampion | null; duplicate: boolean };
-export type UnicaGameView = {
-  mode: "unica";
-  phase: "SUBMISSION" | "REVEAL";
+export type QuienSoyRevealedTurn = {
+  playerId: string;
+  champion: PublicChampion | null;
+  solved: boolean;
+  attempts: number;
+};
+export type QuienSoyGameView = {
+  mode: "quien-soy";
+  phase: "TURN" | "REVEAL";
   phaseEndsAt: number;
-  category: string;
-  submitted: string[];
-  answers: UnicaAnswer[];
+  activePlayerId: string;
+  order: string[];
+  turnIndex: number;
+  totalTurns: number;
+  /** Intentos fallidos del jugador activo. Nunca incluye su campeón. */
+  attempts: string[];
+  /** Turnos ya cerrados: ahí sí se revela el campeón de cada jugador. */
+  revealed: QuienSoyRevealedTurn[];
 };
 export type CarreraGameView = { mode: "carrera"; phase: "CLUES" | "REVEAL" | "FINISHED"; phaseEndsAt: number; round: number; totalRounds: number; clueIndex: number; clues: BombaPublicClue[]; winnerId: string | null; target: PublicChampion | null };
 export type DescripcionGameView = { mode: "descripcion"; phase: "DESCRIPTION" | "REVEAL"; phaseEndsAt: number; describerId: string; roundIndex: number; totalRounds: number; clues: { playerId: string; text: string }[]; guesses: { playerId: string; text: string; correct: boolean }[]; target: PublicChampion | null };
 export type DuoPair = { playerIds: [string, string]; champions: Record<string, PublicChampion | null>; guesses: Record<string, PublicChampion | null>; correct: Record<string, boolean> | null };
 export type DuoGameView = { mode: "duo"; phase: "GUESSING" | "REVEAL"; phaseEndsAt: number; pairs: DuoPair[]; submitted: string[] };
 export type PartyGameView = { mode: "party"; phase: "GUESSING" | "REVEAL" | "FINISHED"; phaseEndsAt: number; category: PartyCategory; activePlayerId: string; round: number; totalRounds: number; guesses: { playerId: string; correct: boolean }[] };
-export type QuienSoyGameView = {
-  mode: "quien-soy";
-  phase: "QUESTION" | "REVEAL";
-  phaseEndsAt: number;
-  activePlayerId: string;
-  question: { text: string; askedBy: string } | null;
-  answers: { playerId: string; answer: boolean }[];
-  guessed: string[];
-  identitiesRevealed: boolean;
-};
 
-export type GameView = BombaGameView | ImpostorGameView | PictionaryGameView | UnicaGameView | QuienSoyGameView | CarreraGameView | DescripcionGameView | DuoGameView | PartyGameView;
+export type GameView = BombaGameView | ImpostorGameView | PictionaryGameView | QuienSoyGameView | CarreraGameView | DescripcionGameView | DuoGameView | PartyGameView;
 
 export type RoomView = {
   code: string;
@@ -368,7 +355,6 @@ export type RoomView = {
     bomba: BombaSettings;
     impostor: ImpostorSettings;
     pictionary: PictionarySettings;
-    unica: UnicaSettings;
     quienSoy: QuienSoySettings;
     carrera: CarreraSettings;
     descripcion: DescripcionSettings;
@@ -404,23 +390,21 @@ export type PictionaryPrivateView = {
   youAreDrawer: boolean;
 };
 
-export type UnicaPrivateView = {
-  mode: "unica";
-  yourAnswer: PublicChampion | null;
-  hasSubmitted: boolean;
-};
 export type QuienSoyPrivateView = {
   mode: "quien-soy";
-  identities: Record<string, PublicChampion>;
-  yourIdentity: null;
+  /** Campeones de los demás. Incluye al jugador activo si no eres tú. */
+  visible: Record<string, PublicChampion>;
+  /** Tu campeón: null hasta que termina tu turno. */
+  yourChampion: PublicChampion | null;
   isActive: boolean;
+  hasSolved: boolean;
 };
 export type CarreraPrivateView = { mode: "carrera"; hasAnswered: boolean; answer: string | null };
 export type DescripcionPrivateView = { mode: "descripcion"; target: PublicChampion | null; forbiddenWords: string[]; youAreDescriber: boolean };
 export type DuoPrivateView = { mode: "duo"; ownChampion: PublicChampion | null; partnerId: string | null; hasSubmitted: boolean };
 export type PartyPrivateView = { mode: "party"; target: PublicChampion | null; isActive: boolean; hasGuessed: boolean };
 
-export type PrivateView = BombaPrivateView | ImpostorPrivateView | PictionaryPrivateView | UnicaPrivateView | QuienSoyPrivateView | CarreraPrivateView | DescripcionPrivateView | DuoPrivateView | PartyPrivateView | null;
+export type PrivateView = BombaPrivateView | ImpostorPrivateView | PictionaryPrivateView | QuienSoyPrivateView | CarreraPrivateView | DescripcionPrivateView | DuoPrivateView | PartyPrivateView | null;
 
 /* ------------------------------------------------------------------ */
 /* Efectos transitorios (animaciones, no estado)                       */
