@@ -35,15 +35,15 @@ Abre cualquiera en el navegador:
 
 ### Preview del filtro de audio
 
-Este preview no crea una sala multiplayer; sirve para ajustar los filtros de
-Web Audio con los clips locales:
+Este preview no crea una sala multiplayer; sirve para comprobar los cinco clips
+limpios del catálogo local:
 
 ```text
 http://localhost:3000/dev/test/audio
 ```
 
-Prueba los cuatro niveles de distorsión sobre el mismo clip. Los valores se
-ajustan en `apps/web/lib/audio-distortion.ts`.
+La distorsión queda desactivada temporalmente para garantizar que todas las
+líneas sean audibles.
 
 Cada enlace:
 
