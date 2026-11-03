@@ -11,7 +11,7 @@ export const MIN_PLAYERS = 3;
 export const NICKNAME_MAX = 16;
 export const RECONNECT_GRACE_MS = 30_000;
 
-export const MODE_IDS = ["bomba", "impostor"] as const;
+export const MODE_IDS = ["bomba", "impostor", "pictionary"] as const;
 export type ModeId = (typeof MODE_IDS)[number];
 
 /* ------------------------------------------------------------------ */
@@ -91,10 +91,17 @@ export const DEFAULT_IMPOSTOR_SETTINGS: ImpostorSettings = {
   voteSeconds: 30,
 };
 
+export const PictionarySettingsSchema = z.object({
+  drawingSeconds: z.number().int().min(30).max(300),
+});
+export type PictionarySettings = z.infer<typeof PictionarySettingsSchema>;
+export const DEFAULT_PICTIONARY_SETTINGS: PictionarySettings = { drawingSeconds: 90 };
+
 export const SettingsSchema = z.object({
   mode: z.enum(MODE_IDS).optional(),
   bomba: BombaSettingsPatchSchema.optional(),
   impostor: ImpostorSettingsSchema.partial().optional(),
+  pictionary: PictionarySettingsSchema.partial().optional(),
 });
 
 export type SettingsPatch = z.infer<typeof SettingsSchema>;
@@ -114,6 +121,16 @@ export const VotePayloadSchema = z.object({
   targetId: z.string().min(1).max(64).nullable(),
 });
 
+export const PictionaryStrokePayloadSchema = z.object({
+  requestId: RequestIdSchema,
+  points: z.array(z.object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1) })).min(2).max(40),
+});
+
+export const PictionaryGuessPayloadSchema = z.object({
+  requestId: RequestIdSchema,
+  championId: ChampionIdSchema,
+});
+
 /* ------------------------------------------------------------------ */
 /* Nombres de eventos                                                  */
 /* ------------------------------------------------------------------ */
@@ -130,6 +147,8 @@ export const ClientEvents = {
   IMPOSTOR_ACK: "impostor:ack",
   IMPOSTOR_CLUE: "impostor:clue",
   IMPOSTOR_VOTE: "impostor:vote",
+  PICTIONARY_STROKE: "pictionary:stroke",
+  PICTIONARY_GUESS: "pictionary:guess",
 } as const;
 
 export const ServerEvents = {
@@ -161,6 +180,8 @@ export const REJECT_CODES = [
   "NAME_IN_CLUE",
   "INVALID_TARGET",
   "ALREADY_VOTED",
+  "ALREADY_GUESSED",
+  "INVALID_STROKE",
   "SESSION_REPLACED",
 ] as const;
 
@@ -233,7 +254,20 @@ export type ImpostorGameView = {
   reveal: ImpostorReveal | null;
 };
 
-export type GameView = BombaGameView | ImpostorGameView;
+export type PictionaryPoint = { x: number; y: number };
+export type PictionaryGameView = {
+  mode: "pictionary";
+  phase: "DRAWING" | "REVEAL";
+  phaseEndsAt: number;
+  drawerId: string;
+  roundIndex: number;
+  totalRounds: number;
+  strokes: PictionaryPoint[][];
+  guesses: string[];
+  target: PublicChampion | null;
+};
+
+export type GameView = BombaGameView | ImpostorGameView | PictionaryGameView;
 
 export type RoomView = {
   code: string;
@@ -246,6 +280,7 @@ export type RoomView = {
   settings: {
     bomba: BombaSettings;
     impostor: ImpostorSettings;
+    pictionary: PictionarySettings;
   };
   game: GameView | null;
   serverTime: number;
@@ -270,7 +305,13 @@ export type ImpostorPrivateView = {
   mustSubmitClue: boolean;
 };
 
-export type PrivateView = BombaPrivateView | ImpostorPrivateView | null;
+export type PictionaryPrivateView = {
+  mode: "pictionary";
+  target: PublicChampion | null;
+  youAreDrawer: boolean;
+};
+
+export type PrivateView = BombaPrivateView | ImpostorPrivateView | PictionaryPrivateView | null;
 
 /* ------------------------------------------------------------------ */
 /* Efectos transitorios (animaciones, no estado)                       */

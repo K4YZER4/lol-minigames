@@ -1,6 +1,7 @@
-import type { BombaSettings, ImpostorSettings, ModeId } from "@lolgames/protocol";
+import type { BombaSettings, ImpostorSettings, ModeId, PictionarySettings } from "@lolgames/protocol";
 import type { BombaState } from "@lolgames/engine";
 import type { ImpostorState } from "@lolgames/engine";
+import type { PictionaryState } from "@lolgames/engine";
 
 export type Player = {
   id: string;
@@ -17,7 +18,7 @@ export type Player = {
   recentRequests: string[];
 };
 
-export type GameState = BombaState | ImpostorState;
+export type GameState = BombaState | ImpostorState | PictionaryState;
 
 export type Room = {
   id: string;
@@ -33,6 +34,7 @@ export type Room = {
   settings: {
     bomba: BombaSettings;
     impostor: ImpostorSettings;
+    pictionary: PictionarySettings;
   };
   scores: Record<string, number>;
   /** Desplazamiento del primer hablante de Impostor en la siguiente ronda. */
@@ -43,4 +45,6 @@ export type IncomingAction =
   | { kind: "bomba:answer"; requestId: string; championId: string }
   | { kind: "impostor:ack"; requestId: string }
   | { kind: "impostor:clue"; requestId: string; text: string }
-  | { kind: "impostor:vote"; requestId: string; targetId: string | null };
+  | { kind: "impostor:vote"; requestId: string; targetId: string | null }
+  | { kind: "pictionary:stroke"; requestId: string; points: { x: number; y: number }[] }
+  | { kind: "pictionary:guess"; requestId: string; championId: string };

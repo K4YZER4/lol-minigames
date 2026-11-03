@@ -15,6 +15,8 @@ import {
   AvatarIdSchema,
   ClientEvents,
   CluePayloadSchema,
+  PictionaryGuessPayloadSchema,
+  PictionaryStrokePayloadSchema,
   NicknameSchema,
   RequestIdSchema,
   RoomCodeSchema,
@@ -202,6 +204,24 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
       requestId: parsed.data.requestId,
       targetId: parsed.data.targetId,
     });
+  }
+
+  @SubscribeMessage(ClientEvents.PICTIONARY_STROKE)
+  async onPictionaryStroke(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = PictionaryStrokePayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "pictionary:stroke", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.PICTIONARY_GUESS)
+  async onPictionaryGuess(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = PictionaryGuessPayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "pictionary:guess", ...parsed.data });
   }
 
   /* ----------------------------- interno ----------------------------- */

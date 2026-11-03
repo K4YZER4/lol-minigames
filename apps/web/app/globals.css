@@ -1014,6 +1014,38 @@ input:disabled {
   margin-top: 16px;
 }
 
+.pictionary-layout {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.pictionary-heading {
+  margin: 4px auto 10px;
+}
+
+.pictionary-board-wrap {
+  padding: 14px;
+}
+
+.pictionary-board {
+  display: block;
+  width: 100%;
+  height: min(58vh, 520px);
+  min-height: 300px;
+  touch-action: none;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.pictionary-board.can-draw { cursor: crosshair; }
+.pictionary-paper { fill: rgba(240, 236, 221, 0.94); }
+.pictionary-line { fill: none; stroke: #14284b; stroke-width: 0.012; stroke-linecap: round; stroke-linejoin: round; }
+.pictionary-line.draft { stroke: #365c93; }
+.pictionary-hint { padding: 9px 4px 0; color: var(--muted); font-size: 11px; text-align: center; }
+
+.pictionary-guess { max-width: 620px; width: 100%; margin: 0 auto; }
+.pictionary-target { margin: 0 auto; padding: 18px; }
+
 .clue h2 {
   font-size: 24px;
   line-height: 1.45;

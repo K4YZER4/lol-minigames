@@ -19,6 +19,7 @@ import type {
 import { Lobby } from "@/components/Lobby";
 import { BombaGame } from "@/components/BombaGame";
 import { ImpostorGame } from "@/components/ImpostorGame";
+import { PictionaryGame } from "@/components/PictionaryGame";
 
 const newRequestId = () =>
   typeof crypto !== "undefined" && "randomUUID" in crypto
@@ -184,7 +185,7 @@ export function RoomClient({ code }: { code: string }) {
     }
   }, [code]);
 
-  const resetToLobby = useCallback(async (mode?: "bomba" | "impostor") => {
+  const resetToLobby = useCallback(async (mode?: "bomba" | "impostor" | "pictionary") => {
     setResetting(true);
     const ack = await act("session:reset", mode ? { mode } : {});
     setResetting(false);
@@ -247,7 +248,7 @@ export function RoomClient({ code }: { code: string }) {
       <div className="top">
         <div>
           <div className="eyebrow"><span className={`live-dot${connecting ? "" : " on"}`} /> Sala {code}</div>
-          <h1>{!room || room.phase === "LOBBY" ? "La sala está lista." : room.mode === "bomba" ? "No te la quedes." : "Que no te lean tan fácil."}</h1>
+          <h1>{!room || room.phase === "LOBBY" ? "La sala está lista." : room.mode === "bomba" ? "No te la quedes." : room.mode === "impostor" ? "Que no te lean tan fácil." : "Dibuja. Que no te descubran."}</h1>
         </div>
         <div className="row">
           <button className="secondary" onClick={() => void copyCode()}>Copiar código ↗</button>
@@ -295,6 +296,18 @@ export function RoomClient({ code }: { code: string }) {
           }
           isHost={room.hostId === me}
           resetting={resetting}
+          onReset={(mode) => void resetToLobby(mode)}
+        />
+      ) : room.game?.mode === "pictionary" ? (
+        <PictionaryGame
+          room={room}
+          me={me}
+          priv={priv?.mode === "pictionary" ? priv : null}
+          champions={champions}
+          isHost={room.hostId === me}
+          resetting={resetting}
+          onStroke={(points) => void act("pictionary:stroke", { requestId: newRequestId(), points })}
+          onGuess={(championId) => void act("pictionary:guess", { requestId: newRequestId(), championId })}
           onReset={(mode) => void resetToLobby(mode)}
         />
       ) : (
