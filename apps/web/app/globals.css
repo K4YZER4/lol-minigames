@@ -1146,6 +1146,7 @@ input:disabled {
   margin-top: 14px;
 }
 .audio-player .primary { white-space: nowrap; }
+.audio-test-card { display: grid; gap: 10px; margin-top: 20px; }
 
 .clue h2 {
   font-size: 24px;

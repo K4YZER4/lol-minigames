@@ -28,6 +28,11 @@ export default function DevTestHubPage() {
             <span className="dev-test-players">{mode.players} jugadores →</span>
           </Link>
         ))}
+        <Link className="panel dev-test-mode" href="/dev/test/audio">
+          <strong>Prueba de audio</strong>
+          <span className="hint">Escucha los cuatro niveles de distorsión.</span>
+          <span className="dev-test-players">Sin sala →</span>
+        </Link>
       </section>
 
       <p className="hint">
