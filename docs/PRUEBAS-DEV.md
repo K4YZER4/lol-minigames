@@ -32,6 +32,18 @@ Abre cualquiera en el navegador:
 | Dúo a ciegas | `http://localhost:3000/dev/test/duo` | 4 |
 | Party | `http://localhost:3000/dev/test/party` | 4 |
 
+### Preview del filtro de audio
+
+Este preview no crea una sala multiplayer; sirve para ajustar los filtros de
+Web Audio con los clips locales:
+
+```text
+http://localhost:3000/dev/test/audio
+```
+
+Prueba los cuatro niveles de distorsión sobre el mismo clip. Los valores se
+ajustan en `apps/web/lib/audio-distortion.ts`.
+
 Cada enlace:
 
 1. crea una sala nueva;
@@ -56,6 +68,10 @@ Si prefieres el JSON en vez de la redirección:
 ```http
 GET http://localhost:3001/api/dev/test-room?mode=pictionary&players=5
 ```
+
+> `carrera-sonido` todavía no es un valor válido para este endpoint. El modo
+> multiplayer necesita terminar primero su motor autoritativo, catálogo de
+> pistas sonoras y vista de sala; no se debe probar como alias de `party`.
 
 Respuesta:
 
