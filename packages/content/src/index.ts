@@ -48,6 +48,8 @@ export type ContentAvatar = {
   imageUrl: string;
 };
 
+export type ContentEmojiClues = Record<string, string[][]>;
+
 export type ContentBundle = {
   meta: ContentMeta;
   champions: PublicChampion[];
@@ -55,6 +57,7 @@ export type ContentBundle = {
   clues: ContentClue[];
   pairs: ContentPair[];
   avatars: ContentAvatar[];
+  emojiClues: ContentEmojiClues;
 };
 
 const DATA_DIR = join(__dirname, "..", "data");
@@ -78,10 +81,11 @@ export function loadContent(): ContentBundle {
   const clues = readJson<ContentClue[]>("clues.json");
   const pairs = readJson<ContentPair[]>("pairs.json");
   const avatars = readJson<ContentAvatar[]>("avatars.json");
+  const emojiClues = readJson<ContentEmojiClues>("emoji-clues.json");
 
   const championById: Record<string, PublicChampion> = {};
   for (const champion of champions) championById[champion.id] = champion;
 
-  cached = { meta, champions, championById, clues, pairs, avatars };
+  cached = { meta, champions, championById, clues, pairs, avatars, emojiClues };
   return cached;
 }

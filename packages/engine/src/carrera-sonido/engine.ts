@@ -40,14 +40,14 @@ export function carreraSonidoAnswer(state: CarreraSonidoState, playerId: string,
   const answers = { ...state.answers, [playerId]: championId };
   if (championId !== state.targetId) return { state: { ...state, answers }, effects: [], reject: fail("WRONG_ANSWER", "No es ese campeón") };
   const scores = { ...state.scores, [playerId]: (state.scores[playerId] ?? 0) + Math.max(1, state.clues.length - state.clueIndex) };
-  return { state: { ...state, answers, scores, winnerId: playerId, phase: "REVEAL", phaseEndsAt: ctx.now + 2_000 }, effects: [{ type: "carrera-sonido:correct", playerId }] };
+  return { state: { ...state, answers, scores, winnerId: playerId, phase: "REVEAL", phaseEndsAt: ctx.now + 6_000 }, effects: [{ type: "carrera-sonido:correct", playerId }] };
 }
 
 export function carreraSonidoTick(state: CarreraSonidoState, ctx: CarreraSonidoContext): Result<CarreraSonidoState> {
   if (ctx.now < state.phaseEndsAt) return { state, effects: [] };
   if (state.phase === "CLUES") {
     if (state.clueIndex + 1 < state.clues.length) return { state: { ...state, clueIndex: state.clueIndex + 1, phaseEndsAt: ctx.now + state.settings.clueSeconds * 1000 }, effects: [] };
-    return { state: { ...state, phase: "REVEAL", phaseEndsAt: ctx.now + 2_000 }, effects: [] };
+    return { state: { ...state, phase: "REVEAL", phaseEndsAt: ctx.now + 6_000 }, effects: [] };
   }
   if (state.phase === "REVEAL" && state.round + 1 >= state.settings.rounds) return { state: { ...state, phase: "FINISHED", phaseEndsAt: ctx.now }, effects: [] };
   if (state.phase === "REVEAL") return { state: choose({ playerIds: state.players, settings: state.settings, champions: state.champions, clues: ctx.clues, now: ctx.now, rng: ctx.rng, scores: state.scores }, ctx.now, state.round + 1), effects: [] };

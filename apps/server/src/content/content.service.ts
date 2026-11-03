@@ -23,16 +23,6 @@ const AUDIO_ROOT = AUDIO_ROOT_CANDIDATES.find((candidate) => existsSync(candidat
 type AudioClip = { clueId: string; championId: string; audioUrl: string; filePath: string };
 type EmojiClue = { clueId: string; championId: string; emojis: string[] };
 
-function emojiSets(tags: string[]): string[][] {
-  const tag = tags.map((value) => value.toLowerCase());
-  if (tag.includes("mage")) return [["✨", "🔮", "🌌", "💥"], ["🪄", "💫", "🌀", "⚡"], ["🌙", "🧿", "✨", "🔥"]];
-  if (tag.includes("assassin")) return [["🗡️", "🌑", "💨", "🎯"], ["🥷", "🩸", "👤", "⚡"], ["🗡️", "💀", "🌫️", "🔥"]];
-  if (tag.includes("marksman")) return [["🏹", "🎯", "💨", "💥"], ["🔫", "👁️", "⚡", "🎯"], ["🏹", "🔥", "🌪️", "💫"]];
-  if (tag.includes("tank")) return [["🛡️", "🪨", "💪", "🏰"], ["🛡️", "⛰️", "💥", "🧱"], ["⚔️", "🛡️", "🔥", "👊"]];
-  if (tag.includes("support")) return [["🛡️", "💚", "✨", "🤝"], ["💫", "🪽", "💖", "🛡️"], ["🌿", "✨", "🔗", "💚"]];
-  return [["⚔️", "💪", "🔥", "🎯"], ["🛡️", "⚡", "💥", "👊"], ["🌑", "⚔️", "✨", "🔥"]];
-}
-
 @Injectable()
 export class ContentService {
   private readonly bundle: ContentBundle = loadContent();
@@ -53,7 +43,7 @@ export class ContentService {
       };
     }
     this.info = info;
-    this.emojiList = this.bundle.champions.flatMap((champion, championIndex) => emojiSets(champion.tags).map((emojis, setIndex) => ({ clueId: `emoji-${championIndex.toString(36)}-${setIndex}`, championId: champion.id, emojis })));
+    this.emojiList = this.bundle.champions.flatMap((champion, championIndex) => (this.bundle.emojiClues[champion.id] ?? []).filter((emojis) => emojis.length === 4).map((emojis, setIndex) => ({ clueId: `emoji-${championIndex.toString(36)}-${setIndex}`, championId: champion.id, emojis })));
 
     this.clueById = new Map(this.bundle.clues.map((clue) => [clue.clueId, clue]));
 

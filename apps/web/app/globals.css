@@ -1098,6 +1098,8 @@ input:disabled {
 .carrera-layout { max-width: 1120px; grid-template-columns: 250px minmax(0, 1fr); align-items: start; }
 .carrera-heading { grid-column: 1 / -1; }
 .carrera-clues { grid-column: 2; grid-row: 2; padding: 18px; }
+.carrera-sonido-clues,
+.carrera-emojis-clues { grid-column: 2; grid-row: 2; }
 .carrera-sidebar { grid-column: 1; grid-row: 2; position: sticky; top: 12px; max-height: min(64vh, 520px); overflow-y: auto; }
 .carrera-clue-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
 .carrera-clue-card { position: relative; overflow: hidden; border: 1px solid var(--edge); border-radius: 15px; background: rgba(0,0,0,.18); }
@@ -1112,6 +1114,12 @@ input:disabled {
 .emoji-clue-value { min-height: 52px; font-size: clamp(34px, 5vw, 58px); line-height: 1; }
 .carrera-clues .picker { margin-top: 16px; }
 .carrera-result { margin-top: 16px; text-align: center; }
+.carrera-reveal-card { grid-column: 2; grid-row: 2; display: grid; justify-items: center; gap: 5px; margin: 0; text-align: center; }
+.carrera-layout.has-reveal .carrera-clues,
+.carrera-layout.has-reveal .carrera-sonido-clues,
+.carrera-layout.has-reveal .carrera-emojis-clues { grid-row: 3; }
+.carrera-reveal-card img { width: 130px; height: 130px; border-radius: 18px; object-fit: cover; margin: 6px 0; }
+.carrera-reveal-card h2 { margin: 0; }
 
 /* ¿Quién soy? (Hedbanz): campeón propio a la izquierda, mesa al centro, acción a la derecha. */
 .hedbanz-layout {
@@ -1895,8 +1903,15 @@ input:disabled {
   .carrera-layout { grid-template-columns: 1fr; }
   .carrera-clue-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .carrera-heading { grid-column: 1; grid-row: 1; }
-  .carrera-clues { grid-column: 1; grid-row: 2; }
+  .carrera-clues,
+  .carrera-sonido-clues,
+  .carrera-emojis-clues { grid-column: 1; grid-row: 2; }
   .carrera-sidebar { grid-column: 1; grid-row: 3; position: static; max-height: 220px; }
+  .carrera-reveal-card { grid-column: 1; grid-row: 2; }
+  .carrera-layout.has-reveal .carrera-clues,
+  .carrera-layout.has-reveal .carrera-sonido-clues,
+  .carrera-layout.has-reveal .carrera-emojis-clues { grid-row: 3; }
+  .carrera-layout.has-reveal .carrera-sidebar { grid-row: 4; }
 
   .hedbanz-layout { grid-template-columns: 1fr; }
   .hedbanz-heading,
