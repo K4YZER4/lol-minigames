@@ -31,6 +31,7 @@ import { DescripcionGame } from "@/components/DescripcionGame";
 import { DuoGame } from "@/components/DuoGame";
 import { PartyGame } from "@/components/PartyGame";
 import { ResultsScreen } from "@/components/ResultsScreen";
+import { playUiSound } from "@/lib/sounds";
 
 const newRequestId = () =>
   typeof crypto !== "undefined" && "randomUUID" in crypto
@@ -147,7 +148,14 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
     };
     const onPrivate = (view: PrivateView) => setPriv(view);
     const onEffect = (effect: { type?: string }) => {
-      if (effect?.type) setFlash({ type: effect.type, key: Date.now() });
+      if (effect?.type) {
+        setFlash({ type: effect.type, key: Date.now() });
+        const type = effect.type;
+        if (type.includes("explosion")) playUiSound("explosion");
+        else if (type.includes("correct")) playUiSound("correct");
+        else if (type.includes("wrong")) playUiSound("incorrect");
+        else if (type.includes("reveal")) playUiSound("reveal");
+      }
     };
     const onRejected = (payload: { code?: string; message?: string }) => {
       setToast(
@@ -164,6 +172,11 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
     socket.on("game:effect", onEffect);
     socket.on("action:rejected", onRejected);
 
+    const onButtonClick = (event: MouseEvent) => {
+      if ((event.target as HTMLElement | null)?.closest("button")) playUiSound("click");
+    };
+    document.addEventListener("click", onButtonClick, true);
+
     if (socket.connected) onConnect();
 
     return () => {
@@ -173,6 +186,7 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
       socket.off("private:state", onPrivate);
       socket.off("game:effect", onEffect);
       socket.off("action:rejected", onRejected);
+      document.removeEventListener("click", onButtonClick, true);
     };
   }, [socket, join]);
 

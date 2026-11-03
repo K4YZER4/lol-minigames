@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AudioDistortionPlayer } from "@/components/AudioDistortionPlayer";
+import { playUiSound, UI_SOUND_LABELS, type UiSound } from "@/lib/sounds";
 
 type Clip = { url: string; durationMs?: number };
 type Manifest = { champions?: Record<string, { name?: string; clips?: Clip[] }> };
@@ -45,6 +46,12 @@ export function AudioTestClient() {
             ))}
           </div>
         ) : !error ? <p className="hint">Cargando clips…</p> : null}
+        <div className="audio-test-card">
+          <p className="hint">Efectos de interfaz</p>
+          <div className="chips sound-test-grid">
+            {(Object.keys(UI_SOUND_LABELS) as UiSound[]).map((sound) => <button className="chip" type="button" key={sound} onClick={() => playUiSound(sound)}>{UI_SOUND_LABELS[sound]}</button>)}
+          </div>
+        </div>
       </section>
     </main>
   );

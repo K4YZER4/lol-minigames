@@ -51,6 +51,23 @@ body {
   min-height: 100vh;
 }
 
+.site-video-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  pointer-events: none;
+  opacity: 0.32;
+  filter: brightness(0.58) saturate(0.82);
+}
+
+body > *:not(.site-video-bg) {
+  position: relative;
+  z-index: 1;
+}
+
 /* Orbes difusos del fondo */
 body::before,
 body::after {
@@ -1145,6 +1162,7 @@ input:disabled {
 .audio-player .primary { white-space: nowrap; }
 .audio-player audio { display: none; }
 .audio-test-card { display: grid; gap: 10px; margin-top: 20px; }
+.sound-test-grid { justify-content: flex-start; }
 .audio-clue-list { display: grid; gap: 10px; }
 .audio-clue-card { display: grid; grid-template-columns: 34px minmax(0, 1fr); align-items: center; gap: 8px 10px; padding: 12px; border: 1px solid var(--edge); border-radius: 14px; background: rgba(0,0,0,.14); }
 .audio-clue-card.is-current { border-color: color-mix(in srgb, var(--accent) 60%, var(--edge)); background: color-mix(in srgb, var(--accent) 10%, transparent); }
