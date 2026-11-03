@@ -341,7 +341,7 @@ export type QuienSoyGameView = {
   revealed: QuienSoyRevealedTurn[];
 };
 export type CarreraGameView = { mode: "carrera"; phase: "CLUES" | "REVEAL" | "FINISHED"; phaseEndsAt: number; round: number; totalRounds: number; clueIndex: number; clues: BombaPublicClue[]; winnerId: string | null; target: PublicChampion | null };
-export type CarreraSonidoGameView = { mode: "carrera-sonido"; phase: "CLUES" | "REVEAL" | "FINISHED"; phaseEndsAt: number; round: number; totalRounds: number; clueIndex: number; clues: { clueId: string; audioUrl: string }[]; winnerId: string | null; target: PublicChampion | null };
+export type CarreraSonidoGameView = { mode: "carrera-sonido"; phase: "CLUES" | "REVEAL" | "FINISHED"; phaseEndsAt: number; round: number; totalRounds: number; clueIndex: number; clues: { clueId: string; audioUrl: string }[]; winnerId: string | null; target: PublicChampion | null; scores: Record<string, number> };
 export type DescripcionGameView = { mode: "descripcion"; phase: "DESCRIPTION" | "REVEAL"; phaseEndsAt: number; describerId: string; roundIndex: number; totalRounds: number; clues: { playerId: string; text: string }[]; guesses: { playerId: string; text: string; correct: boolean }[]; target: PublicChampion | null };
 export type DuoPair = { playerIds: [string, string]; champions: Record<string, PublicChampion | null>; guesses: Record<string, PublicChampion | null>; correct: Record<string, boolean> | null };
 export type DuoGameView = { mode: "duo"; phase: "GUESSING" | "REVEAL"; phaseEndsAt: number; pairs: DuoPair[]; submitted: string[] };
