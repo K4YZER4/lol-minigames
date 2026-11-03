@@ -89,8 +89,8 @@ export function AudioDistortionPlayer({ src, level, label }: Props) {
     graph.lowpass.frequency.value = settings.lowpassHz;
     graph.shaper.curve = makeCurve(settings.bitcrush);
     graph.delay.delayTime.value = settings.delayMs / 1000;
-    graph.wet.gain.value = settings.bitcrush > 0 ? 0.82 : 0;
-    graph.dry.gain.value = settings.bitcrush > 0 ? 0.18 : 1;
+    graph.wet.gain.value = settings.bitcrush > 0 ? 0.28 : 0;
+    graph.dry.gain.value = settings.bitcrush > 0 ? 0.72 : 1;
     graph.noiseGain.gain.value = settings.noise;
     audio.playbackRate = settings.speed;
   }
