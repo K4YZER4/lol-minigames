@@ -54,6 +54,18 @@ Cada enlace:
 5. arranca la partida;
 6. te redirige a la sala como anfitrión.
 
+### Enlace de invitación
+
+Dentro de la sala de prueba, el botón **Copiar enlace** copia una URL como:
+
+```text
+http://localhost:3000/room/ABC123
+```
+
+Al abrirla, la persona entra directamente a la pantalla de esa sala: solo
+elige su icono, escribe su nombre y pulsa **Entrar**. No necesita escribir el
+código manualmente.
+
 ### Cambiar la cantidad de jugadores
 
 ```text
