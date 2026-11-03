@@ -19,6 +19,8 @@ import {
   PictionaryStrokePayloadSchema,
   PictionaryFillPayloadSchema,
   CarreraAnswerPayloadSchema,
+  ImitacionSubmitPayloadSchema,
+  ImitacionVotePayloadSchema,
   DescripcionCluePayloadSchema,
   DescripcionGuessPayloadSchema,
   DuoSubmitPayloadSchema,
@@ -155,7 +157,7 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
   async onReset(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
     const playerId = this.playerOf(client);
     if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
-      const parsed = z.object({ mode: z.enum(["bomba", "impostor", "pictionary", "quien-soy", "carrera", "carrera-sonido", "descripcion", "duo", "party"]).optional() }).safeParse(body ?? {});
+      const parsed = z.object({ mode: z.enum(["bomba", "impostor", "pictionary", "quien-soy", "carrera", "carrera-sonido", "imitacion", "descripcion", "duo", "party"]).optional() }).safeParse(body ?? {});
     if (!parsed.success) return reject("INVALID", issue(parsed.error));
     return this.rooms.resetSession(playerId, parsed.data.mode);
   }
@@ -274,6 +276,24 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
     const parsed = CarreraAnswerPayloadSchema.safeParse(body);
     if (!parsed.success) return reject("INVALID", issue(parsed.error));
     return this.rooms.action(playerId, { kind: "carrera-sonido:answer", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.IMITACION_SUBMIT)
+  async onImitacionSubmit(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = ImitacionSubmitPayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "imitacion:submit", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.IMITACION_VOTE)
+  async onImitacionVote(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = ImitacionVotePayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "imitacion:vote", ...parsed.data });
   }
 
   @SubscribeMessage(ClientEvents.DESCRIPCION_CLUE)

@@ -1152,6 +1152,17 @@ input:disabled {
 .audio-clue-number { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--glass); font-weight: 800; }
 .audio-clue-card .audio-player { grid-column: 1 / -1; margin-top: 0; }
 .audio-player-error { color: var(--danger); flex-basis: 100%; }
+.imitacion-layout { max-width: 1120px; grid-template-columns: minmax(0, 1fr) 230px; align-items: start; }
+.imitacion-heading { grid-column: 1 / -1; }
+.imitacion-original, .imitacion-record, .imitacion-votes { grid-column: 1; margin: 0; }
+.imitacion-sidebar { grid-column: 2; grid-row: 2 / span 3; position: sticky; top: 12px; margin: 0; }
+.record-button.is-recording { background: var(--danger); color: white; }
+.imitacion-recordings { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+.imitacion-recording { padding: 12px; border: 1px solid var(--edge); border-radius: 14px; background: rgba(0,0,0,.14); }
+.star-votes { display: flex; gap: 4px; margin-top: 10px; flex-wrap: wrap; }
+.star-vote { padding: 6px 8px; border: 1px solid var(--edge); border-radius: 8px; background: var(--glass); color: var(--accent); font-size: 13px; }
+.star-vote:disabled { opacity: .35; cursor: not-allowed; }
+.imitation-score { display: block; margin-top: 10px; color: var(--accent); font-size: 20px; }
 
 .clue h2 {
   font-size: 24px;
@@ -1865,6 +1876,13 @@ input:disabled {
   .hedbanz-mine { grid-row: 2; }
   .hedbanz-board-panel { grid-row: 3; }
   .hedbanz-action { grid-row: 4; }
+
+  .imitacion-layout { grid-template-columns: 1fr; }
+  .imitacion-heading,
+  .imitacion-original,
+  .imitacion-record,
+  .imitacion-votes,
+  .imitacion-sidebar { grid-column: 1; grid-row: auto; position: static; }
 
   .avatar-picker-grid {
     grid-template-columns: repeat(4, 1fr);

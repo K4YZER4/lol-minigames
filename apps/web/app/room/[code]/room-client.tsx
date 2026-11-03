@@ -26,6 +26,7 @@ import { PictionaryGame } from "@/components/PictionaryGame";
 import { QuienSoyGame } from "@/components/QuienSoyGame";
 import { CarreraGame } from "@/components/CarreraGame";
 import { CarreraSonidoGame } from "@/components/CarreraSonidoGame";
+import { ImitacionGame } from "@/components/ImitacionGame";
 import { DescripcionGame } from "@/components/DescripcionGame";
 import { DuoGame } from "@/components/DuoGame";
 import { PartyGame } from "@/components/PartyGame";
@@ -274,7 +275,7 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
       <div className="top">
         <div>
           <div className="eyebrow"><span className={`live-dot${connecting ? "" : " on"}`} /> Sala {code}</div>
-          <h1>{!room || room.phase === "LOBBY" ? "La sala está lista." : room.mode === "bomba" ? "No te la quedes." : room.mode === "impostor" ? "Que no te lean tan fácil." : room.mode === "pictionary" ? "Dibuja. Que no te descubran." : room.mode === "quien-soy" ? "Todos ven tu campeón menos tú." : "Descubre quién eres."}</h1>
+          <h1>{!room || room.phase === "LOBBY" ? "La sala está lista." : room.mode === "bomba" ? "No te la quedes." : room.mode === "impostor" ? "Que no te lean tan fácil." : room.mode === "pictionary" ? "Dibuja. Que no te descubran." : room.mode === "quien-soy" ? "Todos ven tu campeón menos tú." : room.mode === "imitacion" ? "Hazlo parecido." : "Descubre quién eres."}</h1>
         </div>
         <div className="row">
           <button className="secondary" onClick={() => void copyCode()}>Copiar enlace ↗</button>
@@ -347,6 +348,11 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
         <CarreraGame room={room} priv={priv?.mode === "carrera" ? priv : null} champions={champions} isHost={room.hostId === me} resetting={resetting} onAnswer={(championId) => void act("carrera:answer", { requestId: newRequestId(), championId })} onReset={(mode) => void resetToLobby(mode)} />
       ) : room.game?.mode === "carrera-sonido" ? (
         <CarreraSonidoGame room={room} priv={priv?.mode === "carrera-sonido" ? priv : null} champions={champions} isHost={room.hostId === me} resetting={resetting} onAnswer={(championId) => void act("carrera-sonido:answer", { requestId: newRequestId(), championId })} onReset={(mode) => void resetToLobby(mode)} />
+      ) : room.game?.mode === "imitacion" ? (
+        <ImitacionGame room={room} me={me} priv={priv?.mode === "imitacion" ? priv : null} isHost={room.hostId === me} resetting={resetting}
+          onSubmit={(audioData, mimeType) => void act("imitacion:submit", { requestId: newRequestId(), audioData, mimeType })}
+          onVote={(recordingId, stars) => void act("imitacion:vote", { requestId: newRequestId(), recordingId, stars })}
+          onReset={(mode) => void resetToLobby(mode)} />
       ) : room.game?.mode === "descripcion" ? (
         <DescripcionGame room={room} me={me} priv={priv?.mode === "descripcion" ? priv : null} isHost={room.hostId === me} resetting={resetting}
           onClue={(text) => void act("descripcion:clue", { requestId: newRequestId(), text })}

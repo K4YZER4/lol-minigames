@@ -23,6 +23,7 @@ const MODES: { id: ModeId; name: string; icon: string; blurb: string }[] = [
   { id: "quien-soy", name: "¿Quién soy?", icon: "?", blurb: "Todos ven tu campeón menos tú. Pregunta, adivina y suma." },
   { id: "carrera", name: "Carrera de pistas", icon: "➜", blurb: "Adivina antes que los demás con pistas progresivas." },
   { id: "carrera-sonido", name: "Carrera de pistas: Sonido", icon: "♫", blurb: "Escucha una voz distorsionada y descubre al campeón." },
+  { id: "imitacion", name: "Imitación de voz", icon: "★", blurb: "Imita la línea y deja que el grupo vote." },
   { id: "descripcion", name: "Descripción", icon: "☵", blurb: "Describe un campeón sin decir su nombre." },
   { id: "duo", name: "Dúo a ciegas", icon: "◎", blurb: "Conoce tu campeón y adivina el de tu pareja." },
   { id: "party", name: "Party", icon: "★", blurb: "Un jugador recibe un campeón y el resto intenta adivinarlo." },
@@ -89,6 +90,8 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
              <><div className="divider" /><p className="hint">Se revelan pistas progresivamente. El primero en identificar el campeón gana la ronda.</p></>
            ) : room.mode === "carrera-sonido" ? (
              <><div className="divider" /><p className="hint">Escucha una voz de campeón con filtros progresivos. Menos pistas y más rapidez dan más puntos.</p></>
+           ) : room.mode === "imitacion" ? (
+             <><div className="divider" /><p className="hint">Escucha una línea, graba tu imitación y vota de 1 a 5 estrellas. No puedes votar tu propia grabación.</p></>
           ) : room.mode === "descripcion" ? (
             <><div className="divider" /><p className="hint">Por turnos, una persona describe un objetivo privado durante {room.settings.descripcion.turnSeconds} s sin mencionar su nombre.</p></>
            ) : room.mode === "duo" ? (

@@ -6,6 +6,7 @@ export * from "./pictionary/engine";
 export * from "./quien-soy/engine";
 export * from "./carrera/engine";
 export * from "./carrera-sonido/engine";
+export * from "./imitacion/engine";
 export * from "./descripcion/engine";
 export * from "./duo/engine";
 export * from "./party/engine";

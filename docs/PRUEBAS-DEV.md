@@ -29,6 +29,7 @@ Abre cualquiera en el navegador:
 | ¿Quién soy? | `http://localhost:3000/dev/test/quien-soy` | 4 |
 | Carrera de pistas | `http://localhost:3000/dev/test/carrera` | 4 |
 | Carrera de pistas: Sonido | `http://localhost:3000/dev/test/carrera-sonido` | 4 |
+| Imitación de voz | `http://localhost:3000/dev/test/imitacion` | 4 |
 | Descripción | `http://localhost:3000/dev/test/descripcion` | 4 |
 | Dúo a ciegas | `http://localhost:3000/dev/test/duo` | 4 |
 | Party | `http://localhost:3000/dev/test/party` | 4 |
@@ -90,6 +91,12 @@ GET http://localhost:3001/api/dev/test-room?mode=carrera-sonido&players=4
 
 El audio se sirve mediante `/api/audio-clues/:clueId`; el `clueId` es opaco y
 no contiene el nombre del campeón.
+
+Para probar imitación:
+
+```http
+GET http://localhost:3001/api/dev/test-room?mode=imitacion&players=4
+```
 
 Respuesta:
 
