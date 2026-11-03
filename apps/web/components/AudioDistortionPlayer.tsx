@@ -33,7 +33,7 @@ export function AudioDistortionPlayer({ src, level, label }: Props) {
 
   return (
     <div className="audio-player">
-      <audio ref={audioRef} src={src} preload="metadata" controls onEnded={() => setPlaying(false)} onPause={() => setPlaying(false)} onError={() => setError("La pista no está disponible en el endpoint de audio.")} />
+      <audio ref={audioRef} src={src} preload="metadata" onEnded={() => setPlaying(false)} onPause={() => setPlaying(false)} onError={() => setError("La pista no está disponible en el endpoint de audio.")} />
       <button className="primary" type="button" onClick={playing ? stop : play}>
         {playing ? "Pausar audio" : "▶ Escuchar pista"}
       </button>
