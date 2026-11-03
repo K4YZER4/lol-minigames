@@ -42,14 +42,14 @@ export function carreraEmojisAnswer(state: CarreraEmojisState, playerId: string,
   const answers = { ...state.answers, [playerId]: championId };
   if (championId !== state.targetId) return { state: { ...state, answers }, effects: [{ type: "carrera-emojis:wrong", playerId }], reject: fail("WRONG_ANSWER", "No es ese campeón") };
   const scores = { ...state.scores, [playerId]: (state.scores[playerId] ?? 0) + Math.max(1, 4 - state.clueIndex) };
-  return { state: { ...state, answers, scores, winnerId: playerId, phase: "REVEAL", phaseEndsAt: ctx.now + 2_000 }, effects: [{ type: "carrera-emojis:correct", playerId }] };
+  return { state: { ...state, answers, scores, winnerId: playerId, phase: "REVEAL", phaseEndsAt: ctx.now + 6_000 }, effects: [{ type: "carrera-emojis:correct", playerId }] };
 }
 
 export function carreraEmojisTick(state: CarreraEmojisState, ctx: CarreraEmojisContext): Result<CarreraEmojisState> {
   if (ctx.now < state.phaseEndsAt) return { state, effects: [] };
   if (state.phase === "CLUES") {
     if (state.clueIndex < 3) return { state: { ...state, clueIndex: state.clueIndex + 1, phaseEndsAt: ctx.now + state.settings.clueSeconds * 1000 }, effects: [{ type: "carrera-emojis:new-clue", clueIndex: state.clueIndex + 1 }] };
-    return { state: { ...state, phase: "REVEAL", phaseEndsAt: ctx.now + 2_000 }, effects: [{ type: "carrera-emojis:reveal" }] };
+    return { state: { ...state, phase: "REVEAL", phaseEndsAt: ctx.now + 6_000 }, effects: [{ type: "carrera-emojis:reveal" }] };
   }
   if (state.phase === "REVEAL" && state.round + 1 >= state.settings.rounds) return { state: { ...state, phase: "FINISHED", phaseEndsAt: ctx.now }, effects: [] };
   if (state.phase === "REVEAL") return { state: choose({ playerIds: state.players, settings: state.settings, champions: state.champions, clues: ctx.clues, now: ctx.now, rng: ctx.rng, scores: state.scores }, ctx.now, state.round + 1), effects: [] };

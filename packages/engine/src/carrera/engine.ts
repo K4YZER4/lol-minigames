@@ -34,14 +34,14 @@ export function carreraAnswer(state: CarreraState, playerId: string, championId:
   if (!ctx.clues.some((clue) => clue.championId === championId)) return { state, effects: [], reject: fail("UNKNOWN_CHAMPION", "Ese campeón no existe") };
   const answers = { ...state.answers, [playerId]: championId };
   if (championId !== state.targetId) return { state: { ...state, answers }, effects: [], reject: fail("WRONG_ANSWER", "No es ese campeón") };
-  return { state: { ...state, answers, winnerId: playerId, phase: "REVEAL", phaseEndsAt: ctx.now + 2_000 }, effects: [{ type: "carrera:correct", playerId }] };
+  return { state: { ...state, answers, winnerId: playerId, phase: "REVEAL", phaseEndsAt: ctx.now + 6_000 }, effects: [{ type: "carrera:correct", playerId }] };
 }
 
 export function carreraTick(state: CarreraState, ctx: CarreraContext): Result<CarreraState> {
   if (ctx.now < state.phaseEndsAt) return { state, effects: [] };
   if (state.phase === "CLUES") {
     if (state.clueIndex + 1 < state.clues.length) return { state: { ...state, clueIndex: state.clueIndex + 1, phaseEndsAt: ctx.now + state.settings.clueSeconds * 1000 }, effects: [] };
-    return { state: { ...state, phase: "REVEAL", phaseEndsAt: ctx.now + 2_000 }, effects: [] };
+    return { state: { ...state, phase: "REVEAL", phaseEndsAt: ctx.now + 6_000 }, effects: [] };
   }
   if (state.phase === "REVEAL" && state.round + 1 >= state.settings.rounds) return { state: { ...state, phase: "FINISHED", phaseEndsAt: ctx.now }, effects: [] };
   if (state.phase === "REVEAL") {
