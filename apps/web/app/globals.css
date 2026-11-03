@@ -1153,6 +1153,7 @@ input:disabled {
 .audio-clue-card.is-locked { opacity: .45; }
 .audio-clue-number { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--glass); font-weight: 800; }
 .audio-clue-card .audio-player { grid-column: 1 / -1; margin-top: 0; }
+.audio-player-error { color: var(--danger); flex-basis: 100%; }
 
 .clue h2 {
   font-size: 24px;

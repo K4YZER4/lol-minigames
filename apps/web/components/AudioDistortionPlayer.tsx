@@ -39,6 +39,7 @@ export function AudioDistortionPlayer({ src, level, label }: Props) {
     noiseGain: GainNode;
   } | null>(null);
   const [playing, setPlaying] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => () => {
     const graph = graphRef.current;
@@ -97,9 +98,16 @@ export function AudioDistortionPlayer({ src, level, label }: Props) {
   function play() {
     const graph = ensureGraph();
     const audio = audioRef.current;
-    if (!graph || !audio) return;
+    if (!graph || !audio) {
+      setError("Tu navegador no permite filtros de audio.");
+      return;
+    }
+    setError(null);
     applyLevel();
-    void graph.context.resume().then(() => audio.play()).then(() => setPlaying(true)).catch(() => setPlaying(false));
+    void graph.context.resume().then(() => audio.play()).then(() => setPlaying(true)).catch(() => {
+      setPlaying(false);
+      setError("No se pudo reproducir esta pista. Revisa que el servidor tenga los audios locales.");
+    });
   }
 
   function stop() {
@@ -109,11 +117,12 @@ export function AudioDistortionPlayer({ src, level, label }: Props) {
 
   return (
     <div className="audio-player">
-      <audio ref={audioRef} src={src} preload="metadata" onEnded={() => setPlaying(false)} />
+      <audio ref={audioRef} src={src} preload="metadata" onEnded={() => setPlaying(false)} onError={() => setError("La pista no está disponible en el endpoint de audio.")} />
       <button className="primary" type="button" onClick={playing ? stop : play}>
         {playing ? "Pausar audio" : "▶ Escuchar pista"}
       </button>
       <span className="hint">{label ?? `Pista sonora ${level}`}</span>
+      {error ? <span className="hint audio-player-error">{error}</span> : null}
     </div>
   );
 }

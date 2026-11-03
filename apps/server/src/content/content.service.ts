@@ -14,7 +14,11 @@ const PUBLIC_BASE =
   `http://localhost:${process.env.PORT ?? 3001}`;
 
 const IMAGE_CACHE_LIMIT = 600;
-const AUDIO_ROOT = resolve(process.cwd(), "apps/web/public/audio/vo/es-mx");
+const AUDIO_ROOT_CANDIDATES = [
+  resolve(process.cwd(), "apps/web/public/audio/vo/es-mx"),
+  resolve(__dirname, "../../../web/public/audio/vo/es-mx"),
+];
+const AUDIO_ROOT = AUDIO_ROOT_CANDIDATES.find((candidate) => existsSync(candidate)) ?? AUDIO_ROOT_CANDIDATES[0]!;
 
 type AudioClip = { clueId: string; championId: string; audioUrl: string; filePath: string };
 

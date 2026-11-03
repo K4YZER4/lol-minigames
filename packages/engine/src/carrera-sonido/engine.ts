@@ -23,7 +23,7 @@ const fail = (code: string, message: string) => ({ code, message });
 function choose(init: CarreraSonidoInit, now: number, round: number): CarreraSonidoState {
   const available = [...new Set(init.clues.map((clue) => clue.championId))].filter((id) => init.champions[id]);
   const targetId = init.rng.pick(available.length ? available : Object.keys(init.champions));
-  const clues = init.clues.filter((clue) => clue.championId === targetId).slice(0, 4);
+  const clues = init.clues.filter((clue) => clue.championId === targetId).slice(0, 5);
   const scores = { ...(init.scores ?? {}) };
   for (const playerId of init.playerIds) scores[playerId] ??= 0;
   return { phase: "CLUES", settings: init.settings, players: [...init.playerIds], round, targetId, champions: init.champions, clues, clueIndex: 0, answers: {}, winnerId: null, scores, phaseEndsAt: now + init.settings.clueSeconds * 1000 };
