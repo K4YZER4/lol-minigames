@@ -11,6 +11,7 @@ import {
   DEFAULT_PICTIONARY_SETTINGS,
   DEFAULT_QUIEN_SOY_SETTINGS,
   DEFAULT_CARRERA_SETTINGS,
+  DEFAULT_CARRERA_SONIDO_SETTINGS,
   DEFAULT_DESCRIPCION_SETTINGS,
   DEFAULT_DUO_SETTINGS,
   DEFAULT_PARTY_SETTINGS,
@@ -25,6 +26,7 @@ import {
   type PictionarySettings,
   type QuienSoySettings,
   type CarreraSettings,
+  type CarreraSonidoSettings,
   type DescripcionSettings,
   type DuoSettings,
   type PartySettings,
@@ -77,6 +79,12 @@ import {
   carreraPublicView,
   carreraResults,
   carreraTick,
+  createCarreraSonido,
+  carreraSonidoAnswer,
+  carreraSonidoPrivateView,
+  carreraSonidoPublicView,
+  carreraSonidoResults,
+  carreraSonidoTick,
   createDescripcion,
   descripcionClue,
   descripcionGuess,
@@ -103,6 +111,7 @@ import {
   type PictionaryState,
   type QuienSoyState,
   type CarreraState,
+  type CarreraSonidoState,
   type DescripcionState,
   type DuoState,
   type PartyState,
@@ -201,6 +210,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
         pictionary: { ...DEFAULT_PICTIONARY_SETTINGS },
         quienSoy: { ...DEFAULT_QUIEN_SOY_SETTINGS },
         carrera: { ...DEFAULT_CARRERA_SETTINGS },
+        carreraSonido: { ...DEFAULT_CARRERA_SONIDO_SETTINGS },
         descripcion: { ...DEFAULT_DESCRIPCION_SETTINGS },
         duo: { ...DEFAULT_DUO_SETTINGS },
         party: { ...DEFAULT_PARTY_SETTINGS },
@@ -431,6 +441,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       }
       if (patch.quienSoy) room.settings.quienSoy = { ...room.settings.quienSoy, ...patch.quienSoy };
       if (patch.carrera) room.settings.carrera = { ...room.settings.carrera, ...patch.carrera };
+      if (patch.carreraSonido) room.settings.carreraSonido = { ...room.settings.carreraSonido, ...patch.carreraSonido };
       if (patch.descripcion) room.settings.descripcion = { ...room.settings.descripcion, ...patch.descripcion };
       if (patch.duo) room.settings.duo = { ...room.settings.duo, ...patch.duo };
       if (patch.party) room.settings.party = { ...room.settings.party, ...patch.party };
@@ -510,9 +521,11 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                  now,
                  rng: this.rng,
                 })
-                : room.mode === "carrera"
-                ? createCarrera({ playerIds: ids, settings: room.settings.carrera, champions: this.content.championInfo, clues: this.content.clues, now, rng: this.rng })
-                : room.mode === "descripcion"
+                 : room.mode === "carrera"
+                 ? createCarrera({ playerIds: ids, settings: room.settings.carrera, champions: this.content.championInfo, clues: this.content.clues, now, rng: this.rng })
+                 : room.mode === "carrera-sonido"
+                 ? createCarreraSonido({ playerIds: ids, settings: room.settings.carreraSonido, champions: this.content.championInfo, clues: this.content.audioClips, now, rng: this.rng })
+                 : room.mode === "descripcion"
                 ? createDescripcion({ playerIds: ids, settings: room.settings.descripcion, champions: this.content.championInfo, now, rng: this.rng })
                  : room.mode === "duo"
                    ? createDuo({ playerIds: ids, settings: room.settings.duo, champions: this.content.unicaChampionInfo, now, rng: this.rng })
@@ -824,6 +837,10 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       if (action.kind === "carrera:answer") return carreraAnswer(room.game as CarreraState, playerId, action.championId, { now: this.clock.now(), rng: this.rng, clues: this.content.clues });
       return null;
     }
+    if (room.mode === "carrera-sonido") {
+      if (action.kind === "carrera-sonido:answer") return carreraSonidoAnswer(room.game as CarreraSonidoState, playerId, action.championId, { now: this.clock.now(), rng: this.rng, clues: this.content.audioClips });
+      return null;
+    }
     if (room.mode === "descripcion") {
       if (action.kind === "descripcion:clue") return descripcionClue(room.game as DescripcionState, playerId, action.text);
       if (action.kind === "descripcion:guess") return descripcionGuess(room.game as DescripcionState, playerId, action.text, ctx);
@@ -862,6 +879,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
     if (room.mode === "pictionary") return pictionaryTick(room.game as PictionaryState, ctx);
     if (room.mode === "quien-soy") return quienSoyTick(room.game as QuienSoyState, ctx);
     if (room.mode === "carrera") return carreraTick(room.game as CarreraState, { now, rng: this.rng, clues: this.content.clues });
+    if (room.mode === "carrera-sonido") return carreraSonidoTick(room.game as CarreraSonidoState, { now, rng: this.rng, clues: this.content.audioClips });
     if (room.mode === "descripcion") return descripcionTick(room.game as DescripcionState, { now, rng: this.rng, champions: this.content.championInfo });
      if (room.mode === "duo") return duoTick(room.game as DuoState, { now, champions: this.content.unicaChampionInfo });
      return partyTick(room.game as PartyState, { now, rng: this.rng, champions: this.content.unicaChampionInfo });
@@ -893,9 +911,11 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
               (room.game as PictionaryState).roundIndex + 1 >= (room.game as PictionaryState).settings.rounds
               : room.mode === "quien-soy"
                 ? (room.game as QuienSoyState).phase === "REVEAL"
-                   : room.mode === "carrera"
-                     ? (room.game as CarreraState).phase === "FINISHED"
-                      : room.mode === "descripcion"
+              : room.mode === "carrera"
+                ? (room.game as CarreraState).phase === "FINISHED"
+                : room.mode === "carrera-sonido"
+                  ? (room.game as CarreraSonidoState).phase === "FINISHED"
+                : room.mode === "descripcion"
                         ? (room.game as DescripcionState).phase === "REVEAL" &&
                           (room.game as DescripcionState).roundIndex + 1 >= (room.game as DescripcionState).order.length
                          : room.mode === "duo"
@@ -913,9 +933,11 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
             ? pictionaryResults(room.game as PictionaryState)
             : room.mode === "quien-soy"
               ? quienSoyResults(room.game as QuienSoyState)
-                 : room.mode === "carrera"
-                   ? carreraResults(room.game as CarreraState)
-                : room.mode === "descripcion"
+                  : room.mode === "carrera"
+                    ? carreraResults(room.game as CarreraState)
+                  : room.mode === "carrera-sonido"
+                    ? carreraSonidoResults(room.game as CarreraSonidoState)
+                 : room.mode === "descripcion"
                   ? descripcionResults(room.game as DescripcionState)
                    : room.mode === "duo"
                      ? duoResults(room.game as DuoState)
@@ -995,9 +1017,11 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                ? pictionaryPublicView(room.game as PictionaryState, now)
                 : room.mode === "quien-soy"
                      ? quienSoyPublicView(room.game as QuienSoyState)
-                      : room.mode === "carrera"
-                        ? carreraPublicView(room.game as CarreraState, now)
-                        : room.mode === "descripcion"
+                       : room.mode === "carrera"
+                         ? carreraPublicView(room.game as CarreraState, now)
+                         : room.mode === "carrera-sonido"
+                           ? carreraSonidoPublicView(room.game as CarreraSonidoState)
+                         : room.mode === "descripcion"
                            ? descripcionPublicView(room.game as DescripcionState)
                            : room.mode === "duo"
                              ? duoPublicView(room.game as DuoState)
@@ -1025,8 +1049,9 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
     }
     if (room.mode === "impostor") return impostorPrivateView(room.game as ImpostorState, playerId);
     if (room.mode === "pictionary") return pictionaryPrivateView(room.game as PictionaryState, playerId);
-    if (room.mode === "quien-soy") return quienSoyPrivateView(room.game as QuienSoyState, playerId);
-     if (room.mode === "carrera") return carreraPrivateView(room.game as CarreraState, playerId);
+      if (room.mode === "quien-soy") return quienSoyPrivateView(room.game as QuienSoyState, playerId);
+      if (room.mode === "carrera") return carreraPrivateView(room.game as CarreraState, playerId);
+      if (room.mode === "carrera-sonido") return carreraSonidoPrivateView(room.game as CarreraSonidoState, playerId);
       if (room.mode === "descripcion") return descripcionPrivateView(room.game as DescripcionState, playerId);
       if (room.mode === "duo") return duoPrivateView(room.game as DuoState, playerId);
       return partyPrivateView(room.game as PartyState, playerId);

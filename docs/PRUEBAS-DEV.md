@@ -28,6 +28,7 @@ Abre cualquiera en el navegador:
 | Pictionary | `http://localhost:3000/dev/test/pictionary` | 4 |
 | ¿Quién soy? | `http://localhost:3000/dev/test/quien-soy` | 4 |
 | Carrera de pistas | `http://localhost:3000/dev/test/carrera` | 4 |
+| Carrera de pistas: Sonido | `http://localhost:3000/dev/test/carrera-sonido` | 4 |
 | Descripción | `http://localhost:3000/dev/test/descripcion` | 4 |
 | Dúo a ciegas | `http://localhost:3000/dev/test/duo` | 4 |
 | Party | `http://localhost:3000/dev/test/party` | 4 |
@@ -69,9 +70,14 @@ Si prefieres el JSON en vez de la redirección:
 GET http://localhost:3001/api/dev/test-room?mode=pictionary&players=5
 ```
 
-> `carrera-sonido` todavía no es un valor válido para este endpoint. El modo
-> multiplayer necesita terminar primero su motor autoritativo, catálogo de
-> pistas sonoras y vista de sala; no se debe probar como alias de `party`.
+Para el modo sonoro:
+
+```http
+GET http://localhost:3001/api/dev/test-room?mode=carrera-sonido&players=4
+```
+
+El audio se sirve mediante `/api/audio-clues/:clueId`; el `clueId` es opaco y
+no contiene el nombre del campeón.
 
 Respuesta:
 

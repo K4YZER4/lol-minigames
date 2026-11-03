@@ -25,6 +25,7 @@ import { ImpostorGame } from "@/components/ImpostorGame";
 import { PictionaryGame } from "@/components/PictionaryGame";
 import { QuienSoyGame } from "@/components/QuienSoyGame";
 import { CarreraGame } from "@/components/CarreraGame";
+import { CarreraSonidoGame } from "@/components/CarreraSonidoGame";
 import { DescripcionGame } from "@/components/DescripcionGame";
 import { DuoGame } from "@/components/DuoGame";
 import { PartyGame } from "@/components/PartyGame";
@@ -343,6 +344,8 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
           onGuess={(championId) => void act("quien-soy:guess", { requestId: newRequestId(), championId })} />
       ) : room.game?.mode === "carrera" ? (
         <CarreraGame room={room} priv={priv?.mode === "carrera" ? priv : null} champions={champions} isHost={room.hostId === me} resetting={resetting} onAnswer={(championId) => void act("carrera:answer", { requestId: newRequestId(), championId })} onReset={(mode) => void resetToLobby(mode)} />
+      ) : room.game?.mode === "carrera-sonido" ? (
+        <CarreraSonidoGame room={room} priv={priv?.mode === "carrera-sonido" ? priv : null} champions={champions} isHost={room.hostId === me} resetting={resetting} onAnswer={(championId) => void act("carrera-sonido:answer", { requestId: newRequestId(), championId })} onReset={(mode) => void resetToLobby(mode)} />
       ) : room.game?.mode === "descripcion" ? (
         <DescripcionGame room={room} me={me} priv={priv?.mode === "descripcion" ? priv : null} isHost={room.hostId === me} resetting={resetting}
           onClue={(text) => void act("descripcion:clue", { requestId: newRequestId(), text })}

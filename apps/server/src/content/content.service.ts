@@ -1,4 +1,6 @@
 import { Inject, Injectable, NotFoundException } from "@nestjs/common";
+import { existsSync, readFileSync } from "node:fs";
+import { join, resolve } from "node:path";
 import {
   loadContent,
   type ContentBundle,
@@ -12,6 +14,9 @@ const PUBLIC_BASE =
   `http://localhost:${process.env.PORT ?? 3001}`;
 
 const IMAGE_CACHE_LIMIT = 600;
+const AUDIO_ROOT = resolve(process.cwd(), "apps/web/public/audio/vo/es-mx");
+
+type AudioClip = { clueId: string; championId: string; audioUrl: string; filePath: string };
 
 @Injectable()
 export class ContentService {
@@ -20,6 +25,7 @@ export class ContentService {
   private readonly clueList: ContentClue[];
   private readonly clueById: Map<string, ContentClue>;
   private readonly imageCache = new Map<string, Buffer>();
+  private readonly audioById = new Map<string, AudioClip>();
 
   constructor() {
     const info: Record<string, { id: string; name: string; imageUrl: string }> = {};
@@ -43,6 +49,25 @@ export class ContentService {
       ...clue,
       imageUrl: `${PUBLIC_BASE}/api/clues/${encodeURIComponent(clue.clueId)}/image`,
     }));
+
+    const manifestPath = join(AUDIO_ROOT, "manifest.json");
+    if (existsSync(manifestPath)) {
+      const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as { champions?: Record<string, { clips?: { file?: string }[] }> };
+      let index = 0;
+      for (const [championId, champion] of Object.entries(manifest.champions ?? {})) {
+        for (const clip of champion.clips ?? []) {
+          if (!clip.file) continue;
+          const clueId = `audio-${index.toString(36)}`;
+          this.audioById.set(clueId, {
+            clueId,
+            championId,
+            audioUrl: `${PUBLIC_BASE}/api/audio-clues/${clueId}`,
+            filePath: join(AUDIO_ROOT, clip.file),
+          });
+          index += 1;
+        }
+      }
+    }
   }
 
   get meta() {
@@ -77,6 +102,16 @@ export class ContentService {
       imageUrl: champion.imageUrl,
       tags: champion.tags,
     }]));
+  }
+
+  get audioClips(): { clueId: string; championId: string; audioUrl: string }[] {
+    return [...this.audioById.values()].map(({ clueId, championId, audioUrl }) => ({ clueId, championId, audioUrl }));
+  }
+
+  audioClip(clueId: string): { body: Buffer; contentType: string } | null {
+    const clip = this.audioById.get(clueId);
+    if (!clip || !existsSync(clip.filePath)) return null;
+    return { body: readFileSync(clip.filePath), contentType: "audio/ogg" };
   }
 
   exists(championId: string): boolean {

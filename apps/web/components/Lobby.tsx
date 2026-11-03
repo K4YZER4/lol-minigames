@@ -22,6 +22,7 @@ const MODES: { id: ModeId; name: string; icon: string; blurb: string }[] = [
   { id: "pictionary", name: "Pictionary", icon: "〰", blurb: "Dibuja un campeón y deja que tu equipo lo adivine." },
   { id: "quien-soy", name: "¿Quién soy?", icon: "?", blurb: "Todos ven tu campeón menos tú. Pregunta, adivina y suma." },
   { id: "carrera", name: "Carrera de pistas", icon: "➜", blurb: "Adivina antes que los demás con pistas progresivas." },
+  { id: "carrera-sonido", name: "Carrera de pistas: Sonido", icon: "♫", blurb: "Escucha una voz distorsionada y descubre al campeón." },
   { id: "descripcion", name: "Descripción", icon: "☵", blurb: "Describe un campeón sin decir su nombre." },
   { id: "duo", name: "Dúo a ciegas", icon: "◎", blurb: "Conoce tu campeón y adivina el de tu pareja." },
   { id: "party", name: "Party", icon: "★", blurb: "Un jugador recibe un campeón y el resto intenta adivinarlo." },
@@ -84,8 +85,10 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
             <><div className="divider" /><p className="hint">Por turnos, una persona dibuja durante {room.settings.pictionary.drawingSeconds} s. El resto intenta adivinar el campeón.</p><div className="stepper" style={{ marginTop: 14 }}><span className="hint">Rondas</span><button className="step" disabled={!isHost || room.settings.pictionary.rounds <= 1} onClick={() => onConfigure({ pictionary: { rounds: room.settings.pictionary.rounds - 1 } })}>−</button><strong>{room.settings.pictionary.rounds}</strong><button className="step" disabled={!isHost || room.settings.pictionary.rounds >= 10} onClick={() => onConfigure({ pictionary: { rounds: room.settings.pictionary.rounds + 1 } })}>+</button></div></>
           ) : room.mode === "quien-soy" ? (
             <><div className="divider" /><p className="hint">Cada jugador recibe un campeón secreto: todos lo ven menos él. En tu turno haces preguntas de sí/no por Discord y puedes adivinar con el buscador. Acierto: +1 punto y termina tu turno; fallo: sigues intentando. Al acabar el turno se revela tu campeón. Jugáis una vez cada uno.</p><div className="stepper" style={{ marginTop: 14 }}><span className="hint">Segundos por turno</span><button className="step" disabled={!isHost || room.settings.quienSoy.turnSeconds <= 20} onClick={() => onConfigure({ quienSoy: { turnSeconds: room.settings.quienSoy.turnSeconds - 10 } })}>−</button><strong>{room.settings.quienSoy.turnSeconds}</strong><button className="step" disabled={!isHost || room.settings.quienSoy.turnSeconds >= 180} onClick={() => onConfigure({ quienSoy: { turnSeconds: room.settings.quienSoy.turnSeconds + 10 } })}>+</button></div></>
-          ) : room.mode === "carrera" ? (
-            <><div className="divider" /><p className="hint">Se revelan pistas progresivamente. El primero en identificar el campeón gana la ronda.</p></>
+           ) : room.mode === "carrera" ? (
+             <><div className="divider" /><p className="hint">Se revelan pistas progresivamente. El primero en identificar el campeón gana la ronda.</p></>
+           ) : room.mode === "carrera-sonido" ? (
+             <><div className="divider" /><p className="hint">Escucha una voz de campeón con filtros progresivos. Menos pistas y más rapidez dan más puntos.</p></>
           ) : room.mode === "descripcion" ? (
             <><div className="divider" /><p className="hint">Por turnos, una persona describe un objetivo privado durante {room.settings.descripcion.turnSeconds} s sin mencionar su nombre.</p></>
            ) : room.mode === "duo" ? (

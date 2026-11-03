@@ -20,6 +20,7 @@ type ImageResponse = {
   setHeader(name: string, value: string): void;
   end(body?: Buffer): void;
 };
+type AudioResponse = ImageResponse;
 
 @Controller("api")
 export class CatalogController {
@@ -95,5 +96,20 @@ export class CatalogController {
       res.statusCode = 404;
       res.end();
     }
+  }
+
+  /** Audio proxy: el id opaco no contiene el campeón ni el nombre del archivo. */
+  @Get("audio-clues/:clueId")
+  audioClue(@Param("clueId") clueId: string, @Res() res: AudioResponse): void {
+    const audio = this.content.audioClip(clueId);
+    if (!audio) {
+      res.statusCode = 404;
+      res.end();
+      return;
+    }
+    res.setHeader("Content-Type", audio.contentType);
+    res.setHeader("Cache-Control", "public, max-age=86400, immutable");
+    res.setHeader("Content-Length", String(audio.body.length));
+    res.end(audio.body);
   }
 }

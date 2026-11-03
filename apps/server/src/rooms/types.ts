@@ -1,9 +1,10 @@
-import type { BombaSettings, CarreraSettings, DescripcionSettings, DuoSettings, ImpostorSettings, ModeId, PictionarySettings, QuienSoySettings, PartySettings } from "@lolgames/protocol";
+import type { BombaSettings, CarreraSettings, CarreraSonidoSettings, DescripcionSettings, DuoSettings, ImpostorSettings, ModeId, PictionarySettings, QuienSoySettings, PartySettings } from "@lolgames/protocol";
 import type { BombaState } from "@lolgames/engine";
 import type { ImpostorState } from "@lolgames/engine";
 import type { PictionaryState } from "@lolgames/engine";
 import type { QuienSoyState } from "@lolgames/engine";
 import type { CarreraState } from "@lolgames/engine";
+import type { CarreraSonidoState } from "@lolgames/engine";
 import type { DescripcionState } from "@lolgames/engine";
 import type { DuoState } from "@lolgames/engine";
 import type { PartyState } from "@lolgames/engine";
@@ -23,7 +24,7 @@ export type Player = {
   recentRequests: string[];
 };
 
-export type GameState = BombaState | ImpostorState | PictionaryState | QuienSoyState | CarreraState | DescripcionState | DuoState | PartyState;
+export type GameState = BombaState | ImpostorState | PictionaryState | QuienSoyState | CarreraState | CarreraSonidoState | DescripcionState | DuoState | PartyState;
 
 export type Room = {
   id: string;
@@ -42,6 +43,7 @@ export type Room = {
     pictionary: PictionarySettings;
     quienSoy: QuienSoySettings;
     carrera: CarreraSettings;
+    carreraSonido: CarreraSonidoSettings;
     descripcion: DescripcionSettings;
     duo: DuoSettings;
     party: PartySettings;
@@ -63,6 +65,7 @@ export type IncomingAction =
   | { kind: "pictionary:fill"; requestId: string; x: number; y: number; color: string }
   | { kind: "quien-soy:guess"; requestId: string; championId: string }
   | { kind: "carrera:answer"; requestId: string; championId: string }
+  | { kind: "carrera-sonido:answer"; requestId: string; championId: string }
   | { kind: "descripcion:clue"; requestId: string; text: string }
   | { kind: "descripcion:guess"; requestId: string; text: string }
   | { kind: "duo:submit"; requestId: string; championId: string }
