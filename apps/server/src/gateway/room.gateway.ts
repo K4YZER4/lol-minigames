@@ -17,6 +17,15 @@ import {
   CluePayloadSchema,
   PictionaryGuessPayloadSchema,
   PictionaryStrokePayloadSchema,
+  PictionaryFillPayloadSchema,
+  CarreraAnswerPayloadSchema,
+  ImitacionSubmitPayloadSchema,
+  ImitacionVotePayloadSchema,
+  DescripcionCluePayloadSchema,
+  DescripcionGuessPayloadSchema,
+  DuoSubmitPayloadSchema,
+  PartyGuessPayloadSchema,
+  QuienSoyGuessPayloadSchema,
   NicknameSchema,
   RequestIdSchema,
   RoomCodeSchema,
@@ -148,7 +157,7 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
   async onReset(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
     const playerId = this.playerOf(client);
     if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
-    const parsed = z.object({ mode: z.enum(["bomba", "impostor"]).optional() }).safeParse(body ?? {});
+      const parsed = z.object({ mode: z.enum(["bomba", "impostor", "pictionary", "quien-soy", "carrera", "carrera-sonido", "carrera-emojis", "imitacion", "descripcion", "duo", "party"]).optional() }).safeParse(body ?? {});
     if (!parsed.success) return reject("INVALID", issue(parsed.error));
     return this.rooms.resetSession(playerId, parsed.data.mode);
   }
@@ -222,6 +231,121 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
     const parsed = PictionaryGuessPayloadSchema.safeParse(body);
     if (!parsed.success) return reject("INVALID", issue(parsed.error));
     return this.rooms.action(playerId, { kind: "pictionary:guess", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.PICTIONARY_CLEAR)
+  async onPictionaryClear(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = z.object({ requestId: RequestIdSchema }).safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "pictionary:clear", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.PICTIONARY_UNDO)
+  async onPictionaryUndo(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = z.object({ requestId: RequestIdSchema }).safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "pictionary:undo", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.PICTIONARY_FILL)
+  async onPictionaryFill(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = PictionaryFillPayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "pictionary:fill", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.CARRERA_ANSWER)
+  async onCarreraAnswer(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = CarreraAnswerPayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "carrera:answer", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.CARRERA_SONIDO_ANSWER)
+  async onCarreraSonidoAnswer(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = CarreraAnswerPayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "carrera-sonido:answer", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.CARRERA_EMOJIS_ANSWER)
+  async onCarreraEmojisAnswer(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = CarreraAnswerPayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "carrera-emojis:answer", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.IMITACION_SUBMIT)
+  async onImitacionSubmit(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = ImitacionSubmitPayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "imitacion:submit", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.IMITACION_VOTE)
+  async onImitacionVote(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = ImitacionVotePayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "imitacion:vote", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.DESCRIPCION_CLUE)
+  async onDescripcionClue(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = DescripcionCluePayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "descripcion:clue", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.DESCRIPCION_GUESS)
+  async onDescripcionGuess(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = DescripcionGuessPayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "descripcion:guess", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.DUO_SUBMIT)
+  async onDuoSubmit(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = DuoSubmitPayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "duo:submit", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.PARTY_GUESS)
+  async onPartyGuess(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = PartyGuessPayloadSchema.safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "party:guess", ...parsed.data });
+  }
+
+  @SubscribeMessage(ClientEvents.QUIEN_SOY_GUESS)
+  async onQuienSoyGuess(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client); if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = QuienSoyGuessPayloadSchema.safeParse(body); if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "quien-soy:guess", ...parsed.data });
   }
 
   /* ----------------------------- interno ----------------------------- */

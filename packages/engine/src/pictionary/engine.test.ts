@@ -12,7 +12,7 @@ const champions: Record<string, PictionaryChampion> = {
   Ahri: { id: "Ahri", name: "Ahri", imageUrl: "ahri.png" },
   Lux: { id: "Lux", name: "Lux", imageUrl: "lux.png" },
 };
-const settings = { drawingSeconds: 90 };
+const settings = { drawingSeconds: 90, rounds: 3 };
 
 describe("pictionary engine", () => {
   it("keeps the target private and accepts strokes only from the drawer", () => {

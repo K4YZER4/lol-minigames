@@ -27,5 +27,6 @@ import {
     { provide: RateLimiter, useClass: MemoryRateLimiter },
     { provide: Clock, useClass: SystemClock },
   ],
+  exports: [RoomService],
 })
 export class GameModule {}

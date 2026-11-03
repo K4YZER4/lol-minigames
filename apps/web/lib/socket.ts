@@ -29,20 +29,38 @@ export function request<T extends { ok: boolean }>(
 ): Promise<T> {
   const client = getSocket();
   return new Promise((resolve) => {
-    client.timeout(timeoutMs).emit(
-      event,
-      payload,
-      (error: Error | null, response: T) => {
-        if (error) {
-          resolve({
-            ok: false,
-            code: "TIMEOUT",
-            message: "El servidor no respondió",
-          } as unknown as T);
-          return;
-        }
-        resolve(response);
-      },
-    );
+    let settled = false;
+    let timer: ReturnType<typeof setTimeout> | null = null;
+
+    const timeout = () => ({
+      ok: false,
+      code: "TIMEOUT",
+      message: "El servidor no respondió. Revisa que siga encendido e inténtalo otra vez.",
+    } as unknown as T);
+
+    const cleanup = () => {
+      client.off("connect", onConnect);
+      if (timer) clearTimeout(timer);
+    };
+
+    const finish = (response: T) => {
+      if (settled) return;
+      settled = true;
+      cleanup();
+      resolve(response);
+    };
+
+    const emit = () => {
+      client.timeout(timeoutMs).emit(event, payload, (error: Error | null, response: T) => {
+        if (error) finish(timeout());
+        else finish(response);
+      });
+    };
+
+    const onConnect = () => emit();
+    timer = setTimeout(() => finish(timeout()), timeoutMs);
+
+    if (client.connected) emit();
+    else client.once("connect", onConnect);
   });
 }

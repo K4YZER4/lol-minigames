@@ -44,6 +44,8 @@ docs/PRODUCTO.md    reglas, configuración cerrada y arquitectura
 
 - [`docs/PRODUCTO.md`](docs/PRODUCTO.md): reglas exactas, decisiones cerradas,
   modelo de seguridad y flujo de conexiones/reconexión.
+- [`docs/PRUEBAS-DEV.md`](docs/PRUEBAS-DEV.md): enlaces de prueba por modo para
+  abrir una partida ya iniciada sin crear sala a mano.
 
 ## Aviso
 

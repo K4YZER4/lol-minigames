@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .next/
+.next-build/
 out/
 *.log
 .env
@@ -9,3 +10,7 @@ out/
 coverage/
 *.tsbuildinfo
 next-env.d.ts
+
+# Voces de Riot: se mantienen locales y no se publican por accidente.
+/apps/web/public/audio/vo/es-mx/*
+!/apps/web/public/audio/vo/es-mx/manifest.json

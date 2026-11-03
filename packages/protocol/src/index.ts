@@ -11,7 +11,7 @@ export const MIN_PLAYERS = 3;
 export const NICKNAME_MAX = 16;
 export const RECONNECT_GRACE_MS = 30_000;
 
-export const MODE_IDS = ["bomba", "impostor", "pictionary"] as const;
+export const MODE_IDS = ["bomba", "impostor", "pictionary", "quien-soy", "carrera", "carrera-sonido", "carrera-emojis", "imitacion", "descripcion", "duo", "party"] as const;
 export type ModeId = (typeof MODE_IDS)[number];
 
 /* ------------------------------------------------------------------ */
@@ -93,15 +93,50 @@ export const DEFAULT_IMPOSTOR_SETTINGS: ImpostorSettings = {
 
 export const PictionarySettingsSchema = z.object({
   drawingSeconds: z.number().int().min(30).max(300),
+  rounds: z.number().int().min(1).max(10),
 });
 export type PictionarySettings = z.infer<typeof PictionarySettingsSchema>;
-export const DEFAULT_PICTIONARY_SETTINGS: PictionarySettings = { drawingSeconds: 90 };
+export const DEFAULT_PICTIONARY_SETTINGS: PictionarySettings = { drawingSeconds: 90, rounds: 3 };
+export const CarreraSettingsSchema = z.object({ clueSeconds: z.number().int().min(3).max(30), rounds: z.number().int().min(1).max(10) });
+export type CarreraSettings = z.infer<typeof CarreraSettingsSchema>;
+export const DEFAULT_CARRERA_SETTINGS: CarreraSettings = { clueSeconds: 8, rounds: 5 };
+export const CarreraSonidoSettingsSchema = z.object({ clueSeconds: z.number().int().min(3).max(30), rounds: z.number().int().min(1).max(10) });
+export type CarreraSonidoSettings = z.infer<typeof CarreraSonidoSettingsSchema>;
+export const DEFAULT_CARRERA_SONIDO_SETTINGS: CarreraSonidoSettings = { clueSeconds: 8, rounds: 5 };
+export const CarreraEmojisSettingsSchema = z.object({ clueSeconds: z.number().int().min(3).max(30), rounds: z.number().int().min(1).max(10) });
+export type CarreraEmojisSettings = z.infer<typeof CarreraEmojisSettingsSchema>;
+export const DEFAULT_CARRERA_EMOJIS_SETTINGS: CarreraEmojisSettings = { clueSeconds: 8, rounds: 5 };
+export const ImitacionSettingsSchema = z.object({ recordingSeconds: z.number().int().min(10).max(30), votingSeconds: z.number().int().min(15).max(120) });
+export type ImitacionSettings = z.infer<typeof ImitacionSettingsSchema>;
+export const DEFAULT_IMITACION_SETTINGS: ImitacionSettings = { recordingSeconds: 20, votingSeconds: 45 };
+export const DescripcionSettingsSchema = z.object({ turnSeconds: z.number().int().min(20).max(180) });
+export type DescripcionSettings = z.infer<typeof DescripcionSettingsSchema>;
+export const DEFAULT_DESCRIPCION_SETTINGS: DescripcionSettings = { turnSeconds: 60 };
+export const DuoSettingsSchema = z.object({ guessSeconds: z.number().int().min(20).max(180) });
+export type DuoSettings = z.infer<typeof DuoSettingsSchema>;
+export const DEFAULT_DUO_SETTINGS: DuoSettings = { guessSeconds: 60 };
+export const PartyCategorySchema = z.enum(["roles", "audio"]);
+export const PartySettingsSchema = z.object({ category: PartyCategorySchema, turnSeconds: z.number().int().min(20).max(180), rounds: z.number().int().min(1).max(10) });
+export type PartyCategory = z.infer<typeof PartyCategorySchema>;
+export type PartySettings = z.infer<typeof PartySettingsSchema>;
+export const DEFAULT_PARTY_SETTINGS: PartySettings = { category: "roles", turnSeconds: 60, rounds: 3 };
+export const QuienSoySettingsSchema = z.object({ turnSeconds: z.number().int().min(20).max(180) });
+export type QuienSoySettings = z.infer<typeof QuienSoySettingsSchema>;
+export const DEFAULT_QUIEN_SOY_SETTINGS: QuienSoySettings = { turnSeconds: 60 };
 
 export const SettingsSchema = z.object({
   mode: z.enum(MODE_IDS).optional(),
   bomba: BombaSettingsPatchSchema.optional(),
   impostor: ImpostorSettingsSchema.partial().optional(),
   pictionary: PictionarySettingsSchema.partial().optional(),
+  carrera: CarreraSettingsSchema.partial().optional(),
+  carreraSonido: CarreraSonidoSettingsSchema.partial().optional(),
+  carreraEmojis: CarreraEmojisSettingsSchema.partial().optional(),
+  imitacion: ImitacionSettingsSchema.partial().optional(),
+  descripcion: DescripcionSettingsSchema.partial().optional(),
+  duo: DuoSettingsSchema.partial().optional(),
+  party: PartySettingsSchema.partial().optional(),
+  quienSoy: QuienSoySettingsSchema.partial().optional(),
 });
 
 export type SettingsPatch = z.infer<typeof SettingsSchema>;
@@ -123,13 +158,23 @@ export const VotePayloadSchema = z.object({
 
 export const PictionaryStrokePayloadSchema = z.object({
   requestId: RequestIdSchema,
-  points: z.array(z.object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1) })).min(2).max(40),
+  points: z.array(z.object({ x: z.number().min(0).max(1), y: z.number().min(0).max(1), color: z.string().regex(/^#[0-9a-f]{6}$/i).optional(), width: z.number().min(0.001).max(0.03).optional() })).min(2).max(40),
 });
+export const PictionaryFillPayloadSchema = z.object({ requestId: RequestIdSchema, x: z.number().min(0).max(1), y: z.number().min(0).max(1), color: z.string().regex(/^#[0-9a-f]{6}$/i) });
 
 export const PictionaryGuessPayloadSchema = z.object({
   requestId: RequestIdSchema,
   championId: ChampionIdSchema,
 });
+
+export const CarreraAnswerPayloadSchema = z.object({ requestId: RequestIdSchema, championId: ChampionIdSchema });
+export const DescripcionCluePayloadSchema = z.object({ requestId: RequestIdSchema, text: z.string().trim().min(1).max(120) });
+export const DescripcionGuessPayloadSchema = z.object({ requestId: RequestIdSchema, text: z.string().trim().min(1).max(80) });
+export const DuoSubmitPayloadSchema = z.object({ requestId: RequestIdSchema, championId: ChampionIdSchema });
+export const PartyGuessPayloadSchema = z.object({ requestId: RequestIdSchema, championId: ChampionIdSchema });
+export const QuienSoyGuessPayloadSchema = z.object({ requestId: RequestIdSchema, championId: ChampionIdSchema });
+export const ImitacionSubmitPayloadSchema = z.object({ requestId: RequestIdSchema, audioData: z.string().min(32).max(1_500_000), mimeType: z.string().max(80) });
+export const ImitacionVotePayloadSchema = z.object({ requestId: RequestIdSchema, recordingId: z.string().min(1).max(80), stars: z.number().int().min(1).max(5) });
 
 /* ------------------------------------------------------------------ */
 /* Nombres de eventos                                                  */
@@ -149,6 +194,19 @@ export const ClientEvents = {
   IMPOSTOR_VOTE: "impostor:vote",
   PICTIONARY_STROKE: "pictionary:stroke",
   PICTIONARY_GUESS: "pictionary:guess",
+  PICTIONARY_CLEAR: "pictionary:clear",
+  PICTIONARY_UNDO: "pictionary:undo",
+  PICTIONARY_FILL: "pictionary:fill",
+  CARRERA_ANSWER: "carrera:answer",
+  CARRERA_SONIDO_ANSWER: "carrera-sonido:answer",
+  CARRERA_EMOJIS_ANSWER: "carrera-emojis:answer",
+  IMITACION_SUBMIT: "imitacion:submit",
+  IMITACION_VOTE: "imitacion:vote",
+  DESCRIPCION_CLUE: "descripcion:clue",
+  DESCRIPCION_GUESS: "descripcion:guess",
+  DUO_SUBMIT: "duo:submit",
+  PARTY_GUESS: "party:guess",
+  QUIEN_SOY_GUESS: "quien-soy:guess",
 } as const;
 
 export const ServerEvents = {
@@ -181,7 +239,10 @@ export const REJECT_CODES = [
   "INVALID_TARGET",
   "ALREADY_VOTED",
   "ALREADY_GUESSED",
+  "ALREADY_ANSWERED",
   "INVALID_STROKE",
+  "INVALID_CATEGORY",
+  "INVALID_QUESTION",
   "SESSION_REPLACED",
 ] as const;
 
@@ -254,7 +315,9 @@ export type ImpostorGameView = {
   reveal: ImpostorReveal | null;
 };
 
-export type PictionaryPoint = { x: number; y: number };
+export type PictionaryPoint = { x: number; y: number; color?: string; width?: number };
+export type PictionaryFill = { x: number; y: number; color: string };
+export type PictionaryOperation = { type: "stroke"; points: PictionaryPoint[] } | { type: "fill"; fill: PictionaryFill };
 export type PictionaryGameView = {
   mode: "pictionary";
   phase: "DRAWING" | "REVEAL";
@@ -265,9 +328,42 @@ export type PictionaryGameView = {
   strokes: PictionaryPoint[][];
   guesses: string[];
   target: PublicChampion | null;
+  backgroundColor: string;
+  fills: PictionaryFill[];
+  operations: PictionaryOperation[];
+  scores: Record<string, number>;
 };
 
-export type GameView = BombaGameView | ImpostorGameView | PictionaryGameView;
+export type QuienSoyRevealedTurn = {
+  playerId: string;
+  champion: PublicChampion | null;
+  solved: boolean;
+  attempts: number;
+};
+export type QuienSoyGameView = {
+  mode: "quien-soy";
+  phase: "TURN" | "REVEAL";
+  phaseEndsAt: number;
+  activePlayerId: string;
+  order: string[];
+  turnIndex: number;
+  totalTurns: number;
+  /** Intentos fallidos del jugador activo. Nunca incluye su campeón. */
+  attempts: string[];
+  /** Turnos ya cerrados: ahí sí se revela el campeón de cada jugador. */
+  revealed: QuienSoyRevealedTurn[];
+};
+export type CarreraGameView = { mode: "carrera"; phase: "CLUES" | "REVEAL" | "FINISHED"; phaseEndsAt: number; round: number; totalRounds: number; clueIndex: number; clues: BombaPublicClue[]; winnerId: string | null; target: PublicChampion | null };
+export type CarreraSonidoGameView = { mode: "carrera-sonido"; phase: "CLUES" | "REVEAL" | "FINISHED"; phaseEndsAt: number; round: number; totalRounds: number; clueIndex: number; clues: { clueId: string; audioUrl: string }[]; winnerId: string | null; target: PublicChampion | null; scores: Record<string, number> };
+export type CarreraEmojisGameView = { mode: "carrera-emojis"; phase: "CLUES" | "REVEAL" | "FINISHED"; phaseEndsAt: number; round: number; totalRounds: number; clueIndex: number; clues: { clueId: string; emojis: string[] }[]; winnerId: string | null; target: PublicChampion | null; scores: Record<string, number> };
+export type ImitacionRecordingView = { recordingId: string; audioData: string; mimeType: string; playerId: string | null; averageStars: number | null; votes: number };
+export type ImitacionGameView = { mode: "imitacion"; phase: "RECORDING" | "VOTING" | "REVEAL" | "FINISHED"; phaseEndsAt: number; targetAudioUrl: string | null; recordings: ImitacionRecordingView[]; submitted: string[]; voted: string[]; winnerId: string | null };
+export type DescripcionGameView = { mode: "descripcion"; phase: "DESCRIPTION" | "REVEAL"; phaseEndsAt: number; describerId: string; roundIndex: number; totalRounds: number; clues: { playerId: string; text: string }[]; guesses: { playerId: string; text: string; correct: boolean }[]; target: PublicChampion | null };
+export type DuoPair = { playerIds: [string, string]; champions: Record<string, PublicChampion | null>; guesses: Record<string, PublicChampion | null>; correct: Record<string, boolean> | null };
+export type DuoGameView = { mode: "duo"; phase: "GUESSING" | "REVEAL"; phaseEndsAt: number; pairs: DuoPair[]; submitted: string[] };
+export type PartyGameView = { mode: "party"; phase: "GUESSING" | "REVEAL" | "FINISHED"; phaseEndsAt: number; category: PartyCategory; activePlayerId: string; round: number; totalRounds: number; guesses: { playerId: string; correct: boolean }[] };
+
+export type GameView = BombaGameView | ImpostorGameView | PictionaryGameView | QuienSoyGameView | CarreraGameView | CarreraSonidoGameView | CarreraEmojisGameView | ImitacionGameView | DescripcionGameView | DuoGameView | PartyGameView;
 
 export type RoomView = {
   code: string;
@@ -281,6 +377,14 @@ export type RoomView = {
     bomba: BombaSettings;
     impostor: ImpostorSettings;
     pictionary: PictionarySettings;
+    quienSoy: QuienSoySettings;
+    carrera: CarreraSettings;
+    carreraSonido: CarreraSonidoSettings;
+    carreraEmojis: CarreraEmojisSettings;
+    imitacion: ImitacionSettings;
+    descripcion: DescripcionSettings;
+    duo: DuoSettings;
+    party: PartySettings;
   };
   game: GameView | null;
   serverTime: number;
@@ -311,7 +415,24 @@ export type PictionaryPrivateView = {
   youAreDrawer: boolean;
 };
 
-export type PrivateView = BombaPrivateView | ImpostorPrivateView | PictionaryPrivateView | null;
+export type QuienSoyPrivateView = {
+  mode: "quien-soy";
+  /** Campeones de los demás. Incluye al jugador activo si no eres tú. */
+  visible: Record<string, PublicChampion>;
+  /** Tu campeón: null hasta que termina tu turno. */
+  yourChampion: PublicChampion | null;
+  isActive: boolean;
+  hasSolved: boolean;
+};
+export type CarreraPrivateView = { mode: "carrera"; hasAnswered: boolean; answer: string | null };
+export type CarreraSonidoPrivateView = { mode: "carrera-sonido"; hasAnswered: boolean; answer: string | null };
+export type CarreraEmojisPrivateView = { mode: "carrera-emojis"; hasAnswered: boolean; answer: string | null };
+export type ImitacionPrivateView = { mode: "imitacion"; isSubmitted: boolean; hasVoted: boolean; ownRecordingId: string | null };
+export type DescripcionPrivateView = { mode: "descripcion"; target: PublicChampion | null; forbiddenWords: string[]; youAreDescriber: boolean };
+export type DuoPrivateView = { mode: "duo"; ownChampion: PublicChampion | null; partnerId: string | null; hasSubmitted: boolean };
+export type PartyPrivateView = { mode: "party"; target: PublicChampion | null; isActive: boolean; hasGuessed: boolean };
+
+export type PrivateView = BombaPrivateView | ImpostorPrivateView | PictionaryPrivateView | QuienSoyPrivateView | CarreraPrivateView | CarreraSonidoPrivateView | CarreraEmojisPrivateView | ImitacionPrivateView | DescripcionPrivateView | DuoPrivateView | PartyPrivateView | null;
 
 /* ------------------------------------------------------------------ */
 /* Efectos transitorios (animaciones, no estado)                       */

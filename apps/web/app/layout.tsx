@@ -19,6 +19,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
       <body>
+        <video className="site-video-bg" autoPlay muted loop playsInline aria-hidden="true">
+          <source src="/video/agua-neon-pingpong-loop.mp4" type="video/mp4" />
+        </video>
         <SiteHeader />
         {children}
         <footer className="site-footer">

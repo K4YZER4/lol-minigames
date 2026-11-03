@@ -10,8 +10,11 @@ import { AvatarPicker } from "@/components/AvatarPicker";
 import { RoomNotFoundModal } from "@/components/RoomNotFoundModal";
 import type {
   BombaPrivateView,
+  DescripcionPrivateView,
+  DuoPrivateView,
   ImpostorPrivateView,
   JoinAck,
+  ModeId,
   PrivateView,
   RoomView,
   SimpleAck,
@@ -20,13 +23,23 @@ import { Lobby } from "@/components/Lobby";
 import { BombaGame } from "@/components/BombaGame";
 import { ImpostorGame } from "@/components/ImpostorGame";
 import { PictionaryGame } from "@/components/PictionaryGame";
+import { QuienSoyGame } from "@/components/QuienSoyGame";
+import { CarreraGame } from "@/components/CarreraGame";
+import { CarreraSonidoGame } from "@/components/CarreraSonidoGame";
+import { CarreraEmojisGame } from "@/components/CarreraEmojisGame";
+import { ImitacionGame } from "@/components/ImitacionGame";
+import { DescripcionGame } from "@/components/DescripcionGame";
+import { DuoGame } from "@/components/DuoGame";
+import { PartyGame } from "@/components/PartyGame";
+import { ResultsScreen } from "@/components/ResultsScreen";
+import { playUiSound } from "@/lib/sounds";
 
 const newRequestId = () =>
   typeof crypto !== "undefined" && "randomUUID" in crypto
     ? crypto.randomUUID()
     : `${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
-export function RoomClient({ code }: { code: string }) {
+export function RoomClient({ code, devSession }: { code: string; devSession?: { token: string; playerId: string; nickname: string } | null }) {
   const router = useRouter();
   const socket = useMemo(() => getSocket(), []);
 
@@ -49,6 +62,11 @@ export function RoomClient({ code }: { code: string }) {
   const session = useRef(loadSession(code));
 
   useEffect(() => {
+    if (devSession) {
+      const stored = { ...devSession };
+      session.current = stored;
+      saveSession(code, stored);
+    }
     setNickname(session.current?.nickname || lastNickname());
     setAvatarId(session.current?.avatarId ?? lastAvatarId());
     void loadChampions()
@@ -60,7 +78,7 @@ export function RoomClient({ code }: { code: string }) {
         setAvatarId((current) => current && items.some((item) => item.id === current) ? current : items[0]?.id ?? null);
       })
       .catch(() => setToast("No se pudo cargar el catálogo de emotes"));
-  }, []);
+  }, [code, devSession]);
 
   useEffect(() => {
     if (!toast) return;
@@ -124,13 +142,28 @@ export function RoomClient({ code }: { code: string }) {
       else setNeedsJoin(true);
     };
     const onDisconnect = () => setConnecting(true);
-    const onState = (view: RoomView) => setRoom(view);
+    const onState = (view: RoomView) => {
+      setRoom((previous) =>
+        !previous || view.stateVersion >= previous.stateVersion ? view : previous,
+      );
+    };
     const onPrivate = (view: PrivateView) => setPriv(view);
     const onEffect = (effect: { type?: string }) => {
-      if (effect?.type) setFlash({ type: effect.type, key: Date.now() });
+      if (effect?.type) {
+        setFlash({ type: effect.type, key: Date.now() });
+        const type = effect.type;
+        if (type.includes("explosion")) playUiSound("explosion");
+        else if (type.includes("correct")) playUiSound("correct");
+        else if (type.includes("wrong")) playUiSound("incorrect");
+        else if (type.includes("reveal")) playUiSound("reveal");
+      }
     };
-    const onRejected = (payload: { message?: string }) => {
-      setToast(payload?.message ?? "El servidor rechazó la acción");
+    const onRejected = (payload: { code?: string; message?: string }) => {
+      setToast(
+        payload?.code === "SESSION_REPLACED"
+          ? "Esta sesión se abrió en otra pestaña. Usa otro jugador para esta pestaña."
+          : (payload?.message ?? "El servidor rechazó la acción"),
+      );
     };
 
     socket.on("connect", onConnect);
@@ -139,6 +172,11 @@ export function RoomClient({ code }: { code: string }) {
     socket.on("private:state", onPrivate);
     socket.on("game:effect", onEffect);
     socket.on("action:rejected", onRejected);
+
+    const onButtonClick = (event: MouseEvent) => {
+      if ((event.target as HTMLElement | null)?.closest("button")) playUiSound("click");
+    };
+    document.addEventListener("click", onButtonClick, true);
 
     if (socket.connected) onConnect();
 
@@ -149,6 +187,7 @@ export function RoomClient({ code }: { code: string }) {
       socket.off("private:state", onPrivate);
       socket.off("game:effect", onEffect);
       socket.off("action:rejected", onRejected);
+      document.removeEventListener("click", onButtonClick, true);
     };
   }, [socket, join]);
 
@@ -177,15 +216,16 @@ export function RoomClient({ code }: { code: string }) {
   }, [act, code, router]);
 
   const copyCode = useCallback(async () => {
+    const inviteUrl = `${window.location.origin}/room/${code}`;
     try {
-      await navigator.clipboard.writeText(code);
-      setToast("Código copiado");
+      await navigator.clipboard.writeText(inviteUrl);
+      setToast("Enlace de invitación copiado");
     } catch {
-      setToast(`Código: ${code}`);
+      setToast(`Enlace: ${inviteUrl}`);
     }
   }, [code]);
 
-  const resetToLobby = useCallback(async (mode?: "bomba" | "impostor" | "pictionary") => {
+  const resetToLobby = useCallback(async (mode?: ModeId) => {
     setResetting(true);
     const ack = await act("session:reset", mode ? { mode } : {});
     setResetting(false);
@@ -194,12 +234,14 @@ export function RoomClient({ code }: { code: string }) {
 
   const bombaPriv = priv?.mode === "bomba" ? (priv as BombaPrivateView) : null;
   const impostorPriv = priv?.mode === "impostor" ? (priv as ImpostorPrivateView) : null;
+  const descripcionPriv = priv?.mode === "descripcion" ? (priv as DescripcionPrivateView) : null;
+  const duoPriv = priv?.mode === "duo" ? (priv as DuoPrivateView) : null;
 
   if (needsJoin) {
     if (joinErrorCode === "ROOM_NOT_FOUND") {
       return (
         <main className="container">
-          <RoomNotFoundModal code={code} onClose={() => { setJoinError(null); setJoinErrorCode(null); }} onHome={() => router.push("/")} />
+          <RoomNotFoundModal code={code} onHome={() => router.push("/")} />
         </main>
       );
     }
@@ -248,10 +290,10 @@ export function RoomClient({ code }: { code: string }) {
       <div className="top">
         <div>
           <div className="eyebrow"><span className={`live-dot${connecting ? "" : " on"}`} /> Sala {code}</div>
-          <h1>{!room || room.phase === "LOBBY" ? "La sala está lista." : room.mode === "bomba" ? "No te la quedes." : room.mode === "impostor" ? "Que no te lean tan fácil." : "Dibuja. Que no te descubran."}</h1>
+          <h1>{!room || room.phase === "LOBBY" ? "La sala está lista." : room.mode === "bomba" ? "No te la quedes." : room.mode === "impostor" ? "Que no te lean tan fácil." : room.mode === "pictionary" ? "Dibuja. Que no te descubran." : room.mode === "quien-soy" ? "Todos ven tu campeón menos tú." : room.mode === "carrera-emojis" ? "Piensa en emojis." : room.mode === "imitacion" ? "Hazlo parecido." : "Descubre quién eres."}</h1>
         </div>
         <div className="row">
-          <button className="secondary" onClick={() => void copyCode()}>Copiar código ↗</button>
+          <button className="secondary" onClick={() => void copyCode()}>Copiar enlace ↗</button>
           <button className="textbutton" onClick={() => void leave()}>Salir</button>
         </div>
       </div>
@@ -268,6 +310,8 @@ export function RoomClient({ code }: { code: string }) {
           onConfigure={(patch) => void act("session:configure", patch)}
           onStart={() => void act("session:start", {})}
         />
+      ) : room.phase === "FINISHED" ? (
+        <ResultsScreen room={room} me={me} resetting={resetting} onReset={(mode) => void resetToLobby(mode)} />
       ) : room.game?.mode === "bomba" ? (
         <BombaGame
           room={room}
@@ -307,9 +351,34 @@ export function RoomClient({ code }: { code: string }) {
           isHost={room.hostId === me}
           resetting={resetting}
           onStroke={(points) => void act("pictionary:stroke", { requestId: newRequestId(), points })}
+          onUndo={() => void act("pictionary:undo", { requestId: newRequestId() })}
+          onFill={(x, y, color) => void act("pictionary:fill", { requestId: newRequestId(), x, y, color })}
           onGuess={(championId) => void act("pictionary:guess", { requestId: newRequestId(), championId })}
           onReset={(mode) => void resetToLobby(mode)}
         />
+      ) : room.game?.mode === "quien-soy" ? (
+        <QuienSoyGame room={room} me={me} priv={priv?.mode === "quien-soy" ? priv : null} champions={champions}
+          onGuess={(championId) => void act("quien-soy:guess", { requestId: newRequestId(), championId })} />
+      ) : room.game?.mode === "carrera" ? (
+        <CarreraGame room={room} priv={priv?.mode === "carrera" ? priv : null} champions={champions} isHost={room.hostId === me} resetting={resetting} onAnswer={(championId) => void act("carrera:answer", { requestId: newRequestId(), championId })} onReset={(mode) => void resetToLobby(mode)} />
+      ) : room.game?.mode === "carrera-sonido" ? (
+        <CarreraSonidoGame room={room} priv={priv?.mode === "carrera-sonido" ? priv : null} champions={champions} isHost={room.hostId === me} resetting={resetting} onAnswer={(championId) => void act("carrera-sonido:answer", { requestId: newRequestId(), championId })} onReset={(mode) => void resetToLobby(mode)} />
+      ) : room.game?.mode === "carrera-emojis" ? (
+        <CarreraEmojisGame room={room} priv={priv?.mode === "carrera-emojis" ? priv : null} champions={champions} isHost={room.hostId === me} resetting={resetting} onAnswer={(championId) => void act("carrera-emojis:answer", { requestId: newRequestId(), championId })} onReset={(mode) => void resetToLobby(mode)} />
+      ) : room.game?.mode === "imitacion" ? (
+        <ImitacionGame room={room} me={me} priv={priv?.mode === "imitacion" ? priv : null} isHost={room.hostId === me} resetting={resetting}
+          onSubmit={(audioData, mimeType) => act("imitacion:submit", { requestId: newRequestId(), audioData, mimeType })}
+          onVote={(recordingId, stars) => void act("imitacion:vote", { requestId: newRequestId(), recordingId, stars })}
+          onReset={(mode) => void resetToLobby(mode)} />
+      ) : room.game?.mode === "descripcion" ? (
+        <DescripcionGame room={room} me={me} priv={priv?.mode === "descripcion" ? priv : null} isHost={room.hostId === me} resetting={resetting}
+          onClue={(text) => void act("descripcion:clue", { requestId: newRequestId(), text })}
+          onGuess={(text) => void act("descripcion:guess", { requestId: newRequestId(), text })}
+          onReset={(mode) => void resetToLobby(mode)} />
+      ) : room.game?.mode === "duo" ? (
+        <DuoGame room={room} me={me} priv={duoPriv} champions={champions} isHost={room.hostId === me} resetting={resetting} onSubmit={(championId) => void act("duo:submit", { requestId: newRequestId(), championId })} onReset={(mode) => void resetToLobby(mode)} />
+      ) : room.game?.mode === "party" ? (
+        <PartyGame room={room} me={me} priv={priv?.mode === "party" ? priv : null} champions={champions} onGuess={(championId) => void act("party:guess", { requestId: newRequestId(), championId })} />
       ) : (
         <section className="panel center">
           <p className="hint">Esperando el estado de la partida…</p>
