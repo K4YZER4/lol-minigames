@@ -63,6 +63,7 @@ export function AudioDistortionPlayer({ src, level, label }: Props) {
     const dry = context.createGain();
     const output = context.createGain();
     const noiseGain = context.createGain();
+    noiseGain.gain.value = 0;
     const noiseBuffer = context.createBuffer(1, context.sampleRate * 2, context.sampleRate);
     const noiseData = noiseBuffer.getChannelData(0);
     for (let i = 0; i < noiseData.length; i += 1) noiseData[i] = Math.random() * 2 - 1;
@@ -89,8 +90,8 @@ export function AudioDistortionPlayer({ src, level, label }: Props) {
     graph.lowpass.frequency.value = settings.lowpassHz;
     graph.shaper.curve = makeCurve(settings.bitcrush);
     graph.delay.delayTime.value = settings.delayMs / 1000;
-    graph.wet.gain.value = settings.bitcrush > 0 ? 0.28 : 0;
-    graph.dry.gain.value = settings.bitcrush > 0 ? 0.72 : 1;
+    graph.wet.gain.value = settings.bitcrush > 0 ? 0.08 : 0;
+    graph.dry.gain.value = settings.bitcrush > 0 ? 0.92 : 1;
     graph.noiseGain.gain.value = settings.noise;
     audio.playbackRate = settings.speed;
   }
@@ -112,12 +113,13 @@ export function AudioDistortionPlayer({ src, level, label }: Props) {
 
   function stop() {
     audioRef.current?.pause();
+    if (graphRef.current) graphRef.current.noiseGain.gain.value = 0;
     setPlaying(false);
   }
 
   return (
     <div className="audio-player">
-      <audio ref={audioRef} src={src} preload="metadata" onEnded={() => setPlaying(false)} onError={() => setError("La pista no está disponible en el endpoint de audio.")} />
+      <audio ref={audioRef} src={src} preload="metadata" onEnded={() => { if (graphRef.current) graphRef.current.noiseGain.gain.value = 0; setPlaying(false); }} onPause={() => { if (graphRef.current) graphRef.current.noiseGain.gain.value = 0; setPlaying(false); }} onError={() => setError("La pista no está disponible en el endpoint de audio.")} />
       <button className="primary" type="button" onClick={playing ? stop : play}>
         {playing ? "Pausar audio" : "▶ Escuchar pista"}
       </button>
