@@ -1015,9 +1015,9 @@ input:disabled {
 }
 
 .pictionary-layout {
-  max-width: 1120px;
+  max-width: 1360px;
   margin: 0 auto;
-  grid-template-columns: minmax(0, 1fr) 300px;
+  grid-template-columns: 240px minmax(0, 1fr) 300px;
   align-items: start;
 }
 
@@ -1027,7 +1027,7 @@ input:disabled {
 }
 
 .pictionary-board-wrap {
-  grid-column: 1;
+  grid-column: 2;
   grid-row: 2;
   padding: 14px;
 }
@@ -1035,8 +1035,7 @@ input:disabled {
 .pictionary-board {
   display: block;
   width: 100%;
-  height: min(52vh, 500px);
-  min-height: 300px;
+  aspect-ratio: 3 / 2;
   touch-action: none;
   border-radius: 16px;
   overflow: hidden;
@@ -1048,9 +1047,17 @@ input:disabled {
 .pictionary-line.draft { stroke: #365c93; }
 .pictionary-hint { padding: 9px 4px 0; color: var(--muted); font-size: 11px; text-align: center; }
 
-.pictionary-guess { grid-column: 2; grid-row: 2; width: 100%; margin: 0; }
-.pictionary-target { grid-column: 2; grid-row: 2; margin: 0; padding: 18px; }
-.pictionary-scoreboard { grid-column: 2; grid-row: 3; margin: 10px 0 0; max-height: 250px; overflow-y: auto; }
+.pictionary-guess { grid-column: 3; grid-row: 2; width: 100%; margin: 0; }
+.pictionary-target { grid-column: 3; grid-row: 2; margin: 0; padding: 18px; }
+.pictionary-scoreboard {
+  grid-column: 1;
+  grid-row: 2;
+  position: sticky;
+  top: 12px;
+  margin: 0;
+  max-height: min(64vh, 540px);
+  overflow-y: auto;
+}
 .score-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--edge); font-size: 12px; }
 .score-row:last-child { border-bottom: 0; }
 .score-row strong { color: var(--accent); }
@@ -1076,10 +1083,10 @@ input:disabled {
 .pictionary-width-tool { width: 27px; height: 27px; padding: 0; line-height: 1; font-size: 14px; }
 .pictionary-clear { margin-left: auto; width: 38px; height: 34px; padding: 0; font-size: 22px; line-height: 1; }
 
-.carrera-layout { max-width: 1120px; grid-template-columns: minmax(0, 1fr) 280px; align-items: start; }
+.carrera-layout { max-width: 1120px; grid-template-columns: 250px minmax(0, 1fr); align-items: start; }
 .carrera-heading { grid-column: 1 / -1; }
-.carrera-clues { grid-column: 1; grid-row: 2; padding: 18px; }
-.carrera-sidebar { grid-column: 2; grid-row: 2; max-height: 520px; overflow-y: auto; }
+.carrera-clues { grid-column: 2; grid-row: 2; padding: 18px; }
+.carrera-sidebar { grid-column: 1; grid-row: 2; position: sticky; top: 12px; max-height: min(64vh, 520px); overflow-y: auto; }
 .carrera-clue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; }
 .carrera-clue-card { position: relative; overflow: hidden; border: 1px solid var(--edge); border-radius: 15px; background: rgba(0,0,0,.18); }
 .carrera-clue-card img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; transition: filter .3s ease; }
@@ -1663,6 +1670,17 @@ input:disabled {
 /* Responsive                                                          */
 /* ------------------------------------------------------------------ */
 
+@media (max-width: 1180px) {
+  .pictionary-layout {
+    grid-template-columns: 210px minmax(0, 1fr);
+  }
+
+  .pictionary-scoreboard { grid-column: 1; grid-row: 2; }
+  .pictionary-board-wrap { grid-column: 2; grid-row: 2; }
+  .pictionary-guess,
+  .pictionary-target { grid-column: 2; grid-row: 3; }
+}
+
 @media (max-width: 760px) {
   .site-header {
     height: 75px;
@@ -1718,18 +1736,33 @@ input:disabled {
     grid-template-columns: 1fr;
   }
 
-  .pictionary-heading,
-  .pictionary-board-wrap,
+  .pictionary-heading {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .pictionary-board-wrap {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .pictionary-scoreboard {
+    grid-column: 1;
+    grid-row: 3;
+    position: static;
+    max-height: 220px;
+  }
+
   .pictionary-guess,
   .pictionary-target {
     grid-column: 1;
-    grid-row: auto;
+    grid-row: 4;
   }
 
-  .pictionary-scoreboard { grid-column: 1; grid-row: auto; }
-
   .carrera-layout { grid-template-columns: 1fr; }
-  .carrera-heading, .carrera-clues, .carrera-sidebar { grid-column: 1; grid-row: auto; }
+  .carrera-heading { grid-column: 1; grid-row: 1; }
+  .carrera-clues { grid-column: 1; grid-row: 2; }
+  .carrera-sidebar { grid-column: 1; grid-row: 3; position: static; max-height: 220px; }
 
   .avatar-picker-grid {
     grid-template-columns: repeat(4, 1fr);
