@@ -1161,6 +1161,7 @@ input:disabled {
 .imitacion-original, .imitacion-record, .imitacion-votes { grid-column: 1; margin: 0; }
 .imitacion-sidebar { grid-column: 2; grid-row: 2 / span 3; position: sticky; top: 12px; margin: 0; }
 .record-button.is-recording { background: var(--danger); color: white; }
+.recording-status { margin-top: 10px; }
 .imitacion-recordings { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
 .imitacion-recording { padding: 12px; border: 1px solid var(--edge); border-radius: 14px; background: rgba(0,0,0,.14); }
 .star-votes { display: flex; gap: 4px; margin-top: 10px; flex-wrap: wrap; }

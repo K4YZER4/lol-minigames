@@ -350,7 +350,7 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
         <CarreraSonidoGame room={room} priv={priv?.mode === "carrera-sonido" ? priv : null} champions={champions} isHost={room.hostId === me} resetting={resetting} onAnswer={(championId) => void act("carrera-sonido:answer", { requestId: newRequestId(), championId })} onReset={(mode) => void resetToLobby(mode)} />
       ) : room.game?.mode === "imitacion" ? (
         <ImitacionGame room={room} me={me} priv={priv?.mode === "imitacion" ? priv : null} isHost={room.hostId === me} resetting={resetting}
-          onSubmit={(audioData, mimeType) => void act("imitacion:submit", { requestId: newRequestId(), audioData, mimeType })}
+          onSubmit={(audioData, mimeType) => act("imitacion:submit", { requestId: newRequestId(), audioData, mimeType })}
           onVote={(recordingId, stars) => void act("imitacion:vote", { requestId: newRequestId(), recordingId, stars })}
           onReset={(mode) => void resetToLobby(mode)} />
       ) : room.game?.mode === "descripcion" ? (
