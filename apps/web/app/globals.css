@@ -1153,6 +1153,10 @@ input:disabled {
 .audio-clue-card .audio-player { grid-column: 1 / -1; margin-top: 0; }
 .audio-player-error { color: var(--danger); flex-basis: 100%; }
 .imitacion-layout { max-width: 1120px; grid-template-columns: minmax(0, 1fr) 230px; align-items: start; }
+.imitacion-heading .timerbox { max-width: 680px; }
+.imitacion-heading .timer { height: 14px; margin-top: 14px; border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--edge)); box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 22%, transparent); }
+.imitacion-heading .timer-fill { background: linear-gradient(90deg, var(--accent), #f5d77b); }
+.imitacion-heading .timer-fill.urgent { background: var(--danger); }
 .imitacion-heading { grid-column: 1 / -1; }
 .imitacion-original, .imitacion-record, .imitacion-votes { grid-column: 1; margin: 0; }
 .imitacion-sidebar { grid-column: 2; grid-row: 2 / span 3; position: sticky; top: 12px; margin: 0; }

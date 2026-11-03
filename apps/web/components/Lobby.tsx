@@ -91,7 +91,7 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
            ) : room.mode === "carrera-sonido" ? (
              <><div className="divider" /><p className="hint">Escucha una voz de campeón con filtros progresivos. Menos pistas y más rapidez dan más puntos.</p></>
            ) : room.mode === "imitacion" ? (
-             <><div className="divider" /><p className="hint">Escucha una línea, graba tu imitación y vota de 1 a 5 estrellas. No puedes votar tu propia grabación.</p></>
+             <><div className="divider" /><p className="hint">Escucha una línea, graba tu imitación y vota de 1 a 5 estrellas. No puedes votar tu propia grabación.</p><div className="stepper" style={{ marginTop: 14 }}><span className="hint">Segundos para grabar</span><button className="step" disabled={!isHost || room.settings.imitacion.recordingSeconds <= 10} onClick={() => onConfigure({ imitacion: { recordingSeconds: room.settings.imitacion.recordingSeconds - 5 } })}>−</button><strong>{room.settings.imitacion.recordingSeconds}</strong><button className="step" disabled={!isHost || room.settings.imitacion.recordingSeconds >= 30} onClick={() => onConfigure({ imitacion: { recordingSeconds: room.settings.imitacion.recordingSeconds + 5 } })}>+</button></div></>
           ) : room.mode === "descripcion" ? (
             <><div className="divider" /><p className="hint">Por turnos, una persona describe un objetivo privado durante {room.settings.descripcion.turnSeconds} s sin mencionar su nombre.</p></>
            ) : room.mode === "duo" ? (
