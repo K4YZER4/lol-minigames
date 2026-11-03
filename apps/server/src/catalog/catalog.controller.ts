@@ -1,4 +1,12 @@
-import { Controller, Get, Inject, Param, Query, Res } from "@nestjs/common";
+import {
+  Controller,
+  Get,
+  Inject,
+  NotFoundException,
+  Param,
+  Query,
+  Res,
+} from "@nestjs/common";
 import { MODE_IDS, type ModeId } from "@lolgames/protocol";
 import { ContentService } from "../content/content.service";
 import { RoomService } from "../rooms/room.service";
@@ -45,17 +53,26 @@ export class CatalogController {
 
   @Get("dev/test-room")
   async devTestRoom(@Query("mode") mode = "pictionary", @Query("players") players = "3") {
-    if (process.env.NODE_ENV === "production") return { ok: false, message: "Ruta disponible solo en desarrollo" };
+    if (process.env.NODE_ENV === "production") {
+      throw new NotFoundException();
+    }
     const selected = MODE_IDS.includes(mode as ModeId) ? (mode as ModeId) : "pictionary";
     const count = Math.max(3, Math.min(12, Number.parseInt(players, 10) || 3));
     const result = await this.rooms.createDevTestRoom(selected, count);
-    const query = new URLSearchParams({ devToken: result.token, devPlayerId: result.playerId, devNickname: result.nickname }).toString();
+    const query = new URLSearchParams({
+      devToken: result.token,
+      devPlayerId: result.playerId,
+      devNickname: result.nickname,
+    }).toString();
+    const hostPath = `/room/${result.roomCode}?${query}`;
     return {
       ok: true,
       mode: selected,
+      players: count,
       roomCode: result.roomCode,
-      hostUrl: `http://localhost:3000/room/${result.roomCode}?${query}`,
-      note: "Abre hostUrl para entrar como anfitrión. Los demás jugadores fake ya están listos.",
+      hostPath,
+      hostUrl: `http://localhost:3000${hostPath}`,
+      note: "Abre hostUrl (o hostPath en este mismo origen) para entrar como anfitrión. Los demás jugadores fake ya están listos.",
     };
   }
 
