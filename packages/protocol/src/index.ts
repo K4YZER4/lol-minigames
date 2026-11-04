@@ -181,6 +181,7 @@ export const ClientEvents = {
   IMPOSTOR_ACK: "impostor:ack",
   IMPOSTOR_CLUE: "impostor:clue",
   IMPOSTOR_VOTE: "impostor:vote",
+  IMPOSTOR_REPEAT: "impostor:repeat",
   PICTIONARY_STROKE: "pictionary:stroke",
   PICTIONARY_GUESS: "pictionary:guess",
   PICTIONARY_CLEAR: "pictionary:clear",
@@ -298,6 +299,8 @@ export type ImpostorGameView = {
   clueIndex: number;
   clues: { playerId: string; text: string }[];
   votesSubmitted: string[];
+  questionRound: number;
+  maxQuestionRounds: number;
   reveal: ImpostorReveal | null;
 };
 
@@ -345,7 +348,16 @@ export type CarreraEmojisGameView = { mode: "carrera-emojis"; phase: "CLUES" | "
 export type ImitacionRecordingView = { recordingId: string; audioData: string; mimeType: string; playerId: string | null; averageStars: number | null; votes: number };
 export type ImitacionGameView = { mode: "imitacion"; phase: "RECORDING" | "VOTING" | "REVEAL" | "FINISHED"; phaseEndsAt: number; targetAudioUrl: string | null; recordings: ImitacionRecordingView[]; submitted: string[]; voted: string[]; winnerId: string | null };
 export type PartyGameView = { mode: "party"; phase: "GUESSING" | "REVEAL" | "FINISHED"; phaseEndsAt: number; category: PartyCategory; activePlayerId: string; round: number; totalRounds: number; guesses: { playerId: string; correct: boolean }[] };
-export type PartyBreakView = { nextMode: ModeId; endsAt: number };
+export type PartyModeResult = { mode: ModeId; scores: Record<string, number> };
+export type PartyBreakView = {
+  nextMode: ModeId;
+  endsAt: number;
+  /** Modo que acaba de terminar y puntos que repartió. */
+  endedMode: ModeId;
+  modeScores: Record<string, number>;
+  modeNumber: number;
+  totalModes: number;
+};
 
 export type GameView = BombaGameView | ImpostorGameView | PictionaryGameView | QuienSoyGameView | CarreraGameView | CarreraSonidoGameView | CarreraEmojisGameView | ImitacionGameView | PartyGameView;
 
@@ -370,6 +382,8 @@ export type RoomView = {
   };
   game: GameView | null;
   partyBreak: PartyBreakView | null;
+  /** Resumen de cada modo cerrado durante la Party. Null fuera de la Party. */
+  partyHistory: PartyModeResult[] | null;
   serverTime: number;
 };
 

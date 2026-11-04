@@ -18,7 +18,7 @@ const LANDING_MODES = [
   ["♫", "Carrera de sonido", "Reconoce al campeón por su voz."],
   ["😀", "Carrera de emojis", "Descubre el campeón con cuatro emojis."],
   ["★", "Imitación de voz", "Imita la línea y recibe estrellas del grupo."],
-  ["✦", "Party", "Un jugador recibe un campeón y el grupo intenta adivinarlo."],
+  ["✦", "Party", "Campaña de minijuegos con puntos acumulados y podio final."],
 ] as const;
 
 type EntryMode = "create" | "join";
@@ -134,7 +134,7 @@ export default function HomePage() {
   return (
     <main className="container">
       <div className="glass form">
-        <button className="textbutton" style={{ padding: 0 }} onClick={back}>
+        <button className="back-button" type="button" onClick={back}>
           ← Volver
         </button>
 

@@ -170,11 +170,6 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
     socket.on("game:effect", onEffect);
     socket.on("action:rejected", onRejected);
 
-    const onButtonClick = (event: MouseEvent) => {
-      if ((event.target as HTMLElement | null)?.closest("button")) playUiSound("click");
-    };
-    document.addEventListener("click", onButtonClick, true);
-
     if (socket.connected) onConnect();
 
     return () => {
@@ -184,7 +179,6 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
       socket.off("private:state", onPrivate);
       socket.off("game:effect", onEffect);
       socket.off("action:rejected", onRejected);
-      document.removeEventListener("click", onButtonClick, true);
     };
   }, [socket, join]);
 
@@ -235,7 +229,7 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
   if (needsJoin) {
     if (joinErrorCode === "ROOM_NOT_FOUND") {
       return (
-        <main className="container">
+          <main className="container room-not-found-page">
           <RoomNotFoundModal code={code} onHome={() => router.push("/")} />
         </main>
       );
@@ -278,7 +272,7 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
   }
 
   return (
-    <main className="container">
+    <main className={`container${room?.phase === "LOBBY" ? " room-lobby-page" : ""}`}>
       <div className="top">
         <div>
           <div className="eyebrow"><span className={`live-dot${connecting ? "" : " on"}`} /> Sala {code}</div>
@@ -331,6 +325,9 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
           }
           onVote={(targetId) =>
             void act("impostor:vote", { requestId: newRequestId(), targetId })
+          }
+          onRepeatQuestions={() =>
+            void act("impostor:repeat", { requestId: newRequestId() })
           }
           isHost={room.hostId === me}
           resetting={resetting}

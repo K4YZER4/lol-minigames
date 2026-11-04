@@ -41,7 +41,7 @@ describe("marcador de la sala", () => {
     game = carreraAnswer(game, "p2", "Ahri", ctx(2)).state;
     const room: Room = {
       id: "r", code: "ABC123", createdAt: 0, lastActivityAt: 0, hostId: "p1",
-      players, mode: "carrera", phase: "PLAYING", stateVersion: 1, game, partyModes: ["carrera-emojis"], partyBreak: null,
+      players, mode: "carrera", phase: "PLAYING", stateVersion: 1, game, partyModes: ["carrera-emojis"], partyBreak: null, partyHistory: [],
       settings: {
         bomba: DEFAULT_BOMBA_SETTINGS, impostor: DEFAULT_IMPOSTOR_SETTINGS,
         pictionary: DEFAULT_PICTIONARY_SETTINGS, quienSoy: DEFAULT_QUIEN_SOY_SETTINGS,
@@ -65,11 +65,26 @@ describe("marcador de la sala", () => {
     expect(room.phase).toBe("PARTY_BREAK");
     expect(room.mode).toBe("party");
     expect(room.game).toBeNull();
-    expect(room.partyBreak).toEqual({ nextMode: "carrera-emojis", endsAt: 16_000 });
+    expect(room.partyBreak).toEqual({
+      nextMode: "carrera-emojis",
+      endsAt: 16_000,
+      endedMode: "carrera",
+      modeScores: { p1: 1000, p2: 900, p3: 0 },
+      modeNumber: 1,
+      totalModes: 2,
+    });
     expect(room.scores).toEqual({ p1: 1200, p2: 900, p3: 0 });
+    expect(room.partyHistory).toEqual([{ mode: "carrera", scores: { p1: 1000, p2: 900, p3: 0 } }]);
     const breakView = service["buildRoomView"](room, now);
     expect(breakView.players.map((p) => p.score)).toEqual([1200, 900, 0]);
-    expect(breakView.partyBreak).toEqual({ nextMode: "carrera-emojis", endsAt: 16_000 });
+    expect(breakView.partyBreak).toEqual({
+      nextMode: "carrera-emojis",
+      endsAt: 16_000,
+      endedMode: "carrera",
+      modeScores: { p1: 1000, p2: 900, p3: 0 },
+      modeNumber: 1,
+      totalModes: 2,
+    });
     expect(service["syncPhase"](room)).toBe(false);
     expect(room.scores).toEqual({ p1: 1200, p2: 900, p3: 0 });
     expect((await service.action("p1", { kind: "carrera:answer", requestId: "during-break", championId: "Ahri" })).ok).toBe(false);
@@ -96,6 +111,12 @@ describe("marcador de la sala", () => {
     expect(room.phase).toBe("FINISHED");
     expect(room.partyBreak).toBeNull();
     expect(room.scores).toEqual({ p1: 2100, p2: 1700, p3: 1000 });
-    expect(service["buildRoomView"](room, now).players.map((p) => p.score)).toEqual([2100, 1700, 1000]);
+    expect(room.partyHistory).toEqual([
+      { mode: "carrera", scores: { p1: 1000, p2: 900, p3: 0 } },
+      { mode: "carrera-emojis", scores: { p1: 900, p2: 800, p3: 1000 } },
+    ]);
+    const finalView = service["buildRoomView"](room, now);
+    expect(finalView.players.map((p) => p.score)).toEqual([2100, 1700, 1000]);
+    expect(finalView.partyHistory).toEqual(room.partyHistory);
   });
 });

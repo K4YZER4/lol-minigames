@@ -22,10 +22,10 @@ const MODES: { id: ModeId; name: string; icon: string; blurb: string }[] = [
   { id: "pictionary", name: "Pictionary", icon: "〰", blurb: "Dibuja un campeón y deja que tu equipo lo adivine." },
   { id: "quien-soy", name: "¿Quién soy?", icon: "?", blurb: "Todos ven tu campeón menos tú. Pregunta, adivina y suma." },
   { id: "carrera", name: "Carrera de pistas", icon: "➜", blurb: "Adivina antes que los demás con pistas progresivas." },
-  { id: "carrera-sonido", name: "Carrera de pistas: Sonido", icon: "♫", blurb: "Escucha una voz distorsionada y descubre al campeón." },
+  { id: "carrera-sonido", name: "Carrera: Sonido", icon: "♫", blurb: "Escucha una voz distorsionada y descubre al campeón." },
   { id: "carrera-emojis", name: "Carrera de emojis", icon: "😀", blurb: "Descubre el campeón con cuatro emojis." },
   { id: "imitacion", name: "Imitación de voz", icon: "★", blurb: "Imita la línea y deja que el grupo vote." },
-  { id: "party", name: "Party", icon: "★", blurb: "Un jugador recibe un campeón y el resto intenta adivinarlo." },
+  { id: "party", name: "Party", icon: "✦", blurb: "Campaña de minijuegos con puntos acumulados y podio final." },
 ];
 const PARTY_MODE_IDS = MODES.filter((mode) => mode.id !== "party");
 
@@ -40,11 +40,12 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
   const readyCount = connected.filter((player) => player.ready).length;
   const canStart = isHost && connected.length >= 3 && connected.every((p) => p.ready);
   const fuse = room.settings.bomba;
+  const selectedMode = MODES.find((mode) => mode.id === room.mode);
 
   return (
-    <div className="game-shell">
+    <div className="game-shell lobby-screen">
       <div className="split">
-        <section className="panel">
+        <section className="panel lobby-main-panel">
           <div className="eyebrow">Elige la partida</div>
           <h2>¿Qué jugamos?</h2>
           <div className="lobbygrid">
@@ -54,16 +55,16 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
                 <button key={mode.id} className={`lobbymode${active ? " selected" : ""}`} disabled={!isHost} onClick={() => onConfigure({ mode: mode.id })}>
                   <span className="mode-icon">{mode.icon}</span>{mode.name}
                   {active ? <span className="tag">activo</span> : null}
-                  <small>{mode.blurb}</small>
                 </button>
               );
             })}
           </div>
+          {selectedMode ? <p className="hint lobby-mode-blurb">{selectedMode.blurb}</p> : null}
 
           {room.mode === "bomba" ? (
             <>
               <div className="divider" />
-              <div className="bar" style={{ marginTop: 0 }}>
+              <div className="bar lobby-settings-row" style={{ marginTop: 0 }}>
                 <div>
                   <span className="hint">Vidas por jugador</span>
                   <div className="stepper" style={{ marginTop: 8 }}>
@@ -82,7 +83,7 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
                   </div>
                 </div>
               </div>
-              <p className="hint" style={{ marginTop: 16 }}>Fallar descuenta {(fuse.penaltyMs / 1000).toFixed(0)} s y siempre tendrás al menos {(fuse.minMarginMs / 1000).toFixed(0)} s para pasarla.</p>
+              <p className="hint" style={{ marginTop: 10 }}>Fallar descuenta {(fuse.penaltyMs / 1000).toFixed(0)} s y siempre tendrás al menos {(fuse.minMarginMs / 1000).toFixed(0)} s para pasarla.</p>
             </>
            ) : room.mode === "impostor" ? (
              <><div className="divider" /><p className="hint">Un infiltrado con 3 a 6 jugadores, dos desde 7.</p><div className="mode-settings"><SettingStepper label="Pistas" value={room.settings.impostor.clueSeconds} min={10} max={120} step={10} disabled={!isHost} onChange={(value) => onConfigure({ impostor: { clueSeconds: value } })} /><SettingStepper label="Discusión" value={room.settings.impostor.discussionSeconds} min={20} max={180} step={10} disabled={!isHost} onChange={(value) => onConfigure({ impostor: { discussionSeconds: value } })} /><SettingStepper label="Votación" value={room.settings.impostor.voteSeconds} min={15} max={120} step={15} disabled={!isHost} onChange={(value) => onConfigure({ impostor: { voteSeconds: value } })} /></div></>
@@ -92,18 +93,18 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
             <><div className="divider" /><p className="hint">Cada jugador recibe un campeón secreto: todos lo ven menos él. En tu turno puedes adivinar con el buscador. Acierto: +1000 puntos y termina tu turno; fallo: sigues intentando. Jugáis una vez cada uno.</p><div className="stepper" style={{ marginTop: 14 }}><span className="hint">Segundos por turno</span><button className="step" disabled={!isHost || room.settings.quienSoy.turnSeconds <= 20} onClick={() => onConfigure({ quienSoy: { turnSeconds: room.settings.quienSoy.turnSeconds - 10 } })}>−</button><strong>{room.settings.quienSoy.turnSeconds}</strong><button className="step" disabled={!isHost || room.settings.quienSoy.turnSeconds >= 180} onClick={() => onConfigure({ quienSoy: { turnSeconds: room.settings.quienSoy.turnSeconds + 10 } })}>+</button></div></>
            ) : room.mode === "carrera" ? (
              <><div className="divider" /><p className="hint">Se revelan pistas progresivamente. Todos pueden responder y los puntos bajan con cada pista.</p><div className="mode-settings"><SettingStepper label="Segundos por pista" value={room.settings.carrera.clueSeconds} min={3} max={30} step={1} disabled={!isHost} onChange={(value) => onConfigure({ carrera: { clueSeconds: value } })} /><SettingStepper label="Rondas" value={room.settings.carrera.rounds} min={1} max={10} step={1} disabled={!isHost} onChange={(value) => onConfigure({ carrera: { rounds: value } })} /></div></>
-            ) : room.mode === "carrera-sonido" ? (
+           ) : room.mode === "carrera-sonido" ? (
              <><div className="divider" /><p className="hint">Escucha una voz de campeón. Todos pueden responder y los puntos bajan progresivamente.</p><div className="mode-settings"><SettingStepper label="Segundos por pista" value={room.settings.carreraSonido.clueSeconds} min={3} max={30} step={1} disabled={!isHost} onChange={(value) => onConfigure({ carreraSonido: { clueSeconds: value } })} /><SettingStepper label="Rondas" value={room.settings.carreraSonido.rounds} min={1} max={10} step={1} disabled={!isHost} onChange={(value) => onConfigure({ carreraSonido: { clueSeconds: room.settings.carreraSonido.clueSeconds, rounds: value } })} /></div></>
-            ) : room.mode === "carrera-emojis" ? (
+           ) : room.mode === "carrera-emojis" ? (
              <><div className="divider" /><p className="hint">Se revela un emoji por pista hasta completar cuatro. Todos pueden responder.</p><div className="mode-settings"><SettingStepper label="Segundos por emoji" value={room.settings.carreraEmojis.clueSeconds} min={3} max={30} step={1} disabled={!isHost} onChange={(value) => onConfigure({ carreraEmojis: { clueSeconds: value } })} /><SettingStepper label="Rondas" value={room.settings.carreraEmojis.rounds} min={1} max={10} step={1} disabled={!isHost} onChange={(value) => onConfigure({ carreraEmojis: { clueSeconds: room.settings.carreraEmojis.clueSeconds, rounds: value } })} /></div></>
            ) : room.mode === "imitacion" ? (
              <><div className="divider" /><p className="hint">Escucha una línea, graba tu imitación y vota de 1 a 5 estrellas. No puedes votar tu propia grabación.</p><div className="mode-settings"><SettingStepper label="Segundos para grabar" value={room.settings.imitacion.recordingSeconds} min={10} max={30} step={5} disabled={!isHost} onChange={(value) => onConfigure({ imitacion: { recordingSeconds: value } })} /><SettingStepper label="Segundos para votar" value={room.settings.imitacion.votingSeconds} min={15} max={120} step={15} disabled={!isHost} onChange={(value) => onConfigure({ imitacion: { votingSeconds: value } })} /></div></>
-            ) : (
-              <><div className="divider" /><p className="hint">Elige qué minijuegos entran en la Party. Se jugarán rápido, en orden aleatorio y con un marcador global.</p><div className="party-mode-picker">{PARTY_MODE_IDS.map((mode) => { const selected = room.settings.party.selectedModes.includes(mode.id); return <button type="button" key={mode.id} className={`party-mode-chip${selected ? " selected" : ""}`} disabled={!isHost} onClick={() => onConfigure({ party: { selectedModes: selected ? room.settings.party.selectedModes.filter((id) => id !== mode.id) : [...room.settings.party.selectedModes, mode.id] } })}>{mode.icon} {mode.name}</button>; })}</div><p className="hint party-preset-note">Preset Party: 3 rondas y tiempos cortos por modo.</p></>
-            )}
+           ) : (
+             <><div className="divider" /><p className="hint">Elige qué minijuegos entran en la Party. Se jugarán rápido, en orden aleatorio y con un marcador global.</p><div className="party-mode-picker">{PARTY_MODE_IDS.map((mode) => { const selected = room.settings.party.selectedModes.includes(mode.id); return <button type="button" key={mode.id} className={`party-mode-chip${selected ? " selected" : ""}`} disabled={!isHost} onClick={() => onConfigure({ party: { selectedModes: selected ? room.settings.party.selectedModes.filter((id) => id !== mode.id) : [...room.settings.party.selectedModes, mode.id] } })}>{mode.icon} {mode.name}</button>; })}</div><p className="hint party-preset-note">Preset Party: 3 rondas y tiempos cortos por modo.</p></>
+           )}
         </section>
 
-        <aside className="panel">
+        <aside className="panel lobby-team-panel">
           <div className="eyebrow">{readyCount}/{connected.length} listos</div>
           <h2>Tu equipo <span className="muted">{room.players.length}</span></h2>
           <div className="roster">
@@ -118,9 +119,9 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
         </aside>
       </div>
 
-      <div className="bar">
-        <div className="row"><button className={mePlayer?.ready ? "secondary" : "primary"} onClick={() => onReady(!mePlayer?.ready)}>{mePlayer?.ready ? "Quitar listo" : "Estoy listo"}</button><span className="hint">{readyCount}/{connected.length} jugadores listos</span></div>
-        {isHost ? <button className="primary" disabled={!canStart} onClick={onStart}>Empezar partida →</button> : <span className="hint">Esperando al anfitrión…</span>}
+      <div className="bar lobby-actions">
+        <div className="row"><button className={`lobby-ready-btn ${mePlayer?.ready ? "secondary" : "primary"}`} onClick={() => onReady(!mePlayer?.ready)}>{mePlayer?.ready ? "Quitar listo" : "Estoy listo"}</button><span className="hint">{readyCount}/{connected.length} jugadores listos</span></div>
+        {isHost ? <button className="primary lobby-start-btn" disabled={!canStart} onClick={onStart}>Empezar partida →</button> : <span className="hint">Esperando al anfitrión…</span>}
       </div>
       {isHost && !canStart ? <p className="hint">{connected.length < 3 ? "Hacen falta al menos 3 jugadores conectados." : "Todos deben marcarse como listos para arrancar."}</p> : null}
     </div>

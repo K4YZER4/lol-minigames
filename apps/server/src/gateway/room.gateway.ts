@@ -289,6 +289,15 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
     });
   }
 
+  @SubscribeMessage(ClientEvents.IMPOSTOR_REPEAT)
+  async onImpostorRepeat(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    const playerId = this.playerOf(client);
+    if (!playerId) return reject("NOT_IN_ROOM", "No estás en una sala");
+    const parsed = z.object({ requestId: RequestIdSchema }).safeParse(body);
+    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    return this.rooms.action(playerId, { kind: "impostor:repeat", ...parsed.data });
+  }
+
   @SubscribeMessage(ClientEvents.PICTIONARY_STROKE)
   async onPictionaryStroke(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
     const playerId = this.playerOf(client);

@@ -39,10 +39,21 @@ export function carreraSonidoAnswer(state: CarreraSonidoState, playerId: string,
   if (state.answers[playerId]) return { state, effects: [], reject: fail("ALREADY_ANSWERED", "Ya respondiste esta ronda") };
   if (!ctx.clues.some((clue) => clue.championId === championId)) return { state, effects: [], reject: fail("UNKNOWN_CHAMPION", "Ese campeón no existe") };
   const answers = { ...state.answers, [playerId]: championId };
-  if (championId !== state.targetId) return { state: { ...state, answers }, effects: [], reject: fail("WRONG_ANSWER", "No es ese campeón") };
+  const allAnswered = Object.keys(answers).length === state.players.length;
+  if (championId !== state.targetId) {
+    return {
+      state: {
+        ...state,
+        answers,
+        phase: allAnswered ? "REVEAL" : state.phase,
+        phaseEndsAt: allAnswered ? ctx.now + 6_000 : state.phaseEndsAt,
+      },
+      effects: [{ type: "carrera-sonido:wrong", playerId }],
+      reject: fail("WRONG_ANSWER", "No es ese campeón"),
+    };
+  }
   const earlier = Object.values(state.answers).filter((answer) => answer === state.targetId).length;
   const scores = { ...state.scores, [playerId]: (state.scores[playerId] ?? 0) + raceScore(state.clueIndex, earlier) };
-  const allAnswered = Object.keys(answers).length === state.players.length;
   return { state: { ...state, answers, scores, winnerId: state.winnerId ?? playerId, phase: allAnswered ? "REVEAL" : "CLUES", phaseEndsAt: allAnswered ? ctx.now + 6_000 : state.phaseEndsAt }, effects: [{ type: "carrera-sonido:correct", playerId }] };
 }
 
