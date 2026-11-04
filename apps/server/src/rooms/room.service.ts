@@ -14,8 +14,6 @@ import {
   DEFAULT_CARRERA_SONIDO_SETTINGS,
   DEFAULT_CARRERA_EMOJIS_SETTINGS,
   DEFAULT_IMITACION_SETTINGS,
-  DEFAULT_DESCRIPCION_SETTINGS,
-  DEFAULT_DUO_SETTINGS,
   DEFAULT_PARTY_SETTINGS,
   MAX_PLAYERS,
   MIN_PLAYERS,
@@ -31,8 +29,6 @@ import {
   type CarreraSonidoSettings,
   type CarreraEmojisSettings,
   type ImitacionSettings,
-  type DescripcionSettings,
-  type DuoSettings,
   type PartySettings,
   type JoinAck,
   type ModeId,
@@ -102,19 +98,6 @@ import {
   imitacionPublicView,
   imitacionResults,
   imitacionTick,
-  createDescripcion,
-  descripcionClue,
-  descripcionGuess,
-  descripcionPrivateView,
-  descripcionPublicView,
-  descripcionResults,
-  descripcionTick,
-  createDuo,
-  duoPrivateView,
-  duoPublicView,
-  duoResults,
-  duoSubmit,
-  duoTick,
   createParty,
   partyGuess,
   partyPrivateView,
@@ -131,8 +114,6 @@ import {
   type CarreraSonidoState,
   type CarreraEmojisState,
   type ImitacionState,
-  type DescripcionState,
-  type DuoState,
   type PartyState,
   type Result,
 } from "@lolgames/engine";
@@ -232,8 +213,6 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
         carreraSonido: { ...DEFAULT_CARRERA_SONIDO_SETTINGS },
         carreraEmojis: { ...DEFAULT_CARRERA_EMOJIS_SETTINGS },
         imitacion: { ...DEFAULT_IMITACION_SETTINGS },
-        descripcion: { ...DEFAULT_DESCRIPCION_SETTINGS },
-        duo: { ...DEFAULT_DUO_SETTINGS },
         party: { ...DEFAULT_PARTY_SETTINGS },
       },
       scores: { [player.id]: 0 },
@@ -465,8 +444,6 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       if (patch.carreraSonido) room.settings.carreraSonido = { ...room.settings.carreraSonido, ...patch.carreraSonido };
       if (patch.carreraEmojis) room.settings.carreraEmojis = { ...room.settings.carreraEmojis, ...patch.carreraEmojis };
       if (patch.imitacion) room.settings.imitacion = { ...room.settings.imitacion, ...patch.imitacion };
-      if (patch.descripcion) room.settings.descripcion = { ...room.settings.descripcion, ...patch.descripcion };
-      if (patch.duo) room.settings.duo = { ...room.settings.duo, ...patch.duo };
       if (patch.party) room.settings.party = { ...room.settings.party, ...patch.party };
 
       room.lastActivityAt = this.clock.now();
@@ -552,11 +529,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                  ? createCarreraEmojis({ playerIds: ids, settings: room.settings.carreraEmojis, champions: this.content.championInfo, clues: this.content.emojiClues, now, rng: this.rng })
                  : room.mode === "imitacion"
                  ? createImitacion({ playerIds: ids, settings: room.settings.imitacion, clips: this.content.audioClips, now, rng: this.rng })
-                 : room.mode === "descripcion"
-                ? createDescripcion({ playerIds: ids, settings: room.settings.descripcion, champions: this.content.championInfo, now, rng: this.rng })
-                 : room.mode === "duo"
-                   ? createDuo({ playerIds: ids, settings: room.settings.duo, champions: this.content.unicaChampionInfo, now, rng: this.rng })
-                   : createParty({ playerIds: ids, settings: room.settings.party, champions: this.content.unicaChampionInfo, now, rng: this.rng });
+                 : createParty({ playerIds: ids, settings: room.settings.party, champions: this.content.unicaChampionInfo, now, rng: this.rng });
 
       room.phase = "PLAYING";
       room.lastActivityAt = now;
@@ -878,15 +851,6 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       if (action.kind === "imitacion:vote") return imitacionVote(state, playerId, action.recordingId, action.stars, { now: this.clock.now(), rng: this.rng });
       return null;
     }
-    if (room.mode === "descripcion") {
-      if (action.kind === "descripcion:clue") return descripcionClue(room.game as DescripcionState, playerId, action.text);
-      if (action.kind === "descripcion:guess") return descripcionGuess(room.game as DescripcionState, playerId, action.text, ctx);
-      return null;
-    }
-    if (room.mode === "duo") {
-      if (action.kind === "duo:submit") return duoSubmit(room.game as DuoState, playerId, action.championId);
-      return null;
-    }
     if (room.mode === "party") {
       if (action.kind === "party:guess") return partyGuess(room.game as PartyState, playerId, action.championId);
       return null;
@@ -919,8 +883,6 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
     if (room.mode === "carrera-sonido") return carreraSonidoTick(room.game as CarreraSonidoState, { now, rng: this.rng, clues: this.content.audioClips });
     if (room.mode === "carrera-emojis") return carreraEmojisTick(room.game as CarreraEmojisState, { now, rng: this.rng, clues: this.content.emojiClues });
     if (room.mode === "imitacion") return imitacionTick(room.game as ImitacionState, { now, rng: this.rng });
-    if (room.mode === "descripcion") return descripcionTick(room.game as DescripcionState, { now, rng: this.rng, champions: this.content.championInfo });
-     if (room.mode === "duo") return duoTick(room.game as DuoState, { now, champions: this.content.unicaChampionInfo });
      return partyTick(room.game as PartyState, { now, rng: this.rng, champions: this.content.unicaChampionInfo });
   }
 
@@ -958,12 +920,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                   ? (room.game as CarreraEmojisState).phase === "FINISHED"
                 : room.mode === "imitacion"
                   ? (room.game as ImitacionState).phase === "FINISHED"
-                : room.mode === "descripcion"
-                        ? (room.game as DescripcionState).phase === "REVEAL" &&
-                          (room.game as DescripcionState).roundIndex + 1 >= (room.game as DescripcionState).order.length
-                         : room.mode === "duo"
-                           ? (room.game as DuoState).phase === "REVEAL"
-                           : (room.game as PartyState).phase === "FINISHED";
+                : (room.game as PartyState).phase === "FINISHED";
     if (!finished || room.phase === "FINISHED") return false;
 
     room.phase = "FINISHED";
@@ -984,11 +941,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                     ? carreraEmojisResults(room.game as CarreraEmojisState)
                   : room.mode === "imitacion"
                     ? imitacionResults(room.game as ImitacionState)
-                 : room.mode === "descripcion"
-                  ? descripcionResults(room.game as DescripcionState)
-                   : room.mode === "duo"
-                     ? duoResults(room.game as DuoState)
-                     : partyResults(room.game as PartyState);
+                  : partyResults(room.game as PartyState);
     for (const [id, score] of Object.entries(results.scores)) {
       room.scores[id] = (room.scores[id] ?? 0) + score;
     }
@@ -1072,11 +1025,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                            ? carreraEmojisPublicView(room.game as CarreraEmojisState)
                          : room.mode === "imitacion"
                            ? imitacionPublicView(room.game as ImitacionState)
-                         : room.mode === "descripcion"
-                           ? descripcionPublicView(room.game as DescripcionState)
-                           : room.mode === "duo"
-                             ? duoPublicView(room.game as DuoState)
-                             : partyPublicView(room.game as PartyState);
+                          : partyPublicView(room.game as PartyState);
     }
 
     return {
@@ -1105,8 +1054,6 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       if (room.mode === "carrera-sonido") return carreraSonidoPrivateView(room.game as CarreraSonidoState, playerId);
       if (room.mode === "carrera-emojis") return carreraEmojisPrivateView(room.game as CarreraEmojisState, playerId);
       if (room.mode === "imitacion") return imitacionPrivateView(room.game as ImitacionState, playerId);
-      if (room.mode === "descripcion") return descripcionPrivateView(room.game as DescripcionState, playerId);
-      if (room.mode === "duo") return duoPrivateView(room.game as DuoState, playerId);
-      return partyPrivateView(room.game as PartyState, playerId);
+       return partyPrivateView(room.game as PartyState, playerId);
   }
 }

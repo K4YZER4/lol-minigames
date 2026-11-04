@@ -3,7 +3,7 @@
 import type { ModeId, RoomView } from "@lolgames/protocol";
 
 type Props = { room: RoomView; me: string | null; resetting: boolean; onReset: (mode?: ModeId) => void };
-const LABELS: Record<ModeId, string> = { bomba: "Bomba", impostor: "Impostor", pictionary: "Pictionary", "quien-soy": "¿Quién soy?", carrera: "Carrera de pistas", "carrera-sonido": "Carrera de pistas: Sonido", "carrera-emojis": "Carrera de emojis", imitacion: "Imitación de voz", descripcion: "Descripción", duo: "Dúo a ciegas", party: "Party" };
+const LABELS: Record<ModeId, string> = { bomba: "Bomba", impostor: "Impostor", pictionary: "Pictionary", "quien-soy": "¿Quién soy?", carrera: "Carrera de pistas", "carrera-sonido": "Carrera de pistas: Sonido", "carrera-emojis": "Carrera de emojis", imitacion: "Imitación de voz", party: "Party" };
 
 export function ResultsScreen({ room, me, resetting, onReset }: Props) {
   const ranking = [...room.players].sort((a, b) => b.score - a.score);

@@ -9,6 +9,18 @@ import { RoomNotFoundModal } from "@/components/RoomNotFoundModal";
 import { lastAvatarId, loadAvatars, saveAvatarId, type Avatar } from "@/lib/avatars";
 import type { JoinAck } from "@lolgames/protocol";
 
+const LANDING_MODES = [
+  ["◕", "Bomba", "Adivina el campeón y pásala antes de que explote."],
+  ["◈", "Impostor", "Da pistas, discute y descubre al infiltrado."],
+  ["〰", "Pictionary", "Dibuja un campeón y deja que tu equipo lo adivine."],
+  ["?", "¿Quién soy?", "Todos ven tu campeón menos tú."],
+  ["➜", "Carrera de pistas", "Adivina con imágenes antes que los demás."],
+  ["♫", "Carrera de sonido", "Reconoce al campeón por su voz."],
+  ["😀", "Carrera de emojis", "Descubre el campeón con cuatro emojis."],
+  ["★", "Imitación de voz", "Imita la línea y recibe estrellas del grupo."],
+  ["✦", "Party", "Un jugador recibe un campeón y el grupo intenta adivinarlo."],
+] as const;
+
 type EntryMode = "create" | "join";
 
 export default function HomePage() {
@@ -82,8 +94,8 @@ export default function HomePage() {
       <main className="container home-page">
         <div className="home">
           <div className="home-inner">
-            <div className="star">✦</div>
-            <h1>LoL Party</h1>
+            <img className="home-logo" src="/images/logo-lol-party.png" alt="Logo de LoL Party" />
+            <h1 className="hero-logo-title"><span>LOL</span> <b>PARTY</b></h1>
             <p className="muted">Tu equipo. Otro tipo de partida.</p>
 
             <div className="buttons">
@@ -98,27 +110,21 @@ export default function HomePage() {
             <a className="textbutton home-explore" href="#modos">Explorar los modos ↗</a>
 
             <p className="mini" style={{ marginTop: 22 }}>
-              Bomba e Impostor · 3 a 12 jugadores · sin cuentas
+               9 modos · 3 a 12 jugadores · sin cuentas
             </p>
           </div>
         </div>
 
         <section id="modos" className="mode-preview">
           <div className="eyebrow">Elige cómo se juega</div>
-          <h2>Una sala. Dos formas de liarla.</h2>
+          <h2>Una sala. Muchas formas de liarla.</h2>
           <div className="mode-preview-grid">
-            <article className="glass mode-preview-card">
-              <div className="mode-preview-icon">◕</div>
-              <h3>Bomba</h3>
-              <p>La sabes o te explota. Adivina el campeón por su habilidad y pasa la bomba.</p>
-              <span className="more">Pistas · 3 a 12 jugadores</span>
-            </article>
-            <article className="glass mode-preview-card">
-              <div className="mode-preview-icon">◈</div>
-              <h3>Impostor</h3>
-              <p>Todos saben algo. No lo mismo. Da pistas, discute y encuentra al infiltrado.</p>
-              <span className="more">Social · 3 a 12 jugadores</span>
-            </article>
+            {LANDING_MODES.map(([icon, name, description]) => <article className="glass mode-preview-card" key={name}>
+              <div className="mode-preview-icon">{icon}</div>
+              <h3>{name}</h3>
+              <p>{description}</p>
+              <span className="more">3 a 12 jugadores</span>
+            </article>)}
           </div>
         </section>
       </main>

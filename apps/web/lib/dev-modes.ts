@@ -9,8 +9,6 @@ export const DEV_MODE_LABELS: Record<ModeId, string> = {
   "carrera-sonido": "Carrera de pistas: Sonido",
   "carrera-emojis": "Carrera de emojis",
   imitacion: "Imitación de voz",
-  descripcion: "Descripción",
-  duo: "Dúo a ciegas",
   party: "Party",
 };
 
@@ -30,7 +28,5 @@ export const DEV_MODES: DevModeInfo[] = [
   { id: "carrera-sonido", players: 4, blurb: "Identifica al campeón por su voz distorsionada." },
   { id: "carrera-emojis", players: 4, blurb: "Descubre el campeón con cuatro emojis progresivos." },
   { id: "imitacion", players: 4, blurb: "Imita una línea de voz y recibe estrellas del grupo." },
-  { id: "descripcion", players: 4, blurb: "Describe sin decir el nombre." },
-  { id: "duo", players: 4, blurb: "Parejas con campeones cruzados." },
   { id: "party", players: 4, blurb: "Rondas rápidas para el grupo." },
 ];

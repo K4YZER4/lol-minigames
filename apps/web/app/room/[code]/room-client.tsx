@@ -10,8 +10,6 @@ import { AvatarPicker } from "@/components/AvatarPicker";
 import { RoomNotFoundModal } from "@/components/RoomNotFoundModal";
 import type {
   BombaPrivateView,
-  DescripcionPrivateView,
-  DuoPrivateView,
   ImpostorPrivateView,
   JoinAck,
   ModeId,
@@ -28,8 +26,6 @@ import { CarreraGame } from "@/components/CarreraGame";
 import { CarreraSonidoGame } from "@/components/CarreraSonidoGame";
 import { CarreraEmojisGame } from "@/components/CarreraEmojisGame";
 import { ImitacionGame } from "@/components/ImitacionGame";
-import { DescripcionGame } from "@/components/DescripcionGame";
-import { DuoGame } from "@/components/DuoGame";
 import { PartyGame } from "@/components/PartyGame";
 import { ResultsScreen } from "@/components/ResultsScreen";
 import { playUiSound } from "@/lib/sounds";
@@ -234,8 +230,6 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
 
   const bombaPriv = priv?.mode === "bomba" ? (priv as BombaPrivateView) : null;
   const impostorPriv = priv?.mode === "impostor" ? (priv as ImpostorPrivateView) : null;
-  const descripcionPriv = priv?.mode === "descripcion" ? (priv as DescripcionPrivateView) : null;
-  const duoPriv = priv?.mode === "duo" ? (priv as DuoPrivateView) : null;
 
   if (needsJoin) {
     if (joinErrorCode === "ROOM_NOT_FOUND") {
@@ -370,13 +364,6 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
           onSubmit={(audioData, mimeType) => act("imitacion:submit", { requestId: newRequestId(), audioData, mimeType })}
           onVote={(recordingId, stars) => void act("imitacion:vote", { requestId: newRequestId(), recordingId, stars })}
           onReset={(mode) => void resetToLobby(mode)} />
-      ) : room.game?.mode === "descripcion" ? (
-        <DescripcionGame room={room} me={me} priv={priv?.mode === "descripcion" ? priv : null} isHost={room.hostId === me} resetting={resetting}
-          onClue={(text) => void act("descripcion:clue", { requestId: newRequestId(), text })}
-          onGuess={(text) => void act("descripcion:guess", { requestId: newRequestId(), text })}
-          onReset={(mode) => void resetToLobby(mode)} />
-      ) : room.game?.mode === "duo" ? (
-        <DuoGame room={room} me={me} priv={duoPriv} champions={champions} isHost={room.hostId === me} resetting={resetting} onSubmit={(championId) => void act("duo:submit", { requestId: newRequestId(), championId })} onReset={(mode) => void resetToLobby(mode)} />
       ) : room.game?.mode === "party" ? (
         <PartyGame room={room} me={me} priv={priv?.mode === "party" ? priv : null} champions={champions} onGuess={(championId) => void act("party:guess", { requestId: newRequestId(), championId })} />
       ) : (

@@ -12,7 +12,8 @@ export function CarreraGame({ room, priv, champions, isHost, resetting, onAnswer
   if (!game) return null;
   const answered = priv?.hasAnswered ?? false;
   const winner = room.players.find((player) => player.playerId === game.winnerId);
-  const blur = Math.max(1, 9 - game.clueIndex * 2);
+  // Prueba visual: pixelación/desenfoque aproximadamente al doble.
+  const blur = Math.max(4, 32 - game.clueIndex * 10);
   const clueSlots = Array.from({ length: 4 }, (_, index) => game.clues[index] ?? null);
   return <div className={`game-shell carrera-layout${game.phase !== "CLUES" && game.target ? " has-reveal" : ""}`}>
     <div className="center carrera-heading"><div className="eyebrow">Carrera de pistas · ronda {game.round + 1}/{game.totalRounds}</div><h1>{game.phase === "CLUES" ? "Adivina antes que los demás." : game.phase === "FINISHED" ? "Carrera terminada" : "Respuesta revelada"}</h1><div className="timerbox"><Timer endsAt={game.phaseEndsAt} serverTime={room.serverTime} totalMs={room.settings.carrera.clueSeconds * 1000} label={`Pista ${game.clueIndex + 1}`} /></div></div>

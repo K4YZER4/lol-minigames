@@ -3,8 +3,9 @@ import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "LoL Party",
+  title: "LOL PARTY",
   description: "Minijuegos de League of Legends para jugar con amigos en sala privada.",
+  icons: { icon: "/images/logo-lol-party.png", apple: "/images/logo-lol-party.png" },
 };
 
 /**

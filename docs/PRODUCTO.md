@@ -24,7 +24,7 @@ Hoy se entregan **dos juegos completos**: **Bomba** e **Impostor**.
 
 - Cuentas, tienda, ranking global, matchmaking público.
 - Voz integrada o reconocimiento automático de voz.
-- Modo fiesta, Pictionary, Dúo a ciegas, ¿Quién soy?, categoría de audio.
+- Modo fiesta, Pictionary, ¿Quién soy?, carreras visuales, de sonido y de emojis, e imitación de voz.
 - Base de datos. Toda la persistencia pasa por interfaces reemplazables.
 
 ---

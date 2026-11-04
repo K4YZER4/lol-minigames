@@ -25,8 +25,6 @@ const MODES: { id: ModeId; name: string; icon: string; blurb: string }[] = [
   { id: "carrera-sonido", name: "Carrera de pistas: Sonido", icon: "♫", blurb: "Escucha una voz distorsionada y descubre al campeón." },
   { id: "carrera-emojis", name: "Carrera de emojis", icon: "😀", blurb: "Descubre el campeón con cuatro emojis." },
   { id: "imitacion", name: "Imitación de voz", icon: "★", blurb: "Imita la línea y deja que el grupo vote." },
-  { id: "descripcion", name: "Descripción", icon: "☵", blurb: "Describe un campeón sin decir su nombre." },
-  { id: "duo", name: "Dúo a ciegas", icon: "◎", blurb: "Conoce tu campeón y adivina el de tu pareja." },
   { id: "party", name: "Party", icon: "★", blurb: "Un jugador recibe un campeón y el resto intenta adivinarlo." },
 ];
 
@@ -95,10 +93,6 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
              <><div className="divider" /><p className="hint">Se revela un emoji por pista hasta completar cuatro. Adivinar antes da más puntos.</p></>
            ) : room.mode === "imitacion" ? (
              <><div className="divider" /><p className="hint">Escucha una línea, graba tu imitación y vota de 1 a 5 estrellas. No puedes votar tu propia grabación.</p><div className="stepper" style={{ marginTop: 14 }}><span className="hint">Segundos para grabar</span><button className="step" disabled={!isHost || room.settings.imitacion.recordingSeconds <= 10} onClick={() => onConfigure({ imitacion: { recordingSeconds: room.settings.imitacion.recordingSeconds - 5 } })}>−</button><strong>{room.settings.imitacion.recordingSeconds}</strong><button className="step" disabled={!isHost || room.settings.imitacion.recordingSeconds >= 30} onClick={() => onConfigure({ imitacion: { recordingSeconds: room.settings.imitacion.recordingSeconds + 5 } })}>+</button></div></>
-          ) : room.mode === "descripcion" ? (
-            <><div className="divider" /><p className="hint">Por turnos, una persona describe un objetivo privado durante {room.settings.descripcion.turnSeconds} s sin mencionar su nombre.</p></>
-           ) : room.mode === "duo" ? (
-             <><div className="divider" /><p className="hint">Cada jugador recibe un campeón privado y debe adivinar el de su pareja durante {room.settings.duo.guessSeconds} s.</p></>
            ) : (
              <><div className="divider" /><p className="hint">Party server-authoritative: el jugador activo recibe un campeón privado y los demás puntúan al acertar. Audio queda reservado hasta integrar un proveedor real.</p></>
            )}

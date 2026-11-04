@@ -25,7 +25,8 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <Link href="/" className="logo" aria-label="LoL Party, ir al inicio">
-        ✦ LoL<span>Party</span>
+        <img src="/images/logo-lol-party.png" alt="" className="logo-image" />
+        LOL<span>PARTY</span>
       </Link>
 
       <nav aria-label="Navegación principal">
@@ -34,7 +35,7 @@ export function SiteHeader() {
         <button
           type="button"
           className={`dot${lila ? "" : " active"}`}
-          style={{ background: "#8ba3c5" }}
+          style={{ background: "#72d9ff" }}
           aria-label="Paleta azul"
           aria-pressed={!lila}
           onClick={() => apply(false)}
