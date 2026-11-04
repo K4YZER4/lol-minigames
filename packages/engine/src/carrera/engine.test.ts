@@ -44,6 +44,21 @@ describe("carrera engine", () => {
     expect(carreraResults(another).scores.p2).toBe(1000);
   });
 
+  it("cierra la ronda en cuanto todos usaron su oportunidad aunque fallen", () => {
+    const cluesWithWrong = [...clues, { clueId: "g1", championId: "Garen", kind: "spell" as const, imageUrl: "" }];
+    const wrongCtx = (now: number) => ({ now, rng: createRng(2), clues: cluesWithWrong });
+    const state = createCarrera({ playerIds: ["p1", "p2", "p3"], settings: { clueSeconds: 5, rounds: 1 }, champions, clues: cluesWithWrong, now: 0, rng: createRng(1) });
+    const wrong = state.targetId === "Ahri" ? "Garen" : "Ahri";
+    const first = carreraAnswer(state, "p1", wrong, wrongCtx(1));
+    expect(first.state.phase).toBe("CLUES");
+    const second = carreraAnswer(first.state, "p2", wrong, wrongCtx(2));
+    expect(second.state.phase).toBe("CLUES");
+    const third = carreraAnswer(second.state, "p3", wrong, wrongCtx(3));
+    expect(third.state.phase).toBe("REVEAL");
+    expect(third.state.phaseEndsAt).toBe(6_003);
+    expect(carreraPublicView(third.state, 3).target?.id).toBe(state.targetId);
+  });
+
   it("revela al agotarse todas las pistas y termina después del tiempo de revelación", () => {
     const state = init();
     const second = carreraTick(state, ctx(5_000)).state;

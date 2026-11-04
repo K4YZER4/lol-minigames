@@ -5,8 +5,10 @@ import {
   impostorClue,
   impostorPrivateView,
   impostorPublicView,
+  impostorRepeatQuestions,
   impostorTick,
   impostorVote,
+  impostorMaxQuestionRounds,
   type ChampionInfo,
   type ImpostorSettings,
   type ImpostorState,
@@ -62,6 +64,13 @@ describe("impostor", () => {
   it("asigna un infiltrado con 4 jugadores y dos con 7", () => {
     expect(make(["p1", "p2", "p3", "p4"]).state.impostorIds).toHaveLength(1);
     expect(make(["p1", "p2", "p3", "p4", "p5", "p6", "p7"]).state.impostorIds).toHaveLength(2);
+  });
+
+  it("calcula el máximo de vueltas según el tamaño del grupo", () => {
+    expect(impostorMaxQuestionRounds(3)).toBe(2);
+    expect(impostorMaxQuestionRounds(4)).toBe(3);
+    expect(impostorMaxQuestionRounds(7)).toBe(4);
+    expect(impostorMaxQuestionRounds(8)).toBe(5);
   });
 
   it("el infiltrado recibe el campeón relacionado y la mayoría el otro", () => {
@@ -153,6 +162,19 @@ describe("impostor", () => {
     expect(current.reveal?.scores[current.order.find((id) => id !== impostor)!]).toBe(1000);
   });
 
+  it("no da puntos de tripulación a un infiltrado que vote a otro infiltrado", () => {
+    const { state } = make(["p1", "p2", "p3", "p4", "p5", "p6", "p7"]);
+    const impostors = state.impostorIds;
+    let current = toVoting(startClues(state));
+    const caught = impostors[0]!;
+    for (const id of current.order) {
+      const target = id === caught ? impostors[1]! : caught;
+      current = impostorVote(current, id, target, ctx(5_000)).state;
+    }
+    expect(current.reveal?.caught).toBe(true);
+    expect(current.reveal?.scores[impostors[1]!]).toBe(0);
+  });
+
   it("gana el infiltrado cuando hay empate", () => {
     const { state } = make(["p1", "p2", "p3", "p4"]);
     const impostor = state.impostorIds[0]!;
@@ -167,6 +189,34 @@ describe("impostor", () => {
     expect(current.reveal?.caught).toBe(false);
     expect(current.reveal?.winners).toContain(impostor);
     expect(current.reveal?.scores[impostor]).toBe(1000);
+  });
+
+  it("permite repetir preguntas, limpia los votos y reduce el tiempo de pista", () => {
+    const { state } = make(["p1", "p2", "p3"]);
+    const voting = toVoting(startClues(state));
+    const repeated = impostorRepeatQuestions(voting, ctx(6_000));
+
+    expect(repeated.reject).toBeUndefined();
+    expect(repeated.state.phase).toBe("CLUES");
+    expect(repeated.state.questionRound).toBe(2);
+    expect(repeated.state.votes).toEqual({});
+    expect(repeated.state.clues).toEqual([]);
+    expect(repeated.state.phaseEndsAt).toBe(21_000);
+  });
+
+  it("da menos puntos a la tripulación si atrapa tarde y más al impostor si escapa", () => {
+    const { state } = make(["p1", "p2", "p3"]);
+    const voting = toVoting(startClues(state));
+    const repeated = impostorRepeatQuestions(voting, ctx(6_000)).state;
+    const impostor = repeated.impostorIds[0]!;
+    let caught = toVoting(repeated, 7_000);
+    for (const id of caught.order) caught = impostorVote(caught, id, id === impostor ? null : impostor, ctx(9_000)).state;
+    expect(caught.reveal?.scores[caught.order.find((id) => id !== impostor)!]).toBe(850);
+
+    const escaped = toVoting(repeated, 10_000);
+    let escapedResult = escaped;
+    for (const id of escaped.order) escapedResult = impostorVote(escapedResult, id, null, ctx(12_000)).state;
+    expect(escapedResult.reveal?.scores[impostor]).toBe(1250);
   });
 
   it("gana el infiltrado si nadie vota", () => {

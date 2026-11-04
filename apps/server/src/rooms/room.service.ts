@@ -55,6 +55,7 @@ import {
   impostorPrivateView,
   impostorPublicView,
   impostorResults,
+  impostorRepeatQuestions,
   impostorTick,
   impostorVote,
   createPictionary,
@@ -207,6 +208,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       game: null,
       partyModes: null,
       partyBreak: null,
+      partyHistory: null,
       settings: {
         bomba: { ...DEFAULT_BOMBA_SETTINGS },
         impostor: { ...DEFAULT_IMPOSTOR_SETTINGS },
@@ -382,6 +384,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       room.game = null;
       room.partyModes = null;
       room.partyBreak = null;
+      room.partyHistory = null;
       if (nextMode) room.mode = nextMode;
       room.scores = {};
       for (const player of room.players) {
@@ -491,9 +494,13 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
         if (selected.length === 0) return reject("INVALID", "Selecciona al menos un minijuego para la Party");
         this.applyPartyPresets(room);
         const shuffled = this.rng.shuffle(selected);
-         room.partyModes = shuffled.slice(1);
-         room.mode = shuffled[0]!;
-       }
+        room.partyModes = shuffled.slice(1);
+        room.partyHistory = [];
+        room.mode = shuffled[0]!;
+      } else {
+        room.partyModes = null;
+        room.partyHistory = null;
+      }
        if (room.mode === "impostor" && connectedIds.length > 0) {
          const offset = room.impostorRoundOffset % connectedIds.length;
          ids = connectedIds.slice(offset).concat(connectedIds.slice(0, offset));
@@ -848,6 +855,15 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
         return impostorClue(state, playerId, action.text, ctx);
       case "impostor:vote":
         return impostorVote(state, playerId, action.targetId, ctx);
+      case "impostor:repeat":
+        if (room.hostId !== playerId) {
+          return {
+            state,
+            effects: [],
+            reject: { code: "NOT_HOST", message: "Solo el anfitrión puede repetir las preguntas" },
+          };
+        }
+        return impostorRepeatQuestions(state, ctx);
       default:
         return null;
     }
@@ -958,8 +974,43 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
      for (const [id, score] of Object.entries(results.scores)) {
        room.scores[id] = (room.scores[id] ?? 0) + score;
      }
+
+     if (room.partyHistory) {
+       const modeScores = { ...results.scores };
+       room.partyHistory.push({ mode: room.mode, scores: modeScores });
+       const modeNumber = room.partyHistory.length;
+       if (room.partyModes?.length) {
+         room.partyBreak = {
+           nextMode: room.partyModes[0]!,
+           endsAt: this.clock.now() + PARTY_BREAK_MS,
+           endedMode: room.mode,
+           modeScores,
+           modeNumber,
+           totalModes: room.partyHistory.length + room.partyModes.length,
+         };
+         room.mode = "party";
+         room.game = null;
+         room.phase = "PARTY_BREAK";
+         room.stateVersion++;
+         return true;
+       }
+       room.mode = "party";
+       room.partyModes = null;
+       room.game = null;
+       room.partyBreak = null;
+       room.phase = "FINISHED";
+       return true;
+     }
+
       if (room.partyModes?.length) {
-        room.partyBreak = { nextMode: room.partyModes[0]!, endsAt: this.clock.now() + PARTY_BREAK_MS };
+        room.partyBreak = {
+          nextMode: room.partyModes[0]!,
+          endsAt: this.clock.now() + PARTY_BREAK_MS,
+          endedMode: room.mode,
+          modeScores: { ...results.scores },
+          modeNumber: 1,
+          totalModes: 1 + room.partyModes.length,
+        };
         room.mode = "party";
         room.game = null;
         room.phase = "PARTY_BREAK";
@@ -1079,6 +1130,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       settings: room.settings,
       game,
       partyBreak: room.partyBreak,
+      partyHistory: room.partyHistory,
       serverTime: now,
     };
   }

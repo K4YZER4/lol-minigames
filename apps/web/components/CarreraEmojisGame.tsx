@@ -5,6 +5,7 @@ import type { Champion } from "@/lib/champions";
 import { CarreraAnswerStatus } from "./CarreraAnswerStatus";
 import { CarreraRevealCard } from "./CarreraRevealCard";
 import { ChampionPicker } from "./ChampionPicker";
+import { PlayerScoreRow } from "./PlayerScoreRow";
 import { Timer } from "./Timer";
 
 type Props = { room: RoomView; priv: CarreraEmojisPrivateView | null; champions: Champion[]; isHost: boolean; resetting: boolean; onAnswer: (id: string) => void; onReset: (mode?: "carrera-emojis") => void };
@@ -23,6 +24,6 @@ export function CarreraEmojisGame({ room, priv, champions, isHost, resetting, on
      <div className="center carrera-heading"><div className="eyebrow">Carrera de emojis · ronda {game.round + 1}/{game.totalRounds}</div><h1>{game.phase === "CLUES" ? "Descubre el campeón." : game.phase === "FINISHED" ? "Carrera terminada" : "Respuesta revelada"}</h1><div className="timerbox"><Timer endsAt={game.phaseEndsAt} serverTime={room.serverTime} totalMs={room.settings.carreraEmojis.clueSeconds * 1000} label={`Pista ${game.clueIndex + 1}/4`} /></div></div>
     {revealTarget ? <CarreraRevealCard champion={revealTarget} eyebrow="El campeón era" note={showPrivateReveal ? "¡Acertaste! Solo tú ves esta confirmación. Los demás siguen adivinando." : undefined} /> : null}
     <section className="glass carrera-emojis-clues"><div className="emoji-clue-grid">{Array.from({ length: 4 }, (_, index) => <div className={`emoji-clue-card${index < revealed.length ? " is-revealed" : " is-hidden"}`} key={index}><span className="emoji-clue-number">{index + 1}</span><span className="emoji-clue-value">{revealed[index] ?? "?"}</span></div>)}</div>{game.phase === "CLUES" && !answered ? <ChampionPicker champions={champions} onPick={onAnswer} placeholder="¿Qué campeón es?" /> : showPrivateReveal ? null : <CarreraAnswerStatus answered={answered} winnerName={winner?.name ?? null} targetName={game.target?.name ?? null} />}</section>
-    <aside className="panel carrera-sidebar"><div className="eyebrow">Puntuación</div>{room.players.slice().sort((a, b) => b.score - a.score).map((player) => <div className="score-row" key={player.playerId}><span>{player.name}</span><strong>{player.score}</strong></div>)}{game.phase === "FINISHED" && isHost ? <div className="result-actions"><button className="primary" disabled={resetting} onClick={() => onReset("carrera-emojis")}>Repetir emojis →</button></div> : null}</aside>
+     <aside className="panel carrera-sidebar"><div className="eyebrow">Puntuación</div>{room.players.slice().sort((a, b) => b.score - a.score).map((player) => <PlayerScoreRow player={player} key={player.playerId} />)}{game.phase === "FINISHED" && isHost ? <div className="result-actions"><button className="primary" disabled={resetting} onClick={() => onReset("carrera-emojis")}>Repetir emojis →</button></div> : null}</aside>
   </div>;
 }

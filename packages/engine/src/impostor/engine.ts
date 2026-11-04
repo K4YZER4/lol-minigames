@@ -51,6 +51,8 @@ export type ImpostorState = {
   votes: Record<string, string | null>;
   phaseEndsAt: number;
   acknowledged: string[];
+  questionRound: number;
+  maxQuestionRounds: number;
   reveal: ImpostorReveal | null;
 };
 
@@ -63,6 +65,17 @@ export type ImpostorContext = {
 
 function seconds(ms: number) {
   return ms;
+}
+
+export function impostorMaxQuestionRounds(playerCount: number): number {
+  if (playerCount <= 3) return 2;
+  if (playerCount <= 5) return 3;
+  if (playerCount <= 7) return 4;
+  return 5;
+}
+
+function clueDuration(state: ImpostorState): number {
+  return Math.max(10, state.settings.clueSeconds - (state.questionRound - 1) * 5) * 1000;
 }
 
 function toDiscussion(
@@ -106,11 +119,13 @@ function tally(
   for (const id of state.order) scores[id] = 0;
 
   if (caught) {
+    const crewScore = Math.max(400, 1000 - (state.questionRound - 1) * 150);
     for (const [voter, target] of Object.entries(state.votes)) {
-      if (target && state.impostorIds.includes(target)) scores[voter] = 1000;
+      if (!state.impostorIds.includes(voter) && target && state.impostorIds.includes(target)) scores[voter] = crewScore;
     }
   } else {
-    for (const id of state.impostorIds) scores[id] = 1000;
+    const impostorScore = 1000 + (state.questionRound - 1) * 250;
+    for (const id of state.impostorIds) scores[id] = impostorScore;
   }
 
   const assignment: Record<string, ChampionInfo> = {};
@@ -148,7 +163,7 @@ function advance(
           ...state,
           phase: "CLUES",
           clueIndex: 0,
-          phaseEndsAt: ctx.now + state.settings.clueSeconds * 1000,
+           phaseEndsAt: ctx.now + clueDuration(state),
         },
         effects,
       };
@@ -165,7 +180,7 @@ function advance(
           ...state,
           clues,
           clueIndex,
-          phaseEndsAt: ctx.now + state.settings.clueSeconds * 1000,
+           phaseEndsAt: ctx.now + clueDuration(state),
         },
         effects,
       };
@@ -212,6 +227,8 @@ export function createImpostor(init: ImpostorInit): ImpostorState {
     votes: {},
     phaseEndsAt: init.now + init.settings.assignmentSeconds * 1000,
     acknowledged: [],
+    questionRound: 1,
+    maxQuestionRounds: impostorMaxQuestionRounds(init.playerIds.length),
     reveal: null,
   };
 }
@@ -290,10 +307,41 @@ export function impostorClue(
       ...state,
       clues,
       clueIndex,
-      phaseEndsAt: ctx.now + state.settings.clueSeconds * 1000,
+       phaseEndsAt: ctx.now + clueDuration(state),
     },
     effects: [],
   };
+}
+
+export function impostorRepeatQuestions(
+  state: ImpostorState,
+  ctx: ImpostorContext,
+): Result<ImpostorState> {
+  if (state.phase !== "VOTING") {
+    return {
+      state,
+      effects: [],
+      reject: { code: "WRONG_PHASE", message: "Solo puedes repetir preguntas durante la votación" },
+    };
+  }
+  if (state.questionRound >= state.maxQuestionRounds) {
+    return {
+      state,
+      effects: [],
+      reject: { code: "MAX_QUESTION_ROUNDS", message: "Ya alcanzaron el máximo de vueltas" },
+    };
+  }
+  const next = {
+    ...state,
+    phase: "CLUES" as const,
+    clueIndex: 0,
+    clues: [],
+    votes: {},
+    questionRound: state.questionRound + 1,
+    phaseEndsAt: ctx.now + clueDuration({ ...state, questionRound: state.questionRound + 1 }),
+    reveal: null,
+  };
+  return { state: next, effects: [] };
 }
 
 export function impostorVote(
@@ -342,6 +390,8 @@ export function impostorPublicView(state: ImpostorState, now: number) {
     clueIndex: state.clueIndex,
     clues: state.clues,
     votesSubmitted: Object.keys(state.votes),
+    questionRound: state.questionRound,
+    maxQuestionRounds: state.maxQuestionRounds,
     reveal: state.phase === "REVEAL" ? state.reveal : null,
   };
 }

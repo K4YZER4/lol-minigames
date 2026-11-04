@@ -31,6 +31,16 @@ describe("carrera de emojis", () => {
     expect(second.phase).toBe("REVEAL");
     expect(carreraEmojisResults(second).scores.p2).toBeLessThan(carreraEmojisResults(second).scores.p1!);
   });
+  it("cierra la ronda cuando todos fallaron su única oportunidad", () => {
+    const state = createCarreraEmojis({ playerIds: ["p1", "p2"], settings: { clueSeconds: 5, rounds: 1 }, champions, clues, now: 0, rng: createRng(1) });
+    const wrong = state.targetId === "A" ? "B" : "A";
+    const first = carreraEmojisAnswer(state, "p1", wrong, { now: 1, rng: createRng(2), clues });
+    expect(first.state.phase).toBe("CLUES");
+    const second = carreraEmojisAnswer(first.state, "p2", wrong, { now: 2, rng: createRng(2), clues });
+    expect(second.state.phase).toBe("REVEAL");
+    expect(carreraEmojisPublicView(second.state).target?.id).toBe(state.targetId);
+  });
+
   it("acumula los puntos tras pasar a la siguiente ronda", () => {
     const ctx = (now: number) => ({ now, rng: createRng(2), clues });
     const state = createCarreraEmojis({ playerIds: ["p1", "p2"], settings: { clueSeconds: 5, rounds: 2 }, champions, clues, now: 0, rng: createRng(1) });

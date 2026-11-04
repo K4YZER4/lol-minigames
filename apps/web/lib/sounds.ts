@@ -14,13 +14,34 @@ const SOURCES: Record<UiSound, string> = {
 };
 
 const cache = new Map<UiSound, HTMLAudioElement>();
+const VOLUME_STORAGE_KEY = "lolparty:volume";
+export const UI_VOLUME_EVENT = "lolparty:volume-change";
+
+export function getUiVolume(): number {
+  if (typeof window === "undefined") return 1;
+  let stored = Number.NaN;
+  try { stored = Number(window.localStorage.getItem(VOLUME_STORAGE_KEY)); } catch { /* almacenamiento bloqueado */ }
+  return Number.isFinite(stored) ? Math.min(1, Math.max(0, stored)) : 1;
+}
+
+export function setUiVolume(value: number): void {
+  if (typeof window === "undefined") return;
+  const volume = Math.min(1, Math.max(0, value));
+  try { window.localStorage.setItem(VOLUME_STORAGE_KEY, String(volume)); } catch { /* almacenamiento bloqueado */ }
+  for (const [sound, audio] of cache) audio.volume = (sound === "explosion" || sound === "victory" ? 0.7 : 0.45) * volume;
+  window.dispatchEvent(new Event(UI_VOLUME_EVENT));
+}
 
 export function playUiSound(sound: UiSound) {
   if (typeof window === "undefined") return;
-  const audio = cache.get(sound) ?? new Audio(SOURCES[sound]);
-  cache.set(sound, audio);
+  let audio = cache.get(sound);
+  if (!audio) {
+    audio = new Audio(SOURCES[sound]);
+    audio.preload = "auto";
+    cache.set(sound, audio);
+  }
   audio.currentTime = 0;
-  audio.volume = sound === "explosion" || sound === "victory" ? 0.7 : 0.45;
+  audio.volume = (sound === "explosion" || sound === "victory" ? 0.7 : 0.45) * getUiVolume();
   void audio.play().catch(() => undefined);
 }
 

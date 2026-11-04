@@ -27,6 +27,18 @@ describe("carrera de pistas: sonido", () => {
     expect(carreraSonidoResults(second).scores.p2).toBeLessThan(carreraSonidoResults(second).scores.p1!);
   });
 
+  it("cierra la ronda cuando todos fallaron su única oportunidad", () => {
+    const cluesWithWrong = [...clues, { clueId: "audio-b-1", championId: "B", audioUrl: "/api/audio-clues/audio-b-1" }];
+    const ctx = (now: number) => ({ now, rng: createRng(2), clues: cluesWithWrong });
+    const state = createCarreraSonido({ playerIds: ["p1", "p2"], settings: { clueSeconds: 5, rounds: 1 }, champions, clues: cluesWithWrong, now: 0, rng: createRng(1) });
+    const wrong = state.targetId === "A" ? "B" : "A";
+    const first = carreraSonidoAnswer(state, "p1", wrong, ctx(1));
+    expect(first.state.phase).toBe("CLUES");
+    const second = carreraSonidoAnswer(first.state, "p2", wrong, ctx(2));
+    expect(second.state.phase).toBe("REVEAL");
+    expect(carreraSonidoPublicView(second.state).target?.id).toBe(state.targetId);
+  });
+
   it("advances clues and finishes after the configured rounds", () => {
     const state = createCarreraSonido({ playerIds: ["p1", "p2"], settings: { clueSeconds: 5, rounds: 1 }, champions, clues, now: 0, rng: createRng(1) });
     const advanced = carreraSonidoTick(state, { now: 5_000, rng: createRng(2), clues }).state;

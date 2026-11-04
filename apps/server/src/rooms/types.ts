@@ -1,4 +1,4 @@
-import type { BombaSettings, CarreraEmojisSettings, CarreraSettings, CarreraSonidoSettings, ImitacionSettings, ImpostorSettings, ModeId, PictionarySettings, QuienSoySettings, PartySettings } from "@lolgames/protocol";
+import type { BombaSettings, CarreraEmojisSettings, CarreraSettings, CarreraSonidoSettings, ImitacionSettings, ImpostorSettings, ModeId, PictionarySettings, QuienSoySettings, PartyModeResult, PartySettings } from "@lolgames/protocol";
 import type { BombaState } from "@lolgames/engine";
 import type { ImpostorState } from "@lolgames/engine";
 import type { PictionaryState } from "@lolgames/engine";
@@ -39,7 +39,16 @@ export type Room = {
   game: GameState | null;
   /** Cola de modos pendiente de la Party meta. */
   partyModes: ModeId[] | null;
-  partyBreak: { nextMode: ModeId; endsAt: number } | null;
+  partyBreak: {
+    nextMode: ModeId;
+    endsAt: number;
+    endedMode: ModeId;
+    modeScores: Record<string, number>;
+    modeNumber: number;
+    totalModes: number;
+  } | null;
+  /** Puntos repartidos por cada modo ya cerrado de la Party. */
+  partyHistory: PartyModeResult[] | null;
   settings: {
     bomba: BombaSettings;
     impostor: ImpostorSettings;
@@ -61,6 +70,7 @@ export type IncomingAction =
   | { kind: "impostor:ack"; requestId: string }
   | { kind: "impostor:clue"; requestId: string; text: string }
   | { kind: "impostor:vote"; requestId: string; targetId: string | null }
+  | { kind: "impostor:repeat"; requestId: string }
   | { kind: "pictionary:stroke"; requestId: string; points: { x: number; y: number; color?: string; width?: number }[] }
   | { kind: "pictionary:guess"; requestId: string; championId: string }
   | { kind: "pictionary:clear"; requestId: string }
