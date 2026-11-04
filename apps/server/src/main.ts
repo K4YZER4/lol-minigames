@@ -2,11 +2,15 @@ import "reflect-metadata";
 import { NestFactory } from "@nestjs/core";
 import { loadContent } from "@lolgames/content";
 import { AppModule } from "./app.module";
+import { allowedOrigins, proxyHops } from "./gateway/security";
 
 async function bootstrap() {
   const content = loadContent();
   const app = await NestFactory.create(AppModule);
-  app.enableCors({ origin: true });
+  const origins = allowedOrigins(process.env.WEB_ORIGIN, process.env.NODE_ENV === "production");
+  const hops = proxyHops(process.env.TRUST_PROXY_HOPS);
+  if (hops) app.getHttpAdapter().getInstance().set("trust proxy", hops);
+  app.enableCors({ origin: origins, credentials: false });
 
   const port = Number(process.env.PORT ?? 3001);
   await app.listen(port, "0.0.0.0");

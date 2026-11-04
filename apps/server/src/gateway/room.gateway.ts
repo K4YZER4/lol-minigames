@@ -34,10 +34,12 @@ import {
 } from "@lolgames/protocol";
 import { RoomService } from "../rooms/room.service";
 import { BroadcastService } from "./broadcast.service";
+import { RateLimiter } from "../ports";
+import { allowedOrigins, clientIp, originAllowed, proxyHops } from "./security";
 
-const ALLOWED_ORIGINS = (
-  process.env.WEB_ORIGIN ?? "http://localhost:3000,http://127.0.0.1:3000"
-).split(",");
+const PRODUCTION = process.env.NODE_ENV === "production";
+const ALLOWED_ORIGINS = allowedOrigins(process.env.WEB_ORIGIN, PRODUCTION);
+const PROXY_HOPS = proxyHops(process.env.TRUST_PROXY_HOPS);
 
 const reject = (code: RejectCode, message: string): Reject => ({
   ok: false,
@@ -50,19 +52,57 @@ const issue = (error: z.ZodError): string =>
 
 @WebSocketGateway({
   cors: { origin: ALLOWED_ORIGINS, credentials: false },
+  allowRequest: (req: { headers: { origin?: string } }, callback: (error: string | null, success: boolean) => void) => {
+    const allowed = originAllowed(req.headers.origin, ALLOWED_ORIGINS, PRODUCTION);
+    callback(allowed ? null : "Origin no permitido", allowed);
+  },
   maxHttpBufferSize: 100_000,
+  pingInterval: 25_000,
+  pingTimeout: 20_000,
+  upgradeTimeout: 10_000,
 })
 export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
   @WebSocketServer()
   server!: Server;
+  private readonly activeByIp = new Map<string, number>();
 
   constructor(
     @Inject(RoomService) private readonly rooms: RoomService,
     @Inject(BroadcastService) private readonly broadcast: BroadcastService,
+    @Inject(RateLimiter) private readonly limiter: RateLimiter,
   ) {}
 
   afterInit(server: Server) {
     this.broadcast.attach(server);
+    server.use(async (socket, next) => {
+      const ip = clientIp(socket.handshake.address, socket.handshake.headers["x-forwarded-for"], PROXY_HOPS);
+      try {
+        if (!(await this.limiter.hit(`connect:${ip}`, 60_000, 30))) {
+          return next(new Error("Demasiadas conexiones, espera un minuto"));
+        }
+        const active = this.activeByIp.get(ip) ?? 0;
+        if (active >= 20) return next(new Error("Demasiadas conexiones simultáneas"));
+        this.activeByIp.set(ip, active + 1);
+        socket.data.ip = ip;
+        socket.once("disconnect", () => {
+          const remaining = (this.activeByIp.get(ip) ?? 1) - 1;
+          if (remaining > 0) this.activeByIp.set(ip, remaining);
+          else this.activeByIp.delete(ip);
+        });
+        next();
+      } catch (error) {
+        next(error instanceof Error ? error : new Error("Error de conexión"));
+      }
+    });
+    server.on("connection", (socket) => {
+      socket.use((packet, next) => {
+        void this.limiter.hit(`event:${socket.id}`, 10_000, 100).then((allowed) => {
+          if (allowed) return next();
+          const ack = packet.at(-1);
+          if (typeof ack === "function") ack(reject("RATE_LIMITED", "Vas demasiado rápido"));
+        }).catch(() => socket.disconnect(true));
+      });
+    });
   }
 
   handleDisconnect(client: Socket) {
@@ -73,21 +113,31 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
 
   @SubscribeMessage(ClientEvents.CREATE_ROOM)
   async onCreate(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
-    const parsed = z.object({ nickname: NicknameSchema, avatarId: AvatarIdSchema.optional() }).safeParse(body);
-    if (!parsed.success) return reject("INVALID", issue(parsed.error));
+    if (this.playerOf(client) || client.data.joining) return reject("INVALID", "Sal de la sala actual antes de crear otra");
+    client.data.joining = true;
+    try {
+      const parsed = z.object({ nickname: NicknameSchema, avatarId: AvatarIdSchema.optional() }).safeParse(body);
+      if (!parsed.success) return reject("INVALID", issue(parsed.error));
 
-    const ack = await this.rooms.createRoom(
-      parsed.data.nickname,
-      parsed.data.avatarId,
-      client.id,
-      client.handshake.address,
-    );
-    if (ack.ok) await this.attach(client, ack.roomId, ack.playerId);
-    return ack;
+      const ack = await this.rooms.createRoom(
+        parsed.data.nickname,
+        parsed.data.avatarId,
+        client.id,
+        client.data.ip as string,
+      );
+      if (ack.ok) {
+        if (client.connected) await this.attach(client, ack.roomId, ack.playerId, ack.roomCode, ack.token);
+        else await this.rooms.disconnectSocket(client.id);
+      }
+      return ack;
+    } finally {
+      delete client.data.joining;
+    }
   }
 
   @SubscribeMessage(ClientEvents.JOIN_ROOM)
   async onJoin(@ConnectedSocket() client: Socket, @MessageBody() body: unknown) {
+    if (client.data.joining) return reject("INVALID", "Ya hay una entrada en curso");
     const parsed = z
       .object({
         code: RoomCodeSchema,
@@ -101,16 +151,41 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
       return reject("INVALID", "Necesitas un apodo para entrar");
     }
 
-    const ack = await this.rooms.joinRoom(
-      parsed.data.code,
-      parsed.data.nickname ?? null,
-      parsed.data.token ?? null,
-      parsed.data.avatarId,
-      client.id,
-      client.handshake.address,
-    );
-    if (ack.ok) await this.attach(client, ack.roomId, ack.playerId);
-    return ack;
+    const currentPlayerId = this.playerOf(client);
+    if (currentPlayerId) {
+      const sameRoom = client.data.roomCode === parsed.data.code;
+      const sameToken = client.data.token === parsed.data.token;
+      if (sameRoom && sameToken && client.data.roomId && client.data.token) {
+        await this.rooms.refresh(client.data.roomId as string);
+        return {
+          ok: true,
+          playerId: currentPlayerId,
+          token: client.data.token as string,
+          roomCode: parsed.data.code,
+          roomId: client.data.roomId as string,
+        };
+      }
+      return reject("INVALID", "Sal de la sala actual antes de entrar a otra");
+    }
+
+    client.data.joining = true;
+    try {
+      const ack = await this.rooms.joinRoom(
+        parsed.data.code,
+        parsed.data.nickname ?? null,
+        parsed.data.token ?? null,
+        parsed.data.avatarId,
+        client.id,
+        client.data.ip as string,
+      );
+      if (ack.ok) {
+        if (client.connected) await this.attach(client, ack.roomId, ack.playerId, ack.roomCode, ack.token);
+        else await this.rooms.disconnectSocket(client.id);
+      }
+      return ack;
+    } finally {
+      delete client.data.joining;
+    }
   }
 
   @SubscribeMessage(ClientEvents.LEAVE_ROOM)
@@ -122,6 +197,8 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
     if (roomId) await client.leave(roomId);
     delete client.data.playerId;
     delete client.data.roomId;
+    delete client.data.roomCode;
+    delete client.data.token;
     return ack;
   }
 
@@ -325,9 +402,11 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
     return typeof playerId === "string" ? playerId : null;
   }
 
-  private async attach(client: Socket, roomId: string, playerId: string) {
+  private async attach(client: Socket, roomId: string, playerId: string, roomCode?: string, token?: string) {
     client.data.playerId = playerId;
     client.data.roomId = roomId;
+    if (roomCode) client.data.roomCode = roomCode;
+    if (token) client.data.token = token;
     await client.join(roomId);
     // La primera difusión ocurrió antes del join: reenviamos el snapshot.
     await this.rooms.refresh(roomId);

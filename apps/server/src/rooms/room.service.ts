@@ -657,6 +657,10 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
         }
 
         if (this.shouldReap(room, now)) {
+          for (const player of room.players) {
+            await this.sessions.revoke(player.token);
+            this.unindexPlayer(player);
+          }
           await this.repo.delete(room.id);
           return;
         }
