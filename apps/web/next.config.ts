@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   devIndicators: false,
   distDir: isProduction ? ".next-build" : ".next",
+  // Permite abrir el servidor de desarrollo desde túneles temporales.
+  allowedDevOrigins: ["*.ngrok-free.dev", "*.ngrok-free.app", "*.trycloudflare.com"],
 };
 
 export default nextConfig;

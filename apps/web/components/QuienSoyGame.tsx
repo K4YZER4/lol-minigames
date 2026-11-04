@@ -60,7 +60,7 @@ export function QuienSoyGame({ room, me, priv, champions, onGuess }: Props) {
             <div className="hedbanz-mine-img"><img src={myChampion.imageUrl} alt={myChampion.name} /></div>
             <h2>{myChampion.name}</h2>
             <span className={`tag ${myTurn?.solved ? "tag-green" : "tag-red"}`}>
-              {myTurn?.solved ? "Acertaste +1" : "Turno terminado"}
+              {myTurn?.solved ? "Acertaste +1000" : "Turno terminado"}
             </span>
           </>
         ) : (
@@ -87,7 +87,7 @@ export function QuienSoyGame({ room, me, priv, champions, onGuess }: Props) {
             const isMe = playerId === me;
             const status = turn
               ? turn.solved
-                ? "Acertó +1"
+                ? "Acertó +1000"
                 : "No acertó"
               : isActive
                 ? "Preguntando…"
@@ -126,7 +126,7 @@ export function QuienSoyGame({ room, me, priv, champions, onGuess }: Props) {
             <div className="eyebrow">Tu turno</div>
             <h2>¿Quién crees que eres?</h2>
             <p className="hint">
-              Acierto: +1 punto y termina tu turno. Fallo: puedes seguir intentando hasta que acabe el tiempo.
+              Acierto: +1000 puntos y termina tu turno. Fallo: puedes seguir intentando hasta que acabe el tiempo.
             </p>
             <ChampionPicker champions={champions} onPick={onGuess} submitLabel="Adivinar campeón" />
             {wrongGuesses.length > 0 ? (

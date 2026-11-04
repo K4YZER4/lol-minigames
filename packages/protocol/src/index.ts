@@ -345,6 +345,7 @@ export type CarreraEmojisGameView = { mode: "carrera-emojis"; phase: "CLUES" | "
 export type ImitacionRecordingView = { recordingId: string; audioData: string; mimeType: string; playerId: string | null; averageStars: number | null; votes: number };
 export type ImitacionGameView = { mode: "imitacion"; phase: "RECORDING" | "VOTING" | "REVEAL" | "FINISHED"; phaseEndsAt: number; targetAudioUrl: string | null; recordings: ImitacionRecordingView[]; submitted: string[]; voted: string[]; winnerId: string | null };
 export type PartyGameView = { mode: "party"; phase: "GUESSING" | "REVEAL" | "FINISHED"; phaseEndsAt: number; category: PartyCategory; activePlayerId: string; round: number; totalRounds: number; guesses: { playerId: string; correct: boolean }[] };
+export type PartyBreakView = { nextMode: ModeId; endsAt: number };
 
 export type GameView = BombaGameView | ImpostorGameView | PictionaryGameView | QuienSoyGameView | CarreraGameView | CarreraSonidoGameView | CarreraEmojisGameView | ImitacionGameView | PartyGameView;
 
@@ -352,7 +353,7 @@ export type RoomView = {
   code: string;
   roomId: string;
   stateVersion: number;
-  phase: "LOBBY" | "PLAYING" | "FINISHED";
+  phase: "LOBBY" | "PLAYING" | "PARTY_BREAK" | "FINISHED";
   hostId: string | null;
   mode: ModeId;
   players: PlayerView[];
@@ -368,6 +369,7 @@ export type RoomView = {
     party: PartySettings;
   };
   game: GameView | null;
+  partyBreak: PartyBreakView | null;
   serverTime: number;
 };
 
@@ -405,9 +407,9 @@ export type QuienSoyPrivateView = {
   isActive: boolean;
   hasSolved: boolean;
 };
-export type CarreraPrivateView = { mode: "carrera"; hasAnswered: boolean; answer: string | null };
-export type CarreraSonidoPrivateView = { mode: "carrera-sonido"; hasAnswered: boolean; answer: string | null };
-export type CarreraEmojisPrivateView = { mode: "carrera-emojis"; hasAnswered: boolean; answer: string | null };
+export type CarreraPrivateView = { mode: "carrera"; hasAnswered: boolean; answer: string | null; revealedTarget: PublicChampion | null };
+export type CarreraSonidoPrivateView = { mode: "carrera-sonido"; hasAnswered: boolean; answer: string | null; revealedTarget: PublicChampion | null };
+export type CarreraEmojisPrivateView = { mode: "carrera-emojis"; hasAnswered: boolean; answer: string | null; revealedTarget: PublicChampion | null };
 export type ImitacionPrivateView = { mode: "imitacion"; isSubmitted: boolean; hasVoted: boolean; ownRecordingId: string | null };
 export type PartyPrivateView = { mode: "party"; target: PublicChampion | null; isActive: boolean; hasGuessed: boolean };
 

@@ -128,6 +128,7 @@ const SKIP_AFTER_MS = 3_000;
 /** Una sala sin nadie conectado se borra pasado este tiempo. */
 const ROOM_IDLE_MS = 5 * 60_000;
 const REQUEST_HISTORY = 50;
+const PARTY_BREAK_MS = 5_000;
 const TICK_MS = 250;
 
 const reject = (code: RejectCode, message: string): Reject => ({
@@ -205,6 +206,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       stateVersion: 1,
       game: null,
       partyModes: null,
+      partyBreak: null,
       settings: {
         bomba: { ...DEFAULT_BOMBA_SETTINGS },
         impostor: { ...DEFAULT_IMPOSTOR_SETTINGS },
@@ -379,6 +381,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       room.phase = "LOBBY";
       room.game = null;
       room.partyModes = null;
+      room.partyBreak = null;
       if (nextMode) room.mode = nextMode;
       room.scores = {};
       for (const player of room.players) {
@@ -483,10 +486,11 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       const now = this.clock.now();
        const connectedIds = connected.map((p) => p.id);
        let ids = connectedIds;
-       if (room.mode === "party") {
-         const selected = room.settings.party.selectedModes.filter((mode) => mode !== "party");
-         if (selected.length === 0) return reject("INVALID", "Selecciona al menos un minijuego para la Party");
-         const shuffled = this.rng.shuffle(selected);
+      if (room.mode === "party") {
+        const selected = room.settings.party.selectedModes.filter((mode) => mode !== "party");
+        if (selected.length === 0) return reject("INVALID", "Selecciona al menos un minijuego para la Party");
+        this.applyPartyPresets(room);
+        const shuffled = this.rng.shuffle(selected);
          room.partyModes = shuffled.slice(1);
          room.mode = shuffled[0]!;
        }
@@ -496,6 +500,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
          room.impostorRoundOffset = (offset + 1) % connectedIds.length;
        }
 
+       room.partyBreak = null;
        room.game = this.createGame(room, ids, now);
 
       room.phase = "PLAYING";
@@ -527,6 +532,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       if (!player) return reject("NOT_IN_ROOM", "No estás en esta sala");
 
       // Idempotencia: un reintento con el mismo requestId no se aplica dos veces.
+      if (room.phase !== "PLAYING") return reject("WRONG_PHASE", "Espera al siguiente minijuego");
       if (player.recentRequests.includes(action.requestId)) return OK;
       player.recentRequests.push(action.requestId);
       if (player.recentRequests.length > REQUEST_HISTORY) player.recentRequests.shift();
@@ -619,6 +625,16 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
 
         if (room.phase === "LOBBY") {
           if (this.expireLobbyPlayers(room, now)) changed = true;
+        } else if (room.phase === "PARTY_BREAK" && room.partyBreak && now >= room.partyBreak.endsAt) {
+          const nextMode = room.partyBreak.nextMode;
+          room.partyModes?.shift();
+          room.partyBreak = null;
+          room.mode = nextMode;
+          const playerIds = room.players.filter((player) => player.connected).map((player) => player.id);
+          room.game = this.createGame(room, playerIds, now);
+          room.phase = "PLAYING";
+          room.stateVersion++;
+          changed = true;
         } else if (room.phase === "PLAYING" && room.game) {
           if (room.mode === "bomba") {
             const skipped = this.skipStalledBomba(room, now);
@@ -887,6 +903,17 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                     : createParty({ playerIds: ids, settings: room.settings.party, champions: this.content.unicaChampionInfo, now, rng: this.rng });
   }
 
+  private applyPartyPresets(room: Room): void {
+    room.settings.bomba = { ...room.settings.bomba, lives: 2, minFuseMs: 7_000, maxFuseMs: 15_000, minMarginMs: 2_000 };
+    room.settings.impostor = { ...room.settings.impostor, assignmentSeconds: 8, clueSeconds: 15, discussionSeconds: 30, voteSeconds: 20 };
+    room.settings.pictionary = { ...room.settings.pictionary, drawingSeconds: 60, rounds: 3 };
+    room.settings.carrera = { ...room.settings.carrera, clueSeconds: 5, rounds: 3 };
+    room.settings.carreraSonido = { ...room.settings.carreraSonido, clueSeconds: 5, rounds: 3 };
+    room.settings.carreraEmojis = { ...room.settings.carreraEmojis, clueSeconds: 5, rounds: 3 };
+    room.settings.imitacion = { ...room.settings.imitacion, recordingSeconds: 15, votingSeconds: 30 };
+    room.settings.quienSoy = { ...room.settings.quienSoy, turnSeconds: 45 };
+  }
+
   private syncPhase(room: Room): boolean {
     if (!room.game) return false;
     const finished =
@@ -931,21 +958,21 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
      for (const [id, score] of Object.entries(results.scores)) {
        room.scores[id] = (room.scores[id] ?? 0) + score;
      }
-     if (room.partyModes?.length) {
-       const nextMode = room.partyModes.shift()!;
-       room.mode = nextMode;
-       const ids = room.players.filter((player) => player.connected).map((player) => player.id);
-       room.game = this.createGame(room, ids, this.clock.now());
-       room.phase = "PLAYING";
-       room.stateVersion++;
-       return true;
-     }
+      if (room.partyModes?.length) {
+        room.partyBreak = { nextMode: room.partyModes[0]!, endsAt: this.clock.now() + PARTY_BREAK_MS };
+        room.mode = "party";
+        room.game = null;
+        room.phase = "PARTY_BREAK";
+        room.stateVersion++;
+        return true;
+      }
      if (room.partyModes) {
        room.mode = "party";
-       room.partyModes = null;
-       room.game = null;
-     }
-     room.phase = "FINISHED";
+        room.partyModes = null;
+        room.game = null;
+      }
+      room.partyBreak = null;
+      room.phase = "FINISHED";
      return true;
   }
 
@@ -995,6 +1022,18 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
   private buildRoomView(room: Room, now: number): RoomView {
     const bomba = room.mode === "bomba" && room.game ? (room.game as BombaState) : null;
 
+    // room.scores contiene los modos cerrados; los puntos del modo activo se
+    // muestran en vivo y solo se consolidan una vez al finalizarlo.
+    const currentScores = room.phase === "PLAYING" && room.game
+      ? room.mode === "pictionary" ? pictionaryResults(room.game as PictionaryState).scores
+        : room.mode === "quien-soy" ? quienSoyResults(room.game as QuienSoyState).scores
+          : room.mode === "carrera" ? carreraResults(room.game as CarreraState).scores
+            : room.mode === "carrera-sonido" ? carreraSonidoResults(room.game as CarreraSonidoState).scores
+              : room.mode === "carrera-emojis" ? carreraEmojisResults(room.game as CarreraEmojisState).scores
+                : room.mode === "imitacion" ? imitacionResults(room.game as ImitacionState).scores
+                  : {}
+      : {};
+
     const players: PlayerView[] = room.players.map((player) => ({
        playerId: player.id,
        name: player.name,
@@ -1004,7 +1043,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       isHost: room.hostId === player.id,
       lives: bomba ? (bomba.lives[player.id] ?? 0) : null,
       eliminated: bomba ? (bomba.lives[player.id] ?? 0) <= 0 : false,
-      score: room.scores[player.id] ?? 0,
+       score: (room.scores[player.id] ?? 0) + (currentScores[player.id] ?? 0),
     }));
 
     let game: RoomView["game"] = null;
@@ -1039,6 +1078,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       players,
       settings: room.settings,
       game,
+      partyBreak: room.partyBreak,
       serverTime: now,
     };
   }

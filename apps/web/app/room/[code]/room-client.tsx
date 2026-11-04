@@ -28,6 +28,7 @@ import { CarreraEmojisGame } from "@/components/CarreraEmojisGame";
 import { ImitacionGame } from "@/components/ImitacionGame";
 import { PartyGame } from "@/components/PartyGame";
 import { ResultsScreen } from "@/components/ResultsScreen";
+import { PartyBreakScreen } from "@/components/PartyBreakScreen";
 import { playUiSound } from "@/lib/sounds";
 
 const newRequestId = () =>
@@ -284,7 +285,7 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
       <div className="top">
         <div>
           <div className="eyebrow"><span className={`live-dot${connecting ? "" : " on"}`} /> Sala {code}</div>
-          <h1>{!room || room.phase === "LOBBY" ? "La sala está lista." : room.mode === "bomba" ? "No te la quedes." : room.mode === "impostor" ? "Que no te lean tan fácil." : room.mode === "pictionary" ? "Dibuja. Que no te descubran." : room.mode === "quien-soy" ? "Todos ven tu campeón menos tú." : room.mode === "carrera-emojis" ? "Piensa en emojis." : room.mode === "imitacion" ? "Hazlo parecido." : "Descubre quién eres."}</h1>
+          <h1>{!room || room.phase === "LOBBY" ? "La sala está lista." : room.phase === "PARTY_BREAK" ? "Así va la Party." : room.mode === "bomba" ? "No te la quedes." : room.mode === "impostor" ? "Que no te lean tan fácil." : room.mode === "pictionary" ? "Dibuja. Que no te descubran." : room.mode === "quien-soy" ? "Todos ven tu campeón menos tú." : room.mode === "carrera-emojis" ? "Piensa en emojis." : room.mode === "imitacion" ? "Hazlo parecido." : "Descubre quién eres."}</h1>
         </div>
         <div className="row">
           <button className="secondary" onClick={() => void copyCode()}>Copiar enlace ↗</button>
@@ -306,6 +307,8 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
         />
       ) : room.phase === "FINISHED" ? (
         <ResultsScreen room={room} me={me} resetting={resetting} onReset={(mode) => void resetToLobby(mode)} />
+      ) : room.phase === "PARTY_BREAK" ? (
+        <PartyBreakScreen room={room} />
       ) : room.game?.mode === "bomba" ? (
         <BombaGame
           room={room}

@@ -287,6 +287,6 @@ export function bombaPrivateView(state: BombaState, playerId: string) {
 
 export function bombaResults(state: BombaState) {
   const scores: Record<string, number> = {};
-  for (const id of state.order) scores[id] = state.winners.includes(id) ? 3 : 0;
+  for (const id of state.order) scores[id] = state.winners.includes(id) ? 1000 : 0;
   return { winners: state.winners, scores };
 }

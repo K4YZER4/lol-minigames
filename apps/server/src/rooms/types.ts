@@ -34,11 +34,12 @@ export type Room = {
   players: Player[];
   hostId: string | null;
   mode: ModeId;
-  phase: "LOBBY" | "PLAYING" | "FINISHED";
+  phase: "LOBBY" | "PLAYING" | "PARTY_BREAK" | "FINISHED";
   stateVersion: number;
   game: GameState | null;
   /** Cola de modos pendiente de la Party meta. */
   partyModes: ModeId[] | null;
+  partyBreak: { nextMode: ModeId; endsAt: number } | null;
   settings: {
     bomba: BombaSettings;
     impostor: ImpostorSettings;

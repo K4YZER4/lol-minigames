@@ -51,10 +51,10 @@ export function imitacionVote(state: ImitacionState, playerId: string, recording
 }
 
 function finishVoting(state: ImitacionState, now: number): ImitacionState {
-  const averages = Object.values(state.recordings).map((recording) => ({ playerId: recording.playerId, average: Object.values(recording.votes).reduce((sum, value) => sum + value, 0) / Math.max(1, Object.keys(recording.votes).length) }));
+  const averages = Object.values(state.recordings).filter((recording) => Object.keys(recording.votes).length > 0).map((recording) => ({ playerId: recording.playerId, average: Object.values(recording.votes).reduce((sum, value) => sum + value, 0) / Object.keys(recording.votes).length }));
   const winner = averages.slice().sort((a, b) => b.average - a.average)[0]?.playerId ?? null;
   const scores = { ...state.scores };
-  if (winner) scores[winner] = (scores[winner] ?? 0) + 1;
+  for (const { playerId, average } of averages) scores[playerId] = Math.round(average * 200);
   return { ...state, phase: "REVEAL", phaseEndsAt: now + 2_000, winnerId: winner, scores };
 }
 

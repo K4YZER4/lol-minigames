@@ -181,7 +181,7 @@ export function quienSoyResults(state: QuienSoyState) {
   const scores: Record<string, number> = {};
   for (const id of state.order) scores[id] = 0;
   for (const result of state.results) {
-    if (result.solved) scores[result.playerId] = 1;
+    if (result.solved) scores[result.playerId] = 1000;
   }
   return { scores };
 }

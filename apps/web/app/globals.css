@@ -1129,12 +1129,13 @@ input:disabled {
 .emoji-clue-value { min-height: 52px; font-size: clamp(34px, 5vw, 58px); line-height: 1; }
 .carrera-clues .picker { margin-top: 16px; }
 .carrera-result { margin-top: 16px; text-align: center; }
-.carrera-reveal-card { grid-column: 2; grid-row: 2; display: grid; justify-items: center; gap: 5px; margin: 0; text-align: center; }
+.carrera-reveal-card { grid-column: 2; grid-row: 2; display: grid; justify-items: center; gap: 5px; margin: 0; padding: 20px; text-align: center; }
 .carrera-layout.has-reveal .carrera-clues,
 .carrera-layout.has-reveal .carrera-sonido-clues,
 .carrera-layout.has-reveal .carrera-emojis-clues { grid-row: 3; }
 .carrera-reveal-card img { width: 130px; height: 130px; border-radius: 18px; object-fit: cover; margin: 6px 0; }
 .carrera-reveal-card h2 { margin: 0; }
+.carrera-reveal-card .hint { max-width: 380px; margin: 4px 0 0; }
 
 /* ¿Quién soy? (Hedbanz): campeón propio a la izquierda, mesa al centro, acción a la derecha. */
 .hedbanz-layout {
@@ -1206,8 +1207,15 @@ input:disabled {
 .party-target { display: grid; justify-items: center; text-align: center; }
 .party-target img { width: 160px; height: 160px; margin: 12px 0; border-radius: 20px; object-fit: cover; }
 .party-mode-picker { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.party-mode-option { display: grid; gap: 6px; min-width: 180px; }
 .party-mode-chip { padding: 8px 10px; border: 1px solid var(--edge); border-radius: 10px; background: var(--glass); color: var(--muted); font-size: 12px; }
 .party-mode-chip.selected { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--text); }
+.party-preset-note { margin-top: 12px; }
+.mode-settings { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+.mode-setting-stepper { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; }
+.mode-setting-stepper .step { padding: 3px 9px; }
+.step { color: var(--text); border: 1px solid var(--edge); background: var(--glass); }
+.step:hover:not(:disabled) { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, transparent); }
 .imitacion-heading .timerbox { max-width: 680px; }
 .imitacion-heading .timer { height: 14px; margin-top: 14px; border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--edge)); box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 22%, transparent); }
 .imitacion-heading .timer-fill { background: linear-gradient(90deg, var(--accent), #f5d77b); }
@@ -1692,6 +1700,8 @@ input:disabled {
 }
 
 .results-screen { max-width: 860px; margin: 0 auto; padding: 20px 0 40px; text-align: center; }
+.party-break-next { max-width: 480px; margin: 22px auto 0; padding: 20px 24px; }
+.party-break-next h2 { margin: 8px 0 20px; color: var(--accent); }
 .results-heading .star { font-size: 42px; margin-bottom: 4px; }
 .results-heading h1 { font-size: 46px; margin: 8px 0; }
 .results-target { display: grid; justify-items: center; gap: 4px; width: min(210px, 80vw); margin: 18px auto 26px; padding: 14px; border: 1px solid var(--accent); border-radius: 18px; background: color-mix(in srgb, var(--accent) 12%, transparent); box-shadow: var(--shadow); }
