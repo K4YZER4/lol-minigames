@@ -37,6 +37,8 @@ export type Room = {
   phase: "LOBBY" | "PLAYING" | "FINISHED";
   stateVersion: number;
   game: GameState | null;
+  /** Cola de modos pendiente de la Party meta. */
+  partyModes: ModeId[] | null;
   settings: {
     bomba: BombaSettings;
     impostor: ImpostorSettings;

@@ -27,6 +27,7 @@ const MODES: { id: ModeId; name: string; icon: string; blurb: string }[] = [
   { id: "imitacion", name: "Imitación de voz", icon: "★", blurb: "Imita la línea y deja que el grupo vote." },
   { id: "party", name: "Party", icon: "★", blurb: "Un jugador recibe un campeón y el resto intenta adivinarlo." },
 ];
+const PARTY_MODE_IDS = MODES.filter((mode) => mode.id !== "party");
 
 export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
   const mePlayer = room.players.find((player) => player.playerId === me);
@@ -93,9 +94,9 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
              <><div className="divider" /><p className="hint">Se revela un emoji por pista hasta completar cuatro. Adivinar antes da más puntos.</p></>
            ) : room.mode === "imitacion" ? (
              <><div className="divider" /><p className="hint">Escucha una línea, graba tu imitación y vota de 1 a 5 estrellas. No puedes votar tu propia grabación.</p><div className="stepper" style={{ marginTop: 14 }}><span className="hint">Segundos para grabar</span><button className="step" disabled={!isHost || room.settings.imitacion.recordingSeconds <= 10} onClick={() => onConfigure({ imitacion: { recordingSeconds: room.settings.imitacion.recordingSeconds - 5 } })}>−</button><strong>{room.settings.imitacion.recordingSeconds}</strong><button className="step" disabled={!isHost || room.settings.imitacion.recordingSeconds >= 30} onClick={() => onConfigure({ imitacion: { recordingSeconds: room.settings.imitacion.recordingSeconds + 5 } })}>+</button></div></>
-           ) : (
-             <><div className="divider" /><p className="hint">Party server-authoritative: el jugador activo recibe un campeón privado y los demás puntúan al acertar. Audio queda reservado hasta integrar un proveedor real.</p></>
-           )}
+            ) : (
+              <><div className="divider" /><p className="hint">Elige qué minijuegos entran en la Party. El orden se mezclará al comenzar y los puntos se acumularán en un marcador global.</p><div className="party-mode-picker">{PARTY_MODE_IDS.map((mode) => { const selected = room.settings.party.selectedModes.includes(mode.id); return <button type="button" key={mode.id} className={`party-mode-chip${selected ? " selected" : ""}`} disabled={!isHost} onClick={() => onConfigure({ party: { selectedModes: selected ? room.settings.party.selectedModes.filter((id) => id !== mode.id) : [...room.settings.party.selectedModes, mode.id] } })}>{mode.icon} {mode.name}</button>; })}</div></>
+            )}
         </section>
 
         <aside className="panel">

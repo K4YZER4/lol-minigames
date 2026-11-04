@@ -204,6 +204,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       phase: "LOBBY",
       stateVersion: 1,
       game: null,
+      partyModes: null,
       settings: {
         bomba: { ...DEFAULT_BOMBA_SETTINGS },
         impostor: { ...DEFAULT_IMPOSTOR_SETTINGS },
@@ -377,6 +378,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
 
       room.phase = "LOBBY";
       room.game = null;
+      room.partyModes = null;
       if (nextMode) room.mode = nextMode;
       room.scores = {};
       for (const player of room.players) {
@@ -481,55 +483,20 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
       const now = this.clock.now();
        const connectedIds = connected.map((p) => p.id);
        let ids = connectedIds;
+       if (room.mode === "party") {
+         const selected = room.settings.party.selectedModes.filter((mode) => mode !== "party");
+         if (selected.length === 0) return reject("INVALID", "Selecciona al menos un minijuego para la Party");
+         const shuffled = this.rng.shuffle(selected);
+         room.partyModes = shuffled.slice(1);
+         room.mode = shuffled[0]!;
+       }
        if (room.mode === "impostor" && connectedIds.length > 0) {
          const offset = room.impostorRoundOffset % connectedIds.length;
          ids = connectedIds.slice(offset).concat(connectedIds.slice(0, offset));
          room.impostorRoundOffset = (offset + 1) % connectedIds.length;
        }
 
-      room.game =
-        room.mode === "bomba"
-          ? createBomba({
-              playerIds: ids,
-              settings: room.settings.bomba,
-              clues: this.content.clues,
-              now,
-              rng: this.rng,
-            })
-          : room.mode === "impostor"
-            ? createImpostor({
-              playerIds: ids,
-              settings: room.settings.impostor,
-              pairs: this.content.pairs,
-              champions: this.content.championInfo,
-              now,
-              rng: this.rng,
-              })
-            : room.mode === "pictionary"
-              ? createPictionary({
-                playerIds: ids,
-                settings: room.settings.pictionary,
-                champions: this.content.championInfo,
-                now,
-                rng: this.rng,
-              })
-                : room.mode === "quien-soy"
-                ? createQuienSoy({
-                 playerIds: ids,
-                 settings: room.settings.quienSoy,
-                 champions: this.content.championInfo,
-                 now,
-                 rng: this.rng,
-                })
-                 : room.mode === "carrera"
-                 ? createCarrera({ playerIds: ids, settings: room.settings.carrera, champions: this.content.championInfo, clues: this.content.clues, now, rng: this.rng })
-                 : room.mode === "carrera-sonido"
-                 ? createCarreraSonido({ playerIds: ids, settings: room.settings.carreraSonido, champions: this.content.championInfo, clues: this.content.audioClips, now, rng: this.rng })
-                 : room.mode === "carrera-emojis"
-                 ? createCarreraEmojis({ playerIds: ids, settings: room.settings.carreraEmojis, champions: this.content.championInfo, clues: this.content.emojiClues, now, rng: this.rng })
-                 : room.mode === "imitacion"
-                 ? createImitacion({ playerIds: ids, settings: room.settings.imitacion, clips: this.content.audioClips, now, rng: this.rng })
-                 : createParty({ playerIds: ids, settings: room.settings.party, champions: this.content.unicaChampionInfo, now, rng: this.rng });
+       room.game = this.createGame(room, ids, now);
 
       room.phase = "PLAYING";
       room.lastActivityAt = now;
@@ -900,6 +867,26 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
     return bombaSkip(state, activeId, this.engineContext(now));
   }
 
+  private createGame(room: Room, ids: string[], now: number): GameState {
+    return room.mode === "bomba"
+      ? createBomba({ playerIds: ids, settings: room.settings.bomba, clues: this.content.clues, now, rng: this.rng })
+      : room.mode === "impostor"
+        ? createImpostor({ playerIds: ids, settings: room.settings.impostor, pairs: this.content.pairs, champions: this.content.championInfo, now, rng: this.rng })
+        : room.mode === "pictionary"
+          ? createPictionary({ playerIds: ids, settings: room.settings.pictionary, champions: this.content.championInfo, now, rng: this.rng })
+          : room.mode === "quien-soy"
+            ? createQuienSoy({ playerIds: ids, settings: room.settings.quienSoy, champions: this.content.championInfo, now, rng: this.rng })
+            : room.mode === "carrera"
+              ? createCarrera({ playerIds: ids, settings: room.settings.carrera, champions: this.content.championInfo, clues: this.content.clues, now, rng: this.rng })
+              : room.mode === "carrera-sonido"
+                ? createCarreraSonido({ playerIds: ids, settings: room.settings.carreraSonido, champions: this.content.championInfo, clues: this.content.audioClips, now, rng: this.rng })
+                : room.mode === "carrera-emojis"
+                  ? createCarreraEmojis({ playerIds: ids, settings: room.settings.carreraEmojis, champions: this.content.championInfo, clues: this.content.emojiClues, now, rng: this.rng })
+                  : room.mode === "imitacion"
+                    ? createImitacion({ playerIds: ids, settings: room.settings.imitacion, clips: this.content.audioClips, now, rng: this.rng })
+                    : createParty({ playerIds: ids, settings: room.settings.party, champions: this.content.unicaChampionInfo, now, rng: this.rng });
+  }
+
   private syncPhase(room: Room): boolean {
     if (!room.game) return false;
     const finished =
@@ -923,8 +910,7 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                 : (room.game as PartyState).phase === "FINISHED";
     if (!finished || room.phase === "FINISHED") return false;
 
-    room.phase = "FINISHED";
-    const results =
+     const results =
       room.mode === "bomba"
         ? bombaResults(room.game as BombaState)
         : room.mode === "impostor"
@@ -942,10 +928,25 @@ export class RoomService implements OnModuleInit, OnModuleDestroy {
                   : room.mode === "imitacion"
                     ? imitacionResults(room.game as ImitacionState)
                   : partyResults(room.game as PartyState);
-    for (const [id, score] of Object.entries(results.scores)) {
-      room.scores[id] = (room.scores[id] ?? 0) + score;
-    }
-    return true;
+     for (const [id, score] of Object.entries(results.scores)) {
+       room.scores[id] = (room.scores[id] ?? 0) + score;
+     }
+     if (room.partyModes?.length) {
+       const nextMode = room.partyModes.shift()!;
+       room.mode = nextMode;
+       const ids = room.players.filter((player) => player.connected).map((player) => player.id);
+       room.game = this.createGame(room, ids, this.clock.now());
+       room.phase = "PLAYING";
+       room.stateVersion++;
+       return true;
+     }
+     if (room.partyModes) {
+       room.mode = "party";
+       room.partyModes = null;
+       room.game = null;
+     }
+     room.phase = "FINISHED";
+     return true;
   }
 
   private expireLobbyPlayers(room: Room, now: number): boolean {

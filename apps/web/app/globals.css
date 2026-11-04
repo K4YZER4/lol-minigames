@@ -1205,6 +1205,9 @@ input:disabled {
 .party-sidebar { grid-column: 2; grid-row: 2; position: sticky; top: 12px; margin: 0; }
 .party-target { display: grid; justify-items: center; text-align: center; }
 .party-target img { width: 160px; height: 160px; margin: 12px 0; border-radius: 20px; object-fit: cover; }
+.party-mode-picker { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.party-mode-chip { padding: 8px 10px; border: 1px solid var(--edge); border-radius: 10px; background: var(--glass); color: var(--muted); font-size: 12px; }
+.party-mode-chip.selected { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--text); }
 .imitacion-heading .timerbox { max-width: 680px; }
 .imitacion-heading .timer { height: 14px; margin-top: 14px; border: 1px solid color-mix(in srgb, var(--accent) 40%, var(--edge)); box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 22%, transparent); }
 .imitacion-heading .timer-fill { background: linear-gradient(90deg, var(--accent), #f5d77b); }
