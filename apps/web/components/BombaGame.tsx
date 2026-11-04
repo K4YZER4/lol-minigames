@@ -33,7 +33,6 @@ export function BombaGame({ room, me, priv, champions, flash, onAnswer, isHost, 
         <p className="mini" style={{ marginTop: 10 }}>{game.heat === "cold" ? "La mecha está fría" : game.heat === "warm" ? "La mecha se está calentando" : "¡La mecha está por estallar!"}</p>
       </section>}
       {!game.finished && isMyTurn ? <div className="answer"><ChampionPicker champions={champions} onPick={onAnswer} submitLabel="Pasar bomba →" /></div> : null}
-      {!game.finished && !isMyTurn ? <p className="muted">Solo {active?.name ?? "el jugador activo"} puede responder. Mira la pista y sufre en silencio.</p> : null}
     </div>
 
     <section className="panel">
@@ -43,7 +42,6 @@ export function BombaGame({ room, me, priv, champions, flash, onAnswer, isHost, 
         <div className="hearts">{Array.from({ length: room.settings.bomba.lives }).map((_, i) => <span key={i} className={i >= (player.lives ?? 0) ? "lost" : ""}>♥</span>)}</div>
         {player.eliminated ? <span className="tag tag-red">fuera</span> : null}
       </div>)}</div>
-      {priv?.mode === "bomba" && priv.youAreActive && !game.finished ? <p className="hint" style={{ marginTop: 16 }}>Tienes la bomba. Una respuesta incorrecta te cuesta {(room.settings.bomba.penaltyMs / 1000).toFixed(0)} s.</p> : null}
     </section>
   </div>;
 }

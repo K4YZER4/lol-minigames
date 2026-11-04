@@ -115,7 +115,6 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
               </div>
             ))}
           </div>
-          <p className="mini" style={{ marginTop: 16 }}>La conversación va por Discord. Aquí ponemos el juego.</p>
         </aside>
       </div>
 

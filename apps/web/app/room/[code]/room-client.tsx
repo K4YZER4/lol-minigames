@@ -254,7 +254,7 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
               className="input"
               value={nickname}
               maxLength={16}
-              placeholder="Ej. Horacio"
+               placeholder="Ej. Invocador"
               onChange={(event) => setNickname(event.target.value)}
               onKeyDown={(event) => {
                 if (event.key === "Enter") void submitJoin();
@@ -272,9 +272,6 @@ export function RoomClient({ code, devSession }: { code: string; devSession?: { 
               {joinError}
             </p>
           ) : null}
-          <p className="hint" style={{ marginTop: 12 }}>
-            Si la sala ya empezó no se puede entrar como jugador nuevo.
-          </p>
         </section>
       </main>
     );
