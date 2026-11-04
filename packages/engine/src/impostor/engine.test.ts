@@ -150,6 +150,7 @@ describe("impostor", () => {
     expect(current.phase).toBe("REVEAL");
     expect(current.reveal?.caught).toBe(true);
     expect(current.reveal?.winners).not.toContain(impostor);
+    expect(current.reveal?.scores[current.order.find((id) => id !== impostor)!]).toBe(1000);
   });
 
   it("gana el infiltrado cuando hay empate", () => {
@@ -165,6 +166,7 @@ describe("impostor", () => {
     expect(current.phase).toBe("REVEAL");
     expect(current.reveal?.caught).toBe(false);
     expect(current.reveal?.winners).toContain(impostor);
+    expect(current.reveal?.scores[impostor]).toBe(1000);
   });
 
   it("gana el infiltrado si nadie vota", () => {

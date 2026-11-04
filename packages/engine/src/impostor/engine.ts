@@ -107,10 +107,10 @@ function tally(
 
   if (caught) {
     for (const [voter, target] of Object.entries(state.votes)) {
-      if (target && state.impostorIds.includes(target)) scores[voter] = 1;
+      if (target && state.impostorIds.includes(target)) scores[voter] = 1000;
     }
   } else {
-    for (const id of state.impostorIds) scores[id] = 2;
+    for (const id of state.impostorIds) scores[id] = 1000;
   }
 
   const assignment: Record<string, ChampionInfo> = {};

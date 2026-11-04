@@ -74,7 +74,7 @@ describe("quién soy (hedbanz)", () => {
 
     expect(result.state.activeIndex).toBe(1);
     expect(result.state.results).toHaveLength(1);
-    expect(quienSoyResults(result.state).scores.one).toBe(1);
+    expect(quienSoyResults(result.state).scores.one).toBe(1000);
     expect(quienSoyPrivateView(result.state, "one").yourChampion?.id).toBe(own);
     expect(quienSoyPublicView(result.state).revealed[0]?.champion?.id).toBe(own);
   });
@@ -106,6 +106,6 @@ describe("quién soy (hedbanz)", () => {
     }
     expect(state.phase).toBe("REVEAL");
     expect(state.results).toHaveLength(3);
-    expect(quienSoyResults(state).scores).toEqual({ one: 1, two: 1, three: 1 });
+    expect(quienSoyResults(state).scores).toEqual({ one: 1000, two: 1000, three: 1000 });
   });
 });

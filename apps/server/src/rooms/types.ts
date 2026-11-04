@@ -1,4 +1,4 @@
-import type { BombaSettings, CarreraEmojisSettings, CarreraSettings, CarreraSonidoSettings, DescripcionSettings, DuoSettings, ImitacionSettings, ImpostorSettings, ModeId, PictionarySettings, QuienSoySettings, PartySettings } from "@lolgames/protocol";
+import type { BombaSettings, CarreraEmojisSettings, CarreraSettings, CarreraSonidoSettings, ImitacionSettings, ImpostorSettings, ModeId, PictionarySettings, QuienSoySettings, PartySettings } from "@lolgames/protocol";
 import type { BombaState } from "@lolgames/engine";
 import type { ImpostorState } from "@lolgames/engine";
 import type { PictionaryState } from "@lolgames/engine";
@@ -7,8 +7,6 @@ import type { CarreraState } from "@lolgames/engine";
 import type { CarreraSonidoState } from "@lolgames/engine";
 import type { CarreraEmojisState } from "@lolgames/engine";
 import type { ImitacionState } from "@lolgames/engine";
-import type { DescripcionState } from "@lolgames/engine";
-import type { DuoState } from "@lolgames/engine";
 import type { PartyState } from "@lolgames/engine";
 
 export type Player = {
@@ -26,7 +24,7 @@ export type Player = {
   recentRequests: string[];
 };
 
-export type GameState = BombaState | ImpostorState | PictionaryState | QuienSoyState | CarreraState | CarreraSonidoState | CarreraEmojisState | ImitacionState | DescripcionState | DuoState | PartyState;
+export type GameState = BombaState | ImpostorState | PictionaryState | QuienSoyState | CarreraState | CarreraSonidoState | CarreraEmojisState | ImitacionState | PartyState;
 
 export type Room = {
   id: string;
@@ -36,9 +34,12 @@ export type Room = {
   players: Player[];
   hostId: string | null;
   mode: ModeId;
-  phase: "LOBBY" | "PLAYING" | "FINISHED";
+  phase: "LOBBY" | "PLAYING" | "PARTY_BREAK" | "FINISHED";
   stateVersion: number;
   game: GameState | null;
+  /** Cola de modos pendiente de la Party meta. */
+  partyModes: ModeId[] | null;
+  partyBreak: { nextMode: ModeId; endsAt: number } | null;
   settings: {
     bomba: BombaSettings;
     impostor: ImpostorSettings;
@@ -48,8 +49,6 @@ export type Room = {
     carreraSonido: CarreraSonidoSettings;
     carreraEmojis: CarreraEmojisSettings;
     imitacion: ImitacionSettings;
-    descripcion: DescripcionSettings;
-    duo: DuoSettings;
     party: PartySettings;
   };
   scores: Record<string, number>;
@@ -73,7 +72,4 @@ export type IncomingAction =
   | { kind: "carrera-emojis:answer"; requestId: string; championId: string }
   | { kind: "imitacion:submit"; requestId: string; audioData: string; mimeType: string }
   | { kind: "imitacion:vote"; requestId: string; recordingId: string; stars: number }
-  | { kind: "descripcion:clue"; requestId: string; text: string }
-  | { kind: "descripcion:guess"; requestId: string; text: string }
-  | { kind: "duo:submit"; requestId: string; championId: string }
   | { kind: "party:guess"; requestId: string; championId: string };

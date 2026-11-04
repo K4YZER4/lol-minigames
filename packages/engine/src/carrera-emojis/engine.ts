@@ -1,4 +1,5 @@
 import type { Result, Rng } from "../core/rng";
+import { raceScore } from "../core/race-score";
 
 export type CarreraEmojisClue = { clueId: string; championId: string; emojis: string[] };
 export type CarreraEmojisSettings = { clueSeconds: number; rounds: number };
@@ -41,8 +42,10 @@ export function carreraEmojisAnswer(state: CarreraEmojisState, playerId: string,
   if (!ctx.clues.some((clue) => clue.championId === championId)) return { state, effects: [], reject: fail("UNKNOWN_CHAMPION", "Ese campeón no existe") };
   const answers = { ...state.answers, [playerId]: championId };
   if (championId !== state.targetId) return { state: { ...state, answers }, effects: [{ type: "carrera-emojis:wrong", playerId }], reject: fail("WRONG_ANSWER", "No es ese campeón") };
-  const scores = { ...state.scores, [playerId]: (state.scores[playerId] ?? 0) + Math.max(1, 4 - state.clueIndex) };
-  return { state: { ...state, answers, scores, winnerId: playerId, phase: "REVEAL", phaseEndsAt: ctx.now + 6_000 }, effects: [{ type: "carrera-emojis:correct", playerId }] };
+  const earlier = Object.values(state.answers).filter((answer) => answer === state.targetId).length;
+  const scores = { ...state.scores, [playerId]: (state.scores[playerId] ?? 0) + raceScore(state.clueIndex, earlier) };
+  const allAnswered = Object.keys(answers).length === state.players.length;
+  return { state: { ...state, answers, scores, winnerId: state.winnerId ?? playerId, phase: allAnswered ? "REVEAL" : "CLUES", phaseEndsAt: allAnswered ? ctx.now + 6_000 : state.phaseEndsAt }, effects: [{ type: "carrera-emojis:correct", playerId }] };
 }
 
 export function carreraEmojisTick(state: CarreraEmojisState, ctx: CarreraEmojisContext): Result<CarreraEmojisState> {
@@ -59,5 +62,14 @@ export function carreraEmojisTick(state: CarreraEmojisState, ctx: CarreraEmojisC
 export function carreraEmojisPublicView(state: CarreraEmojisState) {
   return { mode: "carrera-emojis" as const, phase: state.phase, phaseEndsAt: state.phaseEndsAt, round: state.round, totalRounds: state.settings.rounds, clueIndex: state.clueIndex, clues: [{ clueId: state.clues.clueId, emojis: state.clues.emojis.slice(0, state.clueIndex + 1) }], winnerId: state.winnerId, target: state.phase === "REVEAL" || state.phase === "FINISHED" ? state.champions[state.targetId] ?? null : null, scores: state.scores };
 }
-export function carreraEmojisPrivateView(state: CarreraEmojisState, playerId: string) { return { mode: "carrera-emojis" as const, hasAnswered: Boolean(state.answers[playerId]), answer: state.answers[playerId] ?? null }; }
+export function carreraEmojisPrivateView(state: CarreraEmojisState, playerId: string) {
+  const answer = state.answers[playerId] ?? null;
+  return {
+    mode: "carrera-emojis" as const,
+    hasAnswered: Boolean(answer),
+    answer,
+    /** Solo para quien acertó: confirma el campeón sin revelarlo al resto. */
+    revealedTarget: answer === state.targetId ? state.champions[state.targetId] ?? null : null,
+  };
+}
 export function carreraEmojisResults(state: CarreraEmojisState) { return { scores: state.scores }; }

@@ -1,4 +1,5 @@
 import type { Result, Rng } from "../core/rng";
+import { raceScore } from "../core/race-score";
 
 export type CarreraSonidoClue = { clueId: string; championId: string; audioUrl: string };
 export type CarreraSonidoSettings = { clueSeconds: number; rounds: number };
@@ -39,8 +40,10 @@ export function carreraSonidoAnswer(state: CarreraSonidoState, playerId: string,
   if (!ctx.clues.some((clue) => clue.championId === championId)) return { state, effects: [], reject: fail("UNKNOWN_CHAMPION", "Ese campeón no existe") };
   const answers = { ...state.answers, [playerId]: championId };
   if (championId !== state.targetId) return { state: { ...state, answers }, effects: [], reject: fail("WRONG_ANSWER", "No es ese campeón") };
-  const scores = { ...state.scores, [playerId]: (state.scores[playerId] ?? 0) + Math.max(1, state.clues.length - state.clueIndex) };
-  return { state: { ...state, answers, scores, winnerId: playerId, phase: "REVEAL", phaseEndsAt: ctx.now + 6_000 }, effects: [{ type: "carrera-sonido:correct", playerId }] };
+  const earlier = Object.values(state.answers).filter((answer) => answer === state.targetId).length;
+  const scores = { ...state.scores, [playerId]: (state.scores[playerId] ?? 0) + raceScore(state.clueIndex, earlier) };
+  const allAnswered = Object.keys(answers).length === state.players.length;
+  return { state: { ...state, answers, scores, winnerId: state.winnerId ?? playerId, phase: allAnswered ? "REVEAL" : "CLUES", phaseEndsAt: allAnswered ? ctx.now + 6_000 : state.phaseEndsAt }, effects: [{ type: "carrera-sonido:correct", playerId }] };
 }
 
 export function carreraSonidoTick(state: CarreraSonidoState, ctx: CarreraSonidoContext): Result<CarreraSonidoState> {
@@ -57,5 +60,14 @@ export function carreraSonidoTick(state: CarreraSonidoState, ctx: CarreraSonidoC
 export function carreraSonidoPublicView(state: CarreraSonidoState) {
   return { mode: "carrera-sonido" as const, phase: state.phase, phaseEndsAt: state.phaseEndsAt, round: state.round, totalRounds: state.settings.rounds, clueIndex: state.clueIndex, clues: state.clues.slice(0, state.clueIndex + 1).map(({ clueId, audioUrl }) => ({ clueId, audioUrl })), winnerId: state.winnerId, target: state.phase === "REVEAL" || state.phase === "FINISHED" ? state.champions[state.targetId] ?? null : null, scores: state.scores };
 }
-export function carreraSonidoPrivateView(state: CarreraSonidoState, playerId: string) { return { mode: "carrera-sonido" as const, hasAnswered: Boolean(state.answers[playerId]), answer: state.answers[playerId] ?? null }; }
+export function carreraSonidoPrivateView(state: CarreraSonidoState, playerId: string) {
+  const answer = state.answers[playerId] ?? null;
+  return {
+    mode: "carrera-sonido" as const,
+    hasAnswered: Boolean(answer),
+    answer,
+    /** Solo para quien acertó: confirma el campeón sin revelarlo al resto. */
+    revealedTarget: answer === state.targetId ? state.champions[state.targetId] ?? null : null,
+  };
+}
 export function carreraSonidoResults(state: CarreraSonidoState) { return { scores: state.scores }; }

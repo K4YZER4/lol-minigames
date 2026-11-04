@@ -31,8 +31,6 @@ Abre cualquiera en el navegador:
 | Carrera de pistas: Sonido | `http://localhost:3000/dev/test/carrera-sonido` | 4 |
 | Carrera de emojis | `http://localhost:3000/dev/test/carrera-emojis` | 4 |
 | Imitación de voz | `http://localhost:3000/dev/test/imitacion` | 4 |
-| Descripción | `http://localhost:3000/dev/test/descripcion` | 4 |
-| Dúo a ciegas | `http://localhost:3000/dev/test/duo` | 4 |
 | Party | `http://localhost:3000/dev/test/party` | 4 |
 
 ### Preview del filtro de audio
