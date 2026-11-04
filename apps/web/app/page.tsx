@@ -10,7 +10,7 @@ import { lastAvatarId, loadAvatars, saveAvatarId, type Avatar } from "@/lib/avat
 import type { JoinAck } from "@lolgames/protocol";
 
 const LANDING_MODES = [
-  ["◕", "Bomba", "Adivina el campeón y pásala antes de que explote."],
+  ["◕", "Bomba", "Adivina el campeón y pasa la bomba antes de que explote."],
   ["◈", "Impostor", "Da pistas, discute y descubre al infiltrado."],
   ["〰", "Pictionary", "Dibuja un campeón y deja que tu equipo lo adivine."],
   ["?", "¿Quién soy?", "Todos ven tu campeón menos tú."],
@@ -117,7 +117,7 @@ export default function HomePage() {
 
         <section id="modos" className="mode-preview">
           <div className="eyebrow">Elige cómo se juega</div>
-          <h2>Una sala. Muchas formas de liarla.</h2>
+          <h2>Una sala. Varias formas de jugar.</h2>
           <div className="mode-preview-grid">
             {LANDING_MODES.map(([icon, name, description]) => <article className="glass mode-preview-card" key={name}>
               <div className="mode-preview-icon">{icon}</div>
