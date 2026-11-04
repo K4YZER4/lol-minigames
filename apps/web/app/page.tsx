@@ -168,7 +168,7 @@ export default function HomePage() {
           id="nickname"
           value={nickname}
           maxLength={16}
-          placeholder="Ej. Horacio"
+          placeholder="Ej. Invocador"
           autoComplete="off"
           onChange={(event) => setNickname(event.target.value)}
           onKeyDown={(event) => {
@@ -186,11 +186,6 @@ export default function HomePage() {
           </p>
         ) : null}
 
-        <p className="mini" style={{ marginTop: 18 }}>
-          {mode === "create"
-            ? "Vas a ser el anfitrión: elegís el modo y arrancás la partida."
-            : "Usa el mismo apodo de siempre para recuperar tu lugar si se corta la conexión."}
-        </p>
       </div>
       {errorCode === "ROOM_NOT_FOUND" ? <RoomNotFoundModal code={code} onHome={() => router.push("/")} /> : null}
     </main>

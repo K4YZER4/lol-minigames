@@ -40,9 +40,6 @@ export function QuienSoyGame({ room, me, priv, champions, onGuess }: Props) {
       <section className="panel center hedbanz-heading">
         <div className="eyebrow">¿Quién soy? · Hedbanz</div>
         <h1>{active ? "¡Es tu turno!" : `Turno de ${activeName}`}</h1>
-        <p className="muted">
-          Todos ven tu campeón menos tú. Pregunta de sí/no por Discord y adivina aquí.
-        </p>
         <div className="timerbox">
           <Timer
             endsAt={game.phaseEndsAt}
@@ -67,18 +64,12 @@ export function QuienSoyGame({ room, me, priv, champions, onGuess }: Props) {
           <>
             <div className="hedbanz-mine-img is-hidden"><span>?</span></div>
             <h2>Secreto</h2>
-            <p className="hint">
-              {active
-                ? "Nadie te lo va a decir. Pregunta y adivina."
-                : "Se revela cuando termine tu turno."}
-            </p>
           </>
         )}
       </section>
 
       <section className="panel hedbanz-board-panel">
         <h2>La mesa</h2>
-        <p className="hint">Cada jugador tiene su campeón en la frente. Tú solo no ves el tuyo.</p>
         <div className="hedbanz-board">
           {game.order.map((playerId) => {
             const champion = championOf(playerId);
@@ -125,9 +116,6 @@ export function QuienSoyGame({ room, me, priv, champions, onGuess }: Props) {
           <section className="glass private hedbanz-guess">
             <div className="eyebrow">Tu turno</div>
             <h2>¿Quién crees que eres?</h2>
-            <p className="hint">
-              Acierto: +1000 puntos y termina tu turno. Fallo: puedes seguir intentando hasta que acabe el tiempo.
-            </p>
             <ChampionPicker champions={champions} onPick={onGuess} submitLabel="Adivinar campeón" />
             {wrongGuesses.length > 0 ? (
               <div className="hedbanz-attempts">
@@ -147,14 +135,10 @@ export function QuienSoyGame({ room, me, priv, champions, onGuess }: Props) {
               <>
                 <div className="hedbanz-watch-img"><img src={activeChampion.imageUrl} alt={activeChampion.name} /></div>
                 <h2>{activeChampion.name}</h2>
-                <p className="muted">{activeName} tiene que descubrirlo con preguntas de sí/no.</p>
               </>
             ) : (
               <p className="hint">Esperando el campeón del turno…</p>
             )}
-            {!myChampion ? (
-              <p className="mini">Tu campeón sigue oculto. Lo verás al terminar tu turno.</p>
-            ) : null}
           </section>
         )}
       </div>
