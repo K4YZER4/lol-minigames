@@ -74,7 +74,7 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
                   </div>
                 </div>
                 <div>
-                  <span className="hint">Mecha</span>
+                  <span className="hint">Bomba</span>
                   <div className="chips" style={{ marginTop: 8 }}>
                     {FUSE_PRESETS.map((preset) => {
                       const active = fuse.minFuseMs === preset.minFuseMs && fuse.maxFuseMs === preset.maxFuseMs;
@@ -83,14 +83,14 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
                   </div>
                 </div>
               </div>
-              <p className="hint" style={{ marginTop: 10 }}>Fallar descuenta {(fuse.penaltyMs / 1000).toFixed(0)} s y siempre tendrás al menos {(fuse.minMarginMs / 1000).toFixed(0)} s para pasarla.</p>
+              <p className="hint" style={{ marginTop: 10 }}>Si fallas, se descuentan {(fuse.penaltyMs / 1000).toFixed(0)} s y siempre tendrás al menos {(fuse.minMarginMs / 1000).toFixed(0)} s para pasar la bomba.</p>
             </>
            ) : room.mode === "impostor" ? (
              <><div className="divider" /><p className="hint">Un infiltrado con 3 a 6 jugadores, dos desde 7.</p><div className="mode-settings"><SettingStepper label="Pistas" value={room.settings.impostor.clueSeconds} min={10} max={120} step={10} disabled={!isHost} onChange={(value) => onConfigure({ impostor: { clueSeconds: value } })} /><SettingStepper label="Discusión" value={room.settings.impostor.discussionSeconds} min={20} max={180} step={10} disabled={!isHost} onChange={(value) => onConfigure({ impostor: { discussionSeconds: value } })} /><SettingStepper label="Votación" value={room.settings.impostor.voteSeconds} min={15} max={120} step={15} disabled={!isHost} onChange={(value) => onConfigure({ impostor: { voteSeconds: value } })} /></div></>
           ) : room.mode === "pictionary" ? (
             <><div className="divider" /><p className="hint">Por turnos, una persona dibuja durante {room.settings.pictionary.drawingSeconds} s. El resto intenta adivinar el campeón.</p><div className="stepper" style={{ marginTop: 14 }}><span className="hint">Rondas</span><button className="step" disabled={!isHost || room.settings.pictionary.rounds <= 1} onClick={() => onConfigure({ pictionary: { rounds: room.settings.pictionary.rounds - 1 } })}>−</button><strong>{room.settings.pictionary.rounds}</strong><button className="step" disabled={!isHost || room.settings.pictionary.rounds >= 10} onClick={() => onConfigure({ pictionary: { rounds: room.settings.pictionary.rounds + 1 } })}>+</button></div></>
           ) : room.mode === "quien-soy" ? (
-            <><div className="divider" /><p className="hint">Cada jugador recibe un campeón secreto: todos lo ven menos él. En tu turno puedes adivinar con el buscador. Acierto: +1000 puntos y termina tu turno; fallo: sigues intentando. Jugáis una vez cada uno.</p><div className="stepper" style={{ marginTop: 14 }}><span className="hint">Segundos por turno</span><button className="step" disabled={!isHost || room.settings.quienSoy.turnSeconds <= 20} onClick={() => onConfigure({ quienSoy: { turnSeconds: room.settings.quienSoy.turnSeconds - 10 } })}>−</button><strong>{room.settings.quienSoy.turnSeconds}</strong><button className="step" disabled={!isHost || room.settings.quienSoy.turnSeconds >= 180} onClick={() => onConfigure({ quienSoy: { turnSeconds: room.settings.quienSoy.turnSeconds + 10 } })}>+</button></div></>
+            <><div className="divider" /><p className="hint">Cada jugador recibe un campeón secreto: todos lo ven menos esa persona. En su turno puede adivinar con el buscador. Acierto: +1000 puntos y termina el turno; fallo: puede seguir intentando. Cada jugador juega una vez.</p><div className="stepper" style={{ marginTop: 14 }}><span className="hint">Segundos por turno</span><button className="step" disabled={!isHost || room.settings.quienSoy.turnSeconds <= 20} onClick={() => onConfigure({ quienSoy: { turnSeconds: room.settings.quienSoy.turnSeconds - 10 } })}>−</button><strong>{room.settings.quienSoy.turnSeconds}</strong><button className="step" disabled={!isHost || room.settings.quienSoy.turnSeconds >= 180} onClick={() => onConfigure({ quienSoy: { turnSeconds: room.settings.quienSoy.turnSeconds + 10 } })}>+</button></div></>
            ) : room.mode === "carrera" ? (
              <><div className="divider" /><p className="hint">Se revelan pistas progresivamente. Todos pueden responder y los puntos bajan con cada pista.</p><div className="mode-settings"><SettingStepper label="Segundos por pista" value={room.settings.carrera.clueSeconds} min={3} max={30} step={1} disabled={!isHost} onChange={(value) => onConfigure({ carrera: { clueSeconds: value } })} /><SettingStepper label="Rondas" value={room.settings.carrera.rounds} min={1} max={10} step={1} disabled={!isHost} onChange={(value) => onConfigure({ carrera: { rounds: value } })} /></div></>
            ) : room.mode === "carrera-sonido" ? (

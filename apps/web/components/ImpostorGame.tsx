@@ -21,7 +21,7 @@ export function ImpostorGame({ room, me, priv, onAck, onClue, onVote, onRepeatQu
   const hasVoted = priv?.mode === "impostor" ? priv.hasVoted : false;
   const s = room.settings.impostor;
   const totalMs = game.phase === "ASSIGNMENT" ? s.assignmentSeconds * 1000 : game.phase === "CLUES" ? s.clueSeconds * 1000 : game.phase === "DISCUSSION" ? s.discussionSeconds * 1000 : s.voteSeconds * 1000;
-  const headline: Record<string, string> = { ASSIGNMENT: "Que no te lean tan fácil.", CLUES: "Una pista cada uno.", DISCUSSION: "Ahora sí, sospechen.", VOTING: "¿Quién es el infiltrado?", REVEAL: game.reveal?.caught ? "Atraparon al infiltrado." : "El infiltrado se salió con la suya." };
+  const headline: Record<string, string> = { ASSIGNMENT: "No dejes que descubran tu campeón.", CLUES: "Una pista por persona.", DISCUSSION: "Ahora toca debatir.", VOTING: "¿Quién es el infiltrado?", REVEAL: game.reveal?.caught ? "Atraparon al infiltrado." : "El infiltrado escapó." };
   const orderCards = game.clueOrder.map((id, index) => {
     const player = playerOf(id);
     return { id, index, player, status: index < game.clueIndex ? "done" : index === game.clueIndex && game.phase === "CLUES" ? "current" : "pending" } as const;
@@ -54,7 +54,7 @@ export function ImpostorGame({ room, me, priv, onAck, onClue, onVote, onRepeatQu
           <span className="tag tag-red">infiltrado</span>
         </article>)}
       </div>
-      <div className="center"><span className={`tag ${reveal.caught ? "tag-green" : "tag-red"}`}>{reveal.caught ? "ganó la tripulación" : "ganó el infiltrado"}</span></div>
+      <div className="center"><span className={`tag ${reveal.caught ? "tag-green" : "tag-red"}`}>{reveal.caught ? "ganó el equipo" : "ganó el infiltrado"}</span></div>
 
       <div className="divider" />
       <div className="eyebrow">Puntos de esta ronda</div>
