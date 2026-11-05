@@ -1,4 +1,4 @@
-import { Inject, Injectable, NotFoundException } from "@nestjs/common";
+import { Inject, Injectable, Logger, NotFoundException, type OnModuleInit } from "@nestjs/common";
 import { existsSync, readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import {
@@ -14,6 +14,12 @@ const PUBLIC_BASE =
   `http://localhost:${process.env.PORT ?? 3001}`;
 
 const IMAGE_CACHE_LIMIT = 600;
+const COMMUNITY_DRAGON_SUMMARY_URL =
+  process.env.COMMUNITY_DRAGON_CHAMPION_SUMMARY_URL ??
+  "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-summary.json";
+const COMMUNITY_DRAGON_AUDIO_BASE =
+  process.env.COMMUNITY_DRAGON_AUDIO_BASE ??
+  "https://raw.communitydragon.org/latest/plugins/rcp-be-lol-game-data/global/default/v1/champion-sfx-audios";
 const AUDIO_ROOT_CANDIDATES = [
   resolve(process.cwd(), "apps/web/public/audio/vo/es-mx"),
   resolve(__dirname, "../../../web/public/audio/vo/es-mx"),
@@ -24,13 +30,15 @@ type AudioClip = { clueId: string; championId: string; audioUrl: string; filePat
 type EmojiClue = { clueId: string; championId: string; emojis: string[] };
 
 @Injectable()
-export class ContentService {
+export class ContentService implements OnModuleInit {
+  private readonly logger = new Logger(ContentService.name);
   private readonly bundle: ContentBundle = loadContent();
   private readonly info: Record<string, { id: string; name: string; imageUrl: string }>;
   private readonly clueList: ContentClue[];
   private readonly clueById: Map<string, ContentClue>;
   private readonly imageCache = new Map<string, Buffer>();
   private readonly audioById = new Map<string, AudioClip>();
+  private remoteAudioClips: { clueId: string; championId: string; audioUrl: string }[] = [];
   private readonly emojiList: EmojiClue[];
 
   constructor() {
@@ -112,7 +120,32 @@ export class ContentService {
   }
 
   get audioClips(): { clueId: string; championId: string; audioUrl: string }[] {
+    if (this.remoteAudioClips.length > 0) return this.remoteAudioClips;
     return [...this.audioById.values()].map(({ clueId, championId, audioUrl }) => ({ clueId, championId, audioUrl }));
+  }
+
+  async onModuleInit(): Promise<void> {
+    try {
+      const response = await fetch(COMMUNITY_DRAGON_SUMMARY_URL);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const summary = await response.json() as { id?: number; alias?: string; name?: string }[];
+      const byAlias = new Map(summary.flatMap((champion) => {
+        const names = [champion.alias, champion.name].filter((name): name is string => Boolean(name));
+        return names.map((name) => [name.toLowerCase(), champion.id] as const);
+      }));
+      this.remoteAudioClips = this.bundle.champions.flatMap((champion) => {
+        const id = byAlias.get(champion.id.toLowerCase());
+        if (!id || id <= 0) return [];
+        return [{
+          clueId: `community-audio-${id}`,
+          championId: champion.id,
+          audioUrl: `${COMMUNITY_DRAGON_AUDIO_BASE}/${id}.ogg`,
+        }];
+      });
+      this.logger.log(`CommunityDragon: ${this.remoteAudioClips.length} audios remotos disponibles`);
+    } catch (error) {
+      this.logger.warn(`CommunityDragon no disponible; se usará el catálogo local: ${error instanceof Error ? error.message : String(error)}`);
+    }
   }
 
   get emojiClues(): EmojiClue[] {
