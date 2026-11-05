@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { getUiVolume, UI_VOLUME_EVENT } from "@/lib/sounds";
+import { useTranslation } from "@/lib/i18n";
 
 type Props = {
   src: string;
@@ -10,6 +11,7 @@ type Props = {
 };
 
 export function AudioDistortionPlayer({ src, level, label }: Props) {
+  const { t } = useTranslation();
   const audioRef = useRef<HTMLAudioElement>(null);
   const [playing, setPlaying] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -23,16 +25,25 @@ export function AudioDistortionPlayer({ src, level, label }: Props) {
     return () => window.removeEventListener(UI_VOLUME_EVENT, applyVolume);
   }, []);
 
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.pause();
+    audio.load();
+    setPlaying(false);
+    setError(null);
+  }, [src]);
+
   function play() {
     const audio = audioRef.current;
     if (!audio) {
-      setError("No se encontró el reproductor de audio.");
+      setError(t.audioPlayerMissing);
       return;
     }
     setError(null);
     void audio.play().then(() => setPlaying(true)).catch(() => {
       setPlaying(false);
-      setError("No se pudo reproducir esta pista. Revisa que el servidor tenga los audios locales.");
+      setError(t.audioPlaybackError);
     });
   }
 
@@ -43,11 +54,11 @@ export function AudioDistortionPlayer({ src, level, label }: Props) {
 
   return (
     <div className="audio-player">
-      <audio ref={audioRef} src={src} preload="metadata" onEnded={() => setPlaying(false)} onPause={() => setPlaying(false)} onError={() => setError("La pista no está disponible en el endpoint de audio.")} />
+      <audio ref={audioRef} src={src} preload="metadata" onEnded={() => setPlaying(false)} onPause={() => setPlaying(false)} onError={() => setError(t.audioEndpointError)} />
       <button className="primary" type="button" onClick={playing ? stop : play}>
-        {playing ? "Pausar audio" : "▶ Escuchar pista"}
+        {playing ? t.pauseAudio : `▶ ${label ?? t.listenClue}`}
       </button>
-      <span className="hint">{label ?? `Pista sonora ${level}`}</span>
+      {!label ? <span className="hint">{t.soundClue(level, level)}</span> : null}
       {error ? <span className="hint audio-player-error">{error}</span> : null}
     </div>
   );

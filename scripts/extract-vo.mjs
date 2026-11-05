@@ -33,8 +33,6 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const LOCALE = "es-mx";
-const LOCALE_WAD = "es_MX";
 const CLIPS_PER_CHAMPION = 5;
 
 const CHAMPIONS_DIR =
@@ -45,12 +43,20 @@ const VGMSTREAM = process.env.VGMSTREAM ?? path.join(ROOT, "tools", "vgmstream-c
 const FFMPEG = process.env.FFMPEG ?? "ffmpeg";
 const FFPROBE = process.env.FFPROBE ?? "ffprobe";
 
-const OUT_DIR = path.join(ROOT, "apps", "web", "public", "audio", "vo", LOCALE);
-const MANIFEST_PATH = path.join(OUT_DIR, "manifest.json");
 const TMP_ROOT = path.join(os.tmpdir(), "lolgames-vo");
 
 const args = process.argv.slice(2);
 const force = args.includes("--force");
+const localeArg = args.find((a) => a.startsWith("--locale="))?.split("=")[1] ?? "es-mx";
+const LOCALE_CONFIG = {
+  "es-mx": { output: "es-mx", wad: "es_MX", label: "español mexicano" },
+  "en-us": { output: "en-us", wad: "en_US", label: "inglés estadounidense" },
+}[localeArg];
+if (!LOCALE_CONFIG) throw new Error(`Locale no soportado: ${localeArg}. Usa es-mx o en-us.`);
+const LOCALE = LOCALE_CONFIG.output;
+const LOCALE_WAD = LOCALE_CONFIG.wad;
+const OUT_DIR = path.join(ROOT, "apps", "web", "public", "audio", "vo", LOCALE);
+const MANIFEST_PATH = path.join(OUT_DIR, "manifest.json");
 const onlyIndex = args.indexOf("--only");
 const onlyArg =
   args.find((a) => a.startsWith("--only="))?.split("=").slice(1).join("=") ??
@@ -190,36 +196,27 @@ function probeDurationMs(file) {
 // ---------------------------------------------------------------------------
 // extracción
 
-function extractVoicePackage(champion, workDir) {
+function extractVoicePackages(champion, workDir) {
   const wad = path.join(CHAMPIONS_DIR, `${champion.id}.${LOCALE_WAD}.wad.client`);
   if (!fs.existsSync(wad)) throw new Error(`no existe ${wad}`);
 
-  const patterns = [
-    "skins/base/.*_vo_audio\\.wpk$",
-    "skins/[^/]+/.*_vo_audio\\.wpk$",
-  ];
-  for (const pattern of patterns) {
-    const out = path.join(workDir, pattern.startsWith("skins/base") ? "base" : "any");
-    fs.mkdirSync(out, { recursive: true });
-    run(
-      WADTOOLS,
-      ["extract", "-i", wad, "-o", out, "-x", pattern],
-      `wadtools ${champion.id}`,
-    );
-    const found = [];
-    const walk = (dir) => {
-      for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-        const full = path.join(dir, entry.name);
-        if (entry.isDirectory()) walk(full);
-        else if (entry.name.toLowerCase().endsWith("_vo_audio.wpk")) found.push(full);
-      }
-    };
-    if (fs.existsSync(out)) walk(out);
-    if (found.length > 0) {
-      // Si hay varias skins, prefiere la de menor tamaño (suele ser la base).
-      found.sort((a, b) => fs.statSync(a).size - fs.statSync(b).size);
-      return found[0];
+  // wadtools 0.5.x cambió el formato de los filtros: extraer todo evita que
+  // el filtro deje fuera los WPK aunque el paquete sí contenga la voz.
+  const out = path.join(workDir, "wad");
+  fs.mkdirSync(out, { recursive: true });
+  run(WADTOOLS, ["extract", "-i", wad, "-o", out], `wadtools ${champion.id}`);
+  const found = [];
+  const walk = (dir) => {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) walk(full);
+      else if (entry.name.toLowerCase().endsWith("_vo_audio.wpk")) found.push(full);
     }
+  };
+  walk(out);
+  if (found.length > 0) {
+    const base = found.find((file) => file.toLowerCase().includes(`${path.sep}skins${path.sep}base${path.sep}`));
+    return [base, ...found.filter((file) => file !== base)].filter(Boolean);
   }
   throw new Error(`sin .wpk de VO para ${champion.id}`);
 }
@@ -230,9 +227,11 @@ function processChampion(champion) {
   fs.mkdirSync(workDir, { recursive: true });
 
   try {
-    const wpk = extractVoicePackage(champion, workDir);
-    const entries = readWpk(wpk);
-    const candidates = pickCandidates(entries, 15);
+    const wpks = extractVoicePackages(champion, workDir);
+    const entries = wpks.flatMap((wpk) => readWpk(wpk));
+    // Algunos campeones tienen WEM que no decodifican a la primera; ampliar el
+    // banco de candidatos permite completar siempre las cinco pistas.
+    const candidates = pickCandidates(entries, 60);
     if (candidates.length === 0) throw new Error(`el .wpk no tiene .wem utilizables`);
 
     const wemDir = path.join(workDir, "wem");

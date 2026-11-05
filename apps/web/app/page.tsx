@@ -8,23 +8,18 @@ import { AvatarPicker } from "@/components/AvatarPicker";
 import { RoomNotFoundModal } from "@/components/RoomNotFoundModal";
 import { lastAvatarId, loadAvatars, saveAvatarId, type Avatar } from "@/lib/avatars";
 import type { JoinAck } from "@lolgames/protocol";
+import { useTranslation } from "@/lib/i18n";
 
 const LANDING_MODES = [
-  ["◕", "Bomba", "Adivina el campeón y pasa la bomba antes de que explote."],
-  ["◈", "Impostor", "Da pistas, discute y descubre al infiltrado."],
-  ["〰", "Pictionary", "Dibuja un campeón y deja que tu equipo lo adivine."],
-  ["?", "¿Quién soy?", "Todos ven tu campeón menos tú."],
-  ["➜", "Carrera de pistas", "Adivina con imágenes antes que los demás."],
-  ["♫", "Carrera de sonido", "Reconoce al campeón por su voz."],
-  ["😀", "Carrera de emojis", "Descubre el campeón con cuatro emojis."],
-  ["★", "Imitación de voz", "Imita la línea y recibe estrellas del grupo."],
-  ["✦", "Party", "Campaña de minijuegos con puntos acumulados y podio final."],
+  ["bomba", "◕"], ["impostor", "◈"], ["pictionary", "〰"], ["quien-soy", "?"],
+  ["carrera", "➜"], ["carrera-sonido", "♫"], ["carrera-emojis", "😀"], ["imitacion", "★"], ["party", "✦"],
 ] as const;
 
 type EntryMode = "create" | "join";
 
 export default function HomePage() {
   const router = useRouter();
+  const { t } = useTranslation();
   const [mode, setMode] = useState<EntryMode | null>(null);
   const [nickname, setNickname] = useState("");
   const [code, setCode] = useState("");
@@ -40,7 +35,7 @@ export default function HomePage() {
     void loadAvatars().then((items) => {
       setAvatars(items);
       setAvatarId((current) => current && items.some((item) => item.id === current) ? current : items[0]?.id ?? null);
-    }).catch(() => setError("No se pudo cargar el catálogo de emotes"));
+    }).catch(() => setError(t.catalogError));
   }, []);
 
   function back() {
@@ -56,13 +51,13 @@ export default function HomePage() {
 
     const nick = nickname.trim();
     if (nick.length < 2) {
-      setError("Pon un apodo de al menos 2 caracteres");
+      setError(t.nicknameMin);
       return;
     }
 
     const roomCode = code.trim().toUpperCase();
     if (mode === "join" && roomCode.length !== 6) {
-      setError("El código tiene 6 caracteres");
+      setError(t.codeLength);
       return;
     }
 
@@ -96,34 +91,34 @@ export default function HomePage() {
           <div className="home-inner">
             <img className="home-logo" src="/images/logo-lol-party.png" alt="Logo de LoL Party" />
             <h1 className="hero-logo-title"><span>LOL</span> <b>PARTY</b></h1>
-            <p className="muted">Tu equipo. Otro tipo de partida.</p>
+            <p className="muted">{t.tagline}</p>
 
             <div className="buttons">
               <button className="primary" onClick={() => setMode("create")}>
-                Crear sala
+                {t.createRoom}
               </button>
               <button className="secondary" onClick={() => setMode("join")}>
-                Unirme a sala
+                {t.joinRoom}
               </button>
             </div>
 
-            <a className="textbutton home-explore" href="#modos">Explorar los modos ↗</a>
+            <a className="textbutton home-explore" href="#modos">{t.exploreModes}</a>
 
             <p className="mini" style={{ marginTop: 22 }}>
-               9 modos · 3 a 12 jugadores · sin cuentas
+               {t.modeCount}
             </p>
           </div>
         </div>
 
         <section id="modos" className="mode-preview">
-          <div className="eyebrow">Elige cómo se juega</div>
-          <h2>Una sala. Varias formas de jugar.</h2>
+           <div className="eyebrow">{t.chooseHow}</div>
+           <h2>{t.oneRoom}</h2>
           <div className="mode-preview-grid">
-            {LANDING_MODES.map(([icon, name, description]) => <article className="glass mode-preview-card" key={name}>
-              <div className="mode-preview-icon">{icon}</div>
-              <h3>{name}</h3>
-              <p>{description}</p>
-              <span className="more">3 a 12 jugadores</span>
+             {LANDING_MODES.map(([id, icon]) => <article className="glass mode-preview-card" key={id}>
+               <div className="mode-preview-icon">{icon}</div>
+               <h3>{t.modeName(id)}</h3>
+               <p>{t.modeBlurb(id)}</p>
+               <span className="more">{t.players}</span>
             </article>)}
           </div>
         </section>
@@ -135,19 +130,19 @@ export default function HomePage() {
     <main className="container">
       <div className="glass form">
         <button className="back-button" type="button" onClick={back}>
-          ← Volver
+           {t.back}
         </button>
 
         <h1 style={{ marginTop: 25 }}>
-          {mode === "create" ? "¿Cómo te llamas?" : "Tu equipo te espera."}
+           {mode === "create" ? t.whatIsYourName : t.teamWaiting}
         </h1>
-        <p className="muted">Con tu apodo es suficiente.</p>
+         <p className="muted">{t.nicknameEnough}</p>
 
         <AvatarPicker avatars={avatars} selectedId={avatarId} onChange={(id) => { setAvatarId(id); saveAvatarId(id); }} />
 
         {mode === "join" ? (
           <>
-            <label htmlFor="room-code">Código de sala</label>
+             <label htmlFor="room-code">{t.roomCode}</label>
             <input
               id="room-code"
               className="input code"
@@ -163,12 +158,12 @@ export default function HomePage() {
           </>
         ) : null}
 
-        <label htmlFor="nickname">Tu apodo</label>
+         <label htmlFor="nickname">{t.nickname}</label>
         <input
           id="nickname"
           value={nickname}
           maxLength={16}
-          placeholder="Ej. Invocador"
+           placeholder={t.nicknameExample}
           autoComplete="off"
           onChange={(event) => setNickname(event.target.value)}
           onKeyDown={(event) => {
@@ -177,7 +172,7 @@ export default function HomePage() {
         />
 
         <button className="primary" disabled={busy !== null} onClick={() => void submit()}>
-          {busy ? "Entrando…" : "Vamos a jugar →"}
+           {busy ? t.joining : t.letsPlay}
         </button>
 
         {error && errorCode !== "ROOM_NOT_FOUND" ? (
