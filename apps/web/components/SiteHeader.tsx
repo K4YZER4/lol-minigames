@@ -3,16 +3,19 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getUiVolume, playUiSound, setUiVolume } from "@/lib/sounds";
+import { getLanguage, setLanguage, type AppLanguage } from "@/lib/language";
 
 const STORAGE_KEY = "lolparty:theme";
 
 export function SiteHeader() {
   const [lila, setLila] = useState(false);
   const [volume, setVolume] = useState(1);
+  const [language, setCurrentLanguage] = useState<AppLanguage>("es-mx");
 
   useEffect(() => {
     setLila(document.documentElement.classList.contains("lila"));
     setVolume(getUiVolume());
+    setCurrentLanguage(getLanguage());
   }, []);
 
   useEffect(() => {
@@ -43,6 +46,18 @@ export function SiteHeader() {
 
       <nav aria-label="Navegación principal">
         <Link className="ghost" href="/#modos">Modos</Link>
+        <button
+          type="button"
+          className="language-toggle"
+          aria-label="Cambiar idioma de audio"
+          onClick={() => {
+            const next = language === "es-mx" ? "en-us" : "es-mx";
+            setCurrentLanguage(next);
+            setLanguage(next);
+          }}
+        >
+          {language === "es-mx" ? "ES" : "EN"}
+        </button>
         <label className="volume-control" title={`Volumen ${Math.round(volume * 100)}%`}>
           <span aria-hidden="true">{volume === 0 ? "🔇" : volume < 0.5 ? "🔉" : "🔊"}</span>
           <input

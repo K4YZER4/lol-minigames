@@ -343,10 +343,10 @@ export type QuienSoyGameView = {
   revealed: QuienSoyRevealedTurn[];
 };
 export type CarreraGameView = { mode: "carrera"; phase: "CLUES" | "REVEAL" | "FINISHED"; phaseEndsAt: number; round: number; totalRounds: number; clueIndex: number; clues: BombaPublicClue[]; winnerId: string | null; target: PublicChampion | null };
-export type CarreraSonidoGameView = { mode: "carrera-sonido"; phase: "CLUES" | "REVEAL" | "FINISHED"; phaseEndsAt: number; round: number; totalRounds: number; clueIndex: number; clues: { clueId: string; audioUrl: string }[]; winnerId: string | null; target: PublicChampion | null; scores: Record<string, number> };
+export type CarreraSonidoGameView = { mode: "carrera-sonido"; phase: "CLUES" | "REVEAL" | "FINISHED"; phaseEndsAt: number; round: number; totalRounds: number; clueIndex: number; clues: { clueId: string; audioUrl: string; audioUrlEn?: string }[]; winnerId: string | null; target: PublicChampion | null; scores: Record<string, number> };
 export type CarreraEmojisGameView = { mode: "carrera-emojis"; phase: "CLUES" | "REVEAL" | "FINISHED"; phaseEndsAt: number; round: number; totalRounds: number; clueIndex: number; clues: { clueId: string; emojis: string[] }[]; winnerId: string | null; target: PublicChampion | null; scores: Record<string, number> };
 export type ImitacionRecordingView = { recordingId: string; audioData: string; mimeType: string; playerId: string | null; averageStars: number | null; votes: number };
-export type ImitacionGameView = { mode: "imitacion"; phase: "RECORDING" | "VOTING" | "REVEAL" | "FINISHED"; phaseEndsAt: number; targetAudioUrl: string | null; recordings: ImitacionRecordingView[]; submitted: string[]; voted: string[]; winnerId: string | null };
+export type ImitacionGameView = { mode: "imitacion"; phase: "RECORDING" | "VOTING" | "REVEAL" | "FINISHED"; phaseEndsAt: number; targetAudioUrl: string | null; targetAudioUrlEn: string | null; recordings: ImitacionRecordingView[]; submitted: string[]; voted: string[]; winnerId: string | null };
 export type PartyGameView = { mode: "party"; phase: "GUESSING" | "REVEAL" | "FINISHED"; phaseEndsAt: number; category: PartyCategory; activePlayerId: string; round: number; totalRounds: number; guesses: { playerId: string; correct: boolean }[] };
 export type PartyModeResult = { mode: ModeId; scores: Record<string, number> };
 export type PartyBreakView = {
