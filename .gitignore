@@ -10,7 +10,11 @@ out/
 coverage/
 *.tsbuildinfo
 next-env.d.ts
+/tools/*
+!/tools/.gitkeep
 
 # Voces de Riot: se mantienen locales y no se publican por accidente.
 /apps/web/public/audio/vo/es-mx/*
 !/apps/web/public/audio/vo/es-mx/manifest.json
+/apps/web/public/audio/vo/en-us/*
+!/apps/web/public/audio/vo/en-us/manifest.json

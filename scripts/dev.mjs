@@ -1,4 +1,11 @@
 import { spawn } from "node:child_process";
+import { loadEnvFile } from "node:process";
+
+try {
+  loadEnvFile(".env.local");
+} catch {
+  // En CI/Render las variables ya vienen del entorno.
+}
 
 const npm = process.platform === "win32" ? "npm.cmd" : "npm";
 const children = [];

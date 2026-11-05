@@ -1,7 +1,7 @@
 import type { Result, Rng } from "../core/rng";
 import { raceScore } from "../core/race-score";
 
-export type CarreraSonidoClue = { clueId: string; championId: string; audioUrl: string };
+export type CarreraSonidoClue = { clueId: string; championId: string; audioUrl: string; audioUrlEn?: string };
 export type CarreraSonidoSettings = { clueSeconds: number; rounds: number };
 export type CarreraSonidoState = {
   phase: "CLUES" | "REVEAL" | "FINISHED";
@@ -69,7 +69,7 @@ export function carreraSonidoTick(state: CarreraSonidoState, ctx: CarreraSonidoC
 }
 
 export function carreraSonidoPublicView(state: CarreraSonidoState) {
-  return { mode: "carrera-sonido" as const, phase: state.phase, phaseEndsAt: state.phaseEndsAt, round: state.round, totalRounds: state.settings.rounds, clueIndex: state.clueIndex, clues: state.clues.slice(0, state.clueIndex + 1).map(({ clueId, audioUrl }) => ({ clueId, audioUrl })), winnerId: state.winnerId, target: state.phase === "REVEAL" || state.phase === "FINISHED" ? state.champions[state.targetId] ?? null : null, scores: state.scores };
+  return { mode: "carrera-sonido" as const, phase: state.phase, phaseEndsAt: state.phaseEndsAt, round: state.round, totalRounds: state.settings.rounds, clueIndex: state.clueIndex, clues: state.clues.slice(0, state.clueIndex + 1).map(({ clueId, audioUrl, audioUrlEn }) => ({ clueId, audioUrl, audioUrlEn })), winnerId: state.winnerId, target: state.phase === "REVEAL" || state.phase === "FINISHED" ? state.champions[state.targetId] ?? null : null, scores: state.scores };
 }
 export function carreraSonidoPrivateView(state: CarreraSonidoState, playerId: string) {
   const answer = state.answers[playerId] ?? null;

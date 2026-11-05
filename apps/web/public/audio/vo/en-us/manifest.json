@@ -1,0 +1,7105 @@
+{
+  "locale": "en_US",
+  "generatedAt": "2026-11-05T01:18:47.162Z",
+  "source": "Voces extraídas de la instalación local de League of Legends (paquetes es_MX). Uso local.",
+  "champions": {
+    "Aatrox": {
+      "id": "Aatrox",
+      "name": "Aatrox",
+      "clips": [
+        {
+          "file": "Aatrox/01.ogg",
+          "url": "/audio/vo/en-us/Aatrox/01.ogg",
+          "durationMs": 10007,
+          "bytes": 29198,
+          "sourceWem": "352643767.wem"
+        },
+        {
+          "file": "Aatrox/02.ogg",
+          "url": "/audio/vo/en-us/Aatrox/02.ogg",
+          "durationMs": 10007,
+          "bytes": 29104,
+          "sourceWem": "32262216.wem"
+        },
+        {
+          "file": "Aatrox/03.ogg",
+          "url": "/audio/vo/en-us/Aatrox/03.ogg",
+          "durationMs": 10007,
+          "bytes": 29375,
+          "sourceWem": "39911681.wem"
+        },
+        {
+          "file": "Aatrox/04.ogg",
+          "url": "/audio/vo/en-us/Aatrox/04.ogg",
+          "durationMs": 10007,
+          "bytes": 28648,
+          "sourceWem": "215250572.wem"
+        },
+        {
+          "file": "Aatrox/05.ogg",
+          "url": "/audio/vo/en-us/Aatrox/05.ogg",
+          "durationMs": 9607,
+          "bytes": 27765,
+          "sourceWem": "743379601.wem"
+        }
+      ]
+    },
+    "Ahri": {
+      "id": "Ahri",
+      "name": "Ahri",
+      "clips": [
+        {
+          "file": "Ahri/01.ogg",
+          "url": "/audio/vo/en-us/Ahri/01.ogg",
+          "durationMs": 5407,
+          "bytes": 16468,
+          "sourceWem": "616471866.wem"
+        },
+        {
+          "file": "Ahri/02.ogg",
+          "url": "/audio/vo/en-us/Ahri/02.ogg",
+          "durationMs": 5207,
+          "bytes": 15853,
+          "sourceWem": "500644922.wem"
+        },
+        {
+          "file": "Ahri/03.ogg",
+          "url": "/audio/vo/en-us/Ahri/03.ogg",
+          "durationMs": 5107,
+          "bytes": 15132,
+          "sourceWem": "308938277.wem"
+        },
+        {
+          "file": "Ahri/04.ogg",
+          "url": "/audio/vo/en-us/Ahri/04.ogg",
+          "durationMs": 4607,
+          "bytes": 14162,
+          "sourceWem": "654958002.wem"
+        },
+        {
+          "file": "Ahri/05.ogg",
+          "url": "/audio/vo/en-us/Ahri/05.ogg",
+          "durationMs": 4707,
+          "bytes": 14684,
+          "sourceWem": "413905160.wem"
+        }
+      ]
+    },
+    "Akali": {
+      "id": "Akali",
+      "name": "Akali",
+      "clips": [
+        {
+          "file": "Akali/01.ogg",
+          "url": "/audio/vo/en-us/Akali/01.ogg",
+          "durationMs": 4807,
+          "bytes": 13972,
+          "sourceWem": "531741117.wem"
+        },
+        {
+          "file": "Akali/02.ogg",
+          "url": "/audio/vo/en-us/Akali/02.ogg",
+          "durationMs": 3707,
+          "bytes": 10903,
+          "sourceWem": "115813394.wem"
+        },
+        {
+          "file": "Akali/03.ogg",
+          "url": "/audio/vo/en-us/Akali/03.ogg",
+          "durationMs": 3207,
+          "bytes": 10029,
+          "sourceWem": "490179456.wem"
+        },
+        {
+          "file": "Akali/04.ogg",
+          "url": "/audio/vo/en-us/Akali/04.ogg",
+          "durationMs": 3407,
+          "bytes": 10383,
+          "sourceWem": "590955890.wem"
+        },
+        {
+          "file": "Akali/05.ogg",
+          "url": "/audio/vo/en-us/Akali/05.ogg",
+          "durationMs": 2872,
+          "bytes": 8775,
+          "sourceWem": "723788826.wem"
+        }
+      ]
+    },
+    "Akshan": {
+      "id": "Akshan",
+      "name": "Akshan",
+      "clips": [
+        {
+          "file": "Akshan/01.ogg",
+          "url": "/audio/vo/en-us/Akshan/01.ogg",
+          "durationMs": 5207,
+          "bytes": 14417,
+          "sourceWem": "171177955.wem"
+        },
+        {
+          "file": "Akshan/02.ogg",
+          "url": "/audio/vo/en-us/Akshan/02.ogg",
+          "durationMs": 4307,
+          "bytes": 12081,
+          "sourceWem": "631076012.wem"
+        },
+        {
+          "file": "Akshan/03.ogg",
+          "url": "/audio/vo/en-us/Akshan/03.ogg",
+          "durationMs": 4307,
+          "bytes": 12361,
+          "sourceWem": "851013676.wem"
+        },
+        {
+          "file": "Akshan/04.ogg",
+          "url": "/audio/vo/en-us/Akshan/04.ogg",
+          "durationMs": 4207,
+          "bytes": 11338,
+          "sourceWem": "748314485.wem"
+        },
+        {
+          "file": "Akshan/05.ogg",
+          "url": "/audio/vo/en-us/Akshan/05.ogg",
+          "durationMs": 3807,
+          "bytes": 10466,
+          "sourceWem": "745101664.wem"
+        }
+      ]
+    },
+    "Alistar": {
+      "id": "Alistar",
+      "name": "Alistar",
+      "clips": [
+        {
+          "file": "Alistar/01.ogg",
+          "url": "/audio/vo/en-us/Alistar/01.ogg",
+          "durationMs": 2808,
+          "bytes": 9126,
+          "sourceWem": "694618650.wem"
+        },
+        {
+          "file": "Alistar/02.ogg",
+          "url": "/audio/vo/en-us/Alistar/02.ogg",
+          "durationMs": 2352,
+          "bytes": 7423,
+          "sourceWem": "639275441.wem"
+        },
+        {
+          "file": "Alistar/03.ogg",
+          "url": "/audio/vo/en-us/Alistar/03.ogg",
+          "durationMs": 2123,
+          "bytes": 7022,
+          "sourceWem": "253077308.wem"
+        },
+        {
+          "file": "Alistar/04.ogg",
+          "url": "/audio/vo/en-us/Alistar/04.ogg",
+          "durationMs": 2016,
+          "bytes": 6835,
+          "sourceWem": "155108548.wem"
+        },
+        {
+          "file": "Alistar/05.ogg",
+          "url": "/audio/vo/en-us/Alistar/05.ogg",
+          "durationMs": 1915,
+          "bytes": 6386,
+          "sourceWem": "154060020.wem"
+        }
+      ]
+    },
+    "Ambessa": {
+      "id": "Ambessa",
+      "name": "Ambessa",
+      "clips": [
+        {
+          "file": "Ambessa/01.ogg",
+          "url": "/audio/vo/en-us/Ambessa/01.ogg",
+          "durationMs": 8007,
+          "bytes": 24370,
+          "sourceWem": "138895953.wem"
+        },
+        {
+          "file": "Ambessa/02.ogg",
+          "url": "/audio/vo/en-us/Ambessa/02.ogg",
+          "durationMs": 7807,
+          "bytes": 23729,
+          "sourceWem": "935891754.wem"
+        },
+        {
+          "file": "Ambessa/03.ogg",
+          "url": "/audio/vo/en-us/Ambessa/03.ogg",
+          "durationMs": 7207,
+          "bytes": 21864,
+          "sourceWem": "720072031.wem"
+        },
+        {
+          "file": "Ambessa/04.ogg",
+          "url": "/audio/vo/en-us/Ambessa/04.ogg",
+          "durationMs": 6807,
+          "bytes": 20714,
+          "sourceWem": "51000565.wem"
+        },
+        {
+          "file": "Ambessa/05.ogg",
+          "url": "/audio/vo/en-us/Ambessa/05.ogg",
+          "durationMs": 6907,
+          "bytes": 21046,
+          "sourceWem": "790829140.wem"
+        }
+      ]
+    },
+    "Amumu": {
+      "id": "Amumu",
+      "name": "Amumu",
+      "clips": [
+        {
+          "file": "Amumu/01.ogg",
+          "url": "/audio/vo/en-us/Amumu/01.ogg",
+          "durationMs": 2045,
+          "bytes": 6585,
+          "sourceWem": "123401439.wem"
+        },
+        {
+          "file": "Amumu/02.ogg",
+          "url": "/audio/vo/en-us/Amumu/02.ogg",
+          "durationMs": 1932,
+          "bytes": 6091,
+          "sourceWem": "964843408.wem"
+        },
+        {
+          "file": "Amumu/03.ogg",
+          "url": "/audio/vo/en-us/Amumu/03.ogg",
+          "durationMs": 1756,
+          "bytes": 5323,
+          "sourceWem": "371446254.wem"
+        },
+        {
+          "file": "Amumu/04.ogg",
+          "url": "/audio/vo/en-us/Amumu/04.ogg",
+          "durationMs": 1564,
+          "bytes": 5053,
+          "sourceWem": "85935980.wem"
+        },
+        {
+          "file": "Amumu/05.ogg",
+          "url": "/audio/vo/en-us/Amumu/05.ogg",
+          "durationMs": 1564,
+          "bytes": 5055,
+          "sourceWem": "616098936.wem"
+        }
+      ]
+    },
+    "Anivia": {
+      "id": "Anivia",
+      "name": "Anivia",
+      "clips": [
+        {
+          "file": "Anivia/01.ogg",
+          "url": "/audio/vo/en-us/Anivia/01.ogg",
+          "durationMs": 4107,
+          "bytes": 13290,
+          "sourceWem": "737463710.wem"
+        },
+        {
+          "file": "Anivia/02.ogg",
+          "url": "/audio/vo/en-us/Anivia/02.ogg",
+          "durationMs": 3807,
+          "bytes": 11689,
+          "sourceWem": "368907201.wem"
+        },
+        {
+          "file": "Anivia/03.ogg",
+          "url": "/audio/vo/en-us/Anivia/03.ogg",
+          "durationMs": 3607,
+          "bytes": 11567,
+          "sourceWem": "403711477.wem"
+        },
+        {
+          "file": "Anivia/04.ogg",
+          "url": "/audio/vo/en-us/Anivia/04.ogg",
+          "durationMs": 3607,
+          "bytes": 11396,
+          "sourceWem": "888383670.wem"
+        },
+        {
+          "file": "Anivia/05.ogg",
+          "url": "/audio/vo/en-us/Anivia/05.ogg",
+          "durationMs": 3607,
+          "bytes": 10561,
+          "sourceWem": "303720791.wem"
+        }
+      ]
+    },
+    "Annie": {
+      "id": "Annie",
+      "name": "Annie",
+      "clips": [
+        {
+          "file": "Annie/01.ogg",
+          "url": "/audio/vo/en-us/Annie/01.ogg",
+          "durationMs": 4707,
+          "bytes": 15427,
+          "sourceWem": "746674219.wem"
+        },
+        {
+          "file": "Annie/02.ogg",
+          "url": "/audio/vo/en-us/Annie/02.ogg",
+          "durationMs": 4307,
+          "bytes": 15184,
+          "sourceWem": "354508646.wem"
+        },
+        {
+          "file": "Annie/03.ogg",
+          "url": "/audio/vo/en-us/Annie/03.ogg",
+          "durationMs": 4607,
+          "bytes": 16486,
+          "sourceWem": "969904239.wem"
+        },
+        {
+          "file": "Annie/04.ogg",
+          "url": "/audio/vo/en-us/Annie/04.ogg",
+          "durationMs": 3707,
+          "bytes": 13034,
+          "sourceWem": "296705098.wem"
+        },
+        {
+          "file": "Annie/05.ogg",
+          "url": "/audio/vo/en-us/Annie/05.ogg",
+          "durationMs": 3607,
+          "bytes": 11255,
+          "sourceWem": "887983801.wem"
+        }
+      ]
+    },
+    "Aphelios": {
+      "id": "Aphelios",
+      "name": "Aphelios",
+      "clips": [
+        {
+          "file": "Aphelios/01.ogg",
+          "url": "/audio/vo/en-us/Aphelios/01.ogg",
+          "durationMs": 10007,
+          "bytes": 28041,
+          "sourceWem": "817872530.wem"
+        },
+        {
+          "file": "Aphelios/02.ogg",
+          "url": "/audio/vo/en-us/Aphelios/02.ogg",
+          "durationMs": 10007,
+          "bytes": 29145,
+          "sourceWem": "39425466.wem"
+        },
+        {
+          "file": "Aphelios/03.ogg",
+          "url": "/audio/vo/en-us/Aphelios/03.ogg",
+          "durationMs": 10007,
+          "bytes": 27632,
+          "sourceWem": "625778563.wem"
+        },
+        {
+          "file": "Aphelios/04.ogg",
+          "url": "/audio/vo/en-us/Aphelios/04.ogg",
+          "durationMs": 9307,
+          "bytes": 25649,
+          "sourceWem": "2513215.wem"
+        },
+        {
+          "file": "Aphelios/05.ogg",
+          "url": "/audio/vo/en-us/Aphelios/05.ogg",
+          "durationMs": 8907,
+          "bytes": 24145,
+          "sourceWem": "372904363.wem"
+        }
+      ]
+    },
+    "Ashe": {
+      "id": "Ashe",
+      "name": "Ashe",
+      "clips": [
+        {
+          "file": "Ashe/01.ogg",
+          "url": "/audio/vo/en-us/Ashe/01.ogg",
+          "durationMs": 10007,
+          "bytes": 30125,
+          "sourceWem": "731837043.wem"
+        },
+        {
+          "file": "Ashe/02.ogg",
+          "url": "/audio/vo/en-us/Ashe/02.ogg",
+          "durationMs": 9407,
+          "bytes": 28823,
+          "sourceWem": "195373652.wem"
+        },
+        {
+          "file": "Ashe/03.ogg",
+          "url": "/audio/vo/en-us/Ashe/03.ogg",
+          "durationMs": 9407,
+          "bytes": 28808,
+          "sourceWem": "917060577.wem"
+        },
+        {
+          "file": "Ashe/04.ogg",
+          "url": "/audio/vo/en-us/Ashe/04.ogg",
+          "durationMs": 8407,
+          "bytes": 25219,
+          "sourceWem": "683207898.wem"
+        },
+        {
+          "file": "Ashe/05.ogg",
+          "url": "/audio/vo/en-us/Ashe/05.ogg",
+          "durationMs": 8007,
+          "bytes": 24523,
+          "sourceWem": "322608695.wem"
+        }
+      ]
+    },
+    "AurelionSol": {
+      "id": "AurelionSol",
+      "name": "Aurelion Sol",
+      "clips": [
+        {
+          "file": "AurelionSol/01.ogg",
+          "url": "/audio/vo/en-us/AurelionSol/01.ogg",
+          "durationMs": 10007,
+          "bytes": 29348,
+          "sourceWem": "565767135.wem"
+        },
+        {
+          "file": "AurelionSol/02.ogg",
+          "url": "/audio/vo/en-us/AurelionSol/02.ogg",
+          "durationMs": 8607,
+          "bytes": 23980,
+          "sourceWem": "941661286.wem"
+        },
+        {
+          "file": "AurelionSol/03.ogg",
+          "url": "/audio/vo/en-us/AurelionSol/03.ogg",
+          "durationMs": 10007,
+          "bytes": 28709,
+          "sourceWem": "140647602.wem"
+        },
+        {
+          "file": "AurelionSol/04.ogg",
+          "url": "/audio/vo/en-us/AurelionSol/04.ogg",
+          "durationMs": 10007,
+          "bytes": 28632,
+          "sourceWem": "35046116.wem"
+        },
+        {
+          "file": "AurelionSol/05.ogg",
+          "url": "/audio/vo/en-us/AurelionSol/05.ogg",
+          "durationMs": 7407,
+          "bytes": 21225,
+          "sourceWem": "826815599.wem"
+        }
+      ]
+    },
+    "Aurora": {
+      "id": "Aurora",
+      "name": "Aurora",
+      "clips": [
+        {
+          "file": "Aurora/01.ogg",
+          "url": "/audio/vo/en-us/Aurora/01.ogg",
+          "durationMs": 7007,
+          "bytes": 21560,
+          "sourceWem": "357791117.wem"
+        },
+        {
+          "file": "Aurora/02.ogg",
+          "url": "/audio/vo/en-us/Aurora/02.ogg",
+          "durationMs": 6907,
+          "bytes": 20783,
+          "sourceWem": "312555162.wem"
+        },
+        {
+          "file": "Aurora/03.ogg",
+          "url": "/audio/vo/en-us/Aurora/03.ogg",
+          "durationMs": 7007,
+          "bytes": 21230,
+          "sourceWem": "621773708.wem"
+        },
+        {
+          "file": "Aurora/04.ogg",
+          "url": "/audio/vo/en-us/Aurora/04.ogg",
+          "durationMs": 6607,
+          "bytes": 20117,
+          "sourceWem": "923324681.wem"
+        },
+        {
+          "file": "Aurora/05.ogg",
+          "url": "/audio/vo/en-us/Aurora/05.ogg",
+          "durationMs": 7107,
+          "bytes": 19761,
+          "sourceWem": "843660984.wem"
+        }
+      ]
+    },
+    "Azir": {
+      "id": "Azir",
+      "name": "Azir",
+      "clips": [
+        {
+          "file": "Azir/01.ogg",
+          "url": "/audio/vo/en-us/Azir/01.ogg",
+          "durationMs": 10007,
+          "bytes": 29864,
+          "sourceWem": "987066633.wem"
+        },
+        {
+          "file": "Azir/02.ogg",
+          "url": "/audio/vo/en-us/Azir/02.ogg",
+          "durationMs": 4507,
+          "bytes": 13305,
+          "sourceWem": "646707387.wem"
+        },
+        {
+          "file": "Azir/03.ogg",
+          "url": "/audio/vo/en-us/Azir/03.ogg",
+          "durationMs": 4707,
+          "bytes": 14346,
+          "sourceWem": "207401924.wem"
+        },
+        {
+          "file": "Azir/04.ogg",
+          "url": "/audio/vo/en-us/Azir/04.ogg",
+          "durationMs": 6507,
+          "bytes": 19924,
+          "sourceWem": "472564367.wem"
+        },
+        {
+          "file": "Azir/05.ogg",
+          "url": "/audio/vo/en-us/Azir/05.ogg",
+          "durationMs": 3907,
+          "bytes": 11784,
+          "sourceWem": "861921783.wem"
+        }
+      ]
+    },
+    "Bard": {
+      "id": "Bard",
+      "name": "Bardo",
+      "clips": [
+        {
+          "file": "Bard/01.ogg",
+          "url": "/audio/vo/en-us/Bard/01.ogg",
+          "durationMs": 7007,
+          "bytes": 21688,
+          "sourceWem": "1026806564.wem"
+        },
+        {
+          "file": "Bard/02.ogg",
+          "url": "/audio/vo/en-us/Bard/02.ogg",
+          "durationMs": 8807,
+          "bytes": 31610,
+          "sourceWem": "564499551.wem"
+        },
+        {
+          "file": "Bard/03.ogg",
+          "url": "/audio/vo/en-us/Bard/03.ogg",
+          "durationMs": 7807,
+          "bytes": 30009,
+          "sourceWem": "960296657.wem"
+        },
+        {
+          "file": "Bard/04.ogg",
+          "url": "/audio/vo/en-us/Bard/04.ogg",
+          "durationMs": 4907,
+          "bytes": 15475,
+          "sourceWem": "404052134.wem"
+        },
+        {
+          "file": "Bard/05.ogg",
+          "url": "/audio/vo/en-us/Bard/05.ogg",
+          "durationMs": 4507,
+          "bytes": 13057,
+          "sourceWem": "650306941.wem"
+        }
+      ]
+    },
+    "Belveth": {
+      "id": "Belveth",
+      "name": "Bel'Veth",
+      "clips": [
+        {
+          "file": "Belveth/01.ogg",
+          "url": "/audio/vo/en-us/Belveth/01.ogg",
+          "durationMs": 9607,
+          "bytes": 27779,
+          "sourceWem": "1032819725.wem"
+        },
+        {
+          "file": "Belveth/02.ogg",
+          "url": "/audio/vo/en-us/Belveth/02.ogg",
+          "durationMs": 8107,
+          "bytes": 23804,
+          "sourceWem": "604710663.wem"
+        },
+        {
+          "file": "Belveth/03.ogg",
+          "url": "/audio/vo/en-us/Belveth/03.ogg",
+          "durationMs": 7607,
+          "bytes": 22481,
+          "sourceWem": "546577488.wem"
+        },
+        {
+          "file": "Belveth/04.ogg",
+          "url": "/audio/vo/en-us/Belveth/04.ogg",
+          "durationMs": 7207,
+          "bytes": 19764,
+          "sourceWem": "368310493.wem"
+        },
+        {
+          "file": "Belveth/05.ogg",
+          "url": "/audio/vo/en-us/Belveth/05.ogg",
+          "durationMs": 6607,
+          "bytes": 18076,
+          "sourceWem": "102683581.wem"
+        }
+      ]
+    },
+    "Blitzcrank": {
+      "id": "Blitzcrank",
+      "name": "Blitzcrank",
+      "clips": [
+        {
+          "file": "Blitzcrank/01.ogg",
+          "url": "/audio/vo/en-us/Blitzcrank/01.ogg",
+          "durationMs": 10007,
+          "bytes": 29024,
+          "sourceWem": "1061386427.wem"
+        },
+        {
+          "file": "Blitzcrank/02.ogg",
+          "url": "/audio/vo/en-us/Blitzcrank/02.ogg",
+          "durationMs": 3207,
+          "bytes": 10167,
+          "sourceWem": "253332153.wem"
+        },
+        {
+          "file": "Blitzcrank/03.ogg",
+          "url": "/audio/vo/en-us/Blitzcrank/03.ogg",
+          "durationMs": 2966,
+          "bytes": 9653,
+          "sourceWem": "661825235.wem"
+        },
+        {
+          "file": "Blitzcrank/04.ogg",
+          "url": "/audio/vo/en-us/Blitzcrank/04.ogg",
+          "durationMs": 2509,
+          "bytes": 8005,
+          "sourceWem": "1029759996.wem"
+        },
+        {
+          "file": "Blitzcrank/05.ogg",
+          "url": "/audio/vo/en-us/Blitzcrank/05.ogg",
+          "durationMs": 2761,
+          "bytes": 8406,
+          "sourceWem": "97177969.wem"
+        }
+      ]
+    },
+    "Brand": {
+      "id": "Brand",
+      "name": "Brand",
+      "clips": [
+        {
+          "file": "Brand/01.ogg",
+          "url": "/audio/vo/en-us/Brand/01.ogg",
+          "durationMs": 5507,
+          "bytes": 16603,
+          "sourceWem": "207776729.wem"
+        },
+        {
+          "file": "Brand/02.ogg",
+          "url": "/audio/vo/en-us/Brand/02.ogg",
+          "durationMs": 4707,
+          "bytes": 13905,
+          "sourceWem": "472126445.wem"
+        },
+        {
+          "file": "Brand/03.ogg",
+          "url": "/audio/vo/en-us/Brand/03.ogg",
+          "durationMs": 3707,
+          "bytes": 10953,
+          "sourceWem": "279527243.wem"
+        },
+        {
+          "file": "Brand/04.ogg",
+          "url": "/audio/vo/en-us/Brand/04.ogg",
+          "durationMs": 3507,
+          "bytes": 10257,
+          "sourceWem": "609693522.wem"
+        },
+        {
+          "file": "Brand/05.ogg",
+          "url": "/audio/vo/en-us/Brand/05.ogg",
+          "durationMs": 3207,
+          "bytes": 9550,
+          "sourceWem": "516758744.wem"
+        }
+      ]
+    },
+    "Braum": {
+      "id": "Braum",
+      "name": "Braum",
+      "clips": [
+        {
+          "file": "Braum/01.ogg",
+          "url": "/audio/vo/en-us/Braum/01.ogg",
+          "durationMs": 7607,
+          "bytes": 22647,
+          "sourceWem": "80763567.wem"
+        },
+        {
+          "file": "Braum/02.ogg",
+          "url": "/audio/vo/en-us/Braum/02.ogg",
+          "durationMs": 6407,
+          "bytes": 21617,
+          "sourceWem": "170771395.wem"
+        },
+        {
+          "file": "Braum/03.ogg",
+          "url": "/audio/vo/en-us/Braum/03.ogg",
+          "durationMs": 6707,
+          "bytes": 20680,
+          "sourceWem": "1042303900.wem"
+        },
+        {
+          "file": "Braum/04.ogg",
+          "url": "/audio/vo/en-us/Braum/04.ogg",
+          "durationMs": 5707,
+          "bytes": 17373,
+          "sourceWem": "417018604.wem"
+        },
+        {
+          "file": "Braum/05.ogg",
+          "url": "/audio/vo/en-us/Braum/05.ogg",
+          "durationMs": 5607,
+          "bytes": 16540,
+          "sourceWem": "194568168.wem"
+        }
+      ]
+    },
+    "Briar": {
+      "id": "Briar",
+      "name": "Briar",
+      "clips": [
+        {
+          "file": "Briar/01.ogg",
+          "url": "/audio/vo/en-us/Briar/01.ogg",
+          "durationMs": 10007,
+          "bytes": 32328,
+          "sourceWem": "862657163.wem"
+        },
+        {
+          "file": "Briar/02.ogg",
+          "url": "/audio/vo/en-us/Briar/02.ogg",
+          "durationMs": 9807,
+          "bytes": 30556,
+          "sourceWem": "748080020.wem"
+        },
+        {
+          "file": "Briar/03.ogg",
+          "url": "/audio/vo/en-us/Briar/03.ogg",
+          "durationMs": 9807,
+          "bytes": 29052,
+          "sourceWem": "973364592.wem"
+        },
+        {
+          "file": "Briar/04.ogg",
+          "url": "/audio/vo/en-us/Briar/04.ogg",
+          "durationMs": 9007,
+          "bytes": 27710,
+          "sourceWem": "818069108.wem"
+        },
+        {
+          "file": "Briar/05.ogg",
+          "url": "/audio/vo/en-us/Briar/05.ogg",
+          "durationMs": 9007,
+          "bytes": 26951,
+          "sourceWem": "430076700.wem"
+        }
+      ]
+    },
+    "Caitlyn": {
+      "id": "Caitlyn",
+      "name": "Caitlyn",
+      "clips": [
+        {
+          "file": "Caitlyn/01.ogg",
+          "url": "/audio/vo/en-us/Caitlyn/01.ogg",
+          "durationMs": 6007,
+          "bytes": 18333,
+          "sourceWem": "838976137.wem"
+        },
+        {
+          "file": "Caitlyn/02.ogg",
+          "url": "/audio/vo/en-us/Caitlyn/02.ogg",
+          "durationMs": 5807,
+          "bytes": 17115,
+          "sourceWem": "1051378359.wem"
+        },
+        {
+          "file": "Caitlyn/03.ogg",
+          "url": "/audio/vo/en-us/Caitlyn/03.ogg",
+          "durationMs": 5207,
+          "bytes": 15995,
+          "sourceWem": "305773051.wem"
+        },
+        {
+          "file": "Caitlyn/04.ogg",
+          "url": "/audio/vo/en-us/Caitlyn/04.ogg",
+          "durationMs": 5107,
+          "bytes": 15442,
+          "sourceWem": "422292043.wem"
+        },
+        {
+          "file": "Caitlyn/05.ogg",
+          "url": "/audio/vo/en-us/Caitlyn/05.ogg",
+          "durationMs": 4807,
+          "bytes": 14538,
+          "sourceWem": "338513470.wem"
+        }
+      ]
+    },
+    "Camille": {
+      "id": "Camille",
+      "name": "Camille",
+      "clips": [
+        {
+          "file": "Camille/01.ogg",
+          "url": "/audio/vo/en-us/Camille/01.ogg",
+          "durationMs": 6507,
+          "bytes": 19494,
+          "sourceWem": "346575717.wem"
+        },
+        {
+          "file": "Camille/02.ogg",
+          "url": "/audio/vo/en-us/Camille/02.ogg",
+          "durationMs": 4007,
+          "bytes": 12504,
+          "sourceWem": "1067957844.wem"
+        },
+        {
+          "file": "Camille/03.ogg",
+          "url": "/audio/vo/en-us/Camille/03.ogg",
+          "durationMs": 4207,
+          "bytes": 12744,
+          "sourceWem": "147811235.wem"
+        },
+        {
+          "file": "Camille/04.ogg",
+          "url": "/audio/vo/en-us/Camille/04.ogg",
+          "durationMs": 4607,
+          "bytes": 14182,
+          "sourceWem": "8297554.wem"
+        },
+        {
+          "file": "Camille/05.ogg",
+          "url": "/audio/vo/en-us/Camille/05.ogg",
+          "durationMs": 4407,
+          "bytes": 14039,
+          "sourceWem": "882187941.wem"
+        }
+      ]
+    },
+    "Cassiopeia": {
+      "id": "Cassiopeia",
+      "name": "Cassiopeia",
+      "clips": [
+        {
+          "file": "Cassiopeia/01.ogg",
+          "url": "/audio/vo/en-us/Cassiopeia/01.ogg",
+          "durationMs": 6207,
+          "bytes": 18260,
+          "sourceWem": "115283670.wem"
+        },
+        {
+          "file": "Cassiopeia/02.ogg",
+          "url": "/audio/vo/en-us/Cassiopeia/02.ogg",
+          "durationMs": 5407,
+          "bytes": 19299,
+          "sourceWem": "326125173.wem"
+        },
+        {
+          "file": "Cassiopeia/03.ogg",
+          "url": "/audio/vo/en-us/Cassiopeia/03.ogg",
+          "durationMs": 5007,
+          "bytes": 16694,
+          "sourceWem": "400845936.wem"
+        },
+        {
+          "file": "Cassiopeia/04.ogg",
+          "url": "/audio/vo/en-us/Cassiopeia/04.ogg",
+          "durationMs": 5107,
+          "bytes": 16961,
+          "sourceWem": "599624234.wem"
+        },
+        {
+          "file": "Cassiopeia/05.ogg",
+          "url": "/audio/vo/en-us/Cassiopeia/05.ogg",
+          "durationMs": 5107,
+          "bytes": 15871,
+          "sourceWem": "1040575126.wem"
+        }
+      ]
+    },
+    "Chogath": {
+      "id": "Chogath",
+      "name": "Cho'Gath",
+      "clips": [
+        {
+          "file": "Chogath/01.ogg",
+          "url": "/audio/vo/en-us/Chogath/01.ogg",
+          "durationMs": 9407,
+          "bytes": 26398,
+          "sourceWem": "140789781.wem"
+        },
+        {
+          "file": "Chogath/02.ogg",
+          "url": "/audio/vo/en-us/Chogath/02.ogg",
+          "durationMs": 5107,
+          "bytes": 15182,
+          "sourceWem": "1060508656.wem"
+        },
+        {
+          "file": "Chogath/03.ogg",
+          "url": "/audio/vo/en-us/Chogath/03.ogg",
+          "durationMs": 4907,
+          "bytes": 14580,
+          "sourceWem": "511631603.wem"
+        },
+        {
+          "file": "Chogath/04.ogg",
+          "url": "/audio/vo/en-us/Chogath/04.ogg",
+          "durationMs": 4707,
+          "bytes": 13883,
+          "sourceWem": "218343703.wem"
+        },
+        {
+          "file": "Chogath/05.ogg",
+          "url": "/audio/vo/en-us/Chogath/05.ogg",
+          "durationMs": 4307,
+          "bytes": 12462,
+          "sourceWem": "554704897.wem"
+        }
+      ]
+    },
+    "Corki": {
+      "id": "Corki",
+      "name": "Corki",
+      "clips": [
+        {
+          "file": "Corki/01.ogg",
+          "url": "/audio/vo/en-us/Corki/01.ogg",
+          "durationMs": 3807,
+          "bytes": 11794,
+          "sourceWem": "796321354.wem"
+        },
+        {
+          "file": "Corki/02.ogg",
+          "url": "/audio/vo/en-us/Corki/02.ogg",
+          "durationMs": 2837,
+          "bytes": 9328,
+          "sourceWem": "557527329.wem"
+        },
+        {
+          "file": "Corki/03.ogg",
+          "url": "/audio/vo/en-us/Corki/03.ogg",
+          "durationMs": 2649,
+          "bytes": 8382,
+          "sourceWem": "1063149815.wem"
+        },
+        {
+          "file": "Corki/04.ogg",
+          "url": "/audio/vo/en-us/Corki/04.ogg",
+          "durationMs": 2458,
+          "bytes": 9193,
+          "sourceWem": "675178622.wem"
+        },
+        {
+          "file": "Corki/05.ogg",
+          "url": "/audio/vo/en-us/Corki/05.ogg",
+          "durationMs": 2501,
+          "bytes": 8426,
+          "sourceWem": "623006116.wem"
+        }
+      ]
+    },
+    "Darius": {
+      "id": "Darius",
+      "name": "Darius",
+      "clips": [
+        {
+          "file": "Darius/01.ogg",
+          "url": "/audio/vo/en-us/Darius/01.ogg",
+          "durationMs": 4407,
+          "bytes": 14058,
+          "sourceWem": "171304943.wem"
+        },
+        {
+          "file": "Darius/02.ogg",
+          "url": "/audio/vo/en-us/Darius/02.ogg",
+          "durationMs": 4207,
+          "bytes": 12825,
+          "sourceWem": "570314587.wem"
+        },
+        {
+          "file": "Darius/03.ogg",
+          "url": "/audio/vo/en-us/Darius/03.ogg",
+          "durationMs": 3607,
+          "bytes": 12090,
+          "sourceWem": "751607308.wem"
+        },
+        {
+          "file": "Darius/04.ogg",
+          "url": "/audio/vo/en-us/Darius/04.ogg",
+          "durationMs": 3107,
+          "bytes": 9723,
+          "sourceWem": "31921374.wem"
+        },
+        {
+          "file": "Darius/05.ogg",
+          "url": "/audio/vo/en-us/Darius/05.ogg",
+          "durationMs": 2990,
+          "bytes": 9728,
+          "sourceWem": "41628805.wem"
+        }
+      ]
+    },
+    "Diana": {
+      "id": "Diana",
+      "name": "Diana",
+      "clips": [
+        {
+          "file": "Diana/01.ogg",
+          "url": "/audio/vo/en-us/Diana/01.ogg",
+          "durationMs": 10007,
+          "bytes": 29090,
+          "sourceWem": "541933177.wem"
+        },
+        {
+          "file": "Diana/02.ogg",
+          "url": "/audio/vo/en-us/Diana/02.ogg",
+          "durationMs": 10007,
+          "bytes": 28158,
+          "sourceWem": "359361975.wem"
+        },
+        {
+          "file": "Diana/03.ogg",
+          "url": "/audio/vo/en-us/Diana/03.ogg",
+          "durationMs": 3807,
+          "bytes": 11338,
+          "sourceWem": "288147252.wem"
+        },
+        {
+          "file": "Diana/04.ogg",
+          "url": "/audio/vo/en-us/Diana/04.ogg",
+          "durationMs": 3707,
+          "bytes": 11091,
+          "sourceWem": "309471726.wem"
+        },
+        {
+          "file": "Diana/05.ogg",
+          "url": "/audio/vo/en-us/Diana/05.ogg",
+          "durationMs": 3707,
+          "bytes": 11642,
+          "sourceWem": "148706700.wem"
+        }
+      ]
+    },
+    "Draven": {
+      "id": "Draven",
+      "name": "Draven",
+      "clips": [
+        {
+          "file": "Draven/01.ogg",
+          "url": "/audio/vo/en-us/Draven/01.ogg",
+          "durationMs": 7307,
+          "bytes": 22456,
+          "sourceWem": "717403569.wem"
+        },
+        {
+          "file": "Draven/02.ogg",
+          "url": "/audio/vo/en-us/Draven/02.ogg",
+          "durationMs": 7407,
+          "bytes": 24779,
+          "sourceWem": "586549968.wem"
+        },
+        {
+          "file": "Draven/03.ogg",
+          "url": "/audio/vo/en-us/Draven/03.ogg",
+          "durationMs": 7307,
+          "bytes": 23073,
+          "sourceWem": "86726666.wem"
+        },
+        {
+          "file": "Draven/04.ogg",
+          "url": "/audio/vo/en-us/Draven/04.ogg",
+          "durationMs": 7007,
+          "bytes": 18780,
+          "sourceWem": "731821321.wem"
+        },
+        {
+          "file": "Draven/05.ogg",
+          "url": "/audio/vo/en-us/Draven/05.ogg",
+          "durationMs": 4807,
+          "bytes": 15486,
+          "sourceWem": "43704682.wem"
+        }
+      ]
+    },
+    "DrMundo": {
+      "id": "DrMundo",
+      "name": "Dr. Mundo",
+      "clips": [
+        {
+          "file": "DrMundo/01.ogg",
+          "url": "/audio/vo/en-us/DrMundo/01.ogg",
+          "durationMs": 8507,
+          "bytes": 25912,
+          "sourceWem": "172953454.wem"
+        },
+        {
+          "file": "DrMundo/02.ogg",
+          "url": "/audio/vo/en-us/DrMundo/02.ogg",
+          "durationMs": 7507,
+          "bytes": 22972,
+          "sourceWem": "1057315454.wem"
+        },
+        {
+          "file": "DrMundo/03.ogg",
+          "url": "/audio/vo/en-us/DrMundo/03.ogg",
+          "durationMs": 6907,
+          "bytes": 20995,
+          "sourceWem": "783295612.wem"
+        },
+        {
+          "file": "DrMundo/04.ogg",
+          "url": "/audio/vo/en-us/DrMundo/04.ogg",
+          "durationMs": 6507,
+          "bytes": 20704,
+          "sourceWem": "311700274.wem"
+        },
+        {
+          "file": "DrMundo/05.ogg",
+          "url": "/audio/vo/en-us/DrMundo/05.ogg",
+          "durationMs": 6807,
+          "bytes": 21070,
+          "sourceWem": "546004013.wem"
+        }
+      ]
+    },
+    "Ekko": {
+      "id": "Ekko",
+      "name": "Ekko",
+      "clips": [
+        {
+          "file": "Ekko/01.ogg",
+          "url": "/audio/vo/en-us/Ekko/01.ogg",
+          "durationMs": 8507,
+          "bytes": 22791,
+          "sourceWem": "105488907.wem"
+        },
+        {
+          "file": "Ekko/02.ogg",
+          "url": "/audio/vo/en-us/Ekko/02.ogg",
+          "durationMs": 5207,
+          "bytes": 20075,
+          "sourceWem": "267439532.wem"
+        },
+        {
+          "file": "Ekko/03.ogg",
+          "url": "/audio/vo/en-us/Ekko/03.ogg",
+          "durationMs": 5307,
+          "bytes": 18009,
+          "sourceWem": "24258082.wem"
+        },
+        {
+          "file": "Ekko/04.ogg",
+          "url": "/audio/vo/en-us/Ekko/04.ogg",
+          "durationMs": 4607,
+          "bytes": 16481,
+          "sourceWem": "553994283.wem"
+        },
+        {
+          "file": "Ekko/05.ogg",
+          "url": "/audio/vo/en-us/Ekko/05.ogg",
+          "durationMs": 5407,
+          "bytes": 14018,
+          "sourceWem": "666266084.wem"
+        }
+      ]
+    },
+    "Elise": {
+      "id": "Elise",
+      "name": "Elise",
+      "clips": [
+        {
+          "file": "Elise/01.ogg",
+          "url": "/audio/vo/en-us/Elise/01.ogg",
+          "durationMs": 6107,
+          "bytes": 17965,
+          "sourceWem": "731159711.wem"
+        },
+        {
+          "file": "Elise/02.ogg",
+          "url": "/audio/vo/en-us/Elise/02.ogg",
+          "durationMs": 4707,
+          "bytes": 13327,
+          "sourceWem": "562161574.wem"
+        },
+        {
+          "file": "Elise/03.ogg",
+          "url": "/audio/vo/en-us/Elise/03.ogg",
+          "durationMs": 4507,
+          "bytes": 12931,
+          "sourceWem": "468328460.wem"
+        },
+        {
+          "file": "Elise/04.ogg",
+          "url": "/audio/vo/en-us/Elise/04.ogg",
+          "durationMs": 4707,
+          "bytes": 13933,
+          "sourceWem": "881918167.wem"
+        },
+        {
+          "file": "Elise/05.ogg",
+          "url": "/audio/vo/en-us/Elise/05.ogg",
+          "durationMs": 4607,
+          "bytes": 13250,
+          "sourceWem": "804435968.wem"
+        }
+      ]
+    },
+    "Evelynn": {
+      "id": "Evelynn",
+      "name": "Evelynn",
+      "clips": [
+        {
+          "file": "Evelynn/01.ogg",
+          "url": "/audio/vo/en-us/Evelynn/01.ogg",
+          "durationMs": 7407,
+          "bytes": 21964,
+          "sourceWem": "853090405.wem"
+        },
+        {
+          "file": "Evelynn/02.ogg",
+          "url": "/audio/vo/en-us/Evelynn/02.ogg",
+          "durationMs": 6607,
+          "bytes": 18649,
+          "sourceWem": "805291675.wem"
+        },
+        {
+          "file": "Evelynn/03.ogg",
+          "url": "/audio/vo/en-us/Evelynn/03.ogg",
+          "durationMs": 6207,
+          "bytes": 18415,
+          "sourceWem": "401011518.wem"
+        },
+        {
+          "file": "Evelynn/04.ogg",
+          "url": "/audio/vo/en-us/Evelynn/04.ogg",
+          "durationMs": 6307,
+          "bytes": 18824,
+          "sourceWem": "786032343.wem"
+        },
+        {
+          "file": "Evelynn/05.ogg",
+          "url": "/audio/vo/en-us/Evelynn/05.ogg",
+          "durationMs": 5907,
+          "bytes": 17645,
+          "sourceWem": "252450870.wem"
+        }
+      ]
+    },
+    "Ezreal": {
+      "id": "Ezreal",
+      "name": "Ezreal",
+      "clips": [
+        {
+          "file": "Ezreal/01.ogg",
+          "url": "/audio/vo/en-us/Ezreal/01.ogg",
+          "durationMs": 10007,
+          "bytes": 30923,
+          "sourceWem": "670083870.wem"
+        },
+        {
+          "file": "Ezreal/02.ogg",
+          "url": "/audio/vo/en-us/Ezreal/02.ogg",
+          "durationMs": 8207,
+          "bytes": 24894,
+          "sourceWem": "1024660517.wem"
+        },
+        {
+          "file": "Ezreal/03.ogg",
+          "url": "/audio/vo/en-us/Ezreal/03.ogg",
+          "durationMs": 8407,
+          "bytes": 25566,
+          "sourceWem": "151134538.wem"
+        },
+        {
+          "file": "Ezreal/04.ogg",
+          "url": "/audio/vo/en-us/Ezreal/04.ogg",
+          "durationMs": 7207,
+          "bytes": 21784,
+          "sourceWem": "916268541.wem"
+        },
+        {
+          "file": "Ezreal/05.ogg",
+          "url": "/audio/vo/en-us/Ezreal/05.ogg",
+          "durationMs": 6907,
+          "bytes": 19504,
+          "sourceWem": "147698478.wem"
+        }
+      ]
+    },
+    "Fiddlesticks": {
+      "id": "Fiddlesticks",
+      "name": "Fiddlesticks",
+      "clips": [
+        {
+          "file": "Fiddlesticks/01.ogg",
+          "url": "/audio/vo/en-us/Fiddlesticks/01.ogg",
+          "durationMs": 9207,
+          "bytes": 26980,
+          "sourceWem": "760178719.wem"
+        },
+        {
+          "file": "Fiddlesticks/02.ogg",
+          "url": "/audio/vo/en-us/Fiddlesticks/02.ogg",
+          "durationMs": 9007,
+          "bytes": 26352,
+          "sourceWem": "1013026609.wem"
+        },
+        {
+          "file": "Fiddlesticks/03.ogg",
+          "url": "/audio/vo/en-us/Fiddlesticks/03.ogg",
+          "durationMs": 8607,
+          "bytes": 24995,
+          "sourceWem": "406429207.wem"
+        },
+        {
+          "file": "Fiddlesticks/04.ogg",
+          "url": "/audio/vo/en-us/Fiddlesticks/04.ogg",
+          "durationMs": 8407,
+          "bytes": 23931,
+          "sourceWem": "149993795.wem"
+        },
+        {
+          "file": "Fiddlesticks/05.ogg",
+          "url": "/audio/vo/en-us/Fiddlesticks/05.ogg",
+          "durationMs": 8007,
+          "bytes": 23150,
+          "sourceWem": "48932979.wem"
+        }
+      ]
+    },
+    "Fiora": {
+      "id": "Fiora",
+      "name": "Fiora",
+      "clips": [
+        {
+          "file": "Fiora/01.ogg",
+          "url": "/audio/vo/en-us/Fiora/01.ogg",
+          "durationMs": 3907,
+          "bytes": 12071,
+          "sourceWem": "436106099.wem"
+        },
+        {
+          "file": "Fiora/02.ogg",
+          "url": "/audio/vo/en-us/Fiora/02.ogg",
+          "durationMs": 4307,
+          "bytes": 14128,
+          "sourceWem": "224214043.wem"
+        },
+        {
+          "file": "Fiora/03.ogg",
+          "url": "/audio/vo/en-us/Fiora/03.ogg",
+          "durationMs": 3607,
+          "bytes": 11130,
+          "sourceWem": "13639503.wem"
+        },
+        {
+          "file": "Fiora/04.ogg",
+          "url": "/audio/vo/en-us/Fiora/04.ogg",
+          "durationMs": 3207,
+          "bytes": 9723,
+          "sourceWem": "65725685.wem"
+        },
+        {
+          "file": "Fiora/05.ogg",
+          "url": "/audio/vo/en-us/Fiora/05.ogg",
+          "durationMs": 3607,
+          "bytes": 11991,
+          "sourceWem": "501009338.wem"
+        }
+      ]
+    },
+    "Fizz": {
+      "id": "Fizz",
+      "name": "Fizz",
+      "clips": [
+        {
+          "file": "Fizz/01.ogg",
+          "url": "/audio/vo/en-us/Fizz/01.ogg",
+          "durationMs": 7007,
+          "bytes": 21407,
+          "sourceWem": "512732698.wem"
+        },
+        {
+          "file": "Fizz/02.ogg",
+          "url": "/audio/vo/en-us/Fizz/02.ogg",
+          "durationMs": 7207,
+          "bytes": 20837,
+          "sourceWem": "237432799.wem"
+        },
+        {
+          "file": "Fizz/03.ogg",
+          "url": "/audio/vo/en-us/Fizz/03.ogg",
+          "durationMs": 4707,
+          "bytes": 14351,
+          "sourceWem": "1010321733.wem"
+        },
+        {
+          "file": "Fizz/04.ogg",
+          "url": "/audio/vo/en-us/Fizz/04.ogg",
+          "durationMs": 4907,
+          "bytes": 14986,
+          "sourceWem": "116554019.wem"
+        },
+        {
+          "file": "Fizz/05.ogg",
+          "url": "/audio/vo/en-us/Fizz/05.ogg",
+          "durationMs": 4707,
+          "bytes": 14330,
+          "sourceWem": "721933493.wem"
+        }
+      ]
+    },
+    "Galio": {
+      "id": "Galio",
+      "name": "Galio",
+      "clips": [
+        {
+          "file": "Galio/01.ogg",
+          "url": "/audio/vo/en-us/Galio/01.ogg",
+          "durationMs": 6207,
+          "bytes": 19158,
+          "sourceWem": "366694428.wem"
+        },
+        {
+          "file": "Galio/02.ogg",
+          "url": "/audio/vo/en-us/Galio/02.ogg",
+          "durationMs": 5707,
+          "bytes": 17742,
+          "sourceWem": "268064810.wem"
+        },
+        {
+          "file": "Galio/03.ogg",
+          "url": "/audio/vo/en-us/Galio/03.ogg",
+          "durationMs": 5207,
+          "bytes": 16071,
+          "sourceWem": "465562792.wem"
+        },
+        {
+          "file": "Galio/04.ogg",
+          "url": "/audio/vo/en-us/Galio/04.ogg",
+          "durationMs": 5407,
+          "bytes": 15921,
+          "sourceWem": "246075286.wem"
+        },
+        {
+          "file": "Galio/05.ogg",
+          "url": "/audio/vo/en-us/Galio/05.ogg",
+          "durationMs": 5007,
+          "bytes": 15275,
+          "sourceWem": "332867335.wem"
+        }
+      ]
+    },
+    "Gangplank": {
+      "id": "Gangplank",
+      "name": "Gangplank",
+      "clips": [
+        {
+          "file": "Gangplank/01.ogg",
+          "url": "/audio/vo/en-us/Gangplank/01.ogg",
+          "durationMs": 8407,
+          "bytes": 24954,
+          "sourceWem": "849026318.wem"
+        },
+        {
+          "file": "Gangplank/02.ogg",
+          "url": "/audio/vo/en-us/Gangplank/02.ogg",
+          "durationMs": 7407,
+          "bytes": 22515,
+          "sourceWem": "805956383.wem"
+        },
+        {
+          "file": "Gangplank/03.ogg",
+          "url": "/audio/vo/en-us/Gangplank/03.ogg",
+          "durationMs": 2764,
+          "bytes": 8360,
+          "sourceWem": "1007530831.wem"
+        },
+        {
+          "file": "Gangplank/04.ogg",
+          "url": "/audio/vo/en-us/Gangplank/04.ogg",
+          "durationMs": 3307,
+          "bytes": 9574,
+          "sourceWem": "510854353.wem"
+        },
+        {
+          "file": "Gangplank/05.ogg",
+          "url": "/audio/vo/en-us/Gangplank/05.ogg",
+          "durationMs": 4307,
+          "bytes": 13750,
+          "sourceWem": "835099724.wem"
+        }
+      ]
+    },
+    "Garen": {
+      "id": "Garen",
+      "name": "Garen",
+      "clips": [
+        {
+          "file": "Garen/01.ogg",
+          "url": "/audio/vo/en-us/Garen/01.ogg",
+          "durationMs": 4307,
+          "bytes": 13579,
+          "sourceWem": "1010143650.wem"
+        },
+        {
+          "file": "Garen/02.ogg",
+          "url": "/audio/vo/en-us/Garen/02.ogg",
+          "durationMs": 4307,
+          "bytes": 13768,
+          "sourceWem": "590427535.wem"
+        },
+        {
+          "file": "Garen/03.ogg",
+          "url": "/audio/vo/en-us/Garen/03.ogg",
+          "durationMs": 3807,
+          "bytes": 12877,
+          "sourceWem": "150051978.wem"
+        },
+        {
+          "file": "Garen/04.ogg",
+          "url": "/audio/vo/en-us/Garen/04.ogg",
+          "durationMs": 4007,
+          "bytes": 11704,
+          "sourceWem": "988954240.wem"
+        },
+        {
+          "file": "Garen/05.ogg",
+          "url": "/audio/vo/en-us/Garen/05.ogg",
+          "durationMs": 3307,
+          "bytes": 10342,
+          "sourceWem": "226870302.wem"
+        }
+      ]
+    },
+    "Gnar": {
+      "id": "Gnar",
+      "name": "Gnar",
+      "clips": [
+        {
+          "file": "Gnar/01.ogg",
+          "url": "/audio/vo/en-us/Gnar/01.ogg",
+          "durationMs": 10007,
+          "bytes": 35224,
+          "sourceWem": "508734843.wem"
+        },
+        {
+          "file": "Gnar/02.ogg",
+          "url": "/audio/vo/en-us/Gnar/02.ogg",
+          "durationMs": 10007,
+          "bytes": 37139,
+          "sourceWem": "1053681105.wem"
+        },
+        {
+          "file": "Gnar/03.ogg",
+          "url": "/audio/vo/en-us/Gnar/03.ogg",
+          "durationMs": 7407,
+          "bytes": 22596,
+          "sourceWem": "915968807.wem"
+        },
+        {
+          "file": "Gnar/04.ogg",
+          "url": "/audio/vo/en-us/Gnar/04.ogg",
+          "durationMs": 4307,
+          "bytes": 12276,
+          "sourceWem": "523406201.wem"
+        },
+        {
+          "file": "Gnar/05.ogg",
+          "url": "/audio/vo/en-us/Gnar/05.ogg",
+          "durationMs": 4007,
+          "bytes": 11656,
+          "sourceWem": "568904417.wem"
+        }
+      ]
+    },
+    "Gragas": {
+      "id": "Gragas",
+      "name": "Gragas",
+      "clips": [
+        {
+          "file": "Gragas/01.ogg",
+          "url": "/audio/vo/en-us/Gragas/01.ogg",
+          "durationMs": 6107,
+          "bytes": 19766,
+          "sourceWem": "1008796840.wem"
+        },
+        {
+          "file": "Gragas/02.ogg",
+          "url": "/audio/vo/en-us/Gragas/02.ogg",
+          "durationMs": 3407,
+          "bytes": 11103,
+          "sourceWem": "942305534.wem"
+        },
+        {
+          "file": "Gragas/03.ogg",
+          "url": "/audio/vo/en-us/Gragas/03.ogg",
+          "durationMs": 2793,
+          "bytes": 9447,
+          "sourceWem": "160743468.wem"
+        },
+        {
+          "file": "Gragas/04.ogg",
+          "url": "/audio/vo/en-us/Gragas/04.ogg",
+          "durationMs": 2405,
+          "bytes": 8532,
+          "sourceWem": "380177854.wem"
+        },
+        {
+          "file": "Gragas/05.ogg",
+          "url": "/audio/vo/en-us/Gragas/05.ogg",
+          "durationMs": 2186,
+          "bytes": 7219,
+          "sourceWem": "742595809.wem"
+        }
+      ]
+    },
+    "Graves": {
+      "id": "Graves",
+      "name": "Graves",
+      "clips": [
+        {
+          "file": "Graves/01.ogg",
+          "url": "/audio/vo/en-us/Graves/01.ogg",
+          "durationMs": 8007,
+          "bytes": 24548,
+          "sourceWem": "695695277.wem"
+        },
+        {
+          "file": "Graves/02.ogg",
+          "url": "/audio/vo/en-us/Graves/02.ogg",
+          "durationMs": 6507,
+          "bytes": 19784,
+          "sourceWem": "698357483.wem"
+        },
+        {
+          "file": "Graves/03.ogg",
+          "url": "/audio/vo/en-us/Graves/03.ogg",
+          "durationMs": 6207,
+          "bytes": 19417,
+          "sourceWem": "846590401.wem"
+        },
+        {
+          "file": "Graves/04.ogg",
+          "url": "/audio/vo/en-us/Graves/04.ogg",
+          "durationMs": 6207,
+          "bytes": 19616,
+          "sourceWem": "133610949.wem"
+        },
+        {
+          "file": "Graves/05.ogg",
+          "url": "/audio/vo/en-us/Graves/05.ogg",
+          "durationMs": 6107,
+          "bytes": 19267,
+          "sourceWem": "1062415351.wem"
+        }
+      ]
+    },
+    "Gwen": {
+      "id": "Gwen",
+      "name": "Gwen",
+      "clips": [
+        {
+          "file": "Gwen/01.ogg",
+          "url": "/audio/vo/en-us/Gwen/01.ogg",
+          "durationMs": 9007,
+          "bytes": 26241,
+          "sourceWem": "810495330.wem"
+        },
+        {
+          "file": "Gwen/02.ogg",
+          "url": "/audio/vo/en-us/Gwen/02.ogg",
+          "durationMs": 7407,
+          "bytes": 22007,
+          "sourceWem": "942682835.wem"
+        },
+        {
+          "file": "Gwen/03.ogg",
+          "url": "/audio/vo/en-us/Gwen/03.ogg",
+          "durationMs": 6507,
+          "bytes": 18867,
+          "sourceWem": "389754956.wem"
+        },
+        {
+          "file": "Gwen/04.ogg",
+          "url": "/audio/vo/en-us/Gwen/04.ogg",
+          "durationMs": 6307,
+          "bytes": 18137,
+          "sourceWem": "551323646.wem"
+        },
+        {
+          "file": "Gwen/05.ogg",
+          "url": "/audio/vo/en-us/Gwen/05.ogg",
+          "durationMs": 6007,
+          "bytes": 18235,
+          "sourceWem": "309616386.wem"
+        }
+      ]
+    },
+    "Hecarim": {
+      "id": "Hecarim",
+      "name": "Hecarim",
+      "clips": [
+        {
+          "file": "Hecarim/01.ogg",
+          "url": "/audio/vo/en-us/Hecarim/01.ogg",
+          "durationMs": 4607,
+          "bytes": 13647,
+          "sourceWem": "448341286.wem"
+        },
+        {
+          "file": "Hecarim/02.ogg",
+          "url": "/audio/vo/en-us/Hecarim/02.ogg",
+          "durationMs": 4707,
+          "bytes": 13122,
+          "sourceWem": "967999055.wem"
+        },
+        {
+          "file": "Hecarim/03.ogg",
+          "url": "/audio/vo/en-us/Hecarim/03.ogg",
+          "durationMs": 3607,
+          "bytes": 10793,
+          "sourceWem": "335121219.wem"
+        },
+        {
+          "file": "Hecarim/04.ogg",
+          "url": "/audio/vo/en-us/Hecarim/04.ogg",
+          "durationMs": 5807,
+          "bytes": 17180,
+          "sourceWem": "62378327.wem"
+        },
+        {
+          "file": "Hecarim/05.ogg",
+          "url": "/audio/vo/en-us/Hecarim/05.ogg",
+          "durationMs": 3807,
+          "bytes": 10746,
+          "sourceWem": "855388256.wem"
+        }
+      ]
+    },
+    "Heimerdinger": {
+      "id": "Heimerdinger",
+      "name": "Heimerdinger",
+      "clips": [
+        {
+          "file": "Heimerdinger/01.ogg",
+          "url": "/audio/vo/en-us/Heimerdinger/01.ogg",
+          "durationMs": 8007,
+          "bytes": 25480,
+          "sourceWem": "704295798.wem"
+        },
+        {
+          "file": "Heimerdinger/02.ogg",
+          "url": "/audio/vo/en-us/Heimerdinger/02.ogg",
+          "durationMs": 6607,
+          "bytes": 21125,
+          "sourceWem": "995066174.wem"
+        },
+        {
+          "file": "Heimerdinger/03.ogg",
+          "url": "/audio/vo/en-us/Heimerdinger/03.ogg",
+          "durationMs": 5107,
+          "bytes": 16151,
+          "sourceWem": "431168445.wem"
+        },
+        {
+          "file": "Heimerdinger/04.ogg",
+          "url": "/audio/vo/en-us/Heimerdinger/04.ogg",
+          "durationMs": 5007,
+          "bytes": 17955,
+          "sourceWem": "128343088.wem"
+        },
+        {
+          "file": "Heimerdinger/05.ogg",
+          "url": "/audio/vo/en-us/Heimerdinger/05.ogg",
+          "durationMs": 7307,
+          "bytes": 18587,
+          "sourceWem": "811903277.wem"
+        }
+      ]
+    },
+    "Hwei": {
+      "id": "Hwei",
+      "name": "Hwei",
+      "clips": [
+        {
+          "file": "Hwei/01.ogg",
+          "url": "/audio/vo/en-us/Hwei/01.ogg",
+          "durationMs": 8807,
+          "bytes": 25417,
+          "sourceWem": "740362039.wem"
+        },
+        {
+          "file": "Hwei/02.ogg",
+          "url": "/audio/vo/en-us/Hwei/02.ogg",
+          "durationMs": 7607,
+          "bytes": 22037,
+          "sourceWem": "272771137.wem"
+        },
+        {
+          "file": "Hwei/03.ogg",
+          "url": "/audio/vo/en-us/Hwei/03.ogg",
+          "durationMs": 7407,
+          "bytes": 22082,
+          "sourceWem": "308476639.wem"
+        },
+        {
+          "file": "Hwei/04.ogg",
+          "url": "/audio/vo/en-us/Hwei/04.ogg",
+          "durationMs": 7807,
+          "bytes": 23077,
+          "sourceWem": "996954566.wem"
+        },
+        {
+          "file": "Hwei/05.ogg",
+          "url": "/audio/vo/en-us/Hwei/05.ogg",
+          "durationMs": 6907,
+          "bytes": 20792,
+          "sourceWem": "19740282.wem"
+        }
+      ]
+    },
+    "Illaoi": {
+      "id": "Illaoi",
+      "name": "Illaoi",
+      "clips": [
+        {
+          "file": "Illaoi/01.ogg",
+          "url": "/audio/vo/en-us/Illaoi/01.ogg",
+          "durationMs": 8107,
+          "bytes": 23359,
+          "sourceWem": "59094937.wem"
+        },
+        {
+          "file": "Illaoi/02.ogg",
+          "url": "/audio/vo/en-us/Illaoi/02.ogg",
+          "durationMs": 7107,
+          "bytes": 21820,
+          "sourceWem": "918790074.wem"
+        },
+        {
+          "file": "Illaoi/03.ogg",
+          "url": "/audio/vo/en-us/Illaoi/03.ogg",
+          "durationMs": 6707,
+          "bytes": 19440,
+          "sourceWem": "227084608.wem"
+        },
+        {
+          "file": "Illaoi/04.ogg",
+          "url": "/audio/vo/en-us/Illaoi/04.ogg",
+          "durationMs": 6007,
+          "bytes": 18252,
+          "sourceWem": "47757418.wem"
+        },
+        {
+          "file": "Illaoi/05.ogg",
+          "url": "/audio/vo/en-us/Illaoi/05.ogg",
+          "durationMs": 5707,
+          "bytes": 17093,
+          "sourceWem": "490003628.wem"
+        }
+      ]
+    },
+    "Irelia": {
+      "id": "Irelia",
+      "name": "Irelia",
+      "clips": [
+        {
+          "file": "Irelia/01.ogg",
+          "url": "/audio/vo/en-us/Irelia/01.ogg",
+          "durationMs": 10007,
+          "bytes": 27491,
+          "sourceWem": "825823752.wem"
+        },
+        {
+          "file": "Irelia/02.ogg",
+          "url": "/audio/vo/en-us/Irelia/02.ogg",
+          "durationMs": 6007,
+          "bytes": 16729,
+          "sourceWem": "802541391.wem"
+        },
+        {
+          "file": "Irelia/03.ogg",
+          "url": "/audio/vo/en-us/Irelia/03.ogg",
+          "durationMs": 5307,
+          "bytes": 16946,
+          "sourceWem": "115062370.wem"
+        },
+        {
+          "file": "Irelia/04.ogg",
+          "url": "/audio/vo/en-us/Irelia/04.ogg",
+          "durationMs": 5307,
+          "bytes": 16039,
+          "sourceWem": "817655.wem"
+        },
+        {
+          "file": "Irelia/05.ogg",
+          "url": "/audio/vo/en-us/Irelia/05.ogg",
+          "durationMs": 6807,
+          "bytes": 20093,
+          "sourceWem": "595784807.wem"
+        }
+      ]
+    },
+    "Ivern": {
+      "id": "Ivern",
+      "name": "Ivern",
+      "clips": [
+        {
+          "file": "Ivern/01.ogg",
+          "url": "/audio/vo/en-us/Ivern/01.ogg",
+          "durationMs": 10007,
+          "bytes": 30750,
+          "sourceWem": "392399968.wem"
+        },
+        {
+          "file": "Ivern/02.ogg",
+          "url": "/audio/vo/en-us/Ivern/02.ogg",
+          "durationMs": 5407,
+          "bytes": 16355,
+          "sourceWem": "142553992.wem"
+        },
+        {
+          "file": "Ivern/03.ogg",
+          "url": "/audio/vo/en-us/Ivern/03.ogg",
+          "durationMs": 5407,
+          "bytes": 16271,
+          "sourceWem": "437781043.wem"
+        },
+        {
+          "file": "Ivern/04.ogg",
+          "url": "/audio/vo/en-us/Ivern/04.ogg",
+          "durationMs": 5107,
+          "bytes": 15542,
+          "sourceWem": "490085771.wem"
+        },
+        {
+          "file": "Ivern/05.ogg",
+          "url": "/audio/vo/en-us/Ivern/05.ogg",
+          "durationMs": 5107,
+          "bytes": 15445,
+          "sourceWem": "327939427.wem"
+        }
+      ]
+    },
+    "Janna": {
+      "id": "Janna",
+      "name": "Janna",
+      "clips": [
+        {
+          "file": "Janna/01.ogg",
+          "url": "/audio/vo/en-us/Janna/01.ogg",
+          "durationMs": 7907,
+          "bytes": 23480,
+          "sourceWem": "673546050.wem"
+        },
+        {
+          "file": "Janna/02.ogg",
+          "url": "/audio/vo/en-us/Janna/02.ogg",
+          "durationMs": 7507,
+          "bytes": 22569,
+          "sourceWem": "711376966.wem"
+        },
+        {
+          "file": "Janna/03.ogg",
+          "url": "/audio/vo/en-us/Janna/03.ogg",
+          "durationMs": 2947,
+          "bytes": 9311,
+          "sourceWem": "88026759.wem"
+        },
+        {
+          "file": "Janna/04.ogg",
+          "url": "/audio/vo/en-us/Janna/04.ogg",
+          "durationMs": 2304,
+          "bytes": 6891,
+          "sourceWem": "959901865.wem"
+        },
+        {
+          "file": "Janna/05.ogg",
+          "url": "/audio/vo/en-us/Janna/05.ogg",
+          "durationMs": 2158,
+          "bytes": 6379,
+          "sourceWem": "386371564.wem"
+        }
+      ]
+    },
+    "JarvanIV": {
+      "id": "JarvanIV",
+      "name": "Jarvan IV",
+      "clips": [
+        {
+          "file": "JarvanIV/01.ogg",
+          "url": "/audio/vo/en-us/JarvanIV/01.ogg",
+          "durationMs": 7207,
+          "bytes": 23227,
+          "sourceWem": "717284989.wem"
+        },
+        {
+          "file": "JarvanIV/02.ogg",
+          "url": "/audio/vo/en-us/JarvanIV/02.ogg",
+          "durationMs": 6207,
+          "bytes": 19013,
+          "sourceWem": "691553025.wem"
+        },
+        {
+          "file": "JarvanIV/03.ogg",
+          "url": "/audio/vo/en-us/JarvanIV/03.ogg",
+          "durationMs": 6707,
+          "bytes": 20325,
+          "sourceWem": "462430565.wem"
+        },
+        {
+          "file": "JarvanIV/04.ogg",
+          "url": "/audio/vo/en-us/JarvanIV/04.ogg",
+          "durationMs": 6207,
+          "bytes": 19091,
+          "sourceWem": "700079153.wem"
+        },
+        {
+          "file": "JarvanIV/05.ogg",
+          "url": "/audio/vo/en-us/JarvanIV/05.ogg",
+          "durationMs": 6207,
+          "bytes": 18413,
+          "sourceWem": "595953035.wem"
+        }
+      ]
+    },
+    "Jax": {
+      "id": "Jax",
+      "name": "Jax",
+      "clips": [
+        {
+          "file": "Jax/01.ogg",
+          "url": "/audio/vo/en-us/Jax/01.ogg",
+          "durationMs": 7707,
+          "bytes": 23574,
+          "sourceWem": "247272067.wem"
+        },
+        {
+          "file": "Jax/02.ogg",
+          "url": "/audio/vo/en-us/Jax/02.ogg",
+          "durationMs": 6507,
+          "bytes": 23775,
+          "sourceWem": "839113511.wem"
+        },
+        {
+          "file": "Jax/03.ogg",
+          "url": "/audio/vo/en-us/Jax/03.ogg",
+          "durationMs": 7007,
+          "bytes": 21861,
+          "sourceWem": "73195510.wem"
+        },
+        {
+          "file": "Jax/04.ogg",
+          "url": "/audio/vo/en-us/Jax/04.ogg",
+          "durationMs": 6907,
+          "bytes": 22201,
+          "sourceWem": "32261619.wem"
+        },
+        {
+          "file": "Jax/05.ogg",
+          "url": "/audio/vo/en-us/Jax/05.ogg",
+          "durationMs": 6707,
+          "bytes": 20567,
+          "sourceWem": "405941377.wem"
+        }
+      ]
+    },
+    "Jayce": {
+      "id": "Jayce",
+      "name": "Jayce",
+      "clips": [
+        {
+          "file": "Jayce/01.ogg",
+          "url": "/audio/vo/en-us/Jayce/01.ogg",
+          "durationMs": 4507,
+          "bytes": 13642,
+          "sourceWem": "7083179.wem"
+        },
+        {
+          "file": "Jayce/02.ogg",
+          "url": "/audio/vo/en-us/Jayce/02.ogg",
+          "durationMs": 4407,
+          "bytes": 12982,
+          "sourceWem": "569400636.wem"
+        },
+        {
+          "file": "Jayce/03.ogg",
+          "url": "/audio/vo/en-us/Jayce/03.ogg",
+          "durationMs": 3407,
+          "bytes": 10080,
+          "sourceWem": "815779042.wem"
+        },
+        {
+          "file": "Jayce/04.ogg",
+          "url": "/audio/vo/en-us/Jayce/04.ogg",
+          "durationMs": 3207,
+          "bytes": 9513,
+          "sourceWem": "808194867.wem"
+        },
+        {
+          "file": "Jayce/05.ogg",
+          "url": "/audio/vo/en-us/Jayce/05.ogg",
+          "durationMs": 2727,
+          "bytes": 8486,
+          "sourceWem": "453574644.wem"
+        }
+      ]
+    },
+    "Jhin": {
+      "id": "Jhin",
+      "name": "Jhin",
+      "clips": [
+        {
+          "file": "Jhin/01.ogg",
+          "url": "/audio/vo/en-us/Jhin/01.ogg",
+          "durationMs": 10007,
+          "bytes": 29198,
+          "sourceWem": "542944255.wem"
+        },
+        {
+          "file": "Jhin/02.ogg",
+          "url": "/audio/vo/en-us/Jhin/02.ogg",
+          "durationMs": 6907,
+          "bytes": 21462,
+          "sourceWem": "941993210.wem"
+        },
+        {
+          "file": "Jhin/03.ogg",
+          "url": "/audio/vo/en-us/Jhin/03.ogg",
+          "durationMs": 6107,
+          "bytes": 17917,
+          "sourceWem": "304969919.wem"
+        },
+        {
+          "file": "Jhin/04.ogg",
+          "url": "/audio/vo/en-us/Jhin/04.ogg",
+          "durationMs": 6307,
+          "bytes": 18832,
+          "sourceWem": "843989804.wem"
+        },
+        {
+          "file": "Jhin/05.ogg",
+          "url": "/audio/vo/en-us/Jhin/05.ogg",
+          "durationMs": 5607,
+          "bytes": 15690,
+          "sourceWem": "960859649.wem"
+        }
+      ]
+    },
+    "Jinx": {
+      "id": "Jinx",
+      "name": "Jinx",
+      "clips": [
+        {
+          "file": "Jinx/01.ogg",
+          "url": "/audio/vo/en-us/Jinx/01.ogg",
+          "durationMs": 9607,
+          "bytes": 33036,
+          "sourceWem": "274537980.wem"
+        },
+        {
+          "file": "Jinx/02.ogg",
+          "url": "/audio/vo/en-us/Jinx/02.ogg",
+          "durationMs": 9507,
+          "bytes": 33275,
+          "sourceWem": "259247218.wem"
+        },
+        {
+          "file": "Jinx/03.ogg",
+          "url": "/audio/vo/en-us/Jinx/03.ogg",
+          "durationMs": 9307,
+          "bytes": 33630,
+          "sourceWem": "557903649.wem"
+        },
+        {
+          "file": "Jinx/04.ogg",
+          "url": "/audio/vo/en-us/Jinx/04.ogg",
+          "durationMs": 8607,
+          "bytes": 25775,
+          "sourceWem": "199899403.wem"
+        },
+        {
+          "file": "Jinx/05.ogg",
+          "url": "/audio/vo/en-us/Jinx/05.ogg",
+          "durationMs": 8807,
+          "bytes": 25865,
+          "sourceWem": "957561274.wem"
+        }
+      ]
+    },
+    "Kaisa": {
+      "id": "Kaisa",
+      "name": "Kai'Sa",
+      "clips": [
+        {
+          "file": "Kaisa/01.ogg",
+          "url": "/audio/vo/en-us/Kaisa/01.ogg",
+          "durationMs": 10007,
+          "bytes": 26979,
+          "sourceWem": "77071256.wem"
+        },
+        {
+          "file": "Kaisa/02.ogg",
+          "url": "/audio/vo/en-us/Kaisa/02.ogg",
+          "durationMs": 8107,
+          "bytes": 22961,
+          "sourceWem": "477497825.wem"
+        },
+        {
+          "file": "Kaisa/03.ogg",
+          "url": "/audio/vo/en-us/Kaisa/03.ogg",
+          "durationMs": 7707,
+          "bytes": 21284,
+          "sourceWem": "600777056.wem"
+        },
+        {
+          "file": "Kaisa/04.ogg",
+          "url": "/audio/vo/en-us/Kaisa/04.ogg",
+          "durationMs": 7407,
+          "bytes": 20418,
+          "sourceWem": "927143001.wem"
+        },
+        {
+          "file": "Kaisa/05.ogg",
+          "url": "/audio/vo/en-us/Kaisa/05.ogg",
+          "durationMs": 8907,
+          "bytes": 24289,
+          "sourceWem": "312421633.wem"
+        }
+      ]
+    },
+    "Kalista": {
+      "id": "Kalista",
+      "name": "Kalista",
+      "clips": [
+        {
+          "file": "Kalista/01.ogg",
+          "url": "/audio/vo/en-us/Kalista/01.ogg",
+          "durationMs": 7007,
+          "bytes": 20806,
+          "sourceWem": "759408142.wem"
+        },
+        {
+          "file": "Kalista/02.ogg",
+          "url": "/audio/vo/en-us/Kalista/02.ogg",
+          "durationMs": 6207,
+          "bytes": 18481,
+          "sourceWem": "1069679208.wem"
+        },
+        {
+          "file": "Kalista/03.ogg",
+          "url": "/audio/vo/en-us/Kalista/03.ogg",
+          "durationMs": 6307,
+          "bytes": 18694,
+          "sourceWem": "526169728.wem"
+        },
+        {
+          "file": "Kalista/04.ogg",
+          "url": "/audio/vo/en-us/Kalista/04.ogg",
+          "durationMs": 5507,
+          "bytes": 16281,
+          "sourceWem": "637600154.wem"
+        },
+        {
+          "file": "Kalista/05.ogg",
+          "url": "/audio/vo/en-us/Kalista/05.ogg",
+          "durationMs": 5307,
+          "bytes": 15606,
+          "sourceWem": "136333231.wem"
+        }
+      ]
+    },
+    "Karma": {
+      "id": "Karma",
+      "name": "Karma",
+      "clips": [
+        {
+          "file": "Karma/01.ogg",
+          "url": "/audio/vo/en-us/Karma/01.ogg",
+          "durationMs": 4107,
+          "bytes": 12514,
+          "sourceWem": "1012626319.wem"
+        },
+        {
+          "file": "Karma/02.ogg",
+          "url": "/audio/vo/en-us/Karma/02.ogg",
+          "durationMs": 4607,
+          "bytes": 12977,
+          "sourceWem": "644267129.wem"
+        },
+        {
+          "file": "Karma/03.ogg",
+          "url": "/audio/vo/en-us/Karma/03.ogg",
+          "durationMs": 4107,
+          "bytes": 11844,
+          "sourceWem": "270155032.wem"
+        },
+        {
+          "file": "Karma/04.ogg",
+          "url": "/audio/vo/en-us/Karma/04.ogg",
+          "durationMs": 3407,
+          "bytes": 10982,
+          "sourceWem": "65986375.wem"
+        },
+        {
+          "file": "Karma/05.ogg",
+          "url": "/audio/vo/en-us/Karma/05.ogg",
+          "durationMs": 4007,
+          "bytes": 11901,
+          "sourceWem": "1004171983.wem"
+        }
+      ]
+    },
+    "Karthus": {
+      "id": "Karthus",
+      "name": "Karthus",
+      "clips": [
+        {
+          "file": "Karthus/01.ogg",
+          "url": "/audio/vo/en-us/Karthus/01.ogg",
+          "durationMs": 8007,
+          "bytes": 22042,
+          "sourceWem": "1044266574.wem"
+        },
+        {
+          "file": "Karthus/02.ogg",
+          "url": "/audio/vo/en-us/Karthus/02.ogg",
+          "durationMs": 6107,
+          "bytes": 17208,
+          "sourceWem": "602681322.wem"
+        },
+        {
+          "file": "Karthus/03.ogg",
+          "url": "/audio/vo/en-us/Karthus/03.ogg",
+          "durationMs": 6207,
+          "bytes": 18064,
+          "sourceWem": "151841842.wem"
+        },
+        {
+          "file": "Karthus/04.ogg",
+          "url": "/audio/vo/en-us/Karthus/04.ogg",
+          "durationMs": 5407,
+          "bytes": 15465,
+          "sourceWem": "157409913.wem"
+        },
+        {
+          "file": "Karthus/05.ogg",
+          "url": "/audio/vo/en-us/Karthus/05.ogg",
+          "durationMs": 5507,
+          "bytes": 15370,
+          "sourceWem": "465701853.wem"
+        }
+      ]
+    },
+    "Kassadin": {
+      "id": "Kassadin",
+      "name": "Kassadin",
+      "clips": [
+        {
+          "file": "Kassadin/01.ogg",
+          "url": "/audio/vo/en-us/Kassadin/01.ogg",
+          "durationMs": 4607,
+          "bytes": 12874,
+          "sourceWem": "225372106.wem"
+        },
+        {
+          "file": "Kassadin/02.ogg",
+          "url": "/audio/vo/en-us/Kassadin/02.ogg",
+          "durationMs": 3607,
+          "bytes": 10178,
+          "sourceWem": "299088002.wem"
+        },
+        {
+          "file": "Kassadin/03.ogg",
+          "url": "/audio/vo/en-us/Kassadin/03.ogg",
+          "durationMs": 5607,
+          "bytes": 16285,
+          "sourceWem": "530551627.wem"
+        },
+        {
+          "file": "Kassadin/04.ogg",
+          "url": "/audio/vo/en-us/Kassadin/04.ogg",
+          "durationMs": 3707,
+          "bytes": 10461,
+          "sourceWem": "222274015.wem"
+        },
+        {
+          "file": "Kassadin/05.ogg",
+          "url": "/audio/vo/en-us/Kassadin/05.ogg",
+          "durationMs": 3107,
+          "bytes": 8917,
+          "sourceWem": "353815077.wem"
+        }
+      ]
+    },
+    "Katarina": {
+      "id": "Katarina",
+      "name": "Katarina",
+      "clips": [
+        {
+          "file": "Katarina/01.ogg",
+          "url": "/audio/vo/en-us/Katarina/01.ogg",
+          "durationMs": 3507,
+          "bytes": 10058,
+          "sourceWem": "1068000858.wem"
+        },
+        {
+          "file": "Katarina/02.ogg",
+          "url": "/audio/vo/en-us/Katarina/02.ogg",
+          "durationMs": 3507,
+          "bytes": 10162,
+          "sourceWem": "587026584.wem"
+        },
+        {
+          "file": "Katarina/03.ogg",
+          "url": "/audio/vo/en-us/Katarina/03.ogg",
+          "durationMs": 2984,
+          "bytes": 9091,
+          "sourceWem": "250026597.wem"
+        },
+        {
+          "file": "Katarina/04.ogg",
+          "url": "/audio/vo/en-us/Katarina/04.ogg",
+          "durationMs": 1860,
+          "bytes": 5918,
+          "sourceWem": "524348022.wem"
+        },
+        {
+          "file": "Katarina/05.ogg",
+          "url": "/audio/vo/en-us/Katarina/05.ogg",
+          "durationMs": 2168,
+          "bytes": 6335,
+          "sourceWem": "745712646.wem"
+        }
+      ]
+    },
+    "Kayle": {
+      "id": "Kayle",
+      "name": "Kayle",
+      "clips": [
+        {
+          "file": "Kayle/01.ogg",
+          "url": "/audio/vo/en-us/Kayle/01.ogg",
+          "durationMs": 8807,
+          "bytes": 26886,
+          "sourceWem": "455343630.wem"
+        },
+        {
+          "file": "Kayle/02.ogg",
+          "url": "/audio/vo/en-us/Kayle/02.ogg",
+          "durationMs": 6507,
+          "bytes": 19792,
+          "sourceWem": "156637188.wem"
+        },
+        {
+          "file": "Kayle/03.ogg",
+          "url": "/audio/vo/en-us/Kayle/03.ogg",
+          "durationMs": 6107,
+          "bytes": 18719,
+          "sourceWem": "79904991.wem"
+        },
+        {
+          "file": "Kayle/04.ogg",
+          "url": "/audio/vo/en-us/Kayle/04.ogg",
+          "durationMs": 5107,
+          "bytes": 15354,
+          "sourceWem": "56234164.wem"
+        },
+        {
+          "file": "Kayle/05.ogg",
+          "url": "/audio/vo/en-us/Kayle/05.ogg",
+          "durationMs": 4807,
+          "bytes": 14994,
+          "sourceWem": "136221890.wem"
+        }
+      ]
+    },
+    "Kayn": {
+      "id": "Kayn",
+      "name": "Kayn",
+      "clips": [
+        {
+          "file": "Kayn/01.ogg",
+          "url": "/audio/vo/en-us/Kayn/01.ogg",
+          "durationMs": 8707,
+          "bytes": 26278,
+          "sourceWem": "463712913.wem"
+        },
+        {
+          "file": "Kayn/02.ogg",
+          "url": "/audio/vo/en-us/Kayn/02.ogg",
+          "durationMs": 8107,
+          "bytes": 24321,
+          "sourceWem": "26741896.wem"
+        },
+        {
+          "file": "Kayn/03.ogg",
+          "url": "/audio/vo/en-us/Kayn/03.ogg",
+          "durationMs": 7607,
+          "bytes": 23345,
+          "sourceWem": "533342065.wem"
+        },
+        {
+          "file": "Kayn/04.ogg",
+          "url": "/audio/vo/en-us/Kayn/04.ogg",
+          "durationMs": 7507,
+          "bytes": 22493,
+          "sourceWem": "1054513594.wem"
+        },
+        {
+          "file": "Kayn/05.ogg",
+          "url": "/audio/vo/en-us/Kayn/05.ogg",
+          "durationMs": 6907,
+          "bytes": 21399,
+          "sourceWem": "533608036.wem"
+        }
+      ]
+    },
+    "Kennen": {
+      "id": "Kennen",
+      "name": "Kennen",
+      "clips": [
+        {
+          "file": "Kennen/01.ogg",
+          "url": "/audio/vo/en-us/Kennen/01.ogg",
+          "durationMs": 3006,
+          "bytes": 9557,
+          "sourceWem": "743432089.wem"
+        },
+        {
+          "file": "Kennen/02.ogg",
+          "url": "/audio/vo/en-us/Kennen/02.ogg",
+          "durationMs": 2464,
+          "bytes": 7779,
+          "sourceWem": "929686315.wem"
+        },
+        {
+          "file": "Kennen/03.ogg",
+          "url": "/audio/vo/en-us/Kennen/03.ogg",
+          "durationMs": 2003,
+          "bytes": 6376,
+          "sourceWem": "726911036.wem"
+        },
+        {
+          "file": "Kennen/04.ogg",
+          "url": "/audio/vo/en-us/Kennen/04.ogg",
+          "durationMs": 1485,
+          "bytes": 4751,
+          "sourceWem": "155858647.wem"
+        },
+        {
+          "file": "Kennen/05.ogg",
+          "url": "/audio/vo/en-us/Kennen/05.ogg",
+          "durationMs": 1453,
+          "bytes": 5430,
+          "sourceWem": "996731491.wem"
+        }
+      ]
+    },
+    "Khazix": {
+      "id": "Khazix",
+      "name": "Kha'Zix",
+      "clips": [
+        {
+          "file": "Khazix/01.ogg",
+          "url": "/audio/vo/en-us/Khazix/01.ogg",
+          "durationMs": 5107,
+          "bytes": 15502,
+          "sourceWem": "1037962163.wem"
+        },
+        {
+          "file": "Khazix/02.ogg",
+          "url": "/audio/vo/en-us/Khazix/02.ogg",
+          "durationMs": 5407,
+          "bytes": 15928,
+          "sourceWem": "318581903.wem"
+        },
+        {
+          "file": "Khazix/03.ogg",
+          "url": "/audio/vo/en-us/Khazix/03.ogg",
+          "durationMs": 5007,
+          "bytes": 15389,
+          "sourceWem": "1035311391.wem"
+        },
+        {
+          "file": "Khazix/04.ogg",
+          "url": "/audio/vo/en-us/Khazix/04.ogg",
+          "durationMs": 3407,
+          "bytes": 9598,
+          "sourceWem": "507343117.wem"
+        },
+        {
+          "file": "Khazix/05.ogg",
+          "url": "/audio/vo/en-us/Khazix/05.ogg",
+          "durationMs": 3207,
+          "bytes": 9612,
+          "sourceWem": "210638272.wem"
+        }
+      ]
+    },
+    "Kindred": {
+      "id": "Kindred",
+      "name": "Kindred",
+      "clips": [
+        {
+          "file": "Kindred/01.ogg",
+          "url": "/audio/vo/en-us/Kindred/01.ogg",
+          "durationMs": 9607,
+          "bytes": 29347,
+          "sourceWem": "928103957.wem"
+        },
+        {
+          "file": "Kindred/02.ogg",
+          "url": "/audio/vo/en-us/Kindred/02.ogg",
+          "durationMs": 8907,
+          "bytes": 26881,
+          "sourceWem": "942023897.wem"
+        },
+        {
+          "file": "Kindred/03.ogg",
+          "url": "/audio/vo/en-us/Kindred/03.ogg",
+          "durationMs": 9307,
+          "bytes": 27845,
+          "sourceWem": "887450045.wem"
+        },
+        {
+          "file": "Kindred/04.ogg",
+          "url": "/audio/vo/en-us/Kindred/04.ogg",
+          "durationMs": 8007,
+          "bytes": 23761,
+          "sourceWem": "593962999.wem"
+        },
+        {
+          "file": "Kindred/05.ogg",
+          "url": "/audio/vo/en-us/Kindred/05.ogg",
+          "durationMs": 8307,
+          "bytes": 28623,
+          "sourceWem": "332571240.wem"
+        }
+      ]
+    },
+    "Kled": {
+      "id": "Kled",
+      "name": "Kled",
+      "clips": [
+        {
+          "file": "Kled/01.ogg",
+          "url": "/audio/vo/en-us/Kled/01.ogg",
+          "durationMs": 9007,
+          "bytes": 29484,
+          "sourceWem": "773247061.wem"
+        },
+        {
+          "file": "Kled/02.ogg",
+          "url": "/audio/vo/en-us/Kled/02.ogg",
+          "durationMs": 9207,
+          "bytes": 27331,
+          "sourceWem": "440748818.wem"
+        },
+        {
+          "file": "Kled/03.ogg",
+          "url": "/audio/vo/en-us/Kled/03.ogg",
+          "durationMs": 7807,
+          "bytes": 24114,
+          "sourceWem": "835055710.wem"
+        },
+        {
+          "file": "Kled/04.ogg",
+          "url": "/audio/vo/en-us/Kled/04.ogg",
+          "durationMs": 7707,
+          "bytes": 23631,
+          "sourceWem": "521633376.wem"
+        },
+        {
+          "file": "Kled/05.ogg",
+          "url": "/audio/vo/en-us/Kled/05.ogg",
+          "durationMs": 6707,
+          "bytes": 21932,
+          "sourceWem": "742441412.wem"
+        }
+      ]
+    },
+    "KogMaw": {
+      "id": "KogMaw",
+      "name": "Kog'Maw",
+      "clips": [
+        {
+          "file": "KogMaw/01.ogg",
+          "url": "/audio/vo/en-us/KogMaw/01.ogg",
+          "durationMs": 5007,
+          "bytes": 15688,
+          "sourceWem": "213602136.wem"
+        },
+        {
+          "file": "KogMaw/02.ogg",
+          "url": "/audio/vo/en-us/KogMaw/02.ogg",
+          "durationMs": 3407,
+          "bytes": 10290,
+          "sourceWem": "316136099.wem"
+        },
+        {
+          "file": "KogMaw/03.ogg",
+          "url": "/audio/vo/en-us/KogMaw/03.ogg",
+          "durationMs": 3707,
+          "bytes": 10814,
+          "sourceWem": "675545928.wem"
+        },
+        {
+          "file": "KogMaw/04.ogg",
+          "url": "/audio/vo/en-us/KogMaw/04.ogg",
+          "durationMs": 3107,
+          "bytes": 9690,
+          "sourceWem": "1012545474.wem"
+        },
+        {
+          "file": "KogMaw/05.ogg",
+          "url": "/audio/vo/en-us/KogMaw/05.ogg",
+          "durationMs": 3207,
+          "bytes": 9646,
+          "sourceWem": "1019784531.wem"
+        }
+      ]
+    },
+    "KSante": {
+      "id": "KSante",
+      "name": "K'Sante",
+      "clips": [
+        {
+          "file": "KSante/01.ogg",
+          "url": "/audio/vo/en-us/KSante/01.ogg",
+          "durationMs": 8907,
+          "bytes": 27623,
+          "sourceWem": "364088870.wem"
+        },
+        {
+          "file": "KSante/02.ogg",
+          "url": "/audio/vo/en-us/KSante/02.ogg",
+          "durationMs": 7207,
+          "bytes": 22180,
+          "sourceWem": "184484557.wem"
+        },
+        {
+          "file": "KSante/03.ogg",
+          "url": "/audio/vo/en-us/KSante/03.ogg",
+          "durationMs": 6707,
+          "bytes": 21012,
+          "sourceWem": "667247875.wem"
+        },
+        {
+          "file": "KSante/04.ogg",
+          "url": "/audio/vo/en-us/KSante/04.ogg",
+          "durationMs": 7407,
+          "bytes": 21407,
+          "sourceWem": "800464083.wem"
+        },
+        {
+          "file": "KSante/05.ogg",
+          "url": "/audio/vo/en-us/KSante/05.ogg",
+          "durationMs": 6607,
+          "bytes": 20153,
+          "sourceWem": "792736224.wem"
+        }
+      ]
+    },
+    "Leblanc": {
+      "id": "Leblanc",
+      "name": "LeBlanc",
+      "clips": [
+        {
+          "file": "Leblanc/01.ogg",
+          "url": "/audio/vo/en-us/Leblanc/01.ogg",
+          "durationMs": 9307,
+          "bytes": 28161,
+          "sourceWem": "623914680.wem"
+        },
+        {
+          "file": "Leblanc/02.ogg",
+          "url": "/audio/vo/en-us/Leblanc/02.ogg",
+          "durationMs": 8907,
+          "bytes": 26795,
+          "sourceWem": "356660090.wem"
+        },
+        {
+          "file": "Leblanc/03.ogg",
+          "url": "/audio/vo/en-us/Leblanc/03.ogg",
+          "durationMs": 8107,
+          "bytes": 25448,
+          "sourceWem": "912937042.wem"
+        },
+        {
+          "file": "Leblanc/04.ogg",
+          "url": "/audio/vo/en-us/Leblanc/04.ogg",
+          "durationMs": 8307,
+          "bytes": 25730,
+          "sourceWem": "401727535.wem"
+        },
+        {
+          "file": "Leblanc/05.ogg",
+          "url": "/audio/vo/en-us/Leblanc/05.ogg",
+          "durationMs": 8307,
+          "bytes": 25468,
+          "sourceWem": "104959658.wem"
+        }
+      ]
+    },
+    "LeeSin": {
+      "id": "LeeSin",
+      "name": "Lee Sin",
+      "clips": [
+        {
+          "file": "LeeSin/01.ogg",
+          "url": "/audio/vo/en-us/LeeSin/01.ogg",
+          "durationMs": 6507,
+          "bytes": 19120,
+          "sourceWem": "1063816271.wem"
+        },
+        {
+          "file": "LeeSin/02.ogg",
+          "url": "/audio/vo/en-us/LeeSin/02.ogg",
+          "durationMs": 6007,
+          "bytes": 18265,
+          "sourceWem": "601870399.wem"
+        },
+        {
+          "file": "LeeSin/03.ogg",
+          "url": "/audio/vo/en-us/LeeSin/03.ogg",
+          "durationMs": 5407,
+          "bytes": 16543,
+          "sourceWem": "323346824.wem"
+        },
+        {
+          "file": "LeeSin/04.ogg",
+          "url": "/audio/vo/en-us/LeeSin/04.ogg",
+          "durationMs": 5207,
+          "bytes": 15835,
+          "sourceWem": "1065715941.wem"
+        },
+        {
+          "file": "LeeSin/05.ogg",
+          "url": "/audio/vo/en-us/LeeSin/05.ogg",
+          "durationMs": 5107,
+          "bytes": 15528,
+          "sourceWem": "728299841.wem"
+        }
+      ]
+    },
+    "Leona": {
+      "id": "Leona",
+      "name": "Leona",
+      "clips": [
+        {
+          "file": "Leona/01.ogg",
+          "url": "/audio/vo/en-us/Leona/01.ogg",
+          "durationMs": 6307,
+          "bytes": 18906,
+          "sourceWem": "815601492.wem"
+        },
+        {
+          "file": "Leona/02.ogg",
+          "url": "/audio/vo/en-us/Leona/02.ogg",
+          "durationMs": 5007,
+          "bytes": 14348,
+          "sourceWem": "816510654.wem"
+        },
+        {
+          "file": "Leona/03.ogg",
+          "url": "/audio/vo/en-us/Leona/03.ogg",
+          "durationMs": 3807,
+          "bytes": 12865,
+          "sourceWem": "545495445.wem"
+        },
+        {
+          "file": "Leona/04.ogg",
+          "url": "/audio/vo/en-us/Leona/04.ogg",
+          "durationMs": 3907,
+          "bytes": 12185,
+          "sourceWem": "770115549.wem"
+        },
+        {
+          "file": "Leona/05.ogg",
+          "url": "/audio/vo/en-us/Leona/05.ogg",
+          "durationMs": 3607,
+          "bytes": 11922,
+          "sourceWem": "784928416.wem"
+        }
+      ]
+    },
+    "Lillia": {
+      "id": "Lillia",
+      "name": "Lillia",
+      "clips": [
+        {
+          "file": "Lillia/01.ogg",
+          "url": "/audio/vo/en-us/Lillia/01.ogg",
+          "durationMs": 10007,
+          "bytes": 30866,
+          "sourceWem": "163444897.wem"
+        },
+        {
+          "file": "Lillia/02.ogg",
+          "url": "/audio/vo/en-us/Lillia/02.ogg",
+          "durationMs": 8307,
+          "bytes": 26391,
+          "sourceWem": "683106097.wem"
+        },
+        {
+          "file": "Lillia/03.ogg",
+          "url": "/audio/vo/en-us/Lillia/03.ogg",
+          "durationMs": 7507,
+          "bytes": 24325,
+          "sourceWem": "987413698.wem"
+        },
+        {
+          "file": "Lillia/04.ogg",
+          "url": "/audio/vo/en-us/Lillia/04.ogg",
+          "durationMs": 7007,
+          "bytes": 22101,
+          "sourceWem": "16701628.wem"
+        },
+        {
+          "file": "Lillia/05.ogg",
+          "url": "/audio/vo/en-us/Lillia/05.ogg",
+          "durationMs": 6407,
+          "bytes": 19045,
+          "sourceWem": "613764846.wem"
+        }
+      ]
+    },
+    "Lissandra": {
+      "id": "Lissandra",
+      "name": "Lissandra",
+      "clips": [
+        {
+          "file": "Lissandra/01.ogg",
+          "url": "/audio/vo/en-us/Lissandra/01.ogg",
+          "durationMs": 4607,
+          "bytes": 13497,
+          "sourceWem": "79370103.wem"
+        },
+        {
+          "file": "Lissandra/02.ogg",
+          "url": "/audio/vo/en-us/Lissandra/02.ogg",
+          "durationMs": 4307,
+          "bytes": 12232,
+          "sourceWem": "608063107.wem"
+        },
+        {
+          "file": "Lissandra/03.ogg",
+          "url": "/audio/vo/en-us/Lissandra/03.ogg",
+          "durationMs": 4307,
+          "bytes": 12552,
+          "sourceWem": "254914053.wem"
+        },
+        {
+          "file": "Lissandra/04.ogg",
+          "url": "/audio/vo/en-us/Lissandra/04.ogg",
+          "durationMs": 4907,
+          "bytes": 14260,
+          "sourceWem": "818275785.wem"
+        },
+        {
+          "file": "Lissandra/05.ogg",
+          "url": "/audio/vo/en-us/Lissandra/05.ogg",
+          "durationMs": 3707,
+          "bytes": 10991,
+          "sourceWem": "826891882.wem"
+        }
+      ]
+    },
+    "Locke": {
+      "id": "Locke",
+      "name": "Locke",
+      "clips": [
+        {
+          "file": "Locke/01.ogg",
+          "url": "/audio/vo/en-us/Locke/01.ogg",
+          "durationMs": 5407,
+          "bytes": 16332,
+          "sourceWem": "690071246.wem"
+        },
+        {
+          "file": "Locke/02.ogg",
+          "url": "/audio/vo/en-us/Locke/02.ogg",
+          "durationMs": 5907,
+          "bytes": 16933,
+          "sourceWem": "313611049.wem"
+        },
+        {
+          "file": "Locke/03.ogg",
+          "url": "/audio/vo/en-us/Locke/03.ogg",
+          "durationMs": 4407,
+          "bytes": 13654,
+          "sourceWem": "750119242.wem"
+        },
+        {
+          "file": "Locke/04.ogg",
+          "url": "/audio/vo/en-us/Locke/04.ogg",
+          "durationMs": 4407,
+          "bytes": 13383,
+          "sourceWem": "879052521.wem"
+        },
+        {
+          "file": "Locke/05.ogg",
+          "url": "/audio/vo/en-us/Locke/05.ogg",
+          "durationMs": 4507,
+          "bytes": 13178,
+          "sourceWem": "207009996.wem"
+        }
+      ]
+    },
+    "Lucian": {
+      "id": "Lucian",
+      "name": "Lucian",
+      "clips": [
+        {
+          "file": "Lucian/01.ogg",
+          "url": "/audio/vo/en-us/Lucian/01.ogg",
+          "durationMs": 5607,
+          "bytes": 16774,
+          "sourceWem": "297464342.wem"
+        },
+        {
+          "file": "Lucian/02.ogg",
+          "url": "/audio/vo/en-us/Lucian/02.ogg",
+          "durationMs": 5507,
+          "bytes": 16311,
+          "sourceWem": "175074333.wem"
+        },
+        {
+          "file": "Lucian/03.ogg",
+          "url": "/audio/vo/en-us/Lucian/03.ogg",
+          "durationMs": 5807,
+          "bytes": 16599,
+          "sourceWem": "438017690.wem"
+        },
+        {
+          "file": "Lucian/04.ogg",
+          "url": "/audio/vo/en-us/Lucian/04.ogg",
+          "durationMs": 5307,
+          "bytes": 16061,
+          "sourceWem": "844668242.wem"
+        },
+        {
+          "file": "Lucian/05.ogg",
+          "url": "/audio/vo/en-us/Lucian/05.ogg",
+          "durationMs": 5507,
+          "bytes": 16452,
+          "sourceWem": "974169350.wem"
+        }
+      ]
+    },
+    "Lulu": {
+      "id": "Lulu",
+      "name": "Lulu",
+      "clips": [
+        {
+          "file": "Lulu/01.ogg",
+          "url": "/audio/vo/en-us/Lulu/01.ogg",
+          "durationMs": 5207,
+          "bytes": 13895,
+          "sourceWem": "920430029.wem"
+        },
+        {
+          "file": "Lulu/02.ogg",
+          "url": "/audio/vo/en-us/Lulu/02.ogg",
+          "durationMs": 4007,
+          "bytes": 15792,
+          "sourceWem": "615819768.wem"
+        },
+        {
+          "file": "Lulu/03.ogg",
+          "url": "/audio/vo/en-us/Lulu/03.ogg",
+          "durationMs": 4107,
+          "bytes": 13814,
+          "sourceWem": "258425350.wem"
+        },
+        {
+          "file": "Lulu/04.ogg",
+          "url": "/audio/vo/en-us/Lulu/04.ogg",
+          "durationMs": 4907,
+          "bytes": 14426,
+          "sourceWem": "864870809.wem"
+        },
+        {
+          "file": "Lulu/05.ogg",
+          "url": "/audio/vo/en-us/Lulu/05.ogg",
+          "durationMs": 3807,
+          "bytes": 14511,
+          "sourceWem": "932424432.wem"
+        }
+      ]
+    },
+    "Lux": {
+      "id": "Lux",
+      "name": "Lux",
+      "clips": [
+        {
+          "file": "Lux/01.ogg",
+          "url": "/audio/vo/en-us/Lux/01.ogg",
+          "durationMs": 7607,
+          "bytes": 25323,
+          "sourceWem": "770252472.wem"
+        },
+        {
+          "file": "Lux/02.ogg",
+          "url": "/audio/vo/en-us/Lux/02.ogg",
+          "durationMs": 7107,
+          "bytes": 22622,
+          "sourceWem": "221965604.wem"
+        },
+        {
+          "file": "Lux/03.ogg",
+          "url": "/audio/vo/en-us/Lux/03.ogg",
+          "durationMs": 5907,
+          "bytes": 18554,
+          "sourceWem": "71095682.wem"
+        },
+        {
+          "file": "Lux/04.ogg",
+          "url": "/audio/vo/en-us/Lux/04.ogg",
+          "durationMs": 5107,
+          "bytes": 17874,
+          "sourceWem": "504353130.wem"
+        },
+        {
+          "file": "Lux/05.ogg",
+          "url": "/audio/vo/en-us/Lux/05.ogg",
+          "durationMs": 4607,
+          "bytes": 14416,
+          "sourceWem": "332078577.wem"
+        }
+      ]
+    },
+    "Malphite": {
+      "id": "Malphite",
+      "name": "Malphite",
+      "clips": [
+        {
+          "file": "Malphite/01.ogg",
+          "url": "/audio/vo/en-us/Malphite/01.ogg",
+          "durationMs": 4407,
+          "bytes": 13339,
+          "sourceWem": "1057099494.wem"
+        },
+        {
+          "file": "Malphite/02.ogg",
+          "url": "/audio/vo/en-us/Malphite/02.ogg",
+          "durationMs": 2370,
+          "bytes": 7440,
+          "sourceWem": "539745593.wem"
+        },
+        {
+          "file": "Malphite/03.ogg",
+          "url": "/audio/vo/en-us/Malphite/03.ogg",
+          "durationMs": 2749,
+          "bytes": 8853,
+          "sourceWem": "1048141741.wem"
+        },
+        {
+          "file": "Malphite/04.ogg",
+          "url": "/audio/vo/en-us/Malphite/04.ogg",
+          "durationMs": 2679,
+          "bytes": 8425,
+          "sourceWem": "306164559.wem"
+        },
+        {
+          "file": "Malphite/05.ogg",
+          "url": "/audio/vo/en-us/Malphite/05.ogg",
+          "durationMs": 2605,
+          "bytes": 7986,
+          "sourceWem": "162250942.wem"
+        }
+      ]
+    },
+    "Malzahar": {
+      "id": "Malzahar",
+      "name": "Malzahar",
+      "clips": [
+        {
+          "file": "Malzahar/01.ogg",
+          "url": "/audio/vo/en-us/Malzahar/01.ogg",
+          "durationMs": 4607,
+          "bytes": 13473,
+          "sourceWem": "814498805.wem"
+        },
+        {
+          "file": "Malzahar/02.ogg",
+          "url": "/audio/vo/en-us/Malzahar/02.ogg",
+          "durationMs": 4607,
+          "bytes": 13355,
+          "sourceWem": "224352840.wem"
+        },
+        {
+          "file": "Malzahar/03.ogg",
+          "url": "/audio/vo/en-us/Malzahar/03.ogg",
+          "durationMs": 3507,
+          "bytes": 10095,
+          "sourceWem": "666860009.wem"
+        },
+        {
+          "file": "Malzahar/04.ogg",
+          "url": "/audio/vo/en-us/Malzahar/04.ogg",
+          "durationMs": 3002,
+          "bytes": 9218,
+          "sourceWem": "348282256.wem"
+        },
+        {
+          "file": "Malzahar/05.ogg",
+          "url": "/audio/vo/en-us/Malzahar/05.ogg",
+          "durationMs": 4007,
+          "bytes": 11733,
+          "sourceWem": "1046756832.wem"
+        }
+      ]
+    },
+    "Maokai": {
+      "id": "Maokai",
+      "name": "Maokai",
+      "clips": [
+        {
+          "file": "Maokai/01.ogg",
+          "url": "/audio/vo/en-us/Maokai/01.ogg",
+          "durationMs": 6607,
+          "bytes": 20865,
+          "sourceWem": "928797364.wem"
+        },
+        {
+          "file": "Maokai/02.ogg",
+          "url": "/audio/vo/en-us/Maokai/02.ogg",
+          "durationMs": 6107,
+          "bytes": 19635,
+          "sourceWem": "305458623.wem"
+        },
+        {
+          "file": "Maokai/03.ogg",
+          "url": "/audio/vo/en-us/Maokai/03.ogg",
+          "durationMs": 4607,
+          "bytes": 14438,
+          "sourceWem": "660687956.wem"
+        },
+        {
+          "file": "Maokai/04.ogg",
+          "url": "/audio/vo/en-us/Maokai/04.ogg",
+          "durationMs": 7007,
+          "bytes": 19897,
+          "sourceWem": "929790310.wem"
+        },
+        {
+          "file": "Maokai/05.ogg",
+          "url": "/audio/vo/en-us/Maokai/05.ogg",
+          "durationMs": 5707,
+          "bytes": 17594,
+          "sourceWem": "581652097.wem"
+        }
+      ]
+    },
+    "MasterYi": {
+      "id": "MasterYi",
+      "name": "Maestro Yi",
+      "clips": [
+        {
+          "file": "MasterYi/01.ogg",
+          "url": "/audio/vo/en-us/MasterYi/01.ogg",
+          "durationMs": 5407,
+          "bytes": 16796,
+          "sourceWem": "13440546.wem"
+        },
+        {
+          "file": "MasterYi/02.ogg",
+          "url": "/audio/vo/en-us/MasterYi/02.ogg",
+          "durationMs": 4007,
+          "bytes": 12342,
+          "sourceWem": "479611935.wem"
+        },
+        {
+          "file": "MasterYi/03.ogg",
+          "url": "/audio/vo/en-us/MasterYi/03.ogg",
+          "durationMs": 3607,
+          "bytes": 11142,
+          "sourceWem": "460346352.wem"
+        },
+        {
+          "file": "MasterYi/04.ogg",
+          "url": "/audio/vo/en-us/MasterYi/04.ogg",
+          "durationMs": 3807,
+          "bytes": 11522,
+          "sourceWem": "145717928.wem"
+        },
+        {
+          "file": "MasterYi/05.ogg",
+          "url": "/audio/vo/en-us/MasterYi/05.ogg",
+          "durationMs": 3707,
+          "bytes": 11981,
+          "sourceWem": "827691610.wem"
+        }
+      ]
+    },
+    "Mel": {
+      "id": "Mel",
+      "name": "Mel",
+      "clips": [
+        {
+          "file": "Mel/01.ogg",
+          "url": "/audio/vo/en-us/Mel/01.ogg",
+          "durationMs": 10007,
+          "bytes": 30304,
+          "sourceWem": "851669291.wem"
+        },
+        {
+          "file": "Mel/02.ogg",
+          "url": "/audio/vo/en-us/Mel/02.ogg",
+          "durationMs": 8407,
+          "bytes": 25399,
+          "sourceWem": "54915965.wem"
+        },
+        {
+          "file": "Mel/03.ogg",
+          "url": "/audio/vo/en-us/Mel/03.ogg",
+          "durationMs": 7707,
+          "bytes": 22814,
+          "sourceWem": "13730708.wem"
+        },
+        {
+          "file": "Mel/04.ogg",
+          "url": "/audio/vo/en-us/Mel/04.ogg",
+          "durationMs": 7307,
+          "bytes": 21989,
+          "sourceWem": "454935887.wem"
+        },
+        {
+          "file": "Mel/05.ogg",
+          "url": "/audio/vo/en-us/Mel/05.ogg",
+          "durationMs": 7307,
+          "bytes": 22692,
+          "sourceWem": "1030570871.wem"
+        }
+      ]
+    },
+    "Milio": {
+      "id": "Milio",
+      "name": "Milio",
+      "clips": [
+        {
+          "file": "Milio/01.ogg",
+          "url": "/audio/vo/en-us/Milio/01.ogg",
+          "durationMs": 8007,
+          "bytes": 24532,
+          "sourceWem": "947440936.wem"
+        },
+        {
+          "file": "Milio/02.ogg",
+          "url": "/audio/vo/en-us/Milio/02.ogg",
+          "durationMs": 7207,
+          "bytes": 23159,
+          "sourceWem": "110107238.wem"
+        },
+        {
+          "file": "Milio/03.ogg",
+          "url": "/audio/vo/en-us/Milio/03.ogg",
+          "durationMs": 6507,
+          "bytes": 18925,
+          "sourceWem": "1041243743.wem"
+        },
+        {
+          "file": "Milio/04.ogg",
+          "url": "/audio/vo/en-us/Milio/04.ogg",
+          "durationMs": 6207,
+          "bytes": 18988,
+          "sourceWem": "904304492.wem"
+        },
+        {
+          "file": "Milio/05.ogg",
+          "url": "/audio/vo/en-us/Milio/05.ogg",
+          "durationMs": 6407,
+          "bytes": 20450,
+          "sourceWem": "919026569.wem"
+        }
+      ]
+    },
+    "MissFortune": {
+      "id": "MissFortune",
+      "name": "Miss Fortune",
+      "clips": [
+        {
+          "file": "MissFortune/01.ogg",
+          "url": "/audio/vo/en-us/MissFortune/01.ogg",
+          "durationMs": 4207,
+          "bytes": 13044,
+          "sourceWem": "740199522.wem"
+        },
+        {
+          "file": "MissFortune/02.ogg",
+          "url": "/audio/vo/en-us/MissFortune/02.ogg",
+          "durationMs": 4107,
+          "bytes": 13481,
+          "sourceWem": "823838138.wem"
+        },
+        {
+          "file": "MissFortune/03.ogg",
+          "url": "/audio/vo/en-us/MissFortune/03.ogg",
+          "durationMs": 4007,
+          "bytes": 12954,
+          "sourceWem": "55266475.wem"
+        },
+        {
+          "file": "MissFortune/04.ogg",
+          "url": "/audio/vo/en-us/MissFortune/04.ogg",
+          "durationMs": 3907,
+          "bytes": 12178,
+          "sourceWem": "291052850.wem"
+        },
+        {
+          "file": "MissFortune/05.ogg",
+          "url": "/audio/vo/en-us/MissFortune/05.ogg",
+          "durationMs": 4007,
+          "bytes": 13500,
+          "sourceWem": "173701814.wem"
+        }
+      ]
+    },
+    "MonkeyKing": {
+      "id": "MonkeyKing",
+      "name": "Wukong",
+      "clips": [
+        {
+          "file": "MonkeyKing/01.ogg",
+          "url": "/audio/vo/en-us/MonkeyKing/01.ogg",
+          "durationMs": 7607,
+          "bytes": 25626,
+          "sourceWem": "232057884.wem"
+        },
+        {
+          "file": "MonkeyKing/02.ogg",
+          "url": "/audio/vo/en-us/MonkeyKing/02.ogg",
+          "durationMs": 7707,
+          "bytes": 26655,
+          "sourceWem": "585145906.wem"
+        },
+        {
+          "file": "MonkeyKing/03.ogg",
+          "url": "/audio/vo/en-us/MonkeyKing/03.ogg",
+          "durationMs": 7707,
+          "bytes": 22982,
+          "sourceWem": "91669187.wem"
+        },
+        {
+          "file": "MonkeyKing/04.ogg",
+          "url": "/audio/vo/en-us/MonkeyKing/04.ogg",
+          "durationMs": 7307,
+          "bytes": 21297,
+          "sourceWem": "282603118.wem"
+        },
+        {
+          "file": "MonkeyKing/05.ogg",
+          "url": "/audio/vo/en-us/MonkeyKing/05.ogg",
+          "durationMs": 7207,
+          "bytes": 23709,
+          "sourceWem": "173307877.wem"
+        }
+      ]
+    },
+    "Mordekaiser": {
+      "id": "Mordekaiser",
+      "name": "Mordekaiser",
+      "clips": [
+        {
+          "file": "Mordekaiser/01.ogg",
+          "url": "/audio/vo/en-us/Mordekaiser/01.ogg",
+          "durationMs": 10007,
+          "bytes": 30136,
+          "sourceWem": "239879525.wem"
+        },
+        {
+          "file": "Mordekaiser/02.ogg",
+          "url": "/audio/vo/en-us/Mordekaiser/02.ogg",
+          "durationMs": 10007,
+          "bytes": 30017,
+          "sourceWem": "933224894.wem"
+        },
+        {
+          "file": "Mordekaiser/03.ogg",
+          "url": "/audio/vo/en-us/Mordekaiser/03.ogg",
+          "durationMs": 8907,
+          "bytes": 27470,
+          "sourceWem": "256369645.wem"
+        },
+        {
+          "file": "Mordekaiser/04.ogg",
+          "url": "/audio/vo/en-us/Mordekaiser/04.ogg",
+          "durationMs": 8407,
+          "bytes": 24208,
+          "sourceWem": "807322128.wem"
+        },
+        {
+          "file": "Mordekaiser/05.ogg",
+          "url": "/audio/vo/en-us/Mordekaiser/05.ogg",
+          "durationMs": 7507,
+          "bytes": 21955,
+          "sourceWem": "529147916.wem"
+        }
+      ]
+    },
+    "Morgana": {
+      "id": "Morgana",
+      "name": "Morgana",
+      "clips": [
+        {
+          "file": "Morgana/01.ogg",
+          "url": "/audio/vo/en-us/Morgana/01.ogg",
+          "durationMs": 9007,
+          "bytes": 26820,
+          "sourceWem": "206609986.wem"
+        },
+        {
+          "file": "Morgana/02.ogg",
+          "url": "/audio/vo/en-us/Morgana/02.ogg",
+          "durationMs": 7507,
+          "bytes": 22646,
+          "sourceWem": "1029699936.wem"
+        },
+        {
+          "file": "Morgana/03.ogg",
+          "url": "/audio/vo/en-us/Morgana/03.ogg",
+          "durationMs": 7507,
+          "bytes": 22598,
+          "sourceWem": "605521751.wem"
+        },
+        {
+          "file": "Morgana/04.ogg",
+          "url": "/audio/vo/en-us/Morgana/04.ogg",
+          "durationMs": 7007,
+          "bytes": 21438,
+          "sourceWem": "646046330.wem"
+        },
+        {
+          "file": "Morgana/05.ogg",
+          "url": "/audio/vo/en-us/Morgana/05.ogg",
+          "durationMs": 6007,
+          "bytes": 16907,
+          "sourceWem": "434802053.wem"
+        }
+      ]
+    },
+    "Naafiri": {
+      "id": "Naafiri",
+      "name": "Naafiri",
+      "clips": [
+        {
+          "file": "Naafiri/01.ogg",
+          "url": "/audio/vo/en-us/Naafiri/01.ogg",
+          "durationMs": 8107,
+          "bytes": 22920,
+          "sourceWem": "503783010.wem"
+        },
+        {
+          "file": "Naafiri/02.ogg",
+          "url": "/audio/vo/en-us/Naafiri/02.ogg",
+          "durationMs": 6907,
+          "bytes": 19618,
+          "sourceWem": "280890195.wem"
+        },
+        {
+          "file": "Naafiri/03.ogg",
+          "url": "/audio/vo/en-us/Naafiri/03.ogg",
+          "durationMs": 6507,
+          "bytes": 17749,
+          "sourceWem": "440014445.wem"
+        },
+        {
+          "file": "Naafiri/04.ogg",
+          "url": "/audio/vo/en-us/Naafiri/04.ogg",
+          "durationMs": 6107,
+          "bytes": 17139,
+          "sourceWem": "541546106.wem"
+        },
+        {
+          "file": "Naafiri/05.ogg",
+          "url": "/audio/vo/en-us/Naafiri/05.ogg",
+          "durationMs": 6007,
+          "bytes": 17291,
+          "sourceWem": "236257901.wem"
+        }
+      ]
+    },
+    "Nami": {
+      "id": "Nami",
+      "name": "Nami",
+      "clips": [
+        {
+          "file": "Nami/01.ogg",
+          "url": "/audio/vo/en-us/Nami/01.ogg",
+          "durationMs": 4007,
+          "bytes": 11026,
+          "sourceWem": "282516364.wem"
+        },
+        {
+          "file": "Nami/02.ogg",
+          "url": "/audio/vo/en-us/Nami/02.ogg",
+          "durationMs": 3707,
+          "bytes": 10806,
+          "sourceWem": "821293704.wem"
+        },
+        {
+          "file": "Nami/03.ogg",
+          "url": "/audio/vo/en-us/Nami/03.ogg",
+          "durationMs": 2762,
+          "bytes": 8562,
+          "sourceWem": "925389183.wem"
+        },
+        {
+          "file": "Nami/04.ogg",
+          "url": "/audio/vo/en-us/Nami/04.ogg",
+          "durationMs": 2954,
+          "bytes": 9346,
+          "sourceWem": "1064395219.wem"
+        },
+        {
+          "file": "Nami/05.ogg",
+          "url": "/audio/vo/en-us/Nami/05.ogg",
+          "durationMs": 2841,
+          "bytes": 8645,
+          "sourceWem": "628527384.wem"
+        }
+      ]
+    },
+    "Nasus": {
+      "id": "Nasus",
+      "name": "Nasus",
+      "clips": [
+        {
+          "file": "Nasus/01.ogg",
+          "url": "/audio/vo/en-us/Nasus/01.ogg",
+          "durationMs": 5507,
+          "bytes": 16244,
+          "sourceWem": "779926466.wem"
+        },
+        {
+          "file": "Nasus/02.ogg",
+          "url": "/audio/vo/en-us/Nasus/02.ogg",
+          "durationMs": 6807,
+          "bytes": 20902,
+          "sourceWem": "342480673.wem"
+        },
+        {
+          "file": "Nasus/03.ogg",
+          "url": "/audio/vo/en-us/Nasus/03.ogg",
+          "durationMs": 4807,
+          "bytes": 14683,
+          "sourceWem": "806449215.wem"
+        },
+        {
+          "file": "Nasus/04.ogg",
+          "url": "/audio/vo/en-us/Nasus/04.ogg",
+          "durationMs": 4607,
+          "bytes": 14278,
+          "sourceWem": "1040125243.wem"
+        },
+        {
+          "file": "Nasus/05.ogg",
+          "url": "/audio/vo/en-us/Nasus/05.ogg",
+          "durationMs": 4607,
+          "bytes": 13626,
+          "sourceWem": "1023498676.wem"
+        }
+      ]
+    },
+    "Nautilus": {
+      "id": "Nautilus",
+      "name": "Nautilus",
+      "clips": [
+        {
+          "file": "Nautilus/01.ogg",
+          "url": "/audio/vo/en-us/Nautilus/01.ogg",
+          "durationMs": 10007,
+          "bytes": 30359,
+          "sourceWem": "330272384.wem"
+        },
+        {
+          "file": "Nautilus/02.ogg",
+          "url": "/audio/vo/en-us/Nautilus/02.ogg",
+          "durationMs": 7407,
+          "bytes": 20979,
+          "sourceWem": "910060198.wem"
+        },
+        {
+          "file": "Nautilus/03.ogg",
+          "url": "/audio/vo/en-us/Nautilus/03.ogg",
+          "durationMs": 6207,
+          "bytes": 18562,
+          "sourceWem": "954808595.wem"
+        },
+        {
+          "file": "Nautilus/04.ogg",
+          "url": "/audio/vo/en-us/Nautilus/04.ogg",
+          "durationMs": 6407,
+          "bytes": 19928,
+          "sourceWem": "541326687.wem"
+        },
+        {
+          "file": "Nautilus/05.ogg",
+          "url": "/audio/vo/en-us/Nautilus/05.ogg",
+          "durationMs": 6407,
+          "bytes": 19696,
+          "sourceWem": "979695838.wem"
+        }
+      ]
+    },
+    "Neeko": {
+      "id": "Neeko",
+      "name": "Neeko",
+      "clips": [
+        {
+          "file": "Neeko/01.ogg",
+          "url": "/audio/vo/en-us/Neeko/01.ogg",
+          "durationMs": 10007,
+          "bytes": 31712,
+          "sourceWem": "944579699.wem"
+        },
+        {
+          "file": "Neeko/02.ogg",
+          "url": "/audio/vo/en-us/Neeko/02.ogg",
+          "durationMs": 6207,
+          "bytes": 18923,
+          "sourceWem": "535349797.wem"
+        },
+        {
+          "file": "Neeko/03.ogg",
+          "url": "/audio/vo/en-us/Neeko/03.ogg",
+          "durationMs": 5807,
+          "bytes": 17587,
+          "sourceWem": "342475106.wem"
+        },
+        {
+          "file": "Neeko/04.ogg",
+          "url": "/audio/vo/en-us/Neeko/04.ogg",
+          "durationMs": 7507,
+          "bytes": 22659,
+          "sourceWem": "1033852186.wem"
+        },
+        {
+          "file": "Neeko/05.ogg",
+          "url": "/audio/vo/en-us/Neeko/05.ogg",
+          "durationMs": 5307,
+          "bytes": 16308,
+          "sourceWem": "21065144.wem"
+        }
+      ]
+    },
+    "Nidalee": {
+      "id": "Nidalee",
+      "name": "Nidalee",
+      "clips": [
+        {
+          "file": "Nidalee/01.ogg",
+          "url": "/audio/vo/en-us/Nidalee/01.ogg",
+          "durationMs": 7807,
+          "bytes": 22987,
+          "sourceWem": "772947125.wem"
+        },
+        {
+          "file": "Nidalee/02.ogg",
+          "url": "/audio/vo/en-us/Nidalee/02.ogg",
+          "durationMs": 6207,
+          "bytes": 18657,
+          "sourceWem": "947768277.wem"
+        },
+        {
+          "file": "Nidalee/03.ogg",
+          "url": "/audio/vo/en-us/Nidalee/03.ogg",
+          "durationMs": 6207,
+          "bytes": 19331,
+          "sourceWem": "662496597.wem"
+        },
+        {
+          "file": "Nidalee/04.ogg",
+          "url": "/audio/vo/en-us/Nidalee/04.ogg",
+          "durationMs": 6307,
+          "bytes": 19059,
+          "sourceWem": "1033974180.wem"
+        },
+        {
+          "file": "Nidalee/05.ogg",
+          "url": "/audio/vo/en-us/Nidalee/05.ogg",
+          "durationMs": 6107,
+          "bytes": 18240,
+          "sourceWem": "290659182.wem"
+        }
+      ]
+    },
+    "Nilah": {
+      "id": "Nilah",
+      "name": "Nilah",
+      "clips": [
+        {
+          "file": "Nilah/01.ogg",
+          "url": "/audio/vo/en-us/Nilah/01.ogg",
+          "durationMs": 7507,
+          "bytes": 21812,
+          "sourceWem": "785949541.wem"
+        },
+        {
+          "file": "Nilah/02.ogg",
+          "url": "/audio/vo/en-us/Nilah/02.ogg",
+          "durationMs": 7407,
+          "bytes": 21729,
+          "sourceWem": "51578785.wem"
+        },
+        {
+          "file": "Nilah/03.ogg",
+          "url": "/audio/vo/en-us/Nilah/03.ogg",
+          "durationMs": 6907,
+          "bytes": 20819,
+          "sourceWem": "98307168.wem"
+        },
+        {
+          "file": "Nilah/04.ogg",
+          "url": "/audio/vo/en-us/Nilah/04.ogg",
+          "durationMs": 6507,
+          "bytes": 19188,
+          "sourceWem": "461005321.wem"
+        },
+        {
+          "file": "Nilah/05.ogg",
+          "url": "/audio/vo/en-us/Nilah/05.ogg",
+          "durationMs": 6207,
+          "bytes": 18811,
+          "sourceWem": "238320835.wem"
+        }
+      ]
+    },
+    "Nocturne": {
+      "id": "Nocturne",
+      "name": "Nocturne",
+      "clips": [
+        {
+          "file": "Nocturne/01.ogg",
+          "url": "/audio/vo/en-us/Nocturne/01.ogg",
+          "durationMs": 5507,
+          "bytes": 15446,
+          "sourceWem": "431928583.wem"
+        },
+        {
+          "file": "Nocturne/02.ogg",
+          "url": "/audio/vo/en-us/Nocturne/02.ogg",
+          "durationMs": 4607,
+          "bytes": 13529,
+          "sourceWem": "795264114.wem"
+        },
+        {
+          "file": "Nocturne/03.ogg",
+          "url": "/audio/vo/en-us/Nocturne/03.ogg",
+          "durationMs": 4507,
+          "bytes": 12541,
+          "sourceWem": "953171505.wem"
+        },
+        {
+          "file": "Nocturne/04.ogg",
+          "url": "/audio/vo/en-us/Nocturne/04.ogg",
+          "durationMs": 4107,
+          "bytes": 11747,
+          "sourceWem": "564608815.wem"
+        },
+        {
+          "file": "Nocturne/05.ogg",
+          "url": "/audio/vo/en-us/Nocturne/05.ogg",
+          "durationMs": 5807,
+          "bytes": 16120,
+          "sourceWem": "226619455.wem"
+        }
+      ]
+    },
+    "Nunu": {
+      "id": "Nunu",
+      "name": "Nunu y Willump",
+      "clips": [
+        {
+          "file": "Nunu/01.ogg",
+          "url": "/audio/vo/en-us/Nunu/01.ogg",
+          "durationMs": 10007,
+          "bytes": 32079,
+          "sourceWem": "46528652.wem"
+        },
+        {
+          "file": "Nunu/02.ogg",
+          "url": "/audio/vo/en-us/Nunu/02.ogg",
+          "durationMs": 10007,
+          "bytes": 30817,
+          "sourceWem": "639669864.wem"
+        },
+        {
+          "file": "Nunu/03.ogg",
+          "url": "/audio/vo/en-us/Nunu/03.ogg",
+          "durationMs": 10007,
+          "bytes": 32673,
+          "sourceWem": "319050921.wem"
+        },
+        {
+          "file": "Nunu/04.ogg",
+          "url": "/audio/vo/en-us/Nunu/04.ogg",
+          "durationMs": 10007,
+          "bytes": 29375,
+          "sourceWem": "44836605.wem"
+        },
+        {
+          "file": "Nunu/05.ogg",
+          "url": "/audio/vo/en-us/Nunu/05.ogg",
+          "durationMs": 8907,
+          "bytes": 27079,
+          "sourceWem": "74474787.wem"
+        }
+      ]
+    },
+    "Olaf": {
+      "id": "Olaf",
+      "name": "Olaf",
+      "clips": [
+        {
+          "file": "Olaf/01.ogg",
+          "url": "/audio/vo/en-us/Olaf/01.ogg",
+          "durationMs": 8107,
+          "bytes": 24811,
+          "sourceWem": "141925229.wem"
+        },
+        {
+          "file": "Olaf/02.ogg",
+          "url": "/audio/vo/en-us/Olaf/02.ogg",
+          "durationMs": 2721,
+          "bytes": 8665,
+          "sourceWem": "735441290.wem"
+        },
+        {
+          "file": "Olaf/03.ogg",
+          "url": "/audio/vo/en-us/Olaf/03.ogg",
+          "durationMs": 3707,
+          "bytes": 11571,
+          "sourceWem": "153533301.wem"
+        },
+        {
+          "file": "Olaf/04.ogg",
+          "url": "/audio/vo/en-us/Olaf/04.ogg",
+          "durationMs": 2596,
+          "bytes": 7586,
+          "sourceWem": "594090383.wem"
+        },
+        {
+          "file": "Olaf/05.ogg",
+          "url": "/audio/vo/en-us/Olaf/05.ogg",
+          "durationMs": 3907,
+          "bytes": 11746,
+          "sourceWem": "1061612635.wem"
+        }
+      ]
+    },
+    "Orianna": {
+      "id": "Orianna",
+      "name": "Orianna",
+      "clips": [
+        {
+          "file": "Orianna/01.ogg",
+          "url": "/audio/vo/en-us/Orianna/01.ogg",
+          "durationMs": 5207,
+          "bytes": 15253,
+          "sourceWem": "639270687.wem"
+        },
+        {
+          "file": "Orianna/02.ogg",
+          "url": "/audio/vo/en-us/Orianna/02.ogg",
+          "durationMs": 5207,
+          "bytes": 15528,
+          "sourceWem": "30713361.wem"
+        },
+        {
+          "file": "Orianna/03.ogg",
+          "url": "/audio/vo/en-us/Orianna/03.ogg",
+          "durationMs": 2496,
+          "bytes": 7740,
+          "sourceWem": "486432888.wem"
+        },
+        {
+          "file": "Orianna/04.ogg",
+          "url": "/audio/vo/en-us/Orianna/04.ogg",
+          "durationMs": 2383,
+          "bytes": 7426,
+          "sourceWem": "496068329.wem"
+        },
+        {
+          "file": "Orianna/05.ogg",
+          "url": "/audio/vo/en-us/Orianna/05.ogg",
+          "durationMs": 2530,
+          "bytes": 7897,
+          "sourceWem": "1041222886.wem"
+        }
+      ]
+    },
+    "Ornn": {
+      "id": "Ornn",
+      "name": "Ornn",
+      "clips": [
+        {
+          "file": "Ornn/01.ogg",
+          "url": "/audio/vo/en-us/Ornn/01.ogg",
+          "durationMs": 10007,
+          "bytes": 27882,
+          "sourceWem": "306544024.wem"
+        },
+        {
+          "file": "Ornn/02.ogg",
+          "url": "/audio/vo/en-us/Ornn/02.ogg",
+          "durationMs": 7207,
+          "bytes": 22108,
+          "sourceWem": "755152867.wem"
+        },
+        {
+          "file": "Ornn/03.ogg",
+          "url": "/audio/vo/en-us/Ornn/03.ogg",
+          "durationMs": 5607,
+          "bytes": 17271,
+          "sourceWem": "826765341.wem"
+        },
+        {
+          "file": "Ornn/04.ogg",
+          "url": "/audio/vo/en-us/Ornn/04.ogg",
+          "durationMs": 8507,
+          "bytes": 29240,
+          "sourceWem": "976898366.wem"
+        },
+        {
+          "file": "Ornn/05.ogg",
+          "url": "/audio/vo/en-us/Ornn/05.ogg",
+          "durationMs": 8707,
+          "bytes": 24425,
+          "sourceWem": "908741496.wem"
+        }
+      ]
+    },
+    "Pantheon": {
+      "id": "Pantheon",
+      "name": "Pantheon",
+      "clips": [
+        {
+          "file": "Pantheon/01.ogg",
+          "url": "/audio/vo/en-us/Pantheon/01.ogg",
+          "durationMs": 10007,
+          "bytes": 31207,
+          "sourceWem": "1010966060.wem"
+        },
+        {
+          "file": "Pantheon/02.ogg",
+          "url": "/audio/vo/en-us/Pantheon/02.ogg",
+          "durationMs": 7407,
+          "bytes": 22479,
+          "sourceWem": "451684896.wem"
+        },
+        {
+          "file": "Pantheon/03.ogg",
+          "url": "/audio/vo/en-us/Pantheon/03.ogg",
+          "durationMs": 6607,
+          "bytes": 21026,
+          "sourceWem": "496659953.wem"
+        },
+        {
+          "file": "Pantheon/04.ogg",
+          "url": "/audio/vo/en-us/Pantheon/04.ogg",
+          "durationMs": 7107,
+          "bytes": 21151,
+          "sourceWem": "501774227.wem"
+        },
+        {
+          "file": "Pantheon/05.ogg",
+          "url": "/audio/vo/en-us/Pantheon/05.ogg",
+          "durationMs": 6207,
+          "bytes": 18684,
+          "sourceWem": "447686077.wem"
+        }
+      ]
+    },
+    "Poppy": {
+      "id": "Poppy",
+      "name": "Poppy",
+      "clips": [
+        {
+          "file": "Poppy/01.ogg",
+          "url": "/audio/vo/en-us/Poppy/01.ogg",
+          "durationMs": 9807,
+          "bytes": 29259,
+          "sourceWem": "1013155356.wem"
+        },
+        {
+          "file": "Poppy/02.ogg",
+          "url": "/audio/vo/en-us/Poppy/02.ogg",
+          "durationMs": 5607,
+          "bytes": 16795,
+          "sourceWem": "894926034.wem"
+        },
+        {
+          "file": "Poppy/03.ogg",
+          "url": "/audio/vo/en-us/Poppy/03.ogg",
+          "durationMs": 5507,
+          "bytes": 16326,
+          "sourceWem": "411978043.wem"
+        },
+        {
+          "file": "Poppy/04.ogg",
+          "url": "/audio/vo/en-us/Poppy/04.ogg",
+          "durationMs": 5007,
+          "bytes": 15514,
+          "sourceWem": "122076479.wem"
+        },
+        {
+          "file": "Poppy/05.ogg",
+          "url": "/audio/vo/en-us/Poppy/05.ogg",
+          "durationMs": 4107,
+          "bytes": 12524,
+          "sourceWem": "614030832.wem"
+        }
+      ]
+    },
+    "Pyke": {
+      "id": "Pyke",
+      "name": "Pyke",
+      "clips": [
+        {
+          "file": "Pyke/01.ogg",
+          "url": "/audio/vo/en-us/Pyke/01.ogg",
+          "durationMs": 8807,
+          "bytes": 26391,
+          "sourceWem": "365055396.wem"
+        },
+        {
+          "file": "Pyke/02.ogg",
+          "url": "/audio/vo/en-us/Pyke/02.ogg",
+          "durationMs": 6507,
+          "bytes": 19970,
+          "sourceWem": "64915180.wem"
+        },
+        {
+          "file": "Pyke/03.ogg",
+          "url": "/audio/vo/en-us/Pyke/03.ogg",
+          "durationMs": 5707,
+          "bytes": 17425,
+          "sourceWem": "626730688.wem"
+        },
+        {
+          "file": "Pyke/04.ogg",
+          "url": "/audio/vo/en-us/Pyke/04.ogg",
+          "durationMs": 5607,
+          "bytes": 19249,
+          "sourceWem": "1038007806.wem"
+        },
+        {
+          "file": "Pyke/05.ogg",
+          "url": "/audio/vo/en-us/Pyke/05.ogg",
+          "durationMs": 5107,
+          "bytes": 15190,
+          "sourceWem": "809727271.wem"
+        }
+      ]
+    },
+    "Qiyana": {
+      "id": "Qiyana",
+      "name": "Qiyana",
+      "clips": [
+        {
+          "file": "Qiyana/01.ogg",
+          "url": "/audio/vo/en-us/Qiyana/01.ogg",
+          "durationMs": 8807,
+          "bytes": 29547,
+          "sourceWem": "864179582.wem"
+        },
+        {
+          "file": "Qiyana/02.ogg",
+          "url": "/audio/vo/en-us/Qiyana/02.ogg",
+          "durationMs": 7007,
+          "bytes": 19509,
+          "sourceWem": "907547103.wem"
+        },
+        {
+          "file": "Qiyana/03.ogg",
+          "url": "/audio/vo/en-us/Qiyana/03.ogg",
+          "durationMs": 6907,
+          "bytes": 20151,
+          "sourceWem": "210028361.wem"
+        },
+        {
+          "file": "Qiyana/04.ogg",
+          "url": "/audio/vo/en-us/Qiyana/04.ogg",
+          "durationMs": 7607,
+          "bytes": 21290,
+          "sourceWem": "956441205.wem"
+        },
+        {
+          "file": "Qiyana/05.ogg",
+          "url": "/audio/vo/en-us/Qiyana/05.ogg",
+          "durationMs": 7307,
+          "bytes": 21798,
+          "sourceWem": "1024998646.wem"
+        }
+      ]
+    },
+    "Quinn": {
+      "id": "Quinn",
+      "name": "Quinn",
+      "clips": [
+        {
+          "file": "Quinn/01.ogg",
+          "url": "/audio/vo/en-us/Quinn/01.ogg",
+          "durationMs": 6207,
+          "bytes": 16452,
+          "sourceWem": "124746186.wem"
+        },
+        {
+          "file": "Quinn/02.ogg",
+          "url": "/audio/vo/en-us/Quinn/02.ogg",
+          "durationMs": 6207,
+          "bytes": 17121,
+          "sourceWem": "154986395.wem"
+        },
+        {
+          "file": "Quinn/03.ogg",
+          "url": "/audio/vo/en-us/Quinn/03.ogg",
+          "durationMs": 6007,
+          "bytes": 15397,
+          "sourceWem": "181232216.wem"
+        },
+        {
+          "file": "Quinn/04.ogg",
+          "url": "/audio/vo/en-us/Quinn/04.ogg",
+          "durationMs": 2731,
+          "bytes": 8415,
+          "sourceWem": "805024050.wem"
+        },
+        {
+          "file": "Quinn/05.ogg",
+          "url": "/audio/vo/en-us/Quinn/05.ogg",
+          "durationMs": 2836,
+          "bytes": 9361,
+          "sourceWem": "931787247.wem"
+        }
+      ]
+    },
+    "Rakan": {
+      "id": "Rakan",
+      "name": "Rakan",
+      "clips": [
+        {
+          "file": "Rakan/01.ogg",
+          "url": "/audio/vo/en-us/Rakan/01.ogg",
+          "durationMs": 9807,
+          "bytes": 30411,
+          "sourceWem": "36400894.wem"
+        },
+        {
+          "file": "Rakan/02.ogg",
+          "url": "/audio/vo/en-us/Rakan/02.ogg",
+          "durationMs": 7207,
+          "bytes": 21816,
+          "sourceWem": "554409802.wem"
+        },
+        {
+          "file": "Rakan/03.ogg",
+          "url": "/audio/vo/en-us/Rakan/03.ogg",
+          "durationMs": 8407,
+          "bytes": 24160,
+          "sourceWem": "435322483.wem"
+        },
+        {
+          "file": "Rakan/04.ogg",
+          "url": "/audio/vo/en-us/Rakan/04.ogg",
+          "durationMs": 7007,
+          "bytes": 19162,
+          "sourceWem": "779711871.wem"
+        },
+        {
+          "file": "Rakan/05.ogg",
+          "url": "/audio/vo/en-us/Rakan/05.ogg",
+          "durationMs": 8007,
+          "bytes": 22950,
+          "sourceWem": "665060846.wem"
+        }
+      ]
+    },
+    "Rammus": {
+      "id": "Rammus",
+      "name": "Rammus",
+      "clips": [
+        {
+          "file": "Rammus/01.ogg",
+          "url": "/audio/vo/en-us/Rammus/01.ogg",
+          "durationMs": 3207,
+          "bytes": 14476,
+          "sourceWem": "42108724.wem"
+        },
+        {
+          "file": "Rammus/02.ogg",
+          "url": "/audio/vo/en-us/Rammus/02.ogg",
+          "durationMs": 1403,
+          "bytes": 4262,
+          "sourceWem": "537522958.wem"
+        },
+        {
+          "file": "Rammus/03.ogg",
+          "url": "/audio/vo/en-us/Rammus/03.ogg",
+          "durationMs": 1427,
+          "bytes": 4387,
+          "sourceWem": "409239057.wem"
+        },
+        {
+          "file": "Rammus/04.ogg",
+          "url": "/audio/vo/en-us/Rammus/04.ogg",
+          "durationMs": 1128,
+          "bytes": 3383,
+          "sourceWem": "731908107.wem"
+        },
+        {
+          "file": "Rammus/05.ogg",
+          "url": "/audio/vo/en-us/Rammus/05.ogg",
+          "durationMs": 1399,
+          "bytes": 4211,
+          "sourceWem": "988459995.wem"
+        }
+      ]
+    },
+    "RekSai": {
+      "id": "RekSai",
+      "name": "Rek'Sai",
+      "clips": [
+        {
+          "file": "RekSai/01.ogg",
+          "url": "/audio/vo/en-us/RekSai/01.ogg",
+          "durationMs": 3207,
+          "bytes": 10385,
+          "sourceWem": "846571532.wem"
+        },
+        {
+          "file": "RekSai/02.ogg",
+          "url": "/audio/vo/en-us/RekSai/02.ogg",
+          "durationMs": 2996,
+          "bytes": 9156,
+          "sourceWem": "988661119.wem"
+        },
+        {
+          "file": "RekSai/03.ogg",
+          "url": "/audio/vo/en-us/RekSai/03.ogg",
+          "durationMs": 2873,
+          "bytes": 9056,
+          "sourceWem": "628258481.wem"
+        },
+        {
+          "file": "RekSai/04.ogg",
+          "url": "/audio/vo/en-us/RekSai/04.ogg",
+          "durationMs": 2952,
+          "bytes": 9253,
+          "sourceWem": "391290737.wem"
+        },
+        {
+          "file": "RekSai/05.ogg",
+          "url": "/audio/vo/en-us/RekSai/05.ogg",
+          "durationMs": 3607,
+          "bytes": 11322,
+          "sourceWem": "25135176.wem"
+        }
+      ]
+    },
+    "Rell": {
+      "id": "Rell",
+      "name": "Rell",
+      "clips": [
+        {
+          "file": "Rell/01.ogg",
+          "url": "/audio/vo/en-us/Rell/01.ogg",
+          "durationMs": 6307,
+          "bytes": 19431,
+          "sourceWem": "935466906.wem"
+        },
+        {
+          "file": "Rell/02.ogg",
+          "url": "/audio/vo/en-us/Rell/02.ogg",
+          "durationMs": 5407,
+          "bytes": 16224,
+          "sourceWem": "979970599.wem"
+        },
+        {
+          "file": "Rell/03.ogg",
+          "url": "/audio/vo/en-us/Rell/03.ogg",
+          "durationMs": 5407,
+          "bytes": 16246,
+          "sourceWem": "615283541.wem"
+        },
+        {
+          "file": "Rell/04.ogg",
+          "url": "/audio/vo/en-us/Rell/04.ogg",
+          "durationMs": 5707,
+          "bytes": 16238,
+          "sourceWem": "379437572.wem"
+        },
+        {
+          "file": "Rell/05.ogg",
+          "url": "/audio/vo/en-us/Rell/05.ogg",
+          "durationMs": 5107,
+          "bytes": 15109,
+          "sourceWem": "823905977.wem"
+        }
+      ]
+    },
+    "Renata": {
+      "id": "Renata",
+      "name": "Renata Glasc",
+      "clips": [
+        {
+          "file": "Renata/01.ogg",
+          "url": "/audio/vo/en-us/Renata/01.ogg",
+          "durationMs": 10007,
+          "bytes": 34231,
+          "sourceWem": "903454627.wem"
+        },
+        {
+          "file": "Renata/02.ogg",
+          "url": "/audio/vo/en-us/Renata/02.ogg",
+          "durationMs": 8907,
+          "bytes": 28434,
+          "sourceWem": "265911984.wem"
+        },
+        {
+          "file": "Renata/03.ogg",
+          "url": "/audio/vo/en-us/Renata/03.ogg",
+          "durationMs": 8707,
+          "bytes": 26939,
+          "sourceWem": "232997670.wem"
+        },
+        {
+          "file": "Renata/04.ogg",
+          "url": "/audio/vo/en-us/Renata/04.ogg",
+          "durationMs": 7907,
+          "bytes": 25421,
+          "sourceWem": "55345290.wem"
+        },
+        {
+          "file": "Renata/05.ogg",
+          "url": "/audio/vo/en-us/Renata/05.ogg",
+          "durationMs": 7707,
+          "bytes": 24310,
+          "sourceWem": "865355241.wem"
+        }
+      ]
+    },
+    "Renekton": {
+      "id": "Renekton",
+      "name": "Renekton",
+      "clips": [
+        {
+          "file": "Renekton/01.ogg",
+          "url": "/audio/vo/en-us/Renekton/01.ogg",
+          "durationMs": 5407,
+          "bytes": 16253,
+          "sourceWem": "997068707.wem"
+        },
+        {
+          "file": "Renekton/02.ogg",
+          "url": "/audio/vo/en-us/Renekton/02.ogg",
+          "durationMs": 4707,
+          "bytes": 14340,
+          "sourceWem": "872942519.wem"
+        },
+        {
+          "file": "Renekton/03.ogg",
+          "url": "/audio/vo/en-us/Renekton/03.ogg",
+          "durationMs": 4307,
+          "bytes": 12860,
+          "sourceWem": "752730047.wem"
+        },
+        {
+          "file": "Renekton/04.ogg",
+          "url": "/audio/vo/en-us/Renekton/04.ogg",
+          "durationMs": 4107,
+          "bytes": 13063,
+          "sourceWem": "10067589.wem"
+        },
+        {
+          "file": "Renekton/05.ogg",
+          "url": "/audio/vo/en-us/Renekton/05.ogg",
+          "durationMs": 4307,
+          "bytes": 12868,
+          "sourceWem": "960287518.wem"
+        }
+      ]
+    },
+    "Rengar": {
+      "id": "Rengar",
+      "name": "Rengar",
+      "clips": [
+        {
+          "file": "Rengar/01.ogg",
+          "url": "/audio/vo/en-us/Rengar/01.ogg",
+          "durationMs": 4807,
+          "bytes": 14831,
+          "sourceWem": "642780522.wem"
+        },
+        {
+          "file": "Rengar/02.ogg",
+          "url": "/audio/vo/en-us/Rengar/02.ogg",
+          "durationMs": 5507,
+          "bytes": 16929,
+          "sourceWem": "834116630.wem"
+        },
+        {
+          "file": "Rengar/03.ogg",
+          "url": "/audio/vo/en-us/Rengar/03.ogg",
+          "durationMs": 4507,
+          "bytes": 13532,
+          "sourceWem": "952753012.wem"
+        },
+        {
+          "file": "Rengar/04.ogg",
+          "url": "/audio/vo/en-us/Rengar/04.ogg",
+          "durationMs": 5107,
+          "bytes": 15471,
+          "sourceWem": "183515523.wem"
+        },
+        {
+          "file": "Rengar/05.ogg",
+          "url": "/audio/vo/en-us/Rengar/05.ogg",
+          "durationMs": 3907,
+          "bytes": 11761,
+          "sourceWem": "380854457.wem"
+        }
+      ]
+    },
+    "Riven": {
+      "id": "Riven",
+      "name": "Riven",
+      "clips": [
+        {
+          "file": "Riven/01.ogg",
+          "url": "/audio/vo/en-us/Riven/01.ogg",
+          "durationMs": 4207,
+          "bytes": 13149,
+          "sourceWem": "443762371.wem"
+        },
+        {
+          "file": "Riven/02.ogg",
+          "url": "/audio/vo/en-us/Riven/02.ogg",
+          "durationMs": 3607,
+          "bytes": 11472,
+          "sourceWem": "637952779.wem"
+        },
+        {
+          "file": "Riven/03.ogg",
+          "url": "/audio/vo/en-us/Riven/03.ogg",
+          "durationMs": 3607,
+          "bytes": 11900,
+          "sourceWem": "254594211.wem"
+        },
+        {
+          "file": "Riven/04.ogg",
+          "url": "/audio/vo/en-us/Riven/04.ogg",
+          "durationMs": 2170,
+          "bytes": 6716,
+          "sourceWem": "261547592.wem"
+        },
+        {
+          "file": "Riven/05.ogg",
+          "url": "/audio/vo/en-us/Riven/05.ogg",
+          "durationMs": 2079,
+          "bytes": 6389,
+          "sourceWem": "85611475.wem"
+        }
+      ]
+    },
+    "Rumble": {
+      "id": "Rumble",
+      "name": "Rumble",
+      "clips": [
+        {
+          "file": "Rumble/01.ogg",
+          "url": "/audio/vo/en-us/Rumble/01.ogg",
+          "durationMs": 9007,
+          "bytes": 29774,
+          "sourceWem": "1060719773.wem"
+        },
+        {
+          "file": "Rumble/02.ogg",
+          "url": "/audio/vo/en-us/Rumble/02.ogg",
+          "durationMs": 8707,
+          "bytes": 28663,
+          "sourceWem": "755607448.wem"
+        },
+        {
+          "file": "Rumble/03.ogg",
+          "url": "/audio/vo/en-us/Rumble/03.ogg",
+          "durationMs": 7807,
+          "bytes": 25849,
+          "sourceWem": "193140001.wem"
+        },
+        {
+          "file": "Rumble/04.ogg",
+          "url": "/audio/vo/en-us/Rumble/04.ogg",
+          "durationMs": 8307,
+          "bytes": 23703,
+          "sourceWem": "907223.wem"
+        },
+        {
+          "file": "Rumble/05.ogg",
+          "url": "/audio/vo/en-us/Rumble/05.ogg",
+          "durationMs": 7007,
+          "bytes": 22806,
+          "sourceWem": "803983454.wem"
+        }
+      ]
+    },
+    "Ryze": {
+      "id": "Ryze",
+      "name": "Ryze",
+      "clips": [
+        {
+          "file": "Ryze/01.ogg",
+          "url": "/audio/vo/en-us/Ryze/01.ogg",
+          "durationMs": 4707,
+          "bytes": 14481,
+          "sourceWem": "184843721.wem"
+        },
+        {
+          "file": "Ryze/02.ogg",
+          "url": "/audio/vo/en-us/Ryze/02.ogg",
+          "durationMs": 3907,
+          "bytes": 12049,
+          "sourceWem": "31079409.wem"
+        },
+        {
+          "file": "Ryze/03.ogg",
+          "url": "/audio/vo/en-us/Ryze/03.ogg",
+          "durationMs": 4107,
+          "bytes": 12210,
+          "sourceWem": "1060357301.wem"
+        },
+        {
+          "file": "Ryze/04.ogg",
+          "url": "/audio/vo/en-us/Ryze/04.ogg",
+          "durationMs": 4207,
+          "bytes": 12905,
+          "sourceWem": "355037075.wem"
+        },
+        {
+          "file": "Ryze/05.ogg",
+          "url": "/audio/vo/en-us/Ryze/05.ogg",
+          "durationMs": 4007,
+          "bytes": 11981,
+          "sourceWem": "538826927.wem"
+        }
+      ]
+    },
+    "Samira": {
+      "id": "Samira",
+      "name": "Samira",
+      "clips": [
+        {
+          "file": "Samira/01.ogg",
+          "url": "/audio/vo/en-us/Samira/01.ogg",
+          "durationMs": 8707,
+          "bytes": 26461,
+          "sourceWem": "20213972.wem"
+        },
+        {
+          "file": "Samira/02.ogg",
+          "url": "/audio/vo/en-us/Samira/02.ogg",
+          "durationMs": 7907,
+          "bytes": 25460,
+          "sourceWem": "343342674.wem"
+        },
+        {
+          "file": "Samira/03.ogg",
+          "url": "/audio/vo/en-us/Samira/03.ogg",
+          "durationMs": 7607,
+          "bytes": 24260,
+          "sourceWem": "671826253.wem"
+        },
+        {
+          "file": "Samira/04.ogg",
+          "url": "/audio/vo/en-us/Samira/04.ogg",
+          "durationMs": 7407,
+          "bytes": 22373,
+          "sourceWem": "124172672.wem"
+        },
+        {
+          "file": "Samira/05.ogg",
+          "url": "/audio/vo/en-us/Samira/05.ogg",
+          "durationMs": 7507,
+          "bytes": 21792,
+          "sourceWem": "244121854.wem"
+        }
+      ]
+    },
+    "Sejuani": {
+      "id": "Sejuani",
+      "name": "Sejuani",
+      "clips": [
+        {
+          "file": "Sejuani/01.ogg",
+          "url": "/audio/vo/en-us/Sejuani/01.ogg",
+          "durationMs": 5107,
+          "bytes": 15738,
+          "sourceWem": "651473595.wem"
+        },
+        {
+          "file": "Sejuani/02.ogg",
+          "url": "/audio/vo/en-us/Sejuani/02.ogg",
+          "durationMs": 3707,
+          "bytes": 11328,
+          "sourceWem": "1024691525.wem"
+        },
+        {
+          "file": "Sejuani/03.ogg",
+          "url": "/audio/vo/en-us/Sejuani/03.ogg",
+          "durationMs": 3607,
+          "bytes": 10878,
+          "sourceWem": "625120207.wem"
+        },
+        {
+          "file": "Sejuani/04.ogg",
+          "url": "/audio/vo/en-us/Sejuani/04.ogg",
+          "durationMs": 3407,
+          "bytes": 10399,
+          "sourceWem": "991147124.wem"
+        },
+        {
+          "file": "Sejuani/05.ogg",
+          "url": "/audio/vo/en-us/Sejuani/05.ogg",
+          "durationMs": 3207,
+          "bytes": 9992,
+          "sourceWem": "340350457.wem"
+        }
+      ]
+    },
+    "Senna": {
+      "id": "Senna",
+      "name": "Senna",
+      "clips": [
+        {
+          "file": "Senna/01.ogg",
+          "url": "/audio/vo/en-us/Senna/01.ogg",
+          "durationMs": 10007,
+          "bytes": 31085,
+          "sourceWem": "1030776359.wem"
+        },
+        {
+          "file": "Senna/02.ogg",
+          "url": "/audio/vo/en-us/Senna/02.ogg",
+          "durationMs": 7607,
+          "bytes": 23022,
+          "sourceWem": "750409259.wem"
+        },
+        {
+          "file": "Senna/03.ogg",
+          "url": "/audio/vo/en-us/Senna/03.ogg",
+          "durationMs": 4407,
+          "bytes": 12366,
+          "sourceWem": "430451099.wem"
+        },
+        {
+          "file": "Senna/04.ogg",
+          "url": "/audio/vo/en-us/Senna/04.ogg",
+          "durationMs": 7107,
+          "bytes": 20695,
+          "sourceWem": "684097288.wem"
+        },
+        {
+          "file": "Senna/05.ogg",
+          "url": "/audio/vo/en-us/Senna/05.ogg",
+          "durationMs": 7007,
+          "bytes": 21201,
+          "sourceWem": "821291818.wem"
+        }
+      ]
+    },
+    "Seraphine": {
+      "id": "Seraphine",
+      "name": "Seraphine",
+      "clips": [
+        {
+          "file": "Seraphine/01.ogg",
+          "url": "/audio/vo/en-us/Seraphine/01.ogg",
+          "durationMs": 6607,
+          "bytes": 20287,
+          "sourceWem": "321340370.wem"
+        },
+        {
+          "file": "Seraphine/02.ogg",
+          "url": "/audio/vo/en-us/Seraphine/02.ogg",
+          "durationMs": 6207,
+          "bytes": 18697,
+          "sourceWem": "687274509.wem"
+        },
+        {
+          "file": "Seraphine/03.ogg",
+          "url": "/audio/vo/en-us/Seraphine/03.ogg",
+          "durationMs": 6107,
+          "bytes": 18556,
+          "sourceWem": "877028913.wem"
+        },
+        {
+          "file": "Seraphine/04.ogg",
+          "url": "/audio/vo/en-us/Seraphine/04.ogg",
+          "durationMs": 6507,
+          "bytes": 19399,
+          "sourceWem": "960741166.wem"
+        },
+        {
+          "file": "Seraphine/05.ogg",
+          "url": "/audio/vo/en-us/Seraphine/05.ogg",
+          "durationMs": 6107,
+          "bytes": 18328,
+          "sourceWem": "333305016.wem"
+        }
+      ]
+    },
+    "Sett": {
+      "id": "Sett",
+      "name": "Sett",
+      "clips": [
+        {
+          "file": "Sett/01.ogg",
+          "url": "/audio/vo/en-us/Sett/01.ogg",
+          "durationMs": 8407,
+          "bytes": 25647,
+          "sourceWem": "799312655.wem"
+        },
+        {
+          "file": "Sett/02.ogg",
+          "url": "/audio/vo/en-us/Sett/02.ogg",
+          "durationMs": 8107,
+          "bytes": 25004,
+          "sourceWem": "378137058.wem"
+        },
+        {
+          "file": "Sett/03.ogg",
+          "url": "/audio/vo/en-us/Sett/03.ogg",
+          "durationMs": 7507,
+          "bytes": 23199,
+          "sourceWem": "860297246.wem"
+        },
+        {
+          "file": "Sett/04.ogg",
+          "url": "/audio/vo/en-us/Sett/04.ogg",
+          "durationMs": 7607,
+          "bytes": 23253,
+          "sourceWem": "893800635.wem"
+        },
+        {
+          "file": "Sett/05.ogg",
+          "url": "/audio/vo/en-us/Sett/05.ogg",
+          "durationMs": 6807,
+          "bytes": 20943,
+          "sourceWem": "305578541.wem"
+        }
+      ]
+    },
+    "Shaco": {
+      "id": "Shaco",
+      "name": "Shaco",
+      "clips": [
+        {
+          "file": "Shaco/01.ogg",
+          "url": "/audio/vo/en-us/Shaco/01.ogg",
+          "durationMs": 5407,
+          "bytes": 17543,
+          "sourceWem": "552914102.wem"
+        },
+        {
+          "file": "Shaco/02.ogg",
+          "url": "/audio/vo/en-us/Shaco/02.ogg",
+          "durationMs": 3107,
+          "bytes": 11081,
+          "sourceWem": "680436452.wem"
+        },
+        {
+          "file": "Shaco/03.ogg",
+          "url": "/audio/vo/en-us/Shaco/03.ogg",
+          "durationMs": 3907,
+          "bytes": 11704,
+          "sourceWem": "790817091.wem"
+        },
+        {
+          "file": "Shaco/04.ogg",
+          "url": "/audio/vo/en-us/Shaco/04.ogg",
+          "durationMs": 3607,
+          "bytes": 10874,
+          "sourceWem": "244059789.wem"
+        },
+        {
+          "file": "Shaco/05.ogg",
+          "url": "/audio/vo/en-us/Shaco/05.ogg",
+          "durationMs": 2503,
+          "bytes": 9347,
+          "sourceWem": "572758944.wem"
+        }
+      ]
+    },
+    "Shen": {
+      "id": "Shen",
+      "name": "Shen",
+      "clips": [
+        {
+          "file": "Shen/01.ogg",
+          "url": "/audio/vo/en-us/Shen/01.ogg",
+          "durationMs": 4207,
+          "bytes": 13212,
+          "sourceWem": "957018422.wem"
+        },
+        {
+          "file": "Shen/02.ogg",
+          "url": "/audio/vo/en-us/Shen/02.ogg",
+          "durationMs": 3207,
+          "bytes": 10409,
+          "sourceWem": "510841796.wem"
+        },
+        {
+          "file": "Shen/03.ogg",
+          "url": "/audio/vo/en-us/Shen/03.ogg",
+          "durationMs": 3307,
+          "bytes": 13246,
+          "sourceWem": "492296409.wem"
+        },
+        {
+          "file": "Shen/04.ogg",
+          "url": "/audio/vo/en-us/Shen/04.ogg",
+          "durationMs": 3207,
+          "bytes": 12168,
+          "sourceWem": "278034084.wem"
+        },
+        {
+          "file": "Shen/05.ogg",
+          "url": "/audio/vo/en-us/Shen/05.ogg",
+          "durationMs": 2701,
+          "bytes": 9393,
+          "sourceWem": "91168558.wem"
+        }
+      ]
+    },
+    "Shyvana": {
+      "id": "Shyvana",
+      "name": "Shyvana",
+      "clips": [
+        {
+          "file": "Shyvana/01.ogg",
+          "url": "/audio/vo/en-us/Shyvana/01.ogg",
+          "durationMs": 7907,
+          "bytes": 23815,
+          "sourceWem": "468320489.wem"
+        },
+        {
+          "file": "Shyvana/02.ogg",
+          "url": "/audio/vo/en-us/Shyvana/02.ogg",
+          "durationMs": 7607,
+          "bytes": 23699,
+          "sourceWem": "99624903.wem"
+        },
+        {
+          "file": "Shyvana/03.ogg",
+          "url": "/audio/vo/en-us/Shyvana/03.ogg",
+          "durationMs": 7307,
+          "bytes": 23178,
+          "sourceWem": "283584841.wem"
+        },
+        {
+          "file": "Shyvana/04.ogg",
+          "url": "/audio/vo/en-us/Shyvana/04.ogg",
+          "durationMs": 7307,
+          "bytes": 22263,
+          "sourceWem": "94718125.wem"
+        },
+        {
+          "file": "Shyvana/05.ogg",
+          "url": "/audio/vo/en-us/Shyvana/05.ogg",
+          "durationMs": 7307,
+          "bytes": 22459,
+          "sourceWem": "89846593.wem"
+        }
+      ]
+    },
+    "Singed": {
+      "id": "Singed",
+      "name": "Singed",
+      "clips": [
+        {
+          "file": "Singed/01.ogg",
+          "url": "/audio/vo/en-us/Singed/01.ogg",
+          "durationMs": 2691,
+          "bytes": 8567,
+          "sourceWem": "700343506.wem"
+        },
+        {
+          "file": "Singed/02.ogg",
+          "url": "/audio/vo/en-us/Singed/02.ogg",
+          "durationMs": 2706,
+          "bytes": 8642,
+          "sourceWem": "103655131.wem"
+        },
+        {
+          "file": "Singed/03.ogg",
+          "url": "/audio/vo/en-us/Singed/03.ogg",
+          "durationMs": 2408,
+          "bytes": 7429,
+          "sourceWem": "402865155.wem"
+        },
+        {
+          "file": "Singed/04.ogg",
+          "url": "/audio/vo/en-us/Singed/04.ogg",
+          "durationMs": 2411,
+          "bytes": 7393,
+          "sourceWem": "396254904.wem"
+        },
+        {
+          "file": "Singed/05.ogg",
+          "url": "/audio/vo/en-us/Singed/05.ogg",
+          "durationMs": 2102,
+          "bytes": 6589,
+          "sourceWem": "397940156.wem"
+        }
+      ]
+    },
+    "Sion": {
+      "id": "Sion",
+      "name": "Sion",
+      "clips": [
+        {
+          "file": "Sion/01.ogg",
+          "url": "/audio/vo/en-us/Sion/01.ogg",
+          "durationMs": 8007,
+          "bytes": 23975,
+          "sourceWem": "630108430.wem"
+        },
+        {
+          "file": "Sion/02.ogg",
+          "url": "/audio/vo/en-us/Sion/02.ogg",
+          "durationMs": 4607,
+          "bytes": 13937,
+          "sourceWem": "594165859.wem"
+        },
+        {
+          "file": "Sion/03.ogg",
+          "url": "/audio/vo/en-us/Sion/03.ogg",
+          "durationMs": 6407,
+          "bytes": 19140,
+          "sourceWem": "467277177.wem"
+        },
+        {
+          "file": "Sion/04.ogg",
+          "url": "/audio/vo/en-us/Sion/04.ogg",
+          "durationMs": 4907,
+          "bytes": 15315,
+          "sourceWem": "29157059.wem"
+        },
+        {
+          "file": "Sion/05.ogg",
+          "url": "/audio/vo/en-us/Sion/05.ogg",
+          "durationMs": 5807,
+          "bytes": 18569,
+          "sourceWem": "827740415.wem"
+        }
+      ]
+    },
+    "Sivir": {
+      "id": "Sivir",
+      "name": "Sivir",
+      "clips": [
+        {
+          "file": "Sivir/01.ogg",
+          "url": "/audio/vo/en-us/Sivir/01.ogg",
+          "durationMs": 5107,
+          "bytes": 15347,
+          "sourceWem": "1049216136.wem"
+        },
+        {
+          "file": "Sivir/02.ogg",
+          "url": "/audio/vo/en-us/Sivir/02.ogg",
+          "durationMs": 4407,
+          "bytes": 12922,
+          "sourceWem": "186156762.wem"
+        },
+        {
+          "file": "Sivir/03.ogg",
+          "url": "/audio/vo/en-us/Sivir/03.ogg",
+          "durationMs": 3907,
+          "bytes": 11494,
+          "sourceWem": "87686473.wem"
+        },
+        {
+          "file": "Sivir/04.ogg",
+          "url": "/audio/vo/en-us/Sivir/04.ogg",
+          "durationMs": 3707,
+          "bytes": 11901,
+          "sourceWem": "447578699.wem"
+        },
+        {
+          "file": "Sivir/05.ogg",
+          "url": "/audio/vo/en-us/Sivir/05.ogg",
+          "durationMs": 3407,
+          "bytes": 10744,
+          "sourceWem": "1013878812.wem"
+        }
+      ]
+    },
+    "Skarner": {
+      "id": "Skarner",
+      "name": "Skarner",
+      "clips": [
+        {
+          "file": "Skarner/01.ogg",
+          "url": "/audio/vo/en-us/Skarner/01.ogg",
+          "durationMs": 10007,
+          "bytes": 28922,
+          "sourceWem": "234287276.wem"
+        },
+        {
+          "file": "Skarner/02.ogg",
+          "url": "/audio/vo/en-us/Skarner/02.ogg",
+          "durationMs": 9907,
+          "bytes": 28181,
+          "sourceWem": "182155018.wem"
+        },
+        {
+          "file": "Skarner/03.ogg",
+          "url": "/audio/vo/en-us/Skarner/03.ogg",
+          "durationMs": 9307,
+          "bytes": 26807,
+          "sourceWem": "772194686.wem"
+        },
+        {
+          "file": "Skarner/04.ogg",
+          "url": "/audio/vo/en-us/Skarner/04.ogg",
+          "durationMs": 8307,
+          "bytes": 24616,
+          "sourceWem": "152597549.wem"
+        },
+        {
+          "file": "Skarner/05.ogg",
+          "url": "/audio/vo/en-us/Skarner/05.ogg",
+          "durationMs": 7307,
+          "bytes": 21243,
+          "sourceWem": "493768874.wem"
+        }
+      ]
+    },
+    "Smolder": {
+      "id": "Smolder",
+      "name": "Smolder",
+      "clips": [
+        {
+          "file": "Smolder/01.ogg",
+          "url": "/audio/vo/en-us/Smolder/01.ogg",
+          "durationMs": 10007,
+          "bytes": 32705,
+          "sourceWem": "887912553.wem"
+        },
+        {
+          "file": "Smolder/02.ogg",
+          "url": "/audio/vo/en-us/Smolder/02.ogg",
+          "durationMs": 9107,
+          "bytes": 28977,
+          "sourceWem": "812866217.wem"
+        },
+        {
+          "file": "Smolder/03.ogg",
+          "url": "/audio/vo/en-us/Smolder/03.ogg",
+          "durationMs": 8807,
+          "bytes": 27189,
+          "sourceWem": "388388642.wem"
+        },
+        {
+          "file": "Smolder/04.ogg",
+          "url": "/audio/vo/en-us/Smolder/04.ogg",
+          "durationMs": 9407,
+          "bytes": 28503,
+          "sourceWem": "630029209.wem"
+        },
+        {
+          "file": "Smolder/05.ogg",
+          "url": "/audio/vo/en-us/Smolder/05.ogg",
+          "durationMs": 9407,
+          "bytes": 32740,
+          "sourceWem": "693668232.wem"
+        }
+      ]
+    },
+    "Sona": {
+      "id": "Sona",
+      "name": "Sona",
+      "clips": [
+        {
+          "file": "Sona/01.ogg",
+          "url": "/audio/vo/en-us/Sona/01.ogg",
+          "durationMs": 10007,
+          "bytes": 29536,
+          "sourceWem": "298699694.wem"
+        },
+        {
+          "file": "Sona/02.ogg",
+          "url": "/audio/vo/en-us/Sona/02.ogg",
+          "durationMs": 8707,
+          "bytes": 23867,
+          "sourceWem": "54463393.wem"
+        },
+        {
+          "file": "Sona/03.ogg",
+          "url": "/audio/vo/en-us/Sona/03.ogg",
+          "durationMs": 7707,
+          "bytes": 21509,
+          "sourceWem": "573153947.wem"
+        },
+        {
+          "file": "Sona/04.ogg",
+          "url": "/audio/vo/en-us/Sona/04.ogg",
+          "durationMs": 7807,
+          "bytes": 22187,
+          "sourceWem": "872843844.wem"
+        },
+        {
+          "file": "Sona/05.ogg",
+          "url": "/audio/vo/en-us/Sona/05.ogg",
+          "durationMs": 7207,
+          "bytes": 20641,
+          "sourceWem": "371102646.wem"
+        }
+      ]
+    },
+    "Soraka": {
+      "id": "Soraka",
+      "name": "Soraka",
+      "clips": [
+        {
+          "file": "Soraka/01.ogg",
+          "url": "/audio/vo/en-us/Soraka/01.ogg",
+          "durationMs": 5107,
+          "bytes": 15591,
+          "sourceWem": "3087770.wem"
+        },
+        {
+          "file": "Soraka/02.ogg",
+          "url": "/audio/vo/en-us/Soraka/02.ogg",
+          "durationMs": 4407,
+          "bytes": 13675,
+          "sourceWem": "47139362.wem"
+        },
+        {
+          "file": "Soraka/03.ogg",
+          "url": "/audio/vo/en-us/Soraka/03.ogg",
+          "durationMs": 2438,
+          "bytes": 7807,
+          "sourceWem": "466825195.wem"
+        },
+        {
+          "file": "Soraka/04.ogg",
+          "url": "/audio/vo/en-us/Soraka/04.ogg",
+          "durationMs": 2148,
+          "bytes": 6883,
+          "sourceWem": "857859623.wem"
+        },
+        {
+          "file": "Soraka/05.ogg",
+          "url": "/audio/vo/en-us/Soraka/05.ogg",
+          "durationMs": 2110,
+          "bytes": 7503,
+          "sourceWem": "353457270.wem"
+        }
+      ]
+    },
+    "Swain": {
+      "id": "Swain",
+      "name": "Swain",
+      "clips": [
+        {
+          "file": "Swain/01.ogg",
+          "url": "/audio/vo/en-us/Swain/01.ogg",
+          "durationMs": 8307,
+          "bytes": 25098,
+          "sourceWem": "535379906.wem"
+        },
+        {
+          "file": "Swain/02.ogg",
+          "url": "/audio/vo/en-us/Swain/02.ogg",
+          "durationMs": 5607,
+          "bytes": 16891,
+          "sourceWem": "162654572.wem"
+        },
+        {
+          "file": "Swain/03.ogg",
+          "url": "/audio/vo/en-us/Swain/03.ogg",
+          "durationMs": 5007,
+          "bytes": 15269,
+          "sourceWem": "923215805.wem"
+        },
+        {
+          "file": "Swain/04.ogg",
+          "url": "/audio/vo/en-us/Swain/04.ogg",
+          "durationMs": 6507,
+          "bytes": 19733,
+          "sourceWem": "875762357.wem"
+        },
+        {
+          "file": "Swain/05.ogg",
+          "url": "/audio/vo/en-us/Swain/05.ogg",
+          "durationMs": 5107,
+          "bytes": 15443,
+          "sourceWem": "14253200.wem"
+        }
+      ]
+    },
+    "Sylas": {
+      "id": "Sylas",
+      "name": "Sylas",
+      "clips": [
+        {
+          "file": "Sylas/01.ogg",
+          "url": "/audio/vo/en-us/Sylas/01.ogg",
+          "durationMs": 6307,
+          "bytes": 19066,
+          "sourceWem": "738813401.wem"
+        },
+        {
+          "file": "Sylas/02.ogg",
+          "url": "/audio/vo/en-us/Sylas/02.ogg",
+          "durationMs": 6607,
+          "bytes": 20528,
+          "sourceWem": "144190000.wem"
+        },
+        {
+          "file": "Sylas/03.ogg",
+          "url": "/audio/vo/en-us/Sylas/03.ogg",
+          "durationMs": 8807,
+          "bytes": 24332,
+          "sourceWem": "1053529123.wem"
+        },
+        {
+          "file": "Sylas/04.ogg",
+          "url": "/audio/vo/en-us/Sylas/04.ogg",
+          "durationMs": 6007,
+          "bytes": 17604,
+          "sourceWem": "529202997.wem"
+        },
+        {
+          "file": "Sylas/05.ogg",
+          "url": "/audio/vo/en-us/Sylas/05.ogg",
+          "durationMs": 5307,
+          "bytes": 16234,
+          "sourceWem": "280133772.wem"
+        }
+      ]
+    },
+    "Syndra": {
+      "id": "Syndra",
+      "name": "Syndra",
+      "clips": [
+        {
+          "file": "Syndra/01.ogg",
+          "url": "/audio/vo/en-us/Syndra/01.ogg",
+          "durationMs": 4707,
+          "bytes": 13140,
+          "sourceWem": "680049891.wem"
+        },
+        {
+          "file": "Syndra/02.ogg",
+          "url": "/audio/vo/en-us/Syndra/02.ogg",
+          "durationMs": 3807,
+          "bytes": 10567,
+          "sourceWem": "344239198.wem"
+        },
+        {
+          "file": "Syndra/03.ogg",
+          "url": "/audio/vo/en-us/Syndra/03.ogg",
+          "durationMs": 3607,
+          "bytes": 10323,
+          "sourceWem": "837801595.wem"
+        },
+        {
+          "file": "Syndra/04.ogg",
+          "url": "/audio/vo/en-us/Syndra/04.ogg",
+          "durationMs": 3307,
+          "bytes": 9403,
+          "sourceWem": "338742802.wem"
+        },
+        {
+          "file": "Syndra/05.ogg",
+          "url": "/audio/vo/en-us/Syndra/05.ogg",
+          "durationMs": 3407,
+          "bytes": 9867,
+          "sourceWem": "859112500.wem"
+        }
+      ]
+    },
+    "TahmKench": {
+      "id": "TahmKench",
+      "name": "Tahm Kench",
+      "clips": [
+        {
+          "file": "TahmKench/01.ogg",
+          "url": "/audio/vo/en-us/TahmKench/01.ogg",
+          "durationMs": 7107,
+          "bytes": 22843,
+          "sourceWem": "492345790.wem"
+        },
+        {
+          "file": "TahmKench/02.ogg",
+          "url": "/audio/vo/en-us/TahmKench/02.ogg",
+          "durationMs": 7207,
+          "bytes": 22784,
+          "sourceWem": "829190645.wem"
+        },
+        {
+          "file": "TahmKench/03.ogg",
+          "url": "/audio/vo/en-us/TahmKench/03.ogg",
+          "durationMs": 7407,
+          "bytes": 23421,
+          "sourceWem": "627026781.wem"
+        },
+        {
+          "file": "TahmKench/04.ogg",
+          "url": "/audio/vo/en-us/TahmKench/04.ogg",
+          "durationMs": 7107,
+          "bytes": 22125,
+          "sourceWem": "1059240187.wem"
+        },
+        {
+          "file": "TahmKench/05.ogg",
+          "url": "/audio/vo/en-us/TahmKench/05.ogg",
+          "durationMs": 6907,
+          "bytes": 21867,
+          "sourceWem": "221088200.wem"
+        }
+      ]
+    },
+    "Taliyah": {
+      "id": "Taliyah",
+      "name": "Taliyah",
+      "clips": [
+        {
+          "file": "Taliyah/01.ogg",
+          "url": "/audio/vo/en-us/Taliyah/01.ogg",
+          "durationMs": 4307,
+          "bytes": 12524,
+          "sourceWem": "784801672.wem"
+        },
+        {
+          "file": "Taliyah/02.ogg",
+          "url": "/audio/vo/en-us/Taliyah/02.ogg",
+          "durationMs": 3807,
+          "bytes": 11395,
+          "sourceWem": "591910531.wem"
+        },
+        {
+          "file": "Taliyah/03.ogg",
+          "url": "/audio/vo/en-us/Taliyah/03.ogg",
+          "durationMs": 3307,
+          "bytes": 10236,
+          "sourceWem": "508668060.wem"
+        },
+        {
+          "file": "Taliyah/04.ogg",
+          "url": "/audio/vo/en-us/Taliyah/04.ogg",
+          "durationMs": 4507,
+          "bytes": 14638,
+          "sourceWem": "47147445.wem"
+        },
+        {
+          "file": "Taliyah/05.ogg",
+          "url": "/audio/vo/en-us/Taliyah/05.ogg",
+          "durationMs": 3807,
+          "bytes": 11769,
+          "sourceWem": "980737441.wem"
+        }
+      ]
+    },
+    "Talon": {
+      "id": "Talon",
+      "name": "Talon",
+      "clips": [
+        {
+          "file": "Talon/01.ogg",
+          "url": "/audio/vo/en-us/Talon/01.ogg",
+          "durationMs": 4607,
+          "bytes": 14425,
+          "sourceWem": "827330624.wem"
+        },
+        {
+          "file": "Talon/02.ogg",
+          "url": "/audio/vo/en-us/Talon/02.ogg",
+          "durationMs": 5007,
+          "bytes": 14929,
+          "sourceWem": "873234837.wem"
+        },
+        {
+          "file": "Talon/03.ogg",
+          "url": "/audio/vo/en-us/Talon/03.ogg",
+          "durationMs": 4807,
+          "bytes": 15564,
+          "sourceWem": "742220152.wem"
+        },
+        {
+          "file": "Talon/04.ogg",
+          "url": "/audio/vo/en-us/Talon/04.ogg",
+          "durationMs": 3607,
+          "bytes": 10998,
+          "sourceWem": "971383448.wem"
+        },
+        {
+          "file": "Talon/05.ogg",
+          "url": "/audio/vo/en-us/Talon/05.ogg",
+          "durationMs": 2500,
+          "bytes": 7776,
+          "sourceWem": "627528886.wem"
+        }
+      ]
+    },
+    "Taric": {
+      "id": "Taric",
+      "name": "Taric",
+      "clips": [
+        {
+          "file": "Taric/01.ogg",
+          "url": "/audio/vo/en-us/Taric/01.ogg",
+          "durationMs": 8907,
+          "bytes": 26193,
+          "sourceWem": "843142244.wem"
+        },
+        {
+          "file": "Taric/02.ogg",
+          "url": "/audio/vo/en-us/Taric/02.ogg",
+          "durationMs": 6407,
+          "bytes": 18306,
+          "sourceWem": "303212464.wem"
+        },
+        {
+          "file": "Taric/03.ogg",
+          "url": "/audio/vo/en-us/Taric/03.ogg",
+          "durationMs": 6107,
+          "bytes": 17943,
+          "sourceWem": "261152119.wem"
+        },
+        {
+          "file": "Taric/04.ogg",
+          "url": "/audio/vo/en-us/Taric/04.ogg",
+          "durationMs": 5807,
+          "bytes": 17092,
+          "sourceWem": "491102741.wem"
+        },
+        {
+          "file": "Taric/05.ogg",
+          "url": "/audio/vo/en-us/Taric/05.ogg",
+          "durationMs": 5007,
+          "bytes": 14808,
+          "sourceWem": "457551924.wem"
+        }
+      ]
+    },
+    "Teemo": {
+      "id": "Teemo",
+      "name": "Teemo",
+      "clips": [
+        {
+          "file": "Teemo/01.ogg",
+          "url": "/audio/vo/en-us/Teemo/01.ogg",
+          "durationMs": 7307,
+          "bytes": 22794,
+          "sourceWem": "12607549.wem"
+        },
+        {
+          "file": "Teemo/02.ogg",
+          "url": "/audio/vo/en-us/Teemo/02.ogg",
+          "durationMs": 7307,
+          "bytes": 22690,
+          "sourceWem": "288858690.wem"
+        },
+        {
+          "file": "Teemo/03.ogg",
+          "url": "/audio/vo/en-us/Teemo/03.ogg",
+          "durationMs": 6907,
+          "bytes": 21168,
+          "sourceWem": "175869809.wem"
+        },
+        {
+          "file": "Teemo/04.ogg",
+          "url": "/audio/vo/en-us/Teemo/04.ogg",
+          "durationMs": 7007,
+          "bytes": 21429,
+          "sourceWem": "443767031.wem"
+        },
+        {
+          "file": "Teemo/05.ogg",
+          "url": "/audio/vo/en-us/Teemo/05.ogg",
+          "durationMs": 6607,
+          "bytes": 21229,
+          "sourceWem": "1050376213.wem"
+        }
+      ]
+    },
+    "Thresh": {
+      "id": "Thresh",
+      "name": "Thresh",
+      "clips": [
+        {
+          "file": "Thresh/01.ogg",
+          "url": "/audio/vo/en-us/Thresh/01.ogg",
+          "durationMs": 5807,
+          "bytes": 16430,
+          "sourceWem": "989884032.wem"
+        },
+        {
+          "file": "Thresh/02.ogg",
+          "url": "/audio/vo/en-us/Thresh/02.ogg",
+          "durationMs": 5707,
+          "bytes": 15954,
+          "sourceWem": "171228107.wem"
+        },
+        {
+          "file": "Thresh/03.ogg",
+          "url": "/audio/vo/en-us/Thresh/03.ogg",
+          "durationMs": 8007,
+          "bytes": 23614,
+          "sourceWem": "660047002.wem"
+        },
+        {
+          "file": "Thresh/04.ogg",
+          "url": "/audio/vo/en-us/Thresh/04.ogg",
+          "durationMs": 5507,
+          "bytes": 16009,
+          "sourceWem": "850194059.wem"
+        },
+        {
+          "file": "Thresh/05.ogg",
+          "url": "/audio/vo/en-us/Thresh/05.ogg",
+          "durationMs": 4907,
+          "bytes": 14256,
+          "sourceWem": "726026384.wem"
+        }
+      ]
+    },
+    "Tristana": {
+      "id": "Tristana",
+      "name": "Tristana",
+      "clips": [
+        {
+          "file": "Tristana/01.ogg",
+          "url": "/audio/vo/en-us/Tristana/01.ogg",
+          "durationMs": 5607,
+          "bytes": 22313,
+          "sourceWem": "921010534.wem"
+        },
+        {
+          "file": "Tristana/02.ogg",
+          "url": "/audio/vo/en-us/Tristana/02.ogg",
+          "durationMs": 4907,
+          "bytes": 19763,
+          "sourceWem": "653321739.wem"
+        },
+        {
+          "file": "Tristana/03.ogg",
+          "url": "/audio/vo/en-us/Tristana/03.ogg",
+          "durationMs": 4907,
+          "bytes": 16360,
+          "sourceWem": "750482306.wem"
+        },
+        {
+          "file": "Tristana/04.ogg",
+          "url": "/audio/vo/en-us/Tristana/04.ogg",
+          "durationMs": 4407,
+          "bytes": 15149,
+          "sourceWem": "832347580.wem"
+        },
+        {
+          "file": "Tristana/05.ogg",
+          "url": "/audio/vo/en-us/Tristana/05.ogg",
+          "durationMs": 3407,
+          "bytes": 10503,
+          "sourceWem": "392943101.wem"
+        }
+      ]
+    },
+    "Trundle": {
+      "id": "Trundle",
+      "name": "Trundle",
+      "clips": [
+        {
+          "file": "Trundle/01.ogg",
+          "url": "/audio/vo/en-us/Trundle/01.ogg",
+          "durationMs": 4507,
+          "bytes": 13209,
+          "sourceWem": "574800835.wem"
+        },
+        {
+          "file": "Trundle/02.ogg",
+          "url": "/audio/vo/en-us/Trundle/02.ogg",
+          "durationMs": 3807,
+          "bytes": 13124,
+          "sourceWem": "680759487.wem"
+        },
+        {
+          "file": "Trundle/03.ogg",
+          "url": "/audio/vo/en-us/Trundle/03.ogg",
+          "durationMs": 4107,
+          "bytes": 13075,
+          "sourceWem": "307967700.wem"
+        },
+        {
+          "file": "Trundle/04.ogg",
+          "url": "/audio/vo/en-us/Trundle/04.ogg",
+          "durationMs": 3807,
+          "bytes": 11530,
+          "sourceWem": "707147216.wem"
+        },
+        {
+          "file": "Trundle/05.ogg",
+          "url": "/audio/vo/en-us/Trundle/05.ogg",
+          "durationMs": 3907,
+          "bytes": 11989,
+          "sourceWem": "239842943.wem"
+        }
+      ]
+    },
+    "Tryndamere": {
+      "id": "Tryndamere",
+      "name": "Tryndamere",
+      "clips": [
+        {
+          "file": "Tryndamere/01.ogg",
+          "url": "/audio/vo/en-us/Tryndamere/01.ogg",
+          "durationMs": 3907,
+          "bytes": 13220,
+          "sourceWem": "632621246.wem"
+        },
+        {
+          "file": "Tryndamere/02.ogg",
+          "url": "/audio/vo/en-us/Tryndamere/02.ogg",
+          "durationMs": 2917,
+          "bytes": 10660,
+          "sourceWem": "864887771.wem"
+        },
+        {
+          "file": "Tryndamere/03.ogg",
+          "url": "/audio/vo/en-us/Tryndamere/03.ogg",
+          "durationMs": 2322,
+          "bytes": 9207,
+          "sourceWem": "927217063.wem"
+        },
+        {
+          "file": "Tryndamere/04.ogg",
+          "url": "/audio/vo/en-us/Tryndamere/04.ogg",
+          "durationMs": 2294,
+          "bytes": 7338,
+          "sourceWem": "235476139.wem"
+        },
+        {
+          "file": "Tryndamere/05.ogg",
+          "url": "/audio/vo/en-us/Tryndamere/05.ogg",
+          "durationMs": 1951,
+          "bytes": 6286,
+          "sourceWem": "475220600.wem"
+        }
+      ]
+    },
+    "TwistedFate": {
+      "id": "TwistedFate",
+      "name": "Twisted Fate",
+      "clips": [
+        {
+          "file": "TwistedFate/01.ogg",
+          "url": "/audio/vo/en-us/TwistedFate/01.ogg",
+          "durationMs": 7907,
+          "bytes": 24872,
+          "sourceWem": "757518705.wem"
+        },
+        {
+          "file": "TwistedFate/02.ogg",
+          "url": "/audio/vo/en-us/TwistedFate/02.ogg",
+          "durationMs": 8307,
+          "bytes": 26299,
+          "sourceWem": "464661410.wem"
+        },
+        {
+          "file": "TwistedFate/03.ogg",
+          "url": "/audio/vo/en-us/TwistedFate/03.ogg",
+          "durationMs": 6607,
+          "bytes": 21906,
+          "sourceWem": "660588326.wem"
+        },
+        {
+          "file": "TwistedFate/04.ogg",
+          "url": "/audio/vo/en-us/TwistedFate/04.ogg",
+          "durationMs": 8407,
+          "bytes": 24836,
+          "sourceWem": "327842846.wem"
+        },
+        {
+          "file": "TwistedFate/05.ogg",
+          "url": "/audio/vo/en-us/TwistedFate/05.ogg",
+          "durationMs": 3307,
+          "bytes": 10311,
+          "sourceWem": "929045840.wem"
+        }
+      ]
+    },
+    "Twitch": {
+      "id": "Twitch",
+      "name": "Twitch",
+      "clips": [
+        {
+          "file": "Twitch/01.ogg",
+          "url": "/audio/vo/en-us/Twitch/01.ogg",
+          "durationMs": 8407,
+          "bytes": 25330,
+          "sourceWem": "594116010.wem"
+        },
+        {
+          "file": "Twitch/02.ogg",
+          "url": "/audio/vo/en-us/Twitch/02.ogg",
+          "durationMs": 7607,
+          "bytes": 21398,
+          "sourceWem": "751757221.wem"
+        },
+        {
+          "file": "Twitch/03.ogg",
+          "url": "/audio/vo/en-us/Twitch/03.ogg",
+          "durationMs": 5907,
+          "bytes": 17765,
+          "sourceWem": "191804335.wem"
+        },
+        {
+          "file": "Twitch/04.ogg",
+          "url": "/audio/vo/en-us/Twitch/04.ogg",
+          "durationMs": 5607,
+          "bytes": 17155,
+          "sourceWem": "385430671.wem"
+        },
+        {
+          "file": "Twitch/05.ogg",
+          "url": "/audio/vo/en-us/Twitch/05.ogg",
+          "durationMs": 4707,
+          "bytes": 14659,
+          "sourceWem": "276751117.wem"
+        }
+      ]
+    },
+    "Udyr": {
+      "id": "Udyr",
+      "name": "Udyr",
+      "clips": [
+        {
+          "file": "Udyr/01.ogg",
+          "url": "/audio/vo/en-us/Udyr/01.ogg",
+          "durationMs": 8007,
+          "bytes": 24235,
+          "sourceWem": "315206882.wem"
+        },
+        {
+          "file": "Udyr/02.ogg",
+          "url": "/audio/vo/en-us/Udyr/02.ogg",
+          "durationMs": 8007,
+          "bytes": 24416,
+          "sourceWem": "565446417.wem"
+        },
+        {
+          "file": "Udyr/03.ogg",
+          "url": "/audio/vo/en-us/Udyr/03.ogg",
+          "durationMs": 8007,
+          "bytes": 24466,
+          "sourceWem": "22587643.wem"
+        },
+        {
+          "file": "Udyr/04.ogg",
+          "url": "/audio/vo/en-us/Udyr/04.ogg",
+          "durationMs": 7107,
+          "bytes": 21615,
+          "sourceWem": "403581566.wem"
+        },
+        {
+          "file": "Udyr/05.ogg",
+          "url": "/audio/vo/en-us/Udyr/05.ogg",
+          "durationMs": 7507,
+          "bytes": 22843,
+          "sourceWem": "523164516.wem"
+        }
+      ]
+    },
+    "Urgot": {
+      "id": "Urgot",
+      "name": "Urgot",
+      "clips": [
+        {
+          "file": "Urgot/01.ogg",
+          "url": "/audio/vo/en-us/Urgot/01.ogg",
+          "durationMs": 8307,
+          "bytes": 23932,
+          "sourceWem": "832172380.wem"
+        },
+        {
+          "file": "Urgot/02.ogg",
+          "url": "/audio/vo/en-us/Urgot/02.ogg",
+          "durationMs": 6807,
+          "bytes": 20186,
+          "sourceWem": "799734782.wem"
+        },
+        {
+          "file": "Urgot/03.ogg",
+          "url": "/audio/vo/en-us/Urgot/03.ogg",
+          "durationMs": 6107,
+          "bytes": 17963,
+          "sourceWem": "371830038.wem"
+        },
+        {
+          "file": "Urgot/04.ogg",
+          "url": "/audio/vo/en-us/Urgot/04.ogg",
+          "durationMs": 7507,
+          "bytes": 21953,
+          "sourceWem": "871108440.wem"
+        },
+        {
+          "file": "Urgot/05.ogg",
+          "url": "/audio/vo/en-us/Urgot/05.ogg",
+          "durationMs": 5907,
+          "bytes": 17099,
+          "sourceWem": "348396706.wem"
+        }
+      ]
+    },
+    "Varus": {
+      "id": "Varus",
+      "name": "Varus",
+      "clips": [
+        {
+          "file": "Varus/01.ogg",
+          "url": "/audio/vo/en-us/Varus/01.ogg",
+          "durationMs": 9807,
+          "bytes": 28249,
+          "sourceWem": "504280385.wem"
+        },
+        {
+          "file": "Varus/02.ogg",
+          "url": "/audio/vo/en-us/Varus/02.ogg",
+          "durationMs": 7907,
+          "bytes": 23450,
+          "sourceWem": "195548713.wem"
+        },
+        {
+          "file": "Varus/03.ogg",
+          "url": "/audio/vo/en-us/Varus/03.ogg",
+          "durationMs": 6807,
+          "bytes": 19819,
+          "sourceWem": "620885861.wem"
+        },
+        {
+          "file": "Varus/04.ogg",
+          "url": "/audio/vo/en-us/Varus/04.ogg",
+          "durationMs": 7407,
+          "bytes": 21346,
+          "sourceWem": "968183697.wem"
+        },
+        {
+          "file": "Varus/05.ogg",
+          "url": "/audio/vo/en-us/Varus/05.ogg",
+          "durationMs": 6107,
+          "bytes": 17765,
+          "sourceWem": "438651722.wem"
+        }
+      ]
+    },
+    "Vayne": {
+      "id": "Vayne",
+      "name": "Vayne",
+      "clips": [
+        {
+          "file": "Vayne/01.ogg",
+          "url": "/audio/vo/en-us/Vayne/01.ogg",
+          "durationMs": 5007,
+          "bytes": 15072,
+          "sourceWem": "551407357.wem"
+        },
+        {
+          "file": "Vayne/02.ogg",
+          "url": "/audio/vo/en-us/Vayne/02.ogg",
+          "durationMs": 5007,
+          "bytes": 14486,
+          "sourceWem": "488798381.wem"
+        },
+        {
+          "file": "Vayne/03.ogg",
+          "url": "/audio/vo/en-us/Vayne/03.ogg",
+          "durationMs": 4907,
+          "bytes": 14576,
+          "sourceWem": "450508979.wem"
+        },
+        {
+          "file": "Vayne/04.ogg",
+          "url": "/audio/vo/en-us/Vayne/04.ogg",
+          "durationMs": 4907,
+          "bytes": 14259,
+          "sourceWem": "757755284.wem"
+        },
+        {
+          "file": "Vayne/05.ogg",
+          "url": "/audio/vo/en-us/Vayne/05.ogg",
+          "durationMs": 3607,
+          "bytes": 11137,
+          "sourceWem": "120471032.wem"
+        }
+      ]
+    },
+    "Veigar": {
+      "id": "Veigar",
+      "name": "Veigar",
+      "clips": [
+        {
+          "file": "Veigar/01.ogg",
+          "url": "/audio/vo/en-us/Veigar/01.ogg",
+          "durationMs": 5707,
+          "bytes": 19538,
+          "sourceWem": "910222968.wem"
+        },
+        {
+          "file": "Veigar/02.ogg",
+          "url": "/audio/vo/en-us/Veigar/02.ogg",
+          "durationMs": 5107,
+          "bytes": 17633,
+          "sourceWem": "725871426.wem"
+        },
+        {
+          "file": "Veigar/03.ogg",
+          "url": "/audio/vo/en-us/Veigar/03.ogg",
+          "durationMs": 3507,
+          "bytes": 11530,
+          "sourceWem": "459673759.wem"
+        },
+        {
+          "file": "Veigar/04.ogg",
+          "url": "/audio/vo/en-us/Veigar/04.ogg",
+          "durationMs": 3407,
+          "bytes": 10355,
+          "sourceWem": "725290512.wem"
+        },
+        {
+          "file": "Veigar/05.ogg",
+          "url": "/audio/vo/en-us/Veigar/05.ogg",
+          "durationMs": 3207,
+          "bytes": 10539,
+          "sourceWem": "211015670.wem"
+        }
+      ]
+    },
+    "Velkoz": {
+      "id": "Velkoz",
+      "name": "Vel'Koz",
+      "clips": [
+        {
+          "file": "Velkoz/01.ogg",
+          "url": "/audio/vo/en-us/Velkoz/01.ogg",
+          "durationMs": 6107,
+          "bytes": 18120,
+          "sourceWem": "694189696.wem"
+        },
+        {
+          "file": "Velkoz/02.ogg",
+          "url": "/audio/vo/en-us/Velkoz/02.ogg",
+          "durationMs": 5407,
+          "bytes": 16038,
+          "sourceWem": "638344375.wem"
+        },
+        {
+          "file": "Velkoz/03.ogg",
+          "url": "/audio/vo/en-us/Velkoz/03.ogg",
+          "durationMs": 5207,
+          "bytes": 14951,
+          "sourceWem": "1062206948.wem"
+        },
+        {
+          "file": "Velkoz/04.ogg",
+          "url": "/audio/vo/en-us/Velkoz/04.ogg",
+          "durationMs": 4807,
+          "bytes": 14524,
+          "sourceWem": "826386301.wem"
+        },
+        {
+          "file": "Velkoz/05.ogg",
+          "url": "/audio/vo/en-us/Velkoz/05.ogg",
+          "durationMs": 7207,
+          "bytes": 21080,
+          "sourceWem": "217201709.wem"
+        }
+      ]
+    },
+    "Vex": {
+      "id": "Vex",
+      "name": "Vex",
+      "clips": [
+        {
+          "file": "Vex/01.ogg",
+          "url": "/audio/vo/en-us/Vex/01.ogg",
+          "durationMs": 9407,
+          "bytes": 28446,
+          "sourceWem": "134938615.wem"
+        },
+        {
+          "file": "Vex/02.ogg",
+          "url": "/audio/vo/en-us/Vex/02.ogg",
+          "durationMs": 7807,
+          "bytes": 23270,
+          "sourceWem": "690454456.wem"
+        },
+        {
+          "file": "Vex/03.ogg",
+          "url": "/audio/vo/en-us/Vex/03.ogg",
+          "durationMs": 8107,
+          "bytes": 23903,
+          "sourceWem": "939362151.wem"
+        },
+        {
+          "file": "Vex/04.ogg",
+          "url": "/audio/vo/en-us/Vex/04.ogg",
+          "durationMs": 7707,
+          "bytes": 23341,
+          "sourceWem": "490629258.wem"
+        },
+        {
+          "file": "Vex/05.ogg",
+          "url": "/audio/vo/en-us/Vex/05.ogg",
+          "durationMs": 7107,
+          "bytes": 21689,
+          "sourceWem": "776528664.wem"
+        }
+      ]
+    },
+    "Vi": {
+      "id": "Vi",
+      "name": "Vi",
+      "clips": [
+        {
+          "file": "Vi/01.ogg",
+          "url": "/audio/vo/en-us/Vi/01.ogg",
+          "durationMs": 6307,
+          "bytes": 22522,
+          "sourceWem": "744489728.wem"
+        },
+        {
+          "file": "Vi/02.ogg",
+          "url": "/audio/vo/en-us/Vi/02.ogg",
+          "durationMs": 4707,
+          "bytes": 13784,
+          "sourceWem": "192794167.wem"
+        },
+        {
+          "file": "Vi/03.ogg",
+          "url": "/audio/vo/en-us/Vi/03.ogg",
+          "durationMs": 5007,
+          "bytes": 13532,
+          "sourceWem": "401381147.wem"
+        },
+        {
+          "file": "Vi/04.ogg",
+          "url": "/audio/vo/en-us/Vi/04.ogg",
+          "durationMs": 4207,
+          "bytes": 11584,
+          "sourceWem": "261278340.wem"
+        },
+        {
+          "file": "Vi/05.ogg",
+          "url": "/audio/vo/en-us/Vi/05.ogg",
+          "durationMs": 4207,
+          "bytes": 11596,
+          "sourceWem": "676796678.wem"
+        }
+      ]
+    },
+    "Viego": {
+      "id": "Viego",
+      "name": "Viego",
+      "clips": [
+        {
+          "file": "Viego/01.ogg",
+          "url": "/audio/vo/en-us/Viego/01.ogg",
+          "durationMs": 9507,
+          "bytes": 25425,
+          "sourceWem": "800774937.wem"
+        },
+        {
+          "file": "Viego/02.ogg",
+          "url": "/audio/vo/en-us/Viego/02.ogg",
+          "durationMs": 8507,
+          "bytes": 23763,
+          "sourceWem": "69696243.wem"
+        },
+        {
+          "file": "Viego/03.ogg",
+          "url": "/audio/vo/en-us/Viego/03.ogg",
+          "durationMs": 7707,
+          "bytes": 21238,
+          "sourceWem": "1067407646.wem"
+        },
+        {
+          "file": "Viego/04.ogg",
+          "url": "/audio/vo/en-us/Viego/04.ogg",
+          "durationMs": 7307,
+          "bytes": 20588,
+          "sourceWem": "327500299.wem"
+        },
+        {
+          "file": "Viego/05.ogg",
+          "url": "/audio/vo/en-us/Viego/05.ogg",
+          "durationMs": 6607,
+          "bytes": 18447,
+          "sourceWem": "264073739.wem"
+        }
+      ]
+    },
+    "Viktor": {
+      "id": "Viktor",
+      "name": "Viktor",
+      "clips": [
+        {
+          "file": "Viktor/01.ogg",
+          "url": "/audio/vo/en-us/Viktor/01.ogg",
+          "durationMs": 8107,
+          "bytes": 22577,
+          "sourceWem": "880472948.wem"
+        },
+        {
+          "file": "Viktor/02.ogg",
+          "url": "/audio/vo/en-us/Viktor/02.ogg",
+          "durationMs": 7407,
+          "bytes": 21345,
+          "sourceWem": "24733609.wem"
+        },
+        {
+          "file": "Viktor/03.ogg",
+          "url": "/audio/vo/en-us/Viktor/03.ogg",
+          "durationMs": 6807,
+          "bytes": 20020,
+          "sourceWem": "47636184.wem"
+        },
+        {
+          "file": "Viktor/04.ogg",
+          "url": "/audio/vo/en-us/Viktor/04.ogg",
+          "durationMs": 6007,
+          "bytes": 17109,
+          "sourceWem": "1017122167.wem"
+        },
+        {
+          "file": "Viktor/05.ogg",
+          "url": "/audio/vo/en-us/Viktor/05.ogg",
+          "durationMs": 5707,
+          "bytes": 16613,
+          "sourceWem": "394562054.wem"
+        }
+      ]
+    },
+    "Vladimir": {
+      "id": "Vladimir",
+      "name": "Vladimir",
+      "clips": [
+        {
+          "file": "Vladimir/01.ogg",
+          "url": "/audio/vo/en-us/Vladimir/01.ogg",
+          "durationMs": 4507,
+          "bytes": 14299,
+          "sourceWem": "115613436.wem"
+        },
+        {
+          "file": "Vladimir/02.ogg",
+          "url": "/audio/vo/en-us/Vladimir/02.ogg",
+          "durationMs": 4207,
+          "bytes": 13833,
+          "sourceWem": "1045258987.wem"
+        },
+        {
+          "file": "Vladimir/03.ogg",
+          "url": "/audio/vo/en-us/Vladimir/03.ogg",
+          "durationMs": 4007,
+          "bytes": 12421,
+          "sourceWem": "325711157.wem"
+        },
+        {
+          "file": "Vladimir/04.ogg",
+          "url": "/audio/vo/en-us/Vladimir/04.ogg",
+          "durationMs": 3707,
+          "bytes": 11488,
+          "sourceWem": "192261302.wem"
+        },
+        {
+          "file": "Vladimir/05.ogg",
+          "url": "/audio/vo/en-us/Vladimir/05.ogg",
+          "durationMs": 3607,
+          "bytes": 10989,
+          "sourceWem": "332619907.wem"
+        }
+      ]
+    },
+    "Volibear": {
+      "id": "Volibear",
+      "name": "Volibear",
+      "clips": [
+        {
+          "file": "Volibear/01.ogg",
+          "url": "/audio/vo/en-us/Volibear/01.ogg",
+          "durationMs": 10007,
+          "bytes": 30663,
+          "sourceWem": "356464873.wem"
+        },
+        {
+          "file": "Volibear/02.ogg",
+          "url": "/audio/vo/en-us/Volibear/02.ogg",
+          "durationMs": 10007,
+          "bytes": 30474,
+          "sourceWem": "961780463.wem"
+        },
+        {
+          "file": "Volibear/03.ogg",
+          "url": "/audio/vo/en-us/Volibear/03.ogg",
+          "durationMs": 9707,
+          "bytes": 29092,
+          "sourceWem": "475740928.wem"
+        },
+        {
+          "file": "Volibear/04.ogg",
+          "url": "/audio/vo/en-us/Volibear/04.ogg",
+          "durationMs": 8907,
+          "bytes": 25989,
+          "sourceWem": "1031145570.wem"
+        },
+        {
+          "file": "Volibear/05.ogg",
+          "url": "/audio/vo/en-us/Volibear/05.ogg",
+          "durationMs": 9007,
+          "bytes": 26699,
+          "sourceWem": "324875849.wem"
+        }
+      ]
+    },
+    "Warwick": {
+      "id": "Warwick",
+      "name": "Warwick",
+      "clips": [
+        {
+          "file": "Warwick/01.ogg",
+          "url": "/audio/vo/en-us/Warwick/01.ogg",
+          "durationMs": 5807,
+          "bytes": 17561,
+          "sourceWem": "326997245.wem"
+        },
+        {
+          "file": "Warwick/02.ogg",
+          "url": "/audio/vo/en-us/Warwick/02.ogg",
+          "durationMs": 4707,
+          "bytes": 14143,
+          "sourceWem": "410305890.wem"
+        },
+        {
+          "file": "Warwick/03.ogg",
+          "url": "/audio/vo/en-us/Warwick/03.ogg",
+          "durationMs": 4007,
+          "bytes": 12246,
+          "sourceWem": "147307610.wem"
+        },
+        {
+          "file": "Warwick/04.ogg",
+          "url": "/audio/vo/en-us/Warwick/04.ogg",
+          "durationMs": 4407,
+          "bytes": 13314,
+          "sourceWem": "898190866.wem"
+        },
+        {
+          "file": "Warwick/05.ogg",
+          "url": "/audio/vo/en-us/Warwick/05.ogg",
+          "durationMs": 3907,
+          "bytes": 11686,
+          "sourceWem": "903875896.wem"
+        }
+      ]
+    },
+    "Xayah": {
+      "id": "Xayah",
+      "name": "Xayah",
+      "clips": [
+        {
+          "file": "Xayah/01.ogg",
+          "url": "/audio/vo/en-us/Xayah/01.ogg",
+          "durationMs": 9507,
+          "bytes": 28011,
+          "sourceWem": "441057892.wem"
+        },
+        {
+          "file": "Xayah/02.ogg",
+          "url": "/audio/vo/en-us/Xayah/02.ogg",
+          "durationMs": 6007,
+          "bytes": 19008,
+          "sourceWem": "768835374.wem"
+        },
+        {
+          "file": "Xayah/03.ogg",
+          "url": "/audio/vo/en-us/Xayah/03.ogg",
+          "durationMs": 6107,
+          "bytes": 18156,
+          "sourceWem": "650144705.wem"
+        },
+        {
+          "file": "Xayah/04.ogg",
+          "url": "/audio/vo/en-us/Xayah/04.ogg",
+          "durationMs": 5407,
+          "bytes": 16717,
+          "sourceWem": "855231521.wem"
+        },
+        {
+          "file": "Xayah/05.ogg",
+          "url": "/audio/vo/en-us/Xayah/05.ogg",
+          "durationMs": 4707,
+          "bytes": 13746,
+          "sourceWem": "1017255330.wem"
+        }
+      ]
+    },
+    "Xerath": {
+      "id": "Xerath",
+      "name": "Xerath",
+      "clips": [
+        {
+          "file": "Xerath/01.ogg",
+          "url": "/audio/vo/en-us/Xerath/01.ogg",
+          "durationMs": 8007,
+          "bytes": 23558,
+          "sourceWem": "878104331.wem"
+        },
+        {
+          "file": "Xerath/02.ogg",
+          "url": "/audio/vo/en-us/Xerath/02.ogg",
+          "durationMs": 6207,
+          "bytes": 18626,
+          "sourceWem": "332944859.wem"
+        },
+        {
+          "file": "Xerath/03.ogg",
+          "url": "/audio/vo/en-us/Xerath/03.ogg",
+          "durationMs": 6007,
+          "bytes": 17708,
+          "sourceWem": "769161679.wem"
+        },
+        {
+          "file": "Xerath/04.ogg",
+          "url": "/audio/vo/en-us/Xerath/04.ogg",
+          "durationMs": 5707,
+          "bytes": 16778,
+          "sourceWem": "983645933.wem"
+        },
+        {
+          "file": "Xerath/05.ogg",
+          "url": "/audio/vo/en-us/Xerath/05.ogg",
+          "durationMs": 5807,
+          "bytes": 16850,
+          "sourceWem": "524210592.wem"
+        }
+      ]
+    },
+    "XinZhao": {
+      "id": "XinZhao",
+      "name": "Xin Zhao",
+      "clips": [
+        {
+          "file": "XinZhao/01.ogg",
+          "url": "/audio/vo/en-us/XinZhao/01.ogg",
+          "durationMs": 6707,
+          "bytes": 20318,
+          "sourceWem": "1053738649.wem"
+        },
+        {
+          "file": "XinZhao/02.ogg",
+          "url": "/audio/vo/en-us/XinZhao/02.ogg",
+          "durationMs": 6207,
+          "bytes": 19309,
+          "sourceWem": "589581921.wem"
+        },
+        {
+          "file": "XinZhao/03.ogg",
+          "url": "/audio/vo/en-us/XinZhao/03.ogg",
+          "durationMs": 6407,
+          "bytes": 19602,
+          "sourceWem": "1047035485.wem"
+        },
+        {
+          "file": "XinZhao/04.ogg",
+          "url": "/audio/vo/en-us/XinZhao/04.ogg",
+          "durationMs": 5507,
+          "bytes": 17139,
+          "sourceWem": "549608422.wem"
+        },
+        {
+          "file": "XinZhao/05.ogg",
+          "url": "/audio/vo/en-us/XinZhao/05.ogg",
+          "durationMs": 5907,
+          "bytes": 18140,
+          "sourceWem": "265569173.wem"
+        }
+      ]
+    },
+    "Yasuo": {
+      "id": "Yasuo",
+      "name": "Yasuo",
+      "clips": [
+        {
+          "file": "Yasuo/01.ogg",
+          "url": "/audio/vo/en-us/Yasuo/01.ogg",
+          "durationMs": 5907,
+          "bytes": 18518,
+          "sourceWem": "474222365.wem"
+        },
+        {
+          "file": "Yasuo/02.ogg",
+          "url": "/audio/vo/en-us/Yasuo/02.ogg",
+          "durationMs": 6107,
+          "bytes": 18582,
+          "sourceWem": "606582552.wem"
+        },
+        {
+          "file": "Yasuo/03.ogg",
+          "url": "/audio/vo/en-us/Yasuo/03.ogg",
+          "durationMs": 5507,
+          "bytes": 17135,
+          "sourceWem": "783981142.wem"
+        },
+        {
+          "file": "Yasuo/04.ogg",
+          "url": "/audio/vo/en-us/Yasuo/04.ogg",
+          "durationMs": 6507,
+          "bytes": 16273,
+          "sourceWem": "740425413.wem"
+        },
+        {
+          "file": "Yasuo/05.ogg",
+          "url": "/audio/vo/en-us/Yasuo/05.ogg",
+          "durationMs": 6007,
+          "bytes": 17137,
+          "sourceWem": "636131917.wem"
+        }
+      ]
+    },
+    "Yone": {
+      "id": "Yone",
+      "name": "Yone",
+      "clips": [
+        {
+          "file": "Yone/01.ogg",
+          "url": "/audio/vo/en-us/Yone/01.ogg",
+          "durationMs": 10007,
+          "bytes": 30199,
+          "sourceWem": "888991377.wem"
+        },
+        {
+          "file": "Yone/02.ogg",
+          "url": "/audio/vo/en-us/Yone/02.ogg",
+          "durationMs": 8107,
+          "bytes": 25686,
+          "sourceWem": "153228359.wem"
+        },
+        {
+          "file": "Yone/03.ogg",
+          "url": "/audio/vo/en-us/Yone/03.ogg",
+          "durationMs": 7907,
+          "bytes": 24263,
+          "sourceWem": "826204338.wem"
+        },
+        {
+          "file": "Yone/04.ogg",
+          "url": "/audio/vo/en-us/Yone/04.ogg",
+          "durationMs": 7907,
+          "bytes": 24100,
+          "sourceWem": "841092224.wem"
+        },
+        {
+          "file": "Yone/05.ogg",
+          "url": "/audio/vo/en-us/Yone/05.ogg",
+          "durationMs": 7107,
+          "bytes": 21814,
+          "sourceWem": "251533955.wem"
+        }
+      ]
+    },
+    "Yorick": {
+      "id": "Yorick",
+      "name": "Yorick",
+      "clips": [
+        {
+          "file": "Yorick/01.ogg",
+          "url": "/audio/vo/en-us/Yorick/01.ogg",
+          "durationMs": 10007,
+          "bytes": 27767,
+          "sourceWem": "514868975.wem"
+        },
+        {
+          "file": "Yorick/02.ogg",
+          "url": "/audio/vo/en-us/Yorick/02.ogg",
+          "durationMs": 8207,
+          "bytes": 24396,
+          "sourceWem": "930215591.wem"
+        },
+        {
+          "file": "Yorick/03.ogg",
+          "url": "/audio/vo/en-us/Yorick/03.ogg",
+          "durationMs": 7307,
+          "bytes": 20970,
+          "sourceWem": "1066787277.wem"
+        },
+        {
+          "file": "Yorick/04.ogg",
+          "url": "/audio/vo/en-us/Yorick/04.ogg",
+          "durationMs": 6707,
+          "bytes": 19708,
+          "sourceWem": "112045306.wem"
+        },
+        {
+          "file": "Yorick/05.ogg",
+          "url": "/audio/vo/en-us/Yorick/05.ogg",
+          "durationMs": 6207,
+          "bytes": 19625,
+          "sourceWem": "665804059.wem"
+        }
+      ]
+    },
+    "Yunara": {
+      "id": "Yunara",
+      "name": "Yunara",
+      "clips": [
+        {
+          "file": "Yunara/01.ogg",
+          "url": "/audio/vo/en-us/Yunara/01.ogg",
+          "durationMs": 8807,
+          "bytes": 26872,
+          "sourceWem": "53907561.wem"
+        },
+        {
+          "file": "Yunara/02.ogg",
+          "url": "/audio/vo/en-us/Yunara/02.ogg",
+          "durationMs": 8507,
+          "bytes": 25570,
+          "sourceWem": "400292921.wem"
+        },
+        {
+          "file": "Yunara/03.ogg",
+          "url": "/audio/vo/en-us/Yunara/03.ogg",
+          "durationMs": 7707,
+          "bytes": 23522,
+          "sourceWem": "651633363.wem"
+        },
+        {
+          "file": "Yunara/04.ogg",
+          "url": "/audio/vo/en-us/Yunara/04.ogg",
+          "durationMs": 7707,
+          "bytes": 23307,
+          "sourceWem": "924710058.wem"
+        },
+        {
+          "file": "Yunara/05.ogg",
+          "url": "/audio/vo/en-us/Yunara/05.ogg",
+          "durationMs": 7407,
+          "bytes": 22608,
+          "sourceWem": "122055093.wem"
+        }
+      ]
+    },
+    "Yuumi": {
+      "id": "Yuumi",
+      "name": "Yuumi",
+      "clips": [
+        {
+          "file": "Yuumi/01.ogg",
+          "url": "/audio/vo/en-us/Yuumi/01.ogg",
+          "durationMs": 8607,
+          "bytes": 27114,
+          "sourceWem": "958472177.wem"
+        },
+        {
+          "file": "Yuumi/02.ogg",
+          "url": "/audio/vo/en-us/Yuumi/02.ogg",
+          "durationMs": 8907,
+          "bytes": 26714,
+          "sourceWem": "277318050.wem"
+        },
+        {
+          "file": "Yuumi/03.ogg",
+          "url": "/audio/vo/en-us/Yuumi/03.ogg",
+          "durationMs": 8707,
+          "bytes": 28093,
+          "sourceWem": "256163435.wem"
+        },
+        {
+          "file": "Yuumi/04.ogg",
+          "url": "/audio/vo/en-us/Yuumi/04.ogg",
+          "durationMs": 8107,
+          "bytes": 25403,
+          "sourceWem": "388918156.wem"
+        },
+        {
+          "file": "Yuumi/05.ogg",
+          "url": "/audio/vo/en-us/Yuumi/05.ogg",
+          "durationMs": 7907,
+          "bytes": 26492,
+          "sourceWem": "533262458.wem"
+        }
+      ]
+    },
+    "Zaahen": {
+      "id": "Zaahen",
+      "name": "Zaahen",
+      "clips": [
+        {
+          "file": "Zaahen/01.ogg",
+          "url": "/audio/vo/en-us/Zaahen/01.ogg",
+          "durationMs": 9907,
+          "bytes": 28941,
+          "sourceWem": "765766094.wem"
+        },
+        {
+          "file": "Zaahen/02.ogg",
+          "url": "/audio/vo/en-us/Zaahen/02.ogg",
+          "durationMs": 7807,
+          "bytes": 22608,
+          "sourceWem": "774489518.wem"
+        },
+        {
+          "file": "Zaahen/03.ogg",
+          "url": "/audio/vo/en-us/Zaahen/03.ogg",
+          "durationMs": 7107,
+          "bytes": 20861,
+          "sourceWem": "470635861.wem"
+        },
+        {
+          "file": "Zaahen/04.ogg",
+          "url": "/audio/vo/en-us/Zaahen/04.ogg",
+          "durationMs": 7007,
+          "bytes": 20921,
+          "sourceWem": "978555067.wem"
+        },
+        {
+          "file": "Zaahen/05.ogg",
+          "url": "/audio/vo/en-us/Zaahen/05.ogg",
+          "durationMs": 6107,
+          "bytes": 17053,
+          "sourceWem": "766954459.wem"
+        }
+      ]
+    },
+    "Zac": {
+      "id": "Zac",
+      "name": "Zac",
+      "clips": [
+        {
+          "file": "Zac/01.ogg",
+          "url": "/audio/vo/en-us/Zac/01.ogg",
+          "durationMs": 6007,
+          "bytes": 18556,
+          "sourceWem": "498611322.wem"
+        },
+        {
+          "file": "Zac/02.ogg",
+          "url": "/audio/vo/en-us/Zac/02.ogg",
+          "durationMs": 5507,
+          "bytes": 16865,
+          "sourceWem": "835191612.wem"
+        },
+        {
+          "file": "Zac/03.ogg",
+          "url": "/audio/vo/en-us/Zac/03.ogg",
+          "durationMs": 5307,
+          "bytes": 16326,
+          "sourceWem": "244493688.wem"
+        },
+        {
+          "file": "Zac/04.ogg",
+          "url": "/audio/vo/en-us/Zac/04.ogg",
+          "durationMs": 5207,
+          "bytes": 16240,
+          "sourceWem": "142418073.wem"
+        },
+        {
+          "file": "Zac/05.ogg",
+          "url": "/audio/vo/en-us/Zac/05.ogg",
+          "durationMs": 3607,
+          "bytes": 11023,
+          "sourceWem": "300617062.wem"
+        }
+      ]
+    },
+    "Zed": {
+      "id": "Zed",
+      "name": "Zed",
+      "clips": [
+        {
+          "file": "Zed/01.ogg",
+          "url": "/audio/vo/en-us/Zed/01.ogg",
+          "durationMs": 8407,
+          "bytes": 19301,
+          "sourceWem": "1057872853.wem"
+        },
+        {
+          "file": "Zed/02.ogg",
+          "url": "/audio/vo/en-us/Zed/02.ogg",
+          "durationMs": 8107,
+          "bytes": 18951,
+          "sourceWem": "500626943.wem"
+        },
+        {
+          "file": "Zed/03.ogg",
+          "url": "/audio/vo/en-us/Zed/03.ogg",
+          "durationMs": 6807,
+          "bytes": 12068,
+          "sourceWem": "896136724.wem"
+        },
+        {
+          "file": "Zed/04.ogg",
+          "url": "/audio/vo/en-us/Zed/04.ogg",
+          "durationMs": 3507,
+          "bytes": 11714,
+          "sourceWem": "703030085.wem"
+        },
+        {
+          "file": "Zed/05.ogg",
+          "url": "/audio/vo/en-us/Zed/05.ogg",
+          "durationMs": 6507,
+          "bytes": 11785,
+          "sourceWem": "764995043.wem"
+        }
+      ]
+    },
+    "Zeri": {
+      "id": "Zeri",
+      "name": "Zeri",
+      "clips": [
+        {
+          "file": "Zeri/01.ogg",
+          "url": "/audio/vo/en-us/Zeri/01.ogg",
+          "durationMs": 6707,
+          "bytes": 20408,
+          "sourceWem": "269637241.wem"
+        },
+        {
+          "file": "Zeri/02.ogg",
+          "url": "/audio/vo/en-us/Zeri/02.ogg",
+          "durationMs": 5707,
+          "bytes": 17526,
+          "sourceWem": "866043729.wem"
+        },
+        {
+          "file": "Zeri/03.ogg",
+          "url": "/audio/vo/en-us/Zeri/03.ogg",
+          "durationMs": 5607,
+          "bytes": 17297,
+          "sourceWem": "888652877.wem"
+        },
+        {
+          "file": "Zeri/04.ogg",
+          "url": "/audio/vo/en-us/Zeri/04.ogg",
+          "durationMs": 5207,
+          "bytes": 16348,
+          "sourceWem": "90958754.wem"
+        },
+        {
+          "file": "Zeri/05.ogg",
+          "url": "/audio/vo/en-us/Zeri/05.ogg",
+          "durationMs": 4507,
+          "bytes": 14098,
+          "sourceWem": "864573059.wem"
+        }
+      ]
+    },
+    "Ziggs": {
+      "id": "Ziggs",
+      "name": "Ziggs",
+      "clips": [
+        {
+          "file": "Ziggs/01.ogg",
+          "url": "/audio/vo/en-us/Ziggs/01.ogg",
+          "durationMs": 5607,
+          "bytes": 17141,
+          "sourceWem": "551155388.wem"
+        },
+        {
+          "file": "Ziggs/02.ogg",
+          "url": "/audio/vo/en-us/Ziggs/02.ogg",
+          "durationMs": 5707,
+          "bytes": 16059,
+          "sourceWem": "321826655.wem"
+        },
+        {
+          "file": "Ziggs/03.ogg",
+          "url": "/audio/vo/en-us/Ziggs/03.ogg",
+          "durationMs": 4207,
+          "bytes": 11848,
+          "sourceWem": "416314644.wem"
+        },
+        {
+          "file": "Ziggs/04.ogg",
+          "url": "/audio/vo/en-us/Ziggs/04.ogg",
+          "durationMs": 3607,
+          "bytes": 11399,
+          "sourceWem": "949873915.wem"
+        },
+        {
+          "file": "Ziggs/05.ogg",
+          "url": "/audio/vo/en-us/Ziggs/05.ogg",
+          "durationMs": 3807,
+          "bytes": 13537,
+          "sourceWem": "115520979.wem"
+        }
+      ]
+    },
+    "Zilean": {
+      "id": "Zilean",
+      "name": "Zilean",
+      "clips": [
+        {
+          "file": "Zilean/01.ogg",
+          "url": "/audio/vo/en-us/Zilean/01.ogg",
+          "durationMs": 3407,
+          "bytes": 11171,
+          "sourceWem": "712784221.wem"
+        },
+        {
+          "file": "Zilean/02.ogg",
+          "url": "/audio/vo/en-us/Zilean/02.ogg",
+          "durationMs": 2766,
+          "bytes": 8691,
+          "sourceWem": "478626207.wem"
+        },
+        {
+          "file": "Zilean/03.ogg",
+          "url": "/audio/vo/en-us/Zilean/03.ogg",
+          "durationMs": 2766,
+          "bytes": 8680,
+          "sourceWem": "153567220.wem"
+        },
+        {
+          "file": "Zilean/04.ogg",
+          "url": "/audio/vo/en-us/Zilean/04.ogg",
+          "durationMs": 2772,
+          "bytes": 8838,
+          "sourceWem": "122811571.wem"
+        },
+        {
+          "file": "Zilean/05.ogg",
+          "url": "/audio/vo/en-us/Zilean/05.ogg",
+          "durationMs": 2058,
+          "bytes": 6723,
+          "sourceWem": "269987911.wem"
+        }
+      ]
+    },
+    "Zoe": {
+      "id": "Zoe",
+      "name": "Zoe",
+      "clips": [
+        {
+          "file": "Zoe/01.ogg",
+          "url": "/audio/vo/en-us/Zoe/01.ogg",
+          "durationMs": 10007,
+          "bytes": 38096,
+          "sourceWem": "790264530.wem"
+        },
+        {
+          "file": "Zoe/02.ogg",
+          "url": "/audio/vo/en-us/Zoe/02.ogg",
+          "durationMs": 10007,
+          "bytes": 32548,
+          "sourceWem": "779638671.wem"
+        },
+        {
+          "file": "Zoe/03.ogg",
+          "url": "/audio/vo/en-us/Zoe/03.ogg",
+          "durationMs": 10007,
+          "bytes": 33519,
+          "sourceWem": "327531416.wem"
+        },
+        {
+          "file": "Zoe/04.ogg",
+          "url": "/audio/vo/en-us/Zoe/04.ogg",
+          "durationMs": 9307,
+          "bytes": 30511,
+          "sourceWem": "576789161.wem"
+        },
+        {
+          "file": "Zoe/05.ogg",
+          "url": "/audio/vo/en-us/Zoe/05.ogg",
+          "durationMs": 8107,
+          "bytes": 24466,
+          "sourceWem": "720199051.wem"
+        }
+      ]
+    },
+    "Zyra": {
+      "id": "Zyra",
+      "name": "Zyra",
+      "clips": [
+        {
+          "file": "Zyra/01.ogg",
+          "url": "/audio/vo/en-us/Zyra/01.ogg",
+          "durationMs": 4207,
+          "bytes": 13773,
+          "sourceWem": "218216655.wem"
+        },
+        {
+          "file": "Zyra/02.ogg",
+          "url": "/audio/vo/en-us/Zyra/02.ogg",
+          "durationMs": 4207,
+          "bytes": 13263,
+          "sourceWem": "766954181.wem"
+        },
+        {
+          "file": "Zyra/03.ogg",
+          "url": "/audio/vo/en-us/Zyra/03.ogg",
+          "durationMs": 4407,
+          "bytes": 13627,
+          "sourceWem": "650595772.wem"
+        },
+        {
+          "file": "Zyra/04.ogg",
+          "url": "/audio/vo/en-us/Zyra/04.ogg",
+          "durationMs": 3407,
+          "bytes": 10515,
+          "sourceWem": "590037771.wem"
+        },
+        {
+          "file": "Zyra/05.ogg",
+          "url": "/audio/vo/en-us/Zyra/05.ogg",
+          "durationMs": 4207,
+          "bytes": 13984,
+          "sourceWem": "793269337.wem"
+        }
+      ]
+    }
+  },
+  "stats": {
+    "champions": 173,
+    "clips": 865,
+    "totalBytes": 15623966
+  }
+}

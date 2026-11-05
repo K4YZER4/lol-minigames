@@ -1,6 +1,6 @@
 import type { Result, Rng } from "../core/rng";
 
-export type ImitacionAudioClip = { clueId: string; championId: string; audioUrl: string };
+export type ImitacionAudioClip = { clueId: string; championId: string; audioUrl: string; audioUrlEn?: string };
 export type ImitacionSettings = { recordingSeconds: number; votingSeconds: number };
 export type ImitacionRecording = { recordingId: string; playerId: string; audioData: string; mimeType: string; votes: Record<string, number> };
 export type ImitacionState = {
@@ -9,6 +9,7 @@ export type ImitacionState = {
   players: string[];
   targetId: string;
   targetAudioUrl: string;
+  targetAudioUrlEn: string | null;
   recordings: Record<string, ImitacionRecording>;
   scores: Record<string, number>;
   phaseEndsAt: number;
@@ -22,7 +23,7 @@ export function createImitacion(init: ImitacionInit): ImitacionState {
   const clip = init.rng.pick(init.clips);
   const scores: Record<string, number> = {};
   for (const playerId of init.playerIds) scores[playerId] = 0;
-  return { phase: "RECORDING", settings: init.settings, players: [...init.playerIds], targetId: clip.championId, targetAudioUrl: clip.audioUrl, recordings: {}, scores, phaseEndsAt: init.now + init.settings.recordingSeconds * 1000, winnerId: null };
+  return { phase: "RECORDING", settings: init.settings, players: [...init.playerIds], targetId: clip.championId, targetAudioUrl: clip.audioUrl, targetAudioUrlEn: clip.audioUrlEn ?? null, recordings: {}, scores, phaseEndsAt: init.now + init.settings.recordingSeconds * 1000, winnerId: null };
 }
 
 function enterVoting(state: ImitacionState, now: number): ImitacionState {
@@ -68,7 +69,7 @@ export function imitacionTick(state: ImitacionState, ctx: ImitacionContext): Res
 
 export function imitacionPublicView(state: ImitacionState) {
   const reveal = state.phase === "REVEAL" || state.phase === "FINISHED";
-  return { mode: "imitacion" as const, phase: state.phase, phaseEndsAt: state.phaseEndsAt, targetAudioUrl: state.targetAudioUrl, recordings: Object.values(state.recordings).map((recording) => ({ recordingId: recording.recordingId, audioData: recording.audioData, mimeType: recording.mimeType, playerId: reveal ? recording.playerId : null, averageStars: Object.keys(recording.votes).length ? Object.values(recording.votes).reduce((sum, value) => sum + value, 0) / Object.keys(recording.votes).length : null, votes: Object.keys(recording.votes).length })), submitted: Object.keys(state.recordings), voted: [...new Set(Object.values(state.recordings).flatMap((recording) => Object.keys(recording.votes)))], winnerId: reveal ? state.winnerId : null };
+  return { mode: "imitacion" as const, phase: state.phase, phaseEndsAt: state.phaseEndsAt, targetAudioUrl: state.targetAudioUrl, targetAudioUrlEn: state.targetAudioUrlEn, recordings: Object.values(state.recordings).map((recording) => ({ recordingId: recording.recordingId, audioData: recording.audioData, mimeType: recording.mimeType, playerId: reveal ? recording.playerId : null, averageStars: Object.keys(recording.votes).length ? Object.values(recording.votes).reduce((sum, value) => sum + value, 0) / Object.keys(recording.votes).length : null, votes: Object.keys(recording.votes).length })), submitted: Object.keys(state.recordings), voted: [...new Set(Object.values(state.recordings).flatMap((recording) => Object.keys(recording.votes)))], winnerId: reveal ? state.winnerId : null };
 }
 export function imitacionPrivateView(state: ImitacionState, playerId: string) { return { mode: "imitacion" as const, isSubmitted: Boolean(state.recordings[playerId]), hasVoted: Object.values(state.recordings).some((recording) => recording.votes[playerId] !== undefined), ownRecordingId: state.recordings[playerId]?.recordingId ?? null }; }
 export function imitacionResults(state: ImitacionState) { return { scores: state.scores }; }

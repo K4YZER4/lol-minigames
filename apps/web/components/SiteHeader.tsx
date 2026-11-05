@@ -3,16 +3,22 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getUiVolume, playUiSound, setUiVolume } from "@/lib/sounds";
+import { getLanguage, setLanguage, type AppLanguage } from "@/lib/language";
+import { useTranslation } from "@/lib/i18n";
 
 const STORAGE_KEY = "lolparty:theme";
 
 export function SiteHeader() {
   const [lila, setLila] = useState(false);
   const [volume, setVolume] = useState(1);
+  const [language, setCurrentLanguage] = useState<AppLanguage>("es-mx");
+  const [languageLocked, setLanguageLocked] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     setLila(document.documentElement.classList.contains("lila"));
     setVolume(getUiVolume());
+    setCurrentLanguage(getLanguage());
   }, []);
 
   useEffect(() => {
@@ -42,7 +48,24 @@ export function SiteHeader() {
       </a>
 
       <nav aria-label="Navegación principal">
-        <Link className="ghost" href="/#modos">Modos</Link>
+        <Link className="ghost" href="/#modos">{t.modes}</Link>
+        <button
+          type="button"
+          className="language-toggle"
+          disabled={languageLocked}
+          aria-label={`${t.audioLanguage}: ${language === "es-mx" ? "Español" : "English"}. Cambiar idioma`}
+          title={`${t.audioLanguage}: ${language === "es-mx" ? "Español" : "English"}`}
+          onClick={() => {
+            if (languageLocked) return;
+            const next = language === "es-mx" ? "en-us" : "es-mx";
+            setCurrentLanguage(next);
+            setLanguage(next);
+            setLanguageLocked(true);
+            window.setTimeout(() => setLanguageLocked(false), 3000);
+          }}
+        >
+          {language === "es-mx" ? "Español" : "English"}
+        </button>
         <label className="volume-control" title={`Volumen ${Math.round(volume * 100)}%`}>
           <span aria-hidden="true">{volume === 0 ? "🔇" : volume < 0.5 ? "🔉" : "🔊"}</span>
           <input
@@ -51,7 +74,7 @@ export function SiteHeader() {
             max="1"
             step="0.01"
             value={volume}
-            aria-label="Volumen de sonidos"
+           aria-label={t.volume(Math.round(volume * 100))}
             onChange={(event) => {
               const next = Number(event.target.value);
               setVolume(next);
@@ -63,7 +86,7 @@ export function SiteHeader() {
           type="button"
           className={`dot${lila ? "" : " active"}`}
           style={{ background: "#72d9ff" }}
-          aria-label="Paleta azul"
+          aria-label={t.bluePalette}
           aria-pressed={!lila}
           onClick={() => apply(false)}
         />
@@ -71,7 +94,7 @@ export function SiteHeader() {
           type="button"
           className={`dot${lila ? " active" : ""}`}
           style={{ background: "#8350c4" }}
-          aria-label="Paleta lila"
+          aria-label={t.purplePalette}
           aria-pressed={lila}
           onClick={() => apply(true)}
         />

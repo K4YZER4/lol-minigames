@@ -1,6 +1,7 @@
 "use client";
 
 import type { ModeId, RoomView } from "@lolgames/protocol";
+import { useTranslation } from "@/lib/i18n";
 
 type Props = {
   room: RoomView;
@@ -34,6 +35,7 @@ function SettingStepper({ label, value, min, max, step, disabled, onChange }: { 
 }
 
 export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
+  const { t } = useTranslation();
   const mePlayer = room.players.find((player) => player.playerId === me);
   const isHost = room.hostId === me;
   const connected = room.players.filter((player) => player.connected);
@@ -46,27 +48,27 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
     <div className="game-shell lobby-screen">
       <div className="split">
         <section className="panel lobby-main-panel">
-          <div className="eyebrow">Elige la partida</div>
-          <h2>¿Qué jugamos?</h2>
+          <div className="eyebrow">{t.chooseGame}</div>
+          <h2>{t.whatPlay}</h2>
           <div className="lobbygrid">
             {MODES.map((mode) => {
               const active = room.mode === mode.id;
               return (
                 <button key={mode.id} className={`lobbymode${active ? " selected" : ""}`} disabled={!isHost} onClick={() => onConfigure({ mode: mode.id })}>
-                  <span className="mode-icon">{mode.icon}</span>{mode.name}
-                  {active ? <span className="tag">activo</span> : null}
+                  <span className="mode-icon">{mode.icon}</span>{t.modeName(mode.id)}
+                  {active ? <span className="tag">{t.active}</span> : null}
                 </button>
               );
             })}
           </div>
-          {selectedMode ? <p className="hint lobby-mode-blurb">{selectedMode.blurb}</p> : null}
+           {selectedMode ? <p className="hint lobby-mode-blurb">{t.modeBlurb(selectedMode.id)}</p> : null}
 
           {room.mode === "bomba" ? (
             <>
               <div className="divider" />
               <div className="bar lobby-settings-row" style={{ marginTop: 0 }}>
                 <div>
-                  <span className="hint">Vidas por jugador</span>
+                   <span className="hint">{t.livesPerPlayer}</span>
                   <div className="stepper" style={{ marginTop: 8 }}>
                     <button className="step" disabled={!isHost || fuse.lives <= 1} onClick={() => onConfigure({ bomba: { lives: fuse.lives - 1 } })}>−</button>
                     <strong>{fuse.lives}</strong>
@@ -74,7 +76,7 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
                   </div>
                 </div>
                 <div>
-                  <span className="hint">Bomba</span>
+                   <span className="hint">{t.bomb}</span>
                   <div className="chips" style={{ marginTop: 8 }}>
                     {FUSE_PRESETS.map((preset) => {
                       const active = fuse.minFuseMs === preset.minFuseMs && fuse.maxFuseMs === preset.maxFuseMs;
@@ -106,12 +108,12 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
 
         <aside className="panel lobby-team-panel">
           <div className="eyebrow">{readyCount}/{connected.length} listos</div>
-          <h2>Tu equipo <span className="muted">{room.players.length}</span></h2>
+           <h2>{t.team} <span className="muted">{room.players.length}</span></h2>
           <div className="roster">
             {room.players.map((player) => (
               <div className="person" key={player.playerId}>
                 <div className="avatar"><img src={player.avatar.imageUrl} alt="" /></div>
-                <div className="name">{player.name}{player.playerId === me ? <span className="tag" style={{ marginLeft: 6 }}>tú</span> : null}<small>{player.isHost ? "Anfitrión" : !player.connected ? "Desconectado" : player.ready ? "Listo" : "Esperando…"}</small></div>
+                 <div className="name">{player.name}{player.playerId === me ? <span className="tag" style={{ marginLeft: 6 }}>{t.you}</span> : null}<small>{player.isHost ? t.host : !player.connected ? t.disconnected : player.ready ? t.ready : t.waiting}</small></div>
                 <span className={`presence${!player.connected ? " off" : player.ready ? " ready" : ""}`} />
               </div>
             ))}
@@ -120,10 +122,10 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
       </div>
 
       <div className="bar lobby-actions">
-        <div className="row"><button className={`lobby-ready-btn ${mePlayer?.ready ? "secondary" : "primary"}`} onClick={() => onReady(!mePlayer?.ready)}>{mePlayer?.ready ? "Quitar listo" : "Estoy listo"}</button><span className="hint">{readyCount}/{connected.length} jugadores listos</span></div>
-        {isHost ? <button className="primary lobby-start-btn" disabled={!canStart} onClick={onStart}>Empezar partida →</button> : <span className="hint">Esperando al anfitrión…</span>}
+         <div className="row"><button className={`lobby-ready-btn ${mePlayer?.ready ? "secondary" : "primary"}`} onClick={() => onReady(!mePlayer?.ready)}>{mePlayer?.ready ? t.unready : t.iAmReady}</button><span className="hint">{readyCount}/{connected.length} {t.playersReady}</span></div>
+         {isHost ? <button className="primary lobby-start-btn" disabled={!canStart} onClick={onStart}>{t.startGame}</button> : <span className="hint">{t.waitingHost}</span>}
       </div>
-      {isHost && !canStart ? <p className="hint">{connected.length < 3 ? "Hacen falta al menos 3 jugadores conectados." : "Todos deben marcarse como listos para arrancar."}</p> : null}
+       {isHost && !canStart ? <p className="hint">{connected.length < 3 ? t.needPlayers : t.allReady}</p> : null}
     </div>
   );
 }

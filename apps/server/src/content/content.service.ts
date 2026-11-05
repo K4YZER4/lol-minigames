@@ -1,4 +1,4 @@
-import { Inject, Injectable, NotFoundException } from "@nestjs/common";
+import { Inject, Injectable, Logger, NotFoundException, type OnModuleInit } from "@nestjs/common";
 import { existsSync, readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import {
@@ -14,6 +14,8 @@ const PUBLIC_BASE =
   `http://localhost:${process.env.PORT ?? 3001}`;
 
 const IMAGE_CACHE_LIMIT = 600;
+const AUDIO_ES_MANIFEST_URL = process.env.AUDIO_ES_MANIFEST_URL;
+const AUDIO_EN_MANIFEST_URL = process.env.AUDIO_EN_MANIFEST_URL;
 const AUDIO_ROOT_CANDIDATES = [
   resolve(process.cwd(), "apps/web/public/audio/vo/es-mx"),
   resolve(__dirname, "../../../web/public/audio/vo/es-mx"),
@@ -21,16 +23,19 @@ const AUDIO_ROOT_CANDIDATES = [
 const AUDIO_ROOT = AUDIO_ROOT_CANDIDATES.find((candidate) => existsSync(candidate)) ?? AUDIO_ROOT_CANDIDATES[0]!;
 
 type AudioClip = { clueId: string; championId: string; audioUrl: string; filePath: string };
+type RemoteManifest = { champions?: Record<string, { clips?: { file?: string; url?: string }[] }> };
 type EmojiClue = { clueId: string; championId: string; emojis: string[] };
 
 @Injectable()
-export class ContentService {
+export class ContentService implements OnModuleInit {
+  private readonly logger = new Logger(ContentService.name);
   private readonly bundle: ContentBundle = loadContent();
   private readonly info: Record<string, { id: string; name: string; imageUrl: string }>;
   private readonly clueList: ContentClue[];
   private readonly clueById: Map<string, ContentClue>;
   private readonly imageCache = new Map<string, Buffer>();
   private readonly audioById = new Map<string, AudioClip>();
+  private remoteAudioClips: { clueId: string; championId: string; audioUrl: string; audioUrlEn?: string }[] = [];
   private readonly emojiList: EmojiClue[];
 
   constructor() {
@@ -111,8 +116,41 @@ export class ContentService {
     }]));
   }
 
-  get audioClips(): { clueId: string; championId: string; audioUrl: string }[] {
+  get audioClips(): { clueId: string; championId: string; audioUrl: string; audioUrlEn?: string }[] {
+    if (this.remoteAudioClips.length > 0) return this.remoteAudioClips;
     return [...this.audioById.values()].map(({ clueId, championId, audioUrl }) => ({ clueId, championId, audioUrl }));
+  }
+
+  async onModuleInit(): Promise<void> {
+    if (!AUDIO_ES_MANIFEST_URL && !AUDIO_EN_MANIFEST_URL) return;
+    try {
+      const fetchManifest = async (url: string | undefined): Promise<RemoteManifest> => {
+        if (!url) return {};
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`${url} respondió HTTP ${response.status}`);
+        return await response.json() as RemoteManifest;
+      };
+      const [es, en] = await Promise.all([fetchManifest(AUDIO_ES_MANIFEST_URL), fetchManifest(AUDIO_EN_MANIFEST_URL)]);
+      const toUrl = (manifestUrl: string | undefined, file: string | undefined, fallback: string | undefined) => {
+        if (file && manifestUrl) return new URL(file, manifestUrl).toString();
+        return fallback;
+      };
+      this.remoteAudioClips = this.bundle.champions.flatMap((champion) => {
+        const esClips = es.champions?.[champion.id]?.clips ?? [];
+        const enClips = en.champions?.[champion.id]?.clips ?? [];
+        const count = Math.max(esClips.length, enClips.length);
+        return Array.from({ length: count }, (_, index) => {
+          const audioUrl = toUrl(AUDIO_ES_MANIFEST_URL, esClips[index]?.file, esClips[index]?.url) ??
+            toUrl(AUDIO_EN_MANIFEST_URL, enClips[index]?.file, enClips[index]?.url);
+          const audioUrlEn = toUrl(AUDIO_EN_MANIFEST_URL, enClips[index]?.file, enClips[index]?.url);
+          if (!audioUrl) return null;
+          return { clueId: `r2-audio-${champion.id}-${index + 1}`, championId: champion.id, audioUrl, ...(audioUrlEn ? { audioUrlEn } : {}) };
+        }).filter((clip): clip is NonNullable<typeof clip> => clip !== null);
+      });
+      this.logger.log(`R2: ${this.remoteAudioClips.length} audios remotos disponibles`);
+    } catch (error) {
+      this.logger.warn(`R2 no disponible; se usará el catálogo local: ${error instanceof Error ? error.message : String(error)}`);
+    }
   }
 
   get emojiClues(): EmojiClue[] {
