@@ -91,7 +91,8 @@ export default function HomePage() {
           <div className="home-inner">
             <img className="home-logo" src="/images/logo-lol-party.png" alt="Logo de LoL Party" />
             <h1 className="hero-logo-title"><span>LOL</span> <b>PARTY</b></h1>
-            <p className="muted">{t.tagline}</p>
+           <p className="muted">{t.tagline}</p>
+            <p className="seo-intro">{t.seoIntro}</p>
 
             <div className="buttons">
               <button className="primary" onClick={() => setMode("create")}>
@@ -110,7 +111,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <section id="modos" className="mode-preview">
+         <section id="modos" className="mode-preview">
            <div className="eyebrow">{t.chooseHow}</div>
            <h2>{t.oneRoom}</h2>
           <div className="mode-preview-grid">
@@ -121,7 +122,14 @@ export default function HomePage() {
                <span className="more">{t.players}</span>
             </article>)}
           </div>
-        </section>
+         </section>
+         <section className="seo-content" aria-labelledby="how-to-play-title">
+           <div className="eyebrow">LoL Party · League of Legends party games</div>
+           <h2 id="how-to-play-title">Cómo jugar LoL Impostor y nuestros minijuegos</h2>
+           <p>Crea una sala privada, comparte el enlace con tu equipo y elige entre Impostor, Pictionary, carreras, Bomba, ¿Quién soy? e Imitación de voz. En el modo LoL Impostor, da pistas sin revelar al campeón y descubre quién recibió una identidad diferente.</p>
+           <h2>How to play League of Legends party games</h2>
+           <p>Create a private room, invite your friends and choose LoL Impostor, champion trivia, Pictionary, races, Bomb, Who am I? or Voice Imitation. No account is required.</p>
+         </section>
       </main>
     );
   }

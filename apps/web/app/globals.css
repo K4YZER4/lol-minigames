@@ -214,6 +214,71 @@ button:disabled {
 .language-toggle:hover { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
 .language-toggle:disabled { opacity: .55; cursor: wait; }
 
+.server-wakeup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: color-mix(in srgb, var(--bg) 72%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.server-wakeup-card {
+  width: min(440px, 100%);
+  padding: 34px;
+  text-align: center;
+  border: 1px solid var(--edge);
+  border-radius: 24px;
+  background: color-mix(in srgb, var(--panel) 92%, transparent);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, .24);
+}
+
+.server-wakeup-card h1 {
+  margin: 16px 0 8px;
+  font-size: clamp(22px, 4vw, 32px);
+}
+
+.server-wakeup-card p {
+  margin: 0 0 20px;
+  color: var(--muted);
+}
+
+.server-wakeup-spinner {
+  width: 34px;
+  height: 34px;
+  margin: 0 auto;
+  border: 3px solid var(--edge);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: server-spin .8s linear infinite;
+}
+
+.server-wakeup-icon {
+  width: 34px;
+  height: 34px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  border: 2px solid var(--danger);
+  border-radius: 50%;
+  color: var(--danger);
+  font-weight: 800;
+}
+
+.server-wakeup-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+@keyframes server-spin {
+  to { transform: rotate(360deg); }
+}
+
 .ghost {
   background: transparent;
   color: var(--muted);
@@ -897,8 +962,19 @@ input:disabled {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 0;
+  padding: 14px 10px;
   border-bottom: 1px solid var(--edge);
+  border-radius: 12px;
+}
+
+.person.is-me {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.person.is-me .player-name {
+  color: var(--accent);
+  font-weight: 750;
 }
 
 .person:last-child {
@@ -928,7 +1004,14 @@ input:disabled {
 
 .person .name {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   font-size: 13px;
+  min-width: 0;
+}
+
+.person .player-name {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -939,7 +1022,7 @@ input:disabled {
   display: block;
   color: var(--muted);
   font-size: 10px;
-  margin-top: 4px;
+  line-height: 1.2;
 }
 
 .presence {
@@ -1899,7 +1982,7 @@ input:disabled {
 .lobby-team-panel { padding: 20px 22px; }
 .lobby-team-panel h2 { margin-bottom: 8px; }
 .lobby-team-panel .roster { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 14px; }
-.lobby-team-panel .person { gap: 10px; padding: 10px 0; }
+.lobby-team-panel .person { gap: 10px; padding: 10px 8px; }
 .lobby-team-panel .person .avatar { width: 36px; height: 36px; }
 .lobby-team-panel .person .name { font-size: 13px; }
 .lobby-team-panel .person .name small { margin-top: 1px; font-size: 9px; }
@@ -2232,7 +2315,7 @@ input:disabled {
 
 @media (max-height: 780px) and (min-width: 761px) {
   .lobby-screen .lobbymode { min-height: 48px; padding: 10px 12px; font-size: 13px; }
-  .lobby-team-panel .person { padding: 8px 0; }
+  .lobby-team-panel .person { padding: 8px; }
   .lobby-mode-blurb { display: none; }
   .lobby-main-panel h2, .lobby-team-panel h2 { margin-bottom: 6px; }
 }
@@ -2244,7 +2327,7 @@ input:disabled {
   .lobby-screen .lobbygrid { gap: 10px; }
   .lobby-screen .lobbymode { min-height: 58px; padding: 14px 16px; border-radius: 14px; font-size: 14px; }
   .lobby-screen .lobbymode .mode-icon { font-size: 22px; }
-  .lobby-team-panel .person { padding: 10px 0; }
+  .lobby-team-panel .person { padding: 10px 8px; }
   .lobby-team-panel .person .avatar { width: 36px; height: 36px; }
   .lobby-team-panel .person .name { font-size: 13px; }
   .lobby-ready-btn { min-height: 60px; font-size: 16px; }
