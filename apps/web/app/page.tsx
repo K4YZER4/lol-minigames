@@ -92,7 +92,7 @@ export default function HomePage() {
             <img className="home-logo" src="/images/logo-lol-party.png" alt="Logo de LoL Party" />
             <h1 className="hero-logo-title"><span>LOL</span> <b>PARTY</b></h1>
            <p className="muted">{t.tagline}</p>
-            <p className="seo-intro">LoL Party is a collection of League of Legends party games for friends: play LoL Impostor, guess champions, draw, race and imitate champion voice lines in private rooms.</p>
+            <p className="seo-intro">{t.seoIntro}</p>
 
             <div className="buttons">
               <button className="primary" onClick={() => setMode("create")}>

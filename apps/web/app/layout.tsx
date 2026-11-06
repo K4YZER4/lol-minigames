@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SiteHeader } from "@/components/SiteHeader";
+import { HealthGate } from "@/components/HealthGate";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://lol-minigames.vercel.app"),
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <span>Hecho para jugar entre amigos</span>
           <span>LoL Party · Glass</span>
         </footer>
+        <HealthGate />
       </body>
     </html>
   );

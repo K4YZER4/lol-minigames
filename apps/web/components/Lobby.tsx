@@ -111,9 +111,9 @@ export function Lobby({ room, me, onReady, onConfigure, onStart }: Props) {
            <h2>{t.team} <span className="muted">{room.players.length}</span></h2>
           <div className="roster">
             {room.players.map((player) => (
-              <div className="person" key={player.playerId}>
+              <div className={`person${player.playerId === me ? " is-me" : ""}`} key={player.playerId}>
                 <div className="avatar"><img src={player.avatar.imageUrl} alt="" /></div>
-                 <div className="name">{player.name}{player.playerId === me ? <span className="tag" style={{ marginLeft: 6 }}>{t.you}</span> : null}<small>{player.isHost ? t.host : !player.connected ? t.disconnected : player.ready ? t.ready : t.waiting}</small></div>
+                 <div className="name"><span className="player-name">{player.name}</span><small>{player.isHost ? t.host : !player.connected ? t.disconnected : player.ready ? t.ready : t.waiting}</small></div>
                 <span className={`presence${!player.connected ? " off" : player.ready ? " ready" : ""}`} />
               </div>
             ))}
