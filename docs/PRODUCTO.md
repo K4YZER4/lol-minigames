@@ -224,7 +224,10 @@ solo, abrí la sala en tres pestañas (o tres navegadores) con apodos distintos.
 | `PORT` | `3001` | Puerto del servidor |
 | `WEB_ORIGIN` | `http://localhost:3000` | Orígenes CORS permitidos |
 | `PUBLIC_BASE_URL` | `http://localhost:3001` | Base de las URLs de pistas |
+| `TRUST_PROXY_HOPS` | `2` en producción, `0` en local | Saltos de proxy confiados (Render + Cloudflare) |
 | `NEXT_PUBLIC_GAME_SERVER_URL` | `http://localhost:3001` | Servidor que usa el navegador |
+
+En producción el servidor usa `CF-Connecting-IP` como IP del cliente solo cuando el salto inmediato pertenece a los rangos oficiales de Cloudflare. Si alguien llega directo al origen y falsifica la cabecera, se usa la cadena `X-Forwarded-For` validada.
 
 ---
 
