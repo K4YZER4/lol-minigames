@@ -1245,7 +1245,7 @@ input:disabled {
 .carrera-sidebar { grid-column: 1; grid-row: 2; position: sticky; top: 12px; max-height: min(64vh, 520px); overflow-y: auto; }
 .carrera-clue-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
 .carrera-clue-card { position: relative; overflow: hidden; border: 1px solid var(--edge); border-radius: 15px; background: rgba(0,0,0,.18); }
-.carrera-clue-card img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; transition: filter .3s ease; }
+.carrera-clue-card img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; transition: filter .3s ease; pointer-events: none; user-select: none; -webkit-user-drag: none; -webkit-touch-callout: none; }
 .carrera-clue-card span { position: absolute; left: 8px; bottom: 8px; padding: 4px 7px; border-radius: 7px; background: rgba(2,18,47,.8); color: var(--text); font-size: 10px; }
 .carrera-clue-card.is-hidden { display: grid; place-items: center; aspect-ratio: 1; border-style: dashed; background: color-mix(in srgb, var(--glass) 70%, transparent); }
 .carrera-clue-card .carrera-clue-locked { position: static; padding: 0; background: transparent; color: var(--muted); font-size: 11px; }
