@@ -35,11 +35,11 @@ import {
 import { RoomService } from "../rooms/room.service";
 import { BroadcastService } from "./broadcast.service";
 import { RateLimiter } from "../ports";
-import { allowedOrigins, clientIp, originAllowed, proxyHops } from "./security";
+import { allowedOrigins, originAllowed, resolveClientIp, resolveProxyHops } from "./security";
 
 const PRODUCTION = process.env.NODE_ENV === "production";
 const ALLOWED_ORIGINS = allowedOrigins(process.env.WEB_ORIGIN, PRODUCTION);
-const PROXY_HOPS = proxyHops(process.env.TRUST_PROXY_HOPS);
+const PROXY_HOPS = resolveProxyHops(process.env.TRUST_PROXY_HOPS, PRODUCTION);
 
 const reject = (code: RejectCode, message: string): Reject => ({
   ok: false,
@@ -75,7 +75,7 @@ export class RoomGateway implements OnGatewayInit, OnGatewayDisconnect {
   afterInit(server: Server) {
     this.broadcast.attach(server);
     server.use(async (socket, next) => {
-      const ip = clientIp(socket.handshake.address, socket.handshake.headers["x-forwarded-for"], PROXY_HOPS);
+      const ip = resolveClientIp(socket.handshake.address, socket.handshake.headers, PROXY_HOPS);
       try {
         if (!(await this.limiter.hit(`connect:${ip}`, 60_000, 30))) {
           return next(new Error("Demasiadas conexiones, espera un minuto"));
