@@ -8,13 +8,31 @@ const MAX_WAIT_MS = 90_000;
 const RETRY_MS = 3_000;
 const REQUEST_TIMEOUT_MS = 8_000;
 const OVERLAY_DELAY_MS = 700;
+const SLOW_HINT_MS = 8_000;
+const KEEPALIVE_MS = 10 * 60_000;
 
 type Status = "checking" | "ready" | "timeout";
 
+/** Consulta el health del servidor con un límite de espera corto. */
+async function pingHealth(): Promise<boolean> {
+  try {
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+    const response = await fetch(`${SERVER_URL}/api/health`, {
+      cache: "no-store",
+      signal: controller.signal,
+    });
+    window.clearTimeout(timeout);
+    return response.ok;
+  } catch {
+    return false;
+  }
+}
+
 /**
- * Despierta el servidor de Render al cargar la web.
- * Se monta como capa independiente: no envuelve el contenido, así el HTML
- * sigue disponible para SEO y el layout no cambia de estructura.
+ * Despierta el servidor de Render al cargar la web y lo mantiene activo
+ * mientras haya una pestaña abierta. Se monta como capa independiente: no
+ * envuelve el contenido, así el HTML sigue disponible para SEO.
  */
 export function HealthGate() {
   const { t } = useTranslation();
@@ -22,30 +40,20 @@ export function HealthGate() {
   const [attempt, setAttempt] = useState(0);
   const [dismissed, setDismissed] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
+  const [slow, setSlow] = useState(false);
 
   useEffect(() => {
-    if (dismissed) return;
     let cancelled = false;
     const startedAt = Date.now();
     let timer: ReturnType<typeof setTimeout> | null = null;
 
     const check = async () => {
-      try {
-        const controller = new AbortController();
-        const timeout = window.setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
-        const response = await fetch(`${SERVER_URL}/api/health`, {
-          cache: "no-store",
-          signal: controller.signal,
-        });
-        window.clearTimeout(timeout);
-        if (response.ok) {
-          if (!cancelled) setStatus("ready");
-          return;
-        }
-      } catch {
-        // Render puede tardar en despertar; se reintenta abajo.
-      }
+      const ok = await pingHealth();
       if (cancelled) return;
+      if (ok) {
+        setStatus("ready");
+        return;
+      }
       if (Date.now() - startedAt >= MAX_WAIT_MS) {
         setStatus("timeout");
         return;
@@ -53,12 +61,34 @@ export function HealthGate() {
       timer = setTimeout(check, RETRY_MS);
     };
 
+    setStatus("checking");
     void check();
     return () => {
       cancelled = true;
       if (timer) clearTimeout(timer);
     };
-  }, [attempt, dismissed]);
+  }, [attempt]);
+
+  // Mientras la pestaña siga abierta, evita que Render vuelva a dormirse.
+  useEffect(() => {
+    if (status !== "ready") return;
+    let lastPing = Date.now();
+    const keepAlive = () => {
+      lastPing = Date.now();
+      void pingHealth();
+    };
+    const interval = setInterval(keepAlive, KEEPALIVE_MS);
+    const onVisible = () => {
+      if (document.visibilityState === "visible" && Date.now() - lastPing > KEEPALIVE_MS / 2) {
+        keepAlive();
+      }
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [status]);
 
   useEffect(() => {
     if (dismissed || status !== "checking") {
@@ -68,6 +98,15 @@ export function HealthGate() {
     const timer = setTimeout(() => setShowOverlay(true), OVERLAY_DELAY_MS);
     return () => clearTimeout(timer);
   }, [status, dismissed]);
+
+  useEffect(() => {
+    if (status !== "checking") {
+      setSlow(false);
+      return;
+    }
+    const timer = setTimeout(() => setSlow(true), SLOW_HINT_MS);
+    return () => clearTimeout(timer);
+  }, [status]);
 
   const retry = () => {
     setStatus("checking");
@@ -80,6 +119,12 @@ export function HealthGate() {
 
   if (!visible) return null;
 
+  const hint = status === "timeout"
+    ? t.serverUnavailableHint
+    : slow
+      ? t.serverWakingSlow
+      : t.serverWakingHint;
+
   return (
     <div className="server-wakeup-overlay" role="status" aria-live="polite">
       <div className="server-wakeup-card">
@@ -89,11 +134,15 @@ export function HealthGate() {
           <div className="server-wakeup-icon" aria-hidden="true">!</div>
         )}
         <h1>{status === "checking" ? t.serverWaking : t.serverUnavailable}</h1>
-        <p>{status === "checking" ? t.serverWakingHint : t.serverUnavailableHint}</p>
+        <p>{hint}</p>
         {status === "timeout" ? (
           <div className="server-wakeup-actions">
             <button className="primary" onClick={retry}>{t.retry}</button>
             <button className="secondary" onClick={() => setDismissed(true)}>{t.continueAnyway}</button>
+          </div>
+        ) : slow ? (
+          <div className="server-wakeup-actions">
+            <button className="textbutton" onClick={() => setDismissed(true)}>{t.keepBrowsing}</button>
           </div>
         ) : null}
       </div>
