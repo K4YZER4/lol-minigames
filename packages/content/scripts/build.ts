@@ -45,6 +45,11 @@ type RawEmote = {
   inventoryIcon?: string;
 };
 
+type RawProfileIcon = {
+  id: number;
+  image: { full: string };
+};
+
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 const HEADERS = {
@@ -340,29 +345,56 @@ async function main() {
   });
 
   /* ------------------------------ avatares ----------------------------- */
-  console.log("→ Descargando emotes de League para avatares…");
-  const emotes = await fetchJson<RawEmote[]>(
-    `${COMMUNITYDRAGON_BASE}/${communityVersion}/plugins/rcp-be-lol-game-data/global/default/v1/summoner-emotes.json`,
-  );
-  const emoteMarker = "/lol-game-data/assets/";
-  const avatars = emotes
-    .filter(
-      (emote) =>
-        Boolean(emote.inventoryIcon?.startsWith(emoteMarker)) &&
-        Boolean(emote.inventoryIcon && emote.inventoryIcon.length > emoteMarker.length) &&
-        Boolean(emote.inventoryIcon && /\.(png|jpg|jpeg)$/i.test(emote.inventoryIcon)),
-    )
-    .map((emote) => {
-      const relative = emote.inventoryIcon!.slice(emoteMarker.length).replace(/^assets[\\/]/i, "");
-      return {
-        id: `emote_${emote.id}`,
-        imageUrl: `${COMMUNITYDRAGON_BASE}/${communityVersion}/plugins/rcp-be-lol-game-data/global/default/assets/${relative.replace(/\\/g, "/").toLowerCase()}`,
-      };
-    })
-    .filter((avatar, index, all) => all.findIndex((candidate) => candidate.imageUrl === avatar.imageUrl) === index)
-    .filter((avatar) => !avatar.imageUrl.includes("/tft/"))
-    .slice(0, 64);
-  if (avatars.length < 12) throw new Error("CommunityDragon no devolvió suficientes emotes para avatares");
+  let avatars: { id: string; imageUrl: string }[] = [];
+  let avatarSource = "emotes de League";
+  try {
+    console.log("→ Descargando emotes de League para avatares…");
+    const emotes = await fetchJson<RawEmote[]>(
+      `${COMMUNITYDRAGON_BASE}/${communityVersion}/plugins/rcp-be-lol-game-data/global/default/v1/summoner-emotes.json`,
+    );
+    const emoteMarker = "/lol-game-data/assets/";
+    avatars = emotes
+      .filter(
+        (emote) =>
+          Boolean(emote.inventoryIcon?.startsWith(emoteMarker)) &&
+          Boolean(emote.inventoryIcon && emote.inventoryIcon.length > emoteMarker.length) &&
+          Boolean(emote.inventoryIcon && /\.(png|jpg|jpeg)$/i.test(emote.inventoryIcon)),
+      )
+      .map((emote) => {
+        const relative = emote.inventoryIcon!.slice(emoteMarker.length).replace(/^assets[\\/]/i, "");
+        return {
+          id: `emote_${emote.id}`,
+          imageUrl: `${COMMUNITYDRAGON_BASE}/${communityVersion}/plugins/rcp-be-lol-game-data/global/default/assets/${relative.replace(/\\/g, "/").toLowerCase()}`,
+        };
+      })
+      .filter((avatar, index, all) => all.findIndex((candidate) => candidate.imageUrl === avatar.imageUrl) === index)
+      .filter((avatar) => !avatar.imageUrl.includes("/tft/"))
+      .slice(0, 64);
+    if (avatars.length < 12) {
+      console.warn(`   ⚠ CommunityDragon devolvió ${avatars.length} emotes; se usarán íconos de perfil.`);
+    }
+  } catch (error) {
+    console.warn("   ⚠ No se pudieron descargar los emotes; se usarán íconos de perfil.");
+    console.warn(`     ${error instanceof Error ? error.message : String(error)}`);
+  }
+
+  if (avatars.length < 12) {
+    console.log("→ Descargando íconos de perfil de Data Dragon…");
+    const profileIcons = await fetchJson<{ data: Record<string, RawProfileIcon> }>(
+      `${CDN}/${version}/data/${LOCALE}/profileicon.json`,
+    );
+    avatars = Object.values(profileIcons.data)
+      .filter((icon) => icon.id > 0 && Boolean(icon.image?.full))
+      .sort((a, b) => a.id - b.id)
+      .slice(0, 64)
+      .map((icon) => ({
+        id: `icon_${icon.id}`,
+        imageUrl: `${CDN}/${version}/img/profileicon/${icon.image.full}`,
+      }));
+    avatarSource = "íconos de perfil de Data Dragon";
+  }
+
+  if (avatars.length < 12) throw new Error("No se pudieron generar suficientes avatares");
 
   /* ------------------------------ escribir ----------------------------- */
 
@@ -394,7 +426,7 @@ async function main() {
   console.log(`✓ Campeones: ${champions.length}`);
   console.log(`✓ Pistas:    ${clues.length} (${dropped} descartadas por ícono repetido)`);
   console.log(`✓ Parejas:   ${pairs.length} (${overrides.length} curadas a mano)`);
-  console.log(`✓ Avatares:  ${avatars.length} emotes de League`);
+  console.log(`✓ Avatares:  ${avatars.length} ${avatarSource}`);
   console.log(`✓ Salida:    ${OUT_DIR}`);
 }
 

@@ -21,6 +21,8 @@ COPY packages/protocol packages/protocol
 COPY packages/engine packages/engine
 COPY packages/content packages/content
 COPY apps/server apps/server
+# Regenera el catálogo (incluye avatares) con la versión actual de Riot.
+RUN npm run content
 RUN npm run typecheck -w @lolgames/server
 
 FROM node:${NODE_VERSION}-alpine AS runner
@@ -40,7 +42,7 @@ RUN npm ci --omit=dev --workspace @lolgames/server --include-workspace-root \
 
 # Código y configuración que necesita tsx en tiempo de ejecución.
 COPY --chown=node:node tsconfig.base.json ./
-COPY --chown=node:node packages ./packages
+COPY --chown=node:node --from=builder /app/packages ./packages
 COPY --chown=node:node apps/server ./apps/server
 
 USER node
