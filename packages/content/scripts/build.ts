@@ -12,7 +12,7 @@
  *   2. Se descarta todo texto: al cliente solo viaja el ícono.
  *   3. Los pares se calculan por similitud y se corrigen con un mapa manual.
  */
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const LOCALE = "es_MX";
@@ -87,6 +87,27 @@ async function mapLimit<T, R>(
   });
   await Promise.all(workers);
   return out;
+}
+
+function readCachedEmoteAvatars(): { id: string; imageUrl: string }[] {
+  try {
+    const cached = JSON.parse(readFileSync(join(OUT_DIR, "avatars.json"), "utf8")) as {
+      id?: unknown;
+      imageUrl?: unknown;
+    }[];
+    if (!Array.isArray(cached)) return [];
+    return cached
+      .filter(
+        (avatar): avatar is { id: string; imageUrl: string } =>
+          typeof avatar?.id === "string" &&
+          typeof avatar?.imageUrl === "string" &&
+          avatar.imageUrl.includes("communitydragon.org") &&
+          !avatar.imageUrl.includes("/tft/"),
+      )
+      .slice(0, 64);
+  } catch {
+    return [];
+  }
 }
 
 /* ------------------------------------------------------------------ */
@@ -371,14 +392,24 @@ async function main() {
       .filter((avatar) => !avatar.imageUrl.includes("/tft/"))
       .slice(0, 64);
     if (avatars.length < 12) {
-      console.warn(`   ⚠ CommunityDragon devolvió ${avatars.length} emotes; se usarán íconos de perfil.`);
+      console.warn(`   ⚠ CommunityDragon devolvió ${avatars.length} emotes.`);
     }
   } catch (error) {
-    console.warn("   ⚠ No se pudieron descargar los emotes; se usarán íconos de perfil.");
+    console.warn("   ⚠ No se pudieron descargar los emotes de CommunityDragon.");
     console.warn(`     ${error instanceof Error ? error.message : String(error)}`);
   }
 
   if (avatars.length < 12) {
+    const cached = readCachedEmoteAvatars();
+    if (cached.length >= 12) {
+      avatars = cached;
+      avatarSource = "emotes de League (catálogo existente)";
+      console.log(`→ Usando ${cached.length} emotes del catálogo existente.`);
+    }
+  }
+
+  if (avatars.length < 12) {
+    console.warn("   ⚠ No hay emotes en el catálogo existente; se usarán íconos de perfil.");
     console.log("→ Descargando íconos de perfil de Data Dragon…");
     const profileIcons = await fetchJson<{ data: Record<string, RawProfileIcon> }>(
       `${CDN}/${version}/data/${LOCALE}/profileicon.json`,
