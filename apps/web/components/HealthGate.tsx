@@ -10,6 +10,12 @@ const REQUEST_TIMEOUT_MS = 8_000;
 const OVERLAY_DELAY_MS = 700;
 const SLOW_HINT_MS = 8_000;
 const KEEPALIVE_MS = 10 * 60_000;
+const MODE_INTERVAL_MS = 2_800;
+
+const MODES = [
+  ["bomba", "◕"], ["impostor", "◈"], ["pictionary", "〰"], ["quien-soy", "?"],
+  ["carrera", "➜"], ["carrera-sonido", "♫"], ["carrera-emojis", "😀"], ["imitacion", "★"], ["party", "✦"],
+] as const;
 
 type Status = "checking" | "ready" | "timeout";
 
@@ -41,6 +47,8 @@ export function HealthGate() {
   const [dismissed, setDismissed] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
   const [slow, setSlow] = useState(false);
+  const [modeIndex, setModeIndex] = useState(0);
+  const loading = !dismissed && status === "checking" && showOverlay;
 
   useEffect(() => {
     let cancelled = false;
@@ -108,6 +116,15 @@ export function HealthGate() {
     return () => clearTimeout(timer);
   }, [status]);
 
+  useEffect(() => {
+    if (!loading) return;
+    setModeIndex(0);
+    const timer = setInterval(() => {
+      setModeIndex((index) => (index + 1) % MODES.length);
+    }, MODE_INTERVAL_MS);
+    return () => clearInterval(timer);
+  }, [loading]);
+
   const retry = () => {
     setStatus("checking");
     setShowOverlay(false);
@@ -124,6 +141,7 @@ export function HealthGate() {
     : slow
       ? t.serverWakingSlow
       : t.serverWakingHint;
+  const [modeId, modeIcon] = MODES[modeIndex]!;
 
   return (
     <div className="server-wakeup-overlay" role="status" aria-live="polite">
@@ -135,6 +153,23 @@ export function HealthGate() {
         )}
         <h1>{status === "checking" ? t.serverWaking : t.serverUnavailable}</h1>
         <p>{hint}</p>
+        {status === "checking" ? (
+          <div className="server-wakeup-modes" aria-live="off">
+            <div className="server-wakeup-modes-label">{t.chooseHow}</div>
+            <div className="server-wakeup-mode" key={modeId}>
+              <div className="server-wakeup-mode-icon" aria-hidden="true">{modeIcon}</div>
+              <div>
+                <strong>{t.modeName(modeId)}</strong>
+                <p>{t.modeBlurb(modeId)}</p>
+              </div>
+            </div>
+            <div className="server-wakeup-dots" aria-hidden="true">
+              {MODES.map(([id], index) => (
+                <span key={id} className={index === modeIndex ? "is-active" : ""} />
+              ))}
+            </div>
+          </div>
+        ) : null}
         {status === "timeout" ? (
           <div className="server-wakeup-actions">
             <button className="primary" onClick={retry}>{t.retry}</button>
