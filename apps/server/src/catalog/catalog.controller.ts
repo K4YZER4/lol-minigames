@@ -54,7 +54,7 @@ export class CatalogController {
 
   @Get("dev/test-room")
   async devTestRoom(@Query("mode") mode = "pictionary", @Query("players") players = "3") {
-    if (process.env.NODE_ENV === "production") {
+    if (process.env.NODE_ENV === "production" || process.env.NODE_ENV === "prod") {
       throw new NotFoundException();
     }
     const selected = MODE_IDS.includes(mode as ModeId) ? (mode as ModeId) : "pictionary";
