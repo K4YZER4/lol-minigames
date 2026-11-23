@@ -67,7 +67,7 @@ body {
   filter: brightness(0.58) saturate(0.82);
 }
 
-body > *:not(.site-video-bg) {
+body > *:not(.site-video-bg, .server-wakeup-overlay) {
   position: relative;
   z-index: 1;
 }
@@ -215,9 +215,9 @@ button:disabled {
 .language-toggle:disabled { opacity: .55; cursor: wait; }
 
 .server-wakeup-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 90;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
   display: grid;
   place-items: center;
   padding: 24px;

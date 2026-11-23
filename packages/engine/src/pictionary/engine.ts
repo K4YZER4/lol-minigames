@@ -108,6 +108,9 @@ export function pictionaryFill(state: PictionaryState, playerId: string, x: numb
   if (state.phase !== "DRAWING") return { state, effects: [], reject: fail("WRONG_PHASE", "El dibujo ya terminó") };
   if (drawer !== playerId) return { state, effects: [], reject: fail("NOT_YOUR_TURN", "Solo quien dibuja puede rellenar") };
   if (!/^#[0-9a-f]{6}$/i.test(color)) return { state, effects: [], reject: fail("INVALID_STROKE", "Color inválido") };
+  if (state.fills.length >= 100 || state.operations.length >= 500) {
+    return { state, effects: [], reject: fail("INVALID_STROKE", "Límite de operaciones alcanzado") };
+  }
   const fill = { x, y, color };
   return { state: { ...state, fills: [...state.fills, fill], operations: [...state.operations, { type: "fill", fill }], history: [...state.history, "fill"] }, effects: [] };
 }

@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { SERVER_URL } from "@/lib/socket";
 import { useTranslation } from "@/lib/i18n";
+import { SERVER_GATE_DEMAND_EVENT, setServerStatus, type ServerStatus } from "@/lib/server-health";
 
 const MAX_WAIT_MS = 90_000;
 const RETRY_MS = 3_000;
 const REQUEST_TIMEOUT_MS = 8_000;
-const OVERLAY_DELAY_MS = 700;
 const SLOW_HINT_MS = 8_000;
 const KEEPALIVE_MS = 10 * 60_000;
 const MODE_INTERVAL_MS = 2_800;
@@ -17,7 +18,7 @@ const MODES = [
   ["carrera", "➜"], ["carrera-sonido", "♫"], ["carrera-emojis", "😀"], ["imitacion", "★"], ["party", "✦"],
 ] as const;
 
-type Status = "checking" | "ready" | "timeout";
+type Status = ServerStatus;
 
 /** Consulta el health del servidor con un límite de espera corto. */
 async function pingHealth(): Promise<boolean> {
@@ -41,14 +42,40 @@ async function pingHealth(): Promise<boolean> {
  * envuelve el contenido, así el HTML sigue disponible para SEO.
  */
 export function HealthGate() {
+  const pathname = usePathname();
   const { t } = useTranslation();
-  const [status, setStatus] = useState<Status>("checking");
+  const [status, setStatusState] = useState<Status>("checking");
+  const [demanded, setDemanded] = useState(false);
   const [attempt, setAttempt] = useState(0);
   const [dismissed, setDismissed] = useState(false);
-  const [showOverlay, setShowOverlay] = useState(false);
   const [slow, setSlow] = useState(false);
   const [modeIndex, setModeIndex] = useState(0);
-  const loading = !dismissed && status === "checking" && showOverlay;
+
+  const setStatus = (next: Status) => {
+    setStatusState(next);
+    setServerStatus(next);
+  };
+
+  const isDemanded = demanded || Boolean(pathname?.startsWith("/room/"));
+  const loading = !dismissed && isDemanded && status === "checking";
+
+  useEffect(() => {
+    const onDemand = (e: Event) => {
+      const detail = (e as CustomEvent<{ force?: boolean }>).detail;
+      setDemanded(true);
+      if (detail?.force) {
+        setDismissed(false);
+      }
+    };
+    window.addEventListener(SERVER_GATE_DEMAND_EVENT, onDemand);
+    return () => window.removeEventListener(SERVER_GATE_DEMAND_EVENT, onDemand);
+  }, []);
+
+  useEffect(() => {
+    if (pathname?.startsWith("/room/")) {
+      setDemanded(true);
+    }
+  }, [pathname]);
 
   useEffect(() => {
     let cancelled = false;
@@ -99,22 +126,13 @@ export function HealthGate() {
   }, [status]);
 
   useEffect(() => {
-    if (dismissed || status !== "checking") {
-      setShowOverlay(false);
-      return;
-    }
-    const timer = setTimeout(() => setShowOverlay(true), OVERLAY_DELAY_MS);
-    return () => clearTimeout(timer);
-  }, [status, dismissed]);
-
-  useEffect(() => {
-    if (status !== "checking") {
+    if (status !== "checking" || !isDemanded) {
       setSlow(false);
       return;
     }
     const timer = setTimeout(() => setSlow(true), SLOW_HINT_MS);
     return () => clearTimeout(timer);
-  }, [status]);
+  }, [status, isDemanded]);
 
   useEffect(() => {
     if (!loading) return;
@@ -127,12 +145,12 @@ export function HealthGate() {
 
   const retry = () => {
     setStatus("checking");
-    setShowOverlay(false);
+    setDemanded(true);
     setDismissed(false);
     setAttempt((value) => value + 1);
   };
 
-  const visible = !dismissed && (showOverlay || status === "timeout");
+  const visible = !dismissed && (status === "timeout" || (isDemanded && status === "checking"));
 
   if (!visible) return null;
 

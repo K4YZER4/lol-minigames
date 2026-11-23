@@ -9,6 +9,7 @@ import { RoomNotFoundModal } from "@/components/RoomNotFoundModal";
 import { lastAvatarId, loadAvatars, saveAvatarId, type Avatar } from "@/lib/avatars";
 import type { JoinAck } from "@lolgames/protocol";
 import { useTranslation } from "@/lib/i18n";
+import { demandServerGate } from "@/lib/server-health";
 
 const LANDING_MODES = [
   ["bomba", "◕"], ["impostor", "◈"], ["pictionary", "〰"], ["quien-soy", "?"],
@@ -62,6 +63,7 @@ export default function HomePage() {
     }
 
     setBusy(mode);
+    demandServerGate(true);
     if (avatarId) saveAvatarId(avatarId);
     const ack =
       mode === "create"
@@ -95,10 +97,22 @@ export default function HomePage() {
             <p className="seo-intro">{t.seoIntro}</p>
 
             <div className="buttons">
-              <button className="primary" onClick={() => setMode("create")}>
+              <button
+                className="primary"
+                onClick={() => {
+                  demandServerGate();
+                  setMode("create");
+                }}
+              >
                 {t.createRoom}
               </button>
-              <button className="secondary" onClick={() => setMode("join")}>
+              <button
+                className="secondary"
+                onClick={() => {
+                  demandServerGate();
+                  setMode("join");
+                }}
+              >
                 {t.joinRoom}
               </button>
             </div>

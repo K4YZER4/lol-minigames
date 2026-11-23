@@ -162,7 +162,28 @@ export const PictionaryGuessPayloadSchema = z.object({
 export const CarreraAnswerPayloadSchema = z.object({ requestId: RequestIdSchema, championId: ChampionIdSchema });
 export const PartyGuessPayloadSchema = z.object({ requestId: RequestIdSchema, championId: ChampionIdSchema });
 export const QuienSoyGuessPayloadSchema = z.object({ requestId: RequestIdSchema, championId: ChampionIdSchema });
-export const ImitacionSubmitPayloadSchema = z.object({ requestId: RequestIdSchema, audioData: z.string().min(32).max(1_500_000), mimeType: z.string().max(80) });
+export const AudioDataUriSchema = z
+  .string()
+  .min(32)
+  .max(1_500_000)
+  .refine(
+    (v) => /^data:audio\/(?:webm|ogg|wav|mp4|aac|mpeg)(?:;codecs=[^;,]+)?;base64,[A-Za-z0-9+/=]+$/i.test(v),
+    { message: "Formato de audio no permitido" },
+  );
+export const AudioMimeTypeSchema = z
+  .string()
+  .min(3)
+  .max(80)
+  .refine(
+    (v) => /^audio\/(?:webm|ogg|wav|mp4|aac|mpeg)(?:;codecs=[^;,]+)?$/i.test(v),
+    { message: "Tipo MIME no permitido" },
+  );
+
+export const ImitacionSubmitPayloadSchema = z.object({
+  requestId: RequestIdSchema,
+  audioData: AudioDataUriSchema,
+  mimeType: AudioMimeTypeSchema,
+});
 export const ImitacionVotePayloadSchema = z.object({ requestId: RequestIdSchema, recordingId: z.string().min(1).max(80), stars: z.number().int().min(1).max(5) });
 
 /* ------------------------------------------------------------------ */
