@@ -1,10 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { SERVER_URL } from "@/lib/socket";
 import { useTranslation } from "@/lib/i18n";
-import { SERVER_GATE_DEMAND_EVENT, setServerStatus, type ServerStatus } from "@/lib/server-health";
+import {
+  SERVER_GATE_DEMAND_EVENT,
+  notifyServerGateDismissed,
+  setServerStatus,
+  type ServerStatus,
+} from "@/lib/server-health";
 
 const MAX_WAIT_MS = 90_000;
 const RETRY_MS = 3_000;
@@ -43,6 +48,7 @@ async function pingHealth(): Promise<boolean> {
  */
 export function HealthGate() {
   const pathname = usePathname();
+  const router = useRouter();
   const { t } = useTranslation();
   const [status, setStatusState] = useState<Status>("checking");
   const [demanded, setDemanded] = useState(false);
@@ -150,7 +156,15 @@ export function HealthGate() {
     setAttempt((value) => value + 1);
   };
 
-  const visible = !dismissed && (status === "timeout" || (isDemanded && status === "checking"));
+  const keepBrowsing = () => {
+    setDemanded(false);
+    notifyServerGateDismissed();
+    if (pathname !== "/") {
+      router.push("/");
+    }
+  };
+
+  const visible = !dismissed && isDemanded && (status === "timeout" || status === "checking");
 
   if (!visible) return null;
 
@@ -195,7 +209,7 @@ export function HealthGate() {
           </div>
         ) : slow ? (
           <div className="server-wakeup-actions">
-            <button className="textbutton" onClick={() => setDismissed(true)}>{t.keepBrowsing}</button>
+            <button className="textbutton" onClick={keepBrowsing}>{t.keepBrowsing}</button>
           </div>
         ) : null}
       </div>

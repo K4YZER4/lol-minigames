@@ -9,7 +9,7 @@ import { RoomNotFoundModal } from "@/components/RoomNotFoundModal";
 import { lastAvatarId, loadAvatars, saveAvatarId, type Avatar } from "@/lib/avatars";
 import type { JoinAck } from "@lolgames/protocol";
 import { useTranslation } from "@/lib/i18n";
-import { demandServerGate } from "@/lib/server-health";
+import { SERVER_GATE_DISMISSED_EVENT, demandServerGate } from "@/lib/server-health";
 
 const LANDING_MODES = [
   ["bomba", "◕"], ["impostor", "◈"], ["pictionary", "〰"], ["quien-soy", "?"],
@@ -37,6 +37,17 @@ export default function HomePage() {
       setAvatars(items);
       setAvatarId((current) => current && items.some((item) => item.id === current) ? current : items[0]?.id ?? null);
     }).catch(() => setError(t.catalogError));
+  }, []);
+
+  useEffect(() => {
+    const onGateDismissed = () => {
+      setMode(null);
+      setError(null);
+      setErrorCode(null);
+      setBusy(null);
+    };
+    window.addEventListener(SERVER_GATE_DISMISSED_EVENT, onGateDismissed);
+    return () => window.removeEventListener(SERVER_GATE_DISMISSED_EVENT, onGateDismissed);
   }, []);
 
   function back() {
