@@ -31,7 +31,8 @@ export class CatalogController {
 
   @Get("health")
   health() {
-    return { ok: true, version: this.content.meta.version };
+    const commit = (process.env.APP_COMMIT_SHA ?? process.env.RENDER_GIT_COMMIT ?? "local").trim().slice(0, 7);
+    return { ok: true, version: this.content.meta.version, commit };
   }
 
   /**
