@@ -27,8 +27,19 @@ RUN npm run typecheck -w @lolgames/server
 
 FROM node:${NODE_VERSION}-alpine AS runner
 WORKDIR /app
+
+ARG APP_COMMIT_SHA=local
+ARG APP_BUILD_DATE=unknown
+
+LABEL org.opencontainers.image.source="https://github.com/K4YZER4/lol-minigames" \
+      org.opencontainers.image.description="LoL Party real-time multiplayer backend (NestJS + Socket.IO)" \
+      org.opencontainers.image.revision="${APP_COMMIT_SHA}" \
+      org.opencontainers.image.created="${APP_BUILD_DATE}"
+
 ENV NODE_ENV=production
 ENV PORT=3001
+ENV APP_COMMIT_SHA=${APP_COMMIT_SHA}
+ENV APP_BUILD_DATE=${APP_BUILD_DATE}
 
 # Solo dependencias de producción del servidor (tsx ya es dependency).
 COPY package.json package-lock.json ./

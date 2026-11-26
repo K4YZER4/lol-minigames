@@ -15,6 +15,11 @@ async function bootstrap() {
   const port = Number(process.env.PORT ?? 3001);
   await app.listen(port, "0.0.0.0");
 
+  const commitSha = (process.env.APP_COMMIT_SHA ?? process.env.RENDER_GIT_COMMIT ?? "local").trim();
+  const shortSha = commitSha.slice(0, 7);
+  const buildDate = (process.env.APP_BUILD_DATE ?? "unknown").trim();
+
+  console.log(`[server] version commit=${shortSha} (${commitSha}) · builtAt=${buildDate}`);
   console.log(
     `[server] Data Dragon ${content.meta.version} · ${content.champions.length} campeones · ${content.clues.length} pistas`,
   );
